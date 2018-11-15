@@ -7,4 +7,9 @@ Delete XX;
 第七次修改
 第八次修改
 添加dev分支
+<<<<<<< HEAD
 在master分支上测试冲突
+=======
+测试dev分支与master分支冲突
+>>>>>>> dev
+新测试
