@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="gb2312"?>
+<AIConfig>
+
+<ConfigKind name="AppFrameInit">
+  <ConfigItem name="CHARSET" remarks="字符集" >UTF-8</ConfigItem>
+  <ConfigItem name="IdGeneratorClass" remarks="数据对象唯一标识管理器实现类" >com.ai.appframe2.complex.tab.id.AdvanceIdGeneratorImpl</ConfigItem>
+  <ConfigItem name="DataStoreClass" remarks="数据存储管理器实现类" >com.ai.appframe2.complex.tab.store.AdvanceDataStoreImpl</ConfigItem>
+  <ConfigItem name="MainWebPageUrl" remarks="web程序主页面url" >/webframe/index.jsp</ConfigItem>
+  <ConfigItem name="LoginOutPageUrl" remarks="web框架的Loginout页面url" >/webframe/Loginout.jsp</ConfigItem>
+  <ConfigItem name="LoginInPageUrl" remarks="web框架的Loginout页面url" >/index.jsp</ConfigItem>
+  <ConfigItem name="UserManagerClass" remarks="用户登陆的实现类" >com.ai.appframe2.complex.secframe.CenterUserManagerImpl</ConfigItem>
+  <ConfigItem name="HostIPPrefix" remarks="为了获取主机的有些IP地址，需要根据前缀获得有些IP,例如10.9" ></ConfigItem>
+  <ConfigItem name="ENHANCE_PACKAGE" remarks="需要增强的包" >demo</ConfigItem>
+  <ConfigItem name="AuthTimeOut" remarks="SSO认证超时时间(秒)" >1800</ConfigItem>
+  <ConfigItem name="AuthRefreshTime" remarks="SSO认证刷新时间(秒)" >120</ConfigItem>
+  <ConfigItem name="MENU_CAPTION" remarks="菜单头" >UCMFRAME-开通接口系统</ConfigItem>
+  <ConfigItem name="IS_HN_PROJECT" remarks="queue中采用的数据源级别为appframe55(河南项目中采用的是appframe_hn版本)" >true</ConfigItem>
+</ConfigKind>
+
+<ConfigKind name="PRIVILEGE_PERMISSION" remarks="与登录,mo权限相关配置">
+  <ConfigItem name="IS_MO_PERMISSION" remarks="是否进行mo权限判断">N</ConfigItem>
+  <ConfigItem name="IS_LOGIN_CHECK_FLAG" remarks="是否做登陆用户的Session会话有效性校验(Y/N)">N</ConfigItem>
+  <ConfigItem name="IS_URL_CHECK_FLAG" remarks="是否做URL合法性校验(Y/N)">N</ConfigItem>
+  <ConfigItem name="SECURITY_SERVICE_NAME" remarks="securityFactory的服务配置类">com.ai.secframe.sysmgr.service.interfaces.ISecFrameMoSecuritySV</ConfigItem>
+</ConfigKind>
+
+
+<ConfigKind name="UNCHECK_URL" remarks="不进行验证的url(包括session和访问权限)">
+  <ConfigItem name="/index.jsp" remarks="首页">Y</ConfigItem>
+  <ConfigItem name="/jsv2/" remarks="平台">Y</ConfigItem>
+  <ConfigItem name="/webframe/" remarks="平台">Y</ConfigItem>
+  <ConfigItem name="/image" remarks="首页">Y</ConfigItem>
+  <ConfigItem name="/images" remarks="首页">Y</ConfigItem>
+  <ConfigItem name="/VerifyCodeLoginServlet" remarks="验证码">Y</ConfigItem>
+  <ConfigItem name="/vertifycodeservlet" remarks="验证码">Y</ConfigItem>
+  <ConfigItem name="/business/com.ai.appframe2.web.DefaultAction?action=getSysDateTime" remarks="获取系统时间">Y</ConfigItem>
+  <ConfigItem name="/secframe/orgmodel/staff/ChPasswordByCode.jsp" remarks="首页改密码">Y</ConfigItem>
+  <ConfigItem name="/baseserver" remarks="登录">Y</ConfigItem>
+  <ConfigItem name="/business/com.ai.secframe.web.orgmodel.SysOperatorAction?action=setSysOperatorPasswordByCode" remarks="登录">Y</ConfigItem>
+  <ConfigItem name="/business/com.ai.secframe.web.SecFrameAction?action=loginOut " remarks="退出">N</ConfigItem> 
+  <ConfigItem name="/crm/common/CrmJsResource.jsp" remarks="平台">Y</ConfigItem>
+</ConfigKind>
+
+<ConfigKind name="DBTreePic">
+  <ConfigItem name="RootImgUrl" remarks="根节点图片url" >/jsv2/image/tree_pic/homepage.gif</ConfigItem>
+  <ConfigItem name="FoldOpenImgUrl" remarks="目录节点展开的图片url" >/jsv2/image/tree_pic/fold_o.gif</ConfigItem>
+  <ConfigItem name="FoldCloseImgUrl" remarks="目录节点收拢时的图片url" >/jsv2/image/tree_pic/fold_c.gif</ConfigItem>
+  <ConfigItem name="LeafImgUrl" remarks="叶子节点的默认图片" >/jsv2/image/tree_pic/leaf_c.gif</ConfigItem>
+</ConfigKind>
+
+<ConfigKind name="CrossGridManagerImpl">
+  <ConfigItem name="crossgrid_implclass" remarks="标准的交叉表实现类" >com.ai.appframe2.analyse.McGrid</ConfigItem>
+  <ConfigItem name="treegrid_implclass" remarks="树表的实现类" >com.ai.appframe2.analyse.TreeGrid</ConfigItem>
+</ConfigKind>
+
+<ConfigKind name="TreeGridImg">
+  <ConfigItem name="TreeGrid_FoldCloseImg" remarks="目录节点展开的图片url" >/jsv2/image/tree_pic/fold_c.gif</ConfigItem>
+  <ConfigItem name="TreeGrid_FoldOpenImg" remarks="目录节点收拢时的图片url" >/jsv2/image/tree_pic/fold_o.gif</ConfigItem>
+  <ConfigItem name="TreeGrid_LeafImg" remarks="叶子节点的图片" >/jsv2/image/tree_pic/leaf_c.gif</ConfigItem>
+</ConfigKind>
+
+<ConfigKind name="TAG_SESSION_CASHE_NUM">
+  <ConfigItem name="DBFormInterfaceManager" remarks="">50</ConfigItem>
+  <ConfigItem name="DBGridInterfaceManager" remarks="">50</ConfigItem>
+  <ConfigItem name="DBTreeInterfaceManager" remarks="">10</ConfigItem>
+  <ConfigItem name="DBTreeNewInterfaceManager" remarks="">10</ConfigItem>
+  <ConfigItem name="CrossGridFactoryDefault" remarks="">5</ConfigItem>
+</ConfigKind>
+
+<ConfigKind name="HttpExpireConfig">
+  <ConfigItem name="EXPIRE_ON_OFF_SWITCH" remarks="打开和关闭超时设置功能(ON/OFF),如无此项默认为ON">ON</ConfigItem>
+  <ConfigItem name="*.gif" remarks="访问后8个小时内客户端有效">A28800</ConfigItem>
+  <ConfigItem name="*.jpg" remarks="访问后8个小时内客户端有效">A28800</ConfigItem>
+  <ConfigItem name="*.png" remarks="访问后8个小时内客户端有效">A28800</ConfigItem>
+  <ConfigItem name="*.js" remarks="访问后2个小时内客户端有效">A7200</ConfigItem>
+  <ConfigItem name="*.vbs" remarks="访问后2个小时内客户端有效">A7200</ConfigItem>
+  <ConfigItem name="*.swf" remarks="访问后2个小时内客户端有效">A7200</ConfigItem>
+  <ConfigItem name="*.css" remarks="访问后2个小时内客户端有效">A7200</ConfigItem>
+  <ConfigItem name="/jsv2/Globe_v2.jsp" remarks="访问后2个小时内客户端有效">A7200</ConfigItem>
+  <ConfigItem name="/jsv2/i18n/AILocale.jsp" remarks="访问后2个小时内客户端有效">A7200</ConfigItem>
+  <ConfigItem name="/jsv2/AppFrameCss.jsp" remarks="访问后2个小时内客户端有效">A7200</ConfigItem>
+  <ConfigItem name="/webframe/common/cookie.jsp" remarks="访问后2个小时内客户端有效">A7200</ConfigItem>
+  <ConfigItem name="/webframe/css/AIFrameDBCSS_css.jsp" remarks="访问后2个小时内客户端有效">A7200</ConfigItem>
+  <ConfigItem name="/crm/common/CrmJsResource.jsp" remarks="访问后8个小时内客户端有效">A28800</ConfigItem>
+</ConfigKind>
+
+<ConfigKind name = "HttpCompressMimeType" remarks="压缩filter需要压缩的文件匹配">
+  <ConfigItem name="COMPRESS_ON_OFF_SWITCH" remarks="打开和关闭超时设置功能(ON/OFF),如无此项默认为ON">OFF</ConfigItem>
+  <ConfigItem name="COMPRESS_THRESHOLD" remarks="压缩filter需要压缩的文件最小size，单位字节byte">10</ConfigItem>
+  <ConfigItem name="GZIP_MIME_TYPE" remarks="是压缩filter需要压缩的文件匹配,以,分割">*.*,/business/*</ConfigItem>
+</ConfigKind>
+
+<ConfigKind name = "IS_SO_ENABLE_WORKFLOW" remarks="业务受理是否启动工作流">
+  <ConfigItem name="IS_SO_ENABLE_WORKFLOW" remarks="业务受理是否启动工作流">N</ConfigItem>
+</ConfigKind>
+
+<ConfigKind name="DBFormDefaultConfigInfo" remarks="DBForm组件默认的width和高度，及其它信息">
+  <ConfigItem name="DBDate_BTN_VALUE" remarks=""></ConfigItem>
+  <ConfigItem name="DBDateTime_BTN_VALUE" remarks=""></ConfigItem>
+</ConfigKind>
+
+<ConfigKind name="AppFrame55" remarks="AppFrame55配置">
+  <ConfigItem name="ILLEGAL_CHAR_CHECK" remarks="非法字符校验" >document.cookie|href|script|select |select/|select\(|select\*|insert |insert/|insert\(|insert\*|update |update/|update\(|update\*|delete |delete/|delete\(|delete\*|truncate |truncate/|truncate\(|truncate\*|exec |exec/|exec\(|exec\*|drop |drop/|drop\(|drop\*</ConfigItem>
+  <ConfigItem name="CPU_TIME_SUPPORT" remarks="cpu时间是否支持(如果没有,系统支持就使用,系统不支持就不使用)" >false</ConfigItem>
+  <ConfigItem name="CACHE_READONLY" remarks="CacheFactory返回只读的map(如果没有,返回只读Map)" >true</ConfigItem>
+  <ConfigItem name="DATABASE_DIALECT" remarks="数据的方言(如果没有,采用OracleDialectImpl)" >com.ai.appframe2.bo.dialect.OracleDialectImpl</ConfigItem>
+  <ConfigItem name="READ_SET_BY_INPUTSTREAM" remarks="读取SET文件采用InputStream方式(默认采用InputStreamReader)" >true</ConfigItem>
+
+  <!--<ConfigItem name="SRVLOG_IMPL_CLASS" remarks="服务日志实现类(如果没有,不进行服务日志处理)" >com.ai.appframe2.complex.mbean.standard.sv.log.DefaultSrvLogImpl</ConfigItem>-->
+  <ConfigItem name="SRVCONTROL_IMPL_CLASS" remarks="服务控制实现类(如果没有,不进行服务控制处理)" >com.ai.appframe2.complex.service.control.DefaultSrvControlImpl</ConfigItem>
+
+  <ConfigItem name="CENTER_REGION_IMPL_CLASS" remarks="CenterRegion实现类(如果没有,采用DefaultCenterRegionImpl)" >com.ai.common.tab.store.CrmCenterRegionImpl</ConfigItem>
+  <ConfigItem name="BD_CHECK_IMPL_CLASS" remarks="ICheck实现类(如果没有,采用DefaultCheckImpl)" >com.ai.appframe2.complex.service.impl.client.check.DefaultCheckImpl</ConfigItem>
+
+  <ConfigItem name="METHOD_CENTER_IMPL_CLASS" remarks="方法中心设置实现类(如果没有,不进行方法中心处理)">com.ai.appframe2.complex.center.mc.DefaultMethodCenterImpl</ConfigItem>
+  <ConfigItem name="METHOD_CENTER_TYPE" remarks="方法中心类型(LOCAL本地方式,SERVER服务器方式)">LOCAL</ConfigItem>
+</ConfigKind>
+
+<ConfigKind name="AppFrameJdbc" remarks="jdbc属性设置">
+  <ConfigItem name="appframe.jdbc.resultset_level" remarks="0:保持原有(最安全),1:安全的使用ResultSet,2:直接返回ResultSet">0</ConfigItem>
+  <ConfigItem name="appframe.jdbc.use.rowid" remarks="0:不使用rowid,1:使用rowid.(现在仅仅oracle方言支持rowid)">1</ConfigItem>
+  <ConfigItem name="appframe.jdbc.check_resultset" remarks="0:不检查返回结果集,1:检查返回结果集">1</ConfigItem>
+  <ConfigItem name="appframe.jdbc.check_resultset.warning_count" remarks="告警数量">100000</ConfigItem>
+  <ConfigItem name="appframe.jdbc.check_resultset.error_count" remarks="错误数量">300000</ConfigItem>
+</ConfigKind>
+
+<ConfigKind name="AppFrameLocale" remarks="语言属性设置">
+  <ConfigItem name="LOCALE" remarks="国际化" >zh_CN</ConfigItem>
+  <ConfigItem name="LOCALE_FIXED" remarks="固定国际化(不采用web或客户端传入的语言)" >true</ConfigItem>
+  <ConfigItem name="CUSTOM_LOCALE_RESOURCE_IMPL_CLASS" remarks="自定义的语言资源实现类(appframe内部采用的是AppframeLocaleFactory获取资源文件的方式,可以采用自定义的方式提高扩展能力)" >com.ai.common.i18n.CrmLocaleResourceImpl</ConfigItem>
+</ConfigKind>
+
+</AIConfig>

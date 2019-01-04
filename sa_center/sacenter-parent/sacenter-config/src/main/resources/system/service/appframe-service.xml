@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="gb2312"?>
+<services>
+   <service id="RemoteDataStore" invoke="pojo" type="primitive">
+       <property name="interfaceClass" value="com.ai.appframe2.common.RemoteDataStore"/>
+       <property name="implClass" value="com.ai.appframe2.bo.RemoteDataStoreImpl"/>
+   </service>
+<!--
+   <service id="com.ai.appframe2.vm.WorkflowEngine" invoke="pojo" type="primitive">
+       <property name="interfaceClass" value="com.ai.appframe2.vm.workflow.WorkflowEngine"/>
+       <property name="implClass" value="com.ai.appframe2.vm.workflow.WorkflowEngineImpl"/>
+   </service>
+-->
+   <service id="com.ai.appframe.CommonTreeService" invoke="pojo" type="primitive">
+       <property name="interfaceClass" value="com.ai.appframe2.util.tree.ICommonTreeService"/>
+       <property name="implClass" value="com.ai.appframe2.util.tree.impl.DefaultTreeService"/>
+   </service>
+<!--
+  <service id="com.ai.comframe.ComframeClient" invoke="pojo" type="primitive">
+     <property name="interfaceClass" value="com.ai.comframe.client.IComframeClient"/>
+     <property name="implClass" value="com.ai.comframe.core.ComframeWorkflowImpl"/>
+  </service>
+-->
+<!--
+  <service id="com.ai.comframe.console.WorkflowServerMonitor" type="primitive">
+     <property name="interfaceClass" value="com.ai.comframe.console.interfaces.IServerMonitor"/>
+     <property name="implClass" value="com.ai.comframe.console.impl.ServerMonitorImpl"/>
+  </service>
+-->
+<!--
+  <service id="com.ai.comframe.console.WorkflowConsole" type="primitive">
+     <property name="interfaceClass" value="com.ai.comframe.console.interfaces.IWorkflowConsole"/>
+     <property name="implClass" value="com.ai.comframe.console.impl.WorkflowConsoleImpl"/>
+  </service>
+-->  
+  <service id="com.asiainfo.crm.so.order.rboss.Gsm02TownCellInfo" type="primitive">
+     <property name="interfaceClass" value="com.asiainfo.crm.so.order.rboss.service.interfaces.IGsm02TownCellInfoSV"/>
+     <property name="implClass" value="com.asiainfo.crm.so.order.rboss.service.impl.Gsm02TownCellInfoSVImpl"/>
+  </service>
+
+</services>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="kt1" name="SAOrderHis" mainattr="ORDER_ID">
+    <mapingenty type="table">{SA_ORDER_H}</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ORDER_ID" maxlength="15" datatype="Long" type="PK">
+        <mapingcol datatype="NUMBER">ORDER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CUST_ORDER" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CUST_ORDER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_CODE" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">DONE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CATEGORY" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CATEGORY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CATALOG" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CATALOG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BUSINESS" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">BUSINESS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">USER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BILL_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SUB_BILL_ID" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">SUB_BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_CODE" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REGION_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPETENCE" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">COMPETENCE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_ORDER_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">CREATE_ORDER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_TASK_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">CREATE_TASK_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="GROUP_ORDER_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">GROUP_ORDER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">USER_REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">ORDER_REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRIORITY" maxlength="10" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">PRIORITY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPOSITE" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">COMPOSITE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">ORDER_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CHANNEL_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CHANNEL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAIL_LOG" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">FAIL_LOG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPLETE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">COMPLETE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="2" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">STATE_DATE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe>
+   <service id="$ID" name="$ID" interface="$INTERFACE">
+    <impl-define invoke="$TYPE" impl-class="$IMPL_CLASS"/>
+  </service>
+</ucmframe>

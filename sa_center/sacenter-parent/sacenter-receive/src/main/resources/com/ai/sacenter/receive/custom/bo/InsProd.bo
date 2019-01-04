@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="so1" name="InsProd" mainattr="CREATE_DATE">
+    <mapingenty type="table">{INS_PROD}</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="PROD_INST_ID" maxlength="14" datatype="Long" type="PK">
+        <mapingcol datatype="NUMBER">PROD_INST_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OFFER_INST_ID" maxlength="14" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">OFFER_INST_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">USER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROD_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">PROD_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="2" datatype="Integer" type="COL" remark="1正常
+3暂停中
+4免费体验">
+        <mapingcol datatype="NUMBER">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRESENT_OBJ_USER" maxlength="12" datatype="Long" type="COL" remark="记录赠送目标用户的产品实例编号">
+        <mapingcol datatype="NUMBER">PRESENT_OBJ_USER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_CODE" maxlength="12" datatype="Long" type="COL" remark="当前业务受理编号">
+        <mapingcol datatype="NUMBER">DONE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_DATE" maxlength="20" datatype="DateTime" type="COL" remark="当前业务受理日期">
+        <mapingcol datatype="DATE">DONE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EFFECTIVE_DATE" maxlength="20" datatype="DateTime" type="PK" remark="客户生效日期">
+        <mapingcol datatype="DATE">EFFECTIVE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXPIRE_DATE" maxlength="20" datatype="DateTime" type="PK" remark="客户失效日期">
+        <mapingcol datatype="DATE">EXPIRE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OP_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">OP_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SRC_SYSTEM_TYPE" maxlength="2" datatype="Integer" type="COL" remark="策划订购的来源系统。
+1－RBOSS
+2－BBOSS
+3－DSMP">
+        <mapingcol datatype="NUMBER">SRC_SYSTEM_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SRC_SYSTEM_EXT_CODE" maxlength="200" datatype="String" type="COL" remark="来源系统扩展编码,如果是来自sp产品，则该字段保存sp_code">
+        <mapingcol datatype="VARCHAR2">SRC_SYSTEM_EXT_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EFFECTIVE_DATE_TYPE" maxlength="6" datatype="Integer" type="COL" remark="0系统计算
+1用户指定">
+        <mapingcol datatype="NUMBER">EFFECTIVE_DATE_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXPIRE_DATE_TYPE" maxlength="6" datatype="Integer" type="COL" remark="0系统计算
+1用户指定">
+        <mapingcol datatype="NUMBER">EXPIRE_DATE_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OLD_INST_OFFER_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">OLD_INST_OFFER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXPIRE_PROCESS_TYPE" maxlength="2" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">EXPIRE_PROCESS_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROD_TYPE" maxlength="30" datatype="String" type="COL" remark="产品类型(code_type=SO_PRODUCT_TYPE)">
+        <mapingcol datatype="VARCHAR2">PROD_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROD_PKG_FLAG" maxlength="1" datatype="Integer" type="COL" remark="产品包标识(code_type=SO_PROD_PKG_FLAG)
+0：包外产品
+1：包内产品
+2：包产品">
+        <mapingcol datatype="NUMBER">PROD_PKG_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OLD_OFFER_ID" maxlength="12" datatype="Long" type="COL" remark="转为包内产品前所对应的老策划编号">
+        <mapingcol datatype="NUMBER">OLD_OFFER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COUNTY_CODE" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">COUNTY_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BOSS_EFFECTIVE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">BOSS_EFFECTIVE_DATE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe id = "ZhcxNSRMapping" desc = "开通测统一开通新业务模块">
+   <mappings id = "IGsm2NsrcL" desc = "普通新业务功能[统一开通][开通测]">
+       <mapping name = "QCSS"        mapping = "QCSS"                 method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "全成平台QC"/>
+       <mapping name = "LNAV"        mapping = "NAV"                  method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "手机导航"/>
+       <mapping name = "SJZQJY"      mapping = "a"                    method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "手机证券交易"/>
+       <mapping name = "BSML"        mapping = "BSML"                 method = "MappingExist"     desc = "基本电子邮件">
+           <mapping name = "BSML"        mapping = "R"                    method = "MappingSplite"    expr = "C=1;DU=1;U=1"     desc = "基本电子邮件"/>
+           <mapping name = "BSML"        mapping = "EMAIL"                method = "MappingSplite"    expr = "C=$BSMLEMAIL;DU=$BSMLEMAIL;U=$BSMLEMAIL"      desc = "电子邮件地址"/>
+       </mapping>
+       <mapping name = "BSMQI"       mapping = "S"                    method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "电子邮件全文接收"/>
+       <mapping name = "ESMBI"       mapping = "MAILBILL"             method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "是否发送账单"/>
+       <mapping name = "ESMBI"       mapping = "MAILCDR"              method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "是否发送详单"/>
+       <mapping name = "ESMBI"       mapping = "MAILINFO"             method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "是否发送信息"/>
+       <mapping name = "SJYH"        mapping = "X"                    method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "手机银行"/>
+       <!--上海WLAN自动认证-->
+       <mapping name = "ZDWLAN"      mapping = "ZDWLAN"               method = "MappingExist"     desc = "上海WLAN自动认证包月套餐">
+          <mapping name = "ZDWLAN"      mapping = "ZDWLANFLG"            method = "MappingDirect"    ignoreable = "true"             desc = "上海WLAN自动认证包月套餐"/>
+          <mapping name = "ZDWLANFLG"   mapping = "ZDWLAN"               method = "MappingSplite"    expr = "C=1;DU=1;U=1"           desc = "上海WLAN自动认证包月套餐"/>
+          <mapping name = "ZDWLANFLG"   mapping = "ZDWLAN_PWD"           method = "MappingSplite"    expr = "C=$ZDWLANPSWD;DU=$ZDWLANPSWD;U=$ZDWLANPSWD"      desc = "上海WLAN自动认证包月套餐"/>
+       </mapping>
+       <mapping name = "DYZDWLAN"    mapping = "DAYZDWLAN"            method = "MappingExist"     desc = "上海WLAN自动认证日套餐">
+          <mapping name = "DYZDWLAN"    mapping = "DYZDWLANFLG"          method = "MappingDirect"    ignoreable = "true"             desc = "上海WLAN自动认证日套餐"/>
+          <mapping name = "DYZDWLANFLG" mapping = "DAYZDWLAN"            method = "MappingSplite"    expr = "C=1;DU=1;U=1"           desc = "上海WLAN自动认证日套餐"/>
+          <mapping name = "DYZDWLANFLG" mapping = "DAYZDWLAN_PWD"        method = "MappingSplite"    expr = "C=$DYZDWLANPSWD;DU=$DYZDWLANPSWD;U=$DYZDWLANPSWD" desc = "上海WLAN自动认证日套餐"/>
+       </mapping>
+       <mapping name = "LZDWLAN"     mapping = "LZDWLAN"              method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "WLAN自动认证封顶限制"/>
+       <mapping name = "RZDWLAN"     mapping = "RZDWLAN"              method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "WLAN自动认证超量叠加包"/>
+       <!--上海校园WLAN-->
+       <mapping name = "JXYWLAN"     mapping = "JXYWLAN"              method = "MappingExist"     desc = "上海校园WLAN">
+          <mapping name = "JXYWLAN"     mapping = "WLAN_PWD"             method = "MappingSplite"    expr = "C=$JXYWLANPSWD;DU=$JXYWLANPSWD;U=$JXYWLANPSWD"       desc = "校园WLAN密码"/>
+          <mapping name = "XYWBIMSI"    mapping = "rh"                   method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "校园WLAN绑定IMSI"/>
+          <mapping name = "BXYWLAN"     mapping = "BASEXYWLAN"           method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海校园WLAN基础"/>
+          <mapping name = "XYWLAN"      mapping = "XYWLAN"               method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海校园WLAN包月套餐"/>
+          <mapping name = "XYWLAN10"    mapping = "XYWLAN10"             method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海校园WLAN10元套餐"/>
+          <mapping name = "XYWLAN20"    mapping = "XYWLAN20"             method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海校园WLAN20元套餐"/>
+          <mapping name = "XYWLAN30"    mapping = "XYWLAN30"             method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海校园WLAN30元流量套餐(试点)"/>
+          <mapping name = "XYWLAN40"    mapping = "XYWLAN40"             method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海校园WLAN40元套餐"/>
+          <mapping name = "XYWLAN50"    mapping = "XYWLAN50"             method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海校园WLAN50元流量套餐(试点)"/>
+          <mapping name = "XYWLAN100"   mapping = "XYWLAN100"            method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海校园WLAN100元流量套餐(试点)"/>
+       </mapping>
+       <mapping name = "RXYWLAN"     mapping = "RXYWLAN"              method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海校园WLAN叠加包"/>
+       <mapping name = "LXYWLAN"     mapping = "LXYWLAN"              method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海校园WLAN封顶包"/>
+       <!--上海家庭WLAN-->
+       <mapping name = "JJTWLAN"     mapping = "JJTWLAN"              method = "MappingExist"     desc = "上海家庭WLAN">
+          <mapping name = "JJTWLAN"     mapping = "JTWLAN_PWD"           method = "MappingSplite"    expr = "C=$JJTWLANPSWD;DU=$JJTWLANPSWD;U=$JJTWLANPSWD"       desc = "上海家庭WLAN密码"/>
+          <mapping name = "JTWLAN"      mapping = "JTWLAN"               method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海家庭WLAN包月套餐"/>
+          <mapping name = "RJTWLAN"     mapping = "RJTWLAN"              method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海家庭WLAN叠加包"/>
+          <mapping name = "LJTWLAN"     mapping = "LJTWLAN"              method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海家庭WLAN封顶限制"/>
+       </mapping>
+       <!--上海手机WLAN-->
+       <mapping name = "JSJWLAN"     mapping = "JSJWLAN"              method = "MappingExist"     desc = "上海手机WLAN">
+          <mapping name = "JSJWLAN"     mapping = "SJWLAN_PWD"           method = "MappingSplite"    expr = "C=$JSJWLANPSWD;DU=$JSJWLANPSWD;U=$JSJWLANPSWD"       desc = "上海手机WLAN密码"/>
+          <mapping name = "SJWLAN"      mapping = "SJWLAN"               method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "手机WLAN功能"/>
+          <mapping name = "RSJWLAN"     mapping = "RSJWLAN"              method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海手机WLAN叠加包"/>
+          <mapping name = "LSJWLAN"     mapping = "LSJWLAN"              method = "MappingSplite"    expr = "C=1;DU=1;U=1"         desc = "上海手机WLAN超40G封顶"/>
+       </mapping>
+       <!--上海大众WLAN-->
+       <!-- <mapping name = "JDZWLAN"     mapping = "JDZWLAN"              method = "MappingExist"     desc = "上海大众WLAN">
+          <mapping name = "JDZWLAN"     mapping = "TWLAN_PWD"             method = "MappingSplite"    expr = "C=$DZWLANPSWD;DU=$DZWLANPSWD;U=$DZWLANPSWD"       desc = "大众WLAN密码"/>
+		  <mapping name = "BTWLAN" 		mapping = "BTWLAN"  		     method = "MappingSplite" 		 expr = "C=1;DU=1;U=1" 		    desc = "WLAN标准资费"/>
+		  <mapping name = "TWLAN5"      mapping = "TWLAN5"               method = "MappingSplite"        expr = "C=1;DU=1;U=1"          desc = "WLAN时长5元套餐"/>
+          <mapping name = "TWLAN10"     mapping = "TWLAN10"              method = "MappingSplite"        expr = "C=1;DU=1;U=1"          desc = "WLAN时长10元套餐"/>
+          <mapping name = "TWLAN20"     mapping = "TWLAN20"              method = "MappingSplite"        expr = "C=1;DU=1;U=1"          desc = "WLAN时长20元套餐"/>
+          <mapping name = "TWLAN30"     mapping = "TWLAN30"              method = "MappingSplite"        expr = "C=1;DU=1;U=1"          desc = "WLAN时长30元套餐"/>
+          <mapping name = "TWLAN50"     mapping = "TWLAN50"              method = "MappingSplite"        expr = "C=1;DU=1;U=1"          desc = "WLAN时长50元套餐"/>
+          <mapping name = "TWLAN100"    mapping = "TWLAN100"             method = "MappingSplite"        expr = "C=1;DU=1;U=1"          desc = "WLAN时长100元套餐"/>	
+          <mapping name = "TWLAN200"    mapping = "TWLAN200"             method = "MappingSplite"        expr = "C=1;DU=1;U=1"          desc = "WLAN时长200元套餐"/>			
+       </mapping> -->
+       <!--LBS个人-->
+       <mapping name = "LBSGR"       mapping = "LBSGR"                method = "MappingExist"     desc = "LBS个人">
+          <mapping name = "LBSGR"      mapping = "LBSADD"               method = "MappingSplite"    expr = "C=1"                desc = "增加LBS个人"/>
+          <mapping name = "LBSGR"      mapping = "LBSDEL"               method = "MappingSplite"    expr = "E=1"                desc = "删除LBS个人"/>
+       </mapping>
+       <mapping name = "LBSQYGR"     mapping = "LBSQYGR"              method = "MappingExist"     desc = "LBS企业个人">
+          <mapping name = "LBSQYGR"    mapping = "LBSSPID"              method = "MappingSplite"    expr = "C=$LBSSPID"                  desc = "LBS企业代码"/>
+          <mapping name = "LBSQYGR"    mapping = "LBSMSISDN"            method = "MappingSplite"    expr = "C=$IInstanceL.BILL_ID"       desc = "LBS企业个人手机号码"/>
+          <mapping name = "LBSQYGR"    mapping = "LBSPASSWORD"          method = "MappingSplite"    expr = "C=$LBSPASSWORD"              desc = "LBS企业个人密码"/>
+          <mapping name = "LBSQYGR"    mapping = "LBSADEL"              method = "MappingSplite"    expr = "E=1"                         desc = "删除LBS企业个人"/>
+       </mapping>
+   </mappings>
+   
+   <mappings id = "IGsm2NsrcoL" desc = "普通新业务功能[统一开通][开通测]">
+       <mapping name = "QCSS"        mapping = "QCSS"                 method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "全成平台QC"/>
+       <mapping name = "LNAV"        mapping = "NAV"                  method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "手机导航"/>
+       <mapping name = "SJZQJY"      mapping = "a"                    method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "手机证券交易"/>
+       <mapping name = "BSML"        mapping = "BSML"                 method = "MappingExist"     desc = "基本电子邮件">
+           <mapping name = "BSML"        mapping = "R"                    method = "MappingSplite"    expr = "E=1;DU=1;U=1"     desc = "基本电子邮件"/>
+           <mapping name = "BSML"        mapping = "EMAIL"                method = "MappingSplite"    expr = "E=$BSMLEMAIL;DU=$BSMLEMAIL;U=$BSMLEMAIL"      desc = "电子邮件地址"/>
+       </mapping>
+       <mapping name = "BSMQI"       mapping = "S"                    method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "电子邮件全文接收"/>
+       <mapping name = "ESMBI"       mapping = "MAILBILL"             method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "是否发送账单"/>
+       <mapping name = "ESMBI"       mapping = "MAILCDR"              method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "是否发送详单"/>
+       <mapping name = "ESMBI"       mapping = "MAILINFO"             method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "是否发送信息"/>
+       <mapping name = "SJYH"        mapping = "X"                    method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "手机银行"/>
+       <!--上海WLAN自动认证-->
+       <mapping name = "ZDWLAN"      mapping = "ZDWLAN"               method = "MappingExist"     desc = "上海WLAN自动认证包月套餐">
+          <mapping name = "ZDWLAN"      mapping = "ZDWLANFLG"            method = "MappingDirect"    ignoreable = "true"             desc = "上海WLAN自动认证包月套餐"/>
+          <mapping name = "ZDWLANFLG"   mapping = "ZDWLAN"               method = "MappingSplite"    expr = "E=1;DU=1;U=1"           desc = "上海WLAN自动认证包月套餐"/>
+          <mapping name = "ZDWLANFLG"   mapping = "ZDWLAN_PWD"           method = "MappingSplite"    expr = "E=$ZDWLANPSWD;DU=$ZDWLANPSWD;U=$ZDWLANPSWD"      desc = "上海WLAN自动认证包月套餐"/>
+       </mapping>
+       <mapping name = "DYZDWLAN"    mapping = "DAYZDWLAN"            method = "MappingExist"     desc = "上海WLAN自动认证日套餐">
+          <mapping name = "DYZDWLAN"    mapping = "DYZDWLANFLG"          method = "MappingDirect"    ignoreable = "true"             desc = "上海WLAN自动认证日套餐"/>
+          <mapping name = "DYZDWLANFLG" mapping = "DAYZDWLAN"            method = "MappingSplite"    expr = "E=1;DU=1;U=1"           desc = "上海WLAN自动认证日套餐"/>
+          <mapping name = "DYZDWLANFLG" mapping = "DAYZDWLAN_PWD"        method = "MappingSplite"    expr = "E=$DYZDWLANPSWD;DU=$DYZDWLANPSWD;U=$DYZDWLANPSWD" desc = "上海WLAN自动认证日套餐"/>
+       </mapping>
+       <mapping name = "LZDWLAN"     mapping = "LZDWLAN"              method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "WLAN自动认证封顶限制"/>
+       <mapping name = "RZDWLAN"     mapping = "RZDWLAN"              method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "WLAN自动认证超量叠加包"/>
+       <!--上海校园WLAN-->
+	   <mapping name = "JXYWLAN"     mapping = "JXYWLAN"              method = "MappingExist"     desc = "上海校园WLAN">
+	      <mapping name = "XYWBIMSI"    mapping = "rh"                   method = "MappingSplite"    expr = "DU=1;U=1"         desc = "校园WLAN绑定IMSI"/>
+          <mapping name = "BXYWLAN"     mapping = "BASEXYWLAN"           method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海校园WLAN基础"/>
+          <mapping name = "XYWLAN"      mapping = "XYWLAN"               method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海校园WLAN包月套餐"/>
+          <mapping name = "XYWLAN10"    mapping = "XYWLAN10"             method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海校园WLAN10元套餐"/>
+          <mapping name = "XYWLAN20"    mapping = "XYWLAN20"             method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海校园WLAN20元套餐"/>
+          <mapping name = "XYWLAN30"    mapping = "XYWLAN30"             method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海校园WLAN30元流量套餐(试点)"/>
+          <mapping name = "XYWLAN40"    mapping = "XYWLAN40"             method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海校园WLAN40元套餐"/>
+          <mapping name = "XYWLAN50"    mapping = "XYWLAN50"             method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海校园WLAN50元流量套餐(试点)"/>
+          <mapping name = "XYWLAN100"   mapping = "XYWLAN100"            method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海校园WLAN100元流量套餐(试点)"/>\
+       </mapping>
+       <mapping name = "RXYWLAN"     mapping = "RXYWLAN"              method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海校园WLAN叠加包"/>
+       <mapping name = "LXYWLAN"     mapping = "LXYWLAN"              method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海校园WLAN封顶包"/>
+       <!--上海家庭WLAN-->
+       <mapping name = "JJTWLAN"     mapping = "JJTWLAN"              method = "MappingExist"     desc = "上海家庭WLAN">
+          <mapping name = "JTWLAN"      mapping = "JTWLAN"               method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海家庭WLAN包月套餐"/>
+          <mapping name = "RJTWLAN"     mapping = "RJTWLAN"              method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海家庭WLAN叠加包"/>
+          <mapping name = "LJTWLAN"     mapping = "LJTWLAN"              method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海家庭WLAN封顶限制"/>
+       </mapping>
+       <!--上海手机WLAN-->
+	   <mapping name = "JSJWLAN"     mapping = "JSJWLAN"              method = "MappingExist"     desc = "上海手机WLAN">
+	      <mapping name = "SJWLAN"      mapping = "SJWLAN"               method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "手机WLAN功能"/>
+          <mapping name = "RSJWLAN"     mapping = "RSJWLAN"              method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海手机WLAN叠加包"/>
+          <mapping name = "LSJWLAN"     mapping = "LSJWLAN"              method = "MappingSplite"    expr = "E=1;DU=1;U=1"         desc = "上海手机WLAN超40G封顶"/>
+       </mapping>
+        <!--上海大众WLAN-->
+     <!--   <mapping name = "JDZWLAN"     mapping = "JDZWLAN"              method = "MappingExist"     desc = "上海大众WLAN">
+		  <mapping name = "BTWLAN" 		mapping = "BTWLAN"  		     method = "MappingSplite" 		 expr = "E=1;DU=1;U=1" 		    desc = "WLAN标准资费"/>
+		  <mapping name = "TWLAN5"      mapping = "TWLAN5"               method = "MappingSplite"        expr = "E=1;DU=1;U=1"          desc = "WLAN时长5元套餐"/>
+          <mapping name = "TWLAN10"     mapping = "TWLAN10"              method = "MappingSplite"        expr = "E=1;DU=1;U=1"          desc = "WLAN时长10元套餐"/>
+          <mapping name = "TWLAN20"     mapping = "TWLAN20"              method = "MappingSplite"        expr = "E=1;DU=1;U=1"          desc = "WLAN时长20元套餐"/>
+          <mapping name = "TWLAN30"     mapping = "TWLAN30"              method = "MappingSplite"        expr = "E=1;DU=1;U=1"          desc = "WLAN时长30元套餐"/>
+          <mapping name = "TWLAN50"     mapping = "TWLAN50"              method = "MappingSplite"        expr = "E=1;DU=1;U=1"          desc = "WLAN时长50元套餐"/>
+          <mapping name = "TWLAN100"    mapping = "TWLAN100"             method = "MappingSplite"        expr = "E=1;DU=1;U=1"          desc = "WLAN时长100元套餐"/>	
+          <mapping name = "TWLAN200"    mapping = "TWLAN200"             method = "MappingSplite"        expr = "E=1;DU=1;U=1"          desc = "WLAN时长200元套餐"/>			
+       </mapping> -->
+       <!--改号通知-->
+       <mapping name = "GHTZP"       mapping = "GHTZP"                method = "MappingExist"     desc = "改号通知">
+          <mapping name = "GHTZP"      mapping = "NOTIFY_OLDTELNO"      method = "MappingSplite"   expr = "E=$GHTZODMS"       desc = "改号通知"/> 
+       </mapping>
+   </mappings>
+</ucmframe>

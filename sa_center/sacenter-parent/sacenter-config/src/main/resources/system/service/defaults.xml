@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<!-- 全局默认配置信息 -->
+<defaults>
+	<!--中心的类型和实现类的对应关系 -->
+	<center>
+		<property name="USER_ID" value="com.ai.common.center.UserIdCenterImpl" />
+		<property name="REGION_ID" value="com.ai.common.center.RegionIdCenterImpl" />
+	</center>
+	<!--默认代理调用方式.默认采用pojo的模式进行调用，采用的实现类为配置的实现类 -->
+	<proxy invoke="pojo" type="primitive">
+		<clazz name="com.ai.appframe2.complex.service.impl.LocalServiceInvokeImpl" />
+	</proxy>
+	<!--默认事务信息.默认采用Required的方式进行事务操作，采用的实现类为配置的实现类 -->
+	<transaction type="Required">
+		<clazz
+			name="com.ai.appframe2.complex.transaction.impl.LocalMutilTransactionImpl" />
+		<!--映射每个服务模块对应的事务数据源，可以具体到类名 -->
+		<mapping>
+			<!--平台自带 -->
+			<property name="com.ai.appframe2.complex.self.service.base" value="base" />
+			<property name="com.ai.appframe2.complex.self.service.check" value="base" />
+			<!--平台扩展 -->
+			<property name="com.asiainfo.appframe.ext.exeframe" value="base" />
+			<property name="com.ai.common" value="base" />
+			<!--secframe -->
+			<property name="com.ai.secframe" value="sec" />
+			<property name="com.ai.frame" value="sec" />
+			<!-- 开通中心 -->
+			<property name="com.ai.sacenter" value="cmkt" />
+			<property name="com.ai.sacenter.base" value="base" />
+			<property name="com.asiainfo.sacenter" value="cmkt" />
+			<property name="com.ai.sacenter.console" value="cmkt" />
+			<property name="com.ai.sacenter.console.base" value="base" />
+			<property name="com.asiainfo.sacenter.shcmcc" value="cmkt" />
+			<!-- CSF -->
+			<property name="com.ai.aif" value="csf"/>
+		</mapping>
+	</transaction>
+	<!--默认数据源信息 -->
+	<datasource>
+		<!--根据base取数据库配置，然后以本配置中的覆盖除base以外的连接池的配置 -->
+		<!--默认 type=dbcp db=oracle -->
+		<!--映射每个DAO模块对应的操作数据源 -->
+		<clazz name="com.ai.appframe2.complex.datasource.impl.LocalMutilDataSourceImpl">
+			<property name="tableName" value="cfg_db_acct" />
+			<property name="urlTableName" value="cfg_db_url" />
+			<property name="relatTableName" value="cfg_db_relat" />
+			<property name="prefetch" value="true" />
+			<property name="prefetch.driverClassName" value="oracle.jdbc.OracleDriver" />
+
+			<property name="prefetch" value="true" />
+			<property name="prefetch.driverClassName" value="oracle.jdbc.OracleDriver" />
+			<property name="prefetch.url" value="jdbc:oracle:thin:@(DESCRIPTION_LIST=(LOAD_BALANCE=off)(FAILOVER=on)(DESCRIPTION=(ADDRESS_LIST=(LOAD_BALANCE=OFF)(FAILOVER=ON)(ADDRESS=(PROTOCOL=TCP)(HOST=10.10.140.221)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=oragis)(Instance_name=oragis)(FAILOVER_MODE=(TYPE=session)(METHOD=basic)(RETRIES=4)(DELAY=1))))(DESCRIPTION=(ADDRESS_LIST=(LOAD_BALANCE=OFF)(FAILOVER=ON)(ADDRESS=(PROTOCOL=TCP)(HOST=10.10.140.221)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=oragis)(Instance_name=oragis)(FAILOVER_MODE=(TYPE=session)(METHOD=basic)(RETRIES=4)(DELAY=1)))))" />
+			<property name="prefetch.username" value="kt_cfg" />
+			<property name="prefetch.password" value="kt_cfg123" />
+			<property name="prefetch.initialSize" value="1" />
+			<property name="prefetch.maxActive" value="1" />
+			<property name="prefetch.maxIdle" value="1" />
+		</clazz>
+		<pool name="base" primary="true" type="dbcp" db="oracle" isAdvanceUrl="true">
+			<property name="initialSize" value="1" />
+			<property name="maxActive" value="8" />
+			<property name="maxIdle" value="8" />
+			<property name="minIdle" value="1" />
+			<property name="maxWait" value="2000" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+			<!--杩??姹?????ф???-->
+			<property name="validationQuery" value="select 1 from dual" />
+			<property name="testWhileIdle" value="true" />
+			<property name="testOnBorrow" value="false" />
+			<property name="testOnReturn" value="false" />
+			<!--??澶?0绉???ュ?杩??澶辨? -->
+			<property name="timeBetweenEvictionRunsMillis" value="20000" />
+			<property name="minEvictableIdleTimeMillis" value="-1" />
+			<property name="softMinEvictableIdleTimeMillis" value="1800000" />
+			<property name="numTestsPerEvictionRun" value="2" />
+		</pool>
+		<pool name="cmkt11" init="true" isAdvanceUrl="true" template="cmkt{CENTER}">
+			<property name="initialSize" value="0" />
+			<property name="maxActive" value="2" />
+			<property name="maxIdle" value="0" />
+	        <property name="maxWait" value="2000" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+			<!--连接池有效性检查 -->
+			<property name="validationQuery" value="select 1 from dual" />
+			<property name="testWhileIdle" value="true" />
+			<property name="testOnBorrow" value="false" />
+			<property name="testOnReturn" value="false" />
+			<!--最多20秒检查到连接失效 -->
+			<property name="timeBetweenEvictionRunsMillis" value="20000" />
+			<property name="minEvictableIdleTimeMillis" value="-1" />
+			<property name="softMinEvictableIdleTimeMillis" value="1800000" />
+			<property name="numTestsPerEvictionRun" value="2" />	
+		</pool>
+		<pool name="cmkt12" init="true" isAdvanceUrl="true" template="cmkt{CENTER}">
+			<property name="initialSize" value="0" />
+			<property name="maxActive" value="2" />
+			<property name="maxIdle" value="0" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+	        <property name="maxWait" value="2000" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+			<!--连接池有效性检查 -->
+			<property name="validationQuery" value="select 1 from dual" />
+			<property name="testWhileIdle" value="true" />
+			<property name="testOnBorrow" value="false" />
+			<property name="testOnReturn" value="false" />
+			<!--最多20秒检查到连接失效 -->
+			<property name="timeBetweenEvictionRunsMillis" value="20000" />
+			<property name="minEvictableIdleTimeMillis" value="-1" />
+			<property name="softMinEvictableIdleTimeMillis" value="1800000" />
+			<property name="numTestsPerEvictionRun" value="2" />	
+		</pool>
+		<pool name="tykt11" init="true" isAdvanceUrl="true" template="tykt{CENTER}">
+			<property name="initialSize" value="0" />
+			<property name="maxActive" value="2" />
+			<property name="maxIdle" value="0" />
+	        <property name="maxWait" value="2000" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+			<!--连接池有效性检查 -->
+			<property name="validationQuery" value="select 1 from dual" />
+			<property name="testWhileIdle" value="true" />
+			<property name="testOnBorrow" value="false" />
+			<property name="testOnReturn" value="false" />
+			<!--最多20秒检查到连接失效 -->
+			<property name="timeBetweenEvictionRunsMillis" value="20000" />
+			<property name="minEvictableIdleTimeMillis" value="-1" />
+			<property name="softMinEvictableIdleTimeMillis" value="1800000" />
+			<property name="numTestsPerEvictionRun" value="2" />	
+		</pool>
+		<pool name="tykt12" init="true" isAdvanceUrl="true" template="tykt{CENTER}">
+			<property name="initialSize" value="0" />
+			<property name="maxActive" value="2" />
+			<property name="maxIdle" value="0" />
+	        <property name="maxWait" value="2000" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+			<!--连接池有效性检查 -->
+			<property name="validationQuery" value="select 1 from dual" />
+			<property name="testWhileIdle" value="true" />
+			<property name="testOnBorrow" value="false" />
+			<property name="testOnReturn" value="false" />
+			<!--最多20秒检查到连接失效 -->
+			<property name="timeBetweenEvictionRunsMillis" value="20000" />
+			<property name="minEvictableIdleTimeMillis" value="-1" />
+			<property name="softMinEvictableIdleTimeMillis" value="1800000" />
+			<property name="numTestsPerEvictionRun" value="2" />	
+		</pool>
+		<pool name="cboss11" isAdvanceUrl="true" init="false">
+			<property name="initialSize" value="0" />
+			<property name="maxActive" value="2" />
+			<property name="maxIdle" value="0" />
+	        <property name="maxWait" value="2000" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+			<property name="validationQuery" value="select 1 from dual" />
+			<property name="testWhileIdle" value="true" />
+			<property name="testOnBorrow" value="false" />
+			<property name="testOnReturn" value="false" />
+			<property name="timeBetweenEvictionRunsMillis" value="20000" />
+			<property name="minEvictableIdleTimeMillis" value="-1" />
+			<property name="softMinEvictableIdleTimeMillis" value="1800000" />
+			<property name="numTestsPerEvictionRun" value="2" />	
+		</pool>
+		<pool name="cboss12" isAdvanceUrl="true" init="false">
+			<property name="initialSize" value="0" />
+			<property name="maxActive" value="2" />
+			<property name="maxIdle" value="0" />
+	        <property name="maxWait" value="2000" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+			<property name="validationQuery" value="select 1 from dual" />
+			<property name="testWhileIdle" value="true" />
+			<property name="testOnBorrow" value="false" />
+			<property name="testOnReturn" value="false" />
+			<property name="timeBetweenEvictionRunsMillis" value="20000" />
+			<property name="minEvictableIdleTimeMillis" value="-1" />
+			<property name="softMinEvictableIdleTimeMillis" value="1800000" />
+			<property name="numTestsPerEvictionRun" value="2" />	
+		</pool>
+		<pool name="shcrm11" init="true" isAdvanceUrl="true" template="shcrm{CENTER}">
+			<property name="initialSize" value="0" />
+			<property name="maxActive" value="2" />
+			<property name="maxIdle" value="0" />
+	        <property name="maxWait" value="2000" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+			<!--连接池有效性检查 -->
+			<property name="validationQuery" value="select 1 from dual" />
+			<property name="testWhileIdle" value="true" />
+			<property name="testOnBorrow" value="false" />
+			<property name="testOnReturn" value="false" />
+			<!--最多20秒检查到连接失效 -->
+			<property name="timeBetweenEvictionRunsMillis" value="20000" />
+			<property name="minEvictableIdleTimeMillis" value="-1" />
+			<property name="softMinEvictableIdleTimeMillis" value="1800000" />
+			<property name="numTestsPerEvictionRun" value="2" />	
+		</pool>
+		<pool name="shcrm12" init="true" isAdvanceUrl="true" template="shcrm{CENTER}">
+			<property name="initialSize" value="0" />
+			<property name="maxActive" value="2" />
+			<property name="maxIdle" value="0" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+	        <property name="maxWait" value="2000" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+			<!--连接池有效性检查 -->
+			<property name="validationQuery" value="select 1 from dual" />
+			<property name="testWhileIdle" value="true" />
+			<property name="testOnBorrow" value="false" />
+			<property name="testOnReturn" value="false" />
+			<!--最多20秒检查到连接失效 -->
+			<property name="timeBetweenEvictionRunsMillis" value="20000" />
+			<property name="minEvictableIdleTimeMillis" value="-1" />
+			<property name="softMinEvictableIdleTimeMillis" value="1800000" />
+			<property name="numTestsPerEvictionRun" value="2" />	
+		</pool>
+		<pool name="shcrm21" init="true" isAdvanceUrl="true" template="shcrm{CENTER}">
+			<property name="initialSize" value="0" />
+			<property name="maxActive" value="2" />
+			<property name="maxIdle" value="0" />
+	        <property name="maxWait" value="2000" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+			<!--连接池有效性检查 -->
+			<property name="validationQuery" value="select 1 from dual" />
+			<property name="testWhileIdle" value="true" />
+			<property name="testOnBorrow" value="false" />
+			<property name="testOnReturn" value="false" />
+			<!--最多20秒检查到连接失效 -->
+			<property name="timeBetweenEvictionRunsMillis" value="20000" />
+			<property name="minEvictableIdleTimeMillis" value="-1" />
+			<property name="softMinEvictableIdleTimeMillis" value="1800000" />
+			<property name="numTestsPerEvictionRun" value="2" />	
+		</pool>
+		<pool name="shcrm22" init="true" isAdvanceUrl="true" template="shcrm{CENTER}">
+			<property name="initialSize" value="0" />
+			<property name="maxActive" value="2" />
+			<property name="maxIdle" value="0" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+	        <property name="maxWait" value="2000" />
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000" />
+			<!--连接池有效性检查 -->
+			<property name="validationQuery" value="select 1 from dual" />
+			<property name="testWhileIdle" value="true" />
+			<property name="testOnBorrow" value="false" />
+			<property name="testOnReturn" value="false" />
+			<!--最多20秒检查到连接失效 -->
+			<property name="timeBetweenEvictionRunsMillis" value="20000" />
+			<property name="minEvictableIdleTimeMillis" value="-1" />
+			<property name="softMinEvictableIdleTimeMillis" value="1800000" />
+			<property name="numTestsPerEvictionRun" value="2" />	
+		</pool>
+		<pool name="csf" isAdvanceUrl="true" init="true" >
+			<property name="initialSize" value="2"/>
+			<property name="maxActive" value="8"/>
+			<property name="maxIdle" value="2"/>
+			<property name="minIdle" value="1"/>
+			<property name="maxWait" value="2000"/>
+			<property name="connectionProperties" value="oracle.net.CONNECT_TIMEOUT=120000"/>
+
+			<property name="validationQuery" value="select 1 from dual"/>
+			<property name="testWhileIdle" value="true"/>
+			<property name="testOnBorrow" value="false"/>
+			<property name="testOnReturn" value="false"/>
+
+			<property name="timeBetweenEvictionRunsMillis" value="20000"/>
+			<property name="minEvictableIdleTimeMillis" value="-1"/>
+			<property name="softMinEvictableIdleTimeMillis" value="1800000"/>
+			<property name="numTestsPerEvictionRun" value="2"/>
+		</pool>
+		<!-- <pool name="csf" init="false" template="csf">
+			<property name="initialSize" value="0" />
+			<property name="maxActive" value="2" />
+			<property name="maxIdle" value="2" />
+		</pool> -->
+		<mapping>
+			<!--平台自带 -->
+			<property name="com.ai.appframe2.complex.self.dao.base"
+				value="base" />
+			<property name="com.ai.appframe2.complex.self.service.check"
+				value="base" />
+			<!--平台扩展 -->
+			<property name="com.asiainfo.appframe.ext.exeframe" value="base" />
+			<property name="com.ai.common" value="base" />
+			<!--secframe -->
+			<property name="com.ai.secframe" value="sec" />
+			<property name="com.ai.frame" value="sec" />
+			<!-- 开通中心 -->
+			<property name="com.ai.sacenter.base.basic.dao" value="base" />
+			<property name="com.ai.sacenter.base.competence.dao" value="base" />
+			<property name="com.ai.sacenter.base.platform.dao" value="base" />
+			<property name="com.ai.sacenter.comptel.dao" value="cmkt{CENTER}" />
+			<property name="com.ai.sacenter.core.dao" value="cmkt{CENTER}" />
+			<property name="com.ai.sacenter.provision.dao" value="cmkt{CENTER}" />
+			<property name="com.ai.sacenter.suggest.dao" value="cmkt{CENTER}" />
+			<property name="com.ai.sacenter.target.dao" value="cmkt{CENTER}" />
+			<property name="com.ai.sacenter.receive.expire.dao" value="cmkt{CENTER}" />
+			<property name="com.ai.sacenter.receive.order.dao" value="cmkt{CENTER}" />
+			<property name="com.ai.sacenter.receive.exigence.dao" value="cmkt{CENTER}" />
+			<property name="com.ai.sacenter.receive.exigence.dao.remote" value="shcrm{CENTER}" />
+			<property name="com.ai.sacenter.console.base.dao" value="base" />
+			<property name="com.ai.sacenter.console.workpaper.dao" value="cmkt{CENTER}" />
+			<!-- 统一开通 -->
+			<property name="com.ai.sacenter.tykt.dao" value="cmkt{CENTER}" />
+			<property name="com.ai.sacenter.tykt.dao.remote" value="tykt{CENTER}" />
+			<!-- CBOSS -->
+			<property name="com.ai.sacenter.cboss.dao" value="cmkt{CENTER}" />
+			<property name="com.ai.sacenter.cboss.dao.remote" value="cboss{CENTER}" />
+			<!-- CSF -->
+			<property name="com.ai.aif" value="csf" />
+			<property name="com.asiainfo.appframe" value="csf" />
+		</mapping>
+	</datasource>
+	<!--包含的服务配置文件 -->
+	<!--平台 -->
+	<include type="sv" classpath="system/service/appframe-service.xml" />
+	<!--开通中心 -->
+	<include type="sv" classpath="com/ai/sacenter/module/sacenter-app-service.xml" />
+	<include type="sv" classpath="com/ai/sacenter/receive/sacenter-app-receive.xml" />
+</defaults>

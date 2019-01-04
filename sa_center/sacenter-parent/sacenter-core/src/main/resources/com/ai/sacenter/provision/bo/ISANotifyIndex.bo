@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="kt1" name="ISANotifyIndex" mainattr="ORDER_ID">
+    <mapingenty type="table">{ISA_NOTIFY}</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ORDER_ID" maxlength="15" datatype="Long" type="PK">
+        <mapingcol datatype="NUMBER">ORDER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CATEGORY" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CATEGORY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">USER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PLATFORM" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PLATFORM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATUS" maxlength="2" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">STATUS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">ORDER_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BACKUP_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">BACKUP_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="UP_FIELD" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">UP_FIELD</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAIL_CODE" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">FAIL_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAIL_REASON" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">FAIL_REASON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAIL_LOG" maxlength="4000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">FAIL_LOG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="START_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">START_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPLETE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">COMPLETE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="END_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">END_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HAND_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">HAND_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HAND_OP_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">HAND_OP_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HAND_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">HAND_DATE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

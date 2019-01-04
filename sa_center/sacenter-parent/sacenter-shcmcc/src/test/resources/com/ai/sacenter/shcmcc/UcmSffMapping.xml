@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe id="UcmSffMapping" desc="PBOSS测其他模块">
+	<mappings id = "IGpon2GernL" desc = "宽带产品模块[PBOSS测]">
+	   <mapping name = "IUcm2CommL"     mapping = "IUcm2CommL"    method = "MappingModule"   expr = "UcmMicroMapping.IUcm2CommL"   desc = "普通公共属性模块[开通测]"/>
+	   <mapping name = "BusiType"       mapping = "VMISFBSI"      method = "MappingDirect"   desc = "业务类型{4040家庭宽带4041东方有线4042FTTH4043校园宽带}"/>
+	   <mapping name = "ActType"        mapping = "LGPOSIGUP"     method = "MappingDirect"   desc = "操作类型"/>
+	   <mapping name = "SSID"           mapping = "LGPOSSID"      method = "MappingDirect"   desc = "SSID"/>
+	   <mapping name = "GetNum"         mapping = "LGGetNum"      method = "MappingDirect"   desc = "返回结果数量"/>
+	   <mapping name = "JQNOL"   	    mapping = "JQNOL"         method = "MappingDirect"   desc = "HLR新老查询区分(1 新,2 老)"/>
+	   <!-- add by fengliang 市场-2016-6404-家庭宽带跨资源续约功能 -->
+	   <mapping name = "IS_NEW_INTERFACE"  mapping = "IS_NEW_INTERFACE"         method = "MappingDirect"   desc = "FTTB和FTTH"/>
+	   <mapping name = "OperateType"  mapping = "OPERATE_TYPE"         method = "MappingDirect"   desc = "FTTB和FTTH跨资源操作，0新增1撤单"/>
+	</mappings>
+	
+	<mappings id = "IGsfn2GernL" desc = "FTTX固话产品模块[PBOSS测]">
+	   <mapping name = "IUcm2CommL"     mapping = "IUcm2CommL"    method = "MappingModule"   expr = "UcmMicroMapping.IUcm2CommL"   desc = "普通公共属性模块[开通测]"/>
+	   <mapping name = "BusiType"       mapping = "VMISFBSI"      method = "MappingDirect"   desc = "业务类型{68040FTTB固话68041FTTH固话}"/>
+	   <mapping name = "ActType"        mapping = "FTTXSIGUP"     method = "MappingDirect"   desc = "操作类型"/>
+	   <mapping name = "Sub_Id"         mapping = "FTTXSUBID"     method = "MappingDirect"   desc = "定单|接入号码"/>
+	   <!-- 固话呼叫转移开通失败的问题修复 add by lidy 2015-03-20 -->
+	   <mapping name = "ForWard"         mapping = "FORWARD"     method = "MappingDirect"   desc = "定单|接入号码"/>
+	</mappings>
+	<!-- add by fengliang 市场-2016-12832-业务支撑系统开发-个人业务-家庭固话 -->
+	<mappings id = "IGfami2GernL" desc = "家庭固话产品模块[PBOSS测]">
+	   <mapping name = "IUcm2CommL"     mapping = "IUcm2CommL"    method = "MappingModule"   expr = "UcmMicroMapping.IUcm2CommL"   desc = "普通公共属性模块[开通测]"/>
+	   <mapping name = "BusiType"       mapping = "VMISFBSI"      method = "MappingDirect"   desc = "业务类型{68042}"/>
+	   <mapping name = "ActType"        mapping = "FAMILYSIGUP"     method = "MappingDirect"   desc = "操作类型"/>
+	   <mapping name = "Sub_Id"         mapping = "FAMILYSUBID"     method = "MappingDirect"   desc = "定单|接入号码"/>
+	</mappings>
+</ucmframe>

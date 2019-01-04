@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe name="即开即通核心服务模块">
+   <!--统一开通网元-->
+   <module file="com/ai/sacenter/shcmcc/table/hangbanzhcx/HangbanZhcxMicroMapping.xml"  name = "统一开通模块"         use="true"/>
+   <module file="com/ai/sacenter/shcmcc/table/hangbanzhcx/HangbanZhcxVpmnMapping.xml"   name = "统一开通[集团JT]模块"  use="true"/>
+   <module file="com/ai/sacenter/shcmcc/table/hangbanzhcx/HangbanZhcxNSRMapping.xml"    name = "统一开通模块"         use="true"/>
+   <module file="com/ai/sacenter/shcmcc/table/hangbanzhcx/HangbanZhcxGsmMicMapping.xml" name = "统一开通[个人GSM]模块" use="true"/>
+   <module file="com/ai/sacenter/shcmcc/table/hangbanzhcx/HangbanZhcxGsmMapping.xml"    name = "统一开通[个人GSM]模块" use="true"/>
+   <module file="com/ai/sacenter/shcmcc/table/hangbanzhcx/HangbanZhcxJTProMapping.xml"  name = "统一开通[集团JT]模块"  use="true"/>
+   <module file="com/ai/sacenter/shcmcc/table/hangbanzhcx/HangbanZhcxJPOMapping.xml"    name = "统一开通[JPO]模块"    use="true"/>
+   <module file="com/ai/sacenter/shcmcc/table/hangbanzhcx/HangbanZhcxOthMapping.xml"    name = "统一开通[其他]模块"    use="true"/>
+   <!--CBOSS网元-->
+   <module file="com/ai/sacenter/shcmcc/table/hangbancboss/HangbanCbossMapping.xml"     name = "CenterBoss模块"      use="true"/>
+   <!--梦网稽核-->
+   <module file="com/ai/sacenter/shcmcc/table/shanghaidsmp/ShangHaiDsmpMapping.xml"     name = "营业测模块"           use="true"/>
+</ucmframe>

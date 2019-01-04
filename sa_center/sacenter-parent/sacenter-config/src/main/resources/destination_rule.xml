@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<destination-rule-cfg>
+	<subject name="open_quene"     >
+		<area name="request_570"   desc="接收消息数均分" number="2" />
+		<area name="request_571"   desc="接收消息数均分" number="4" />
+		<area name="request_572"   desc="接收消息数均分" number="2" />
+		<area name="request_573"   desc="接收消息数均分" number="2" />
+		<area name="request_574"   desc="接收消息数均分" number="4" />
+		<area name="request_575"   desc="接收消息数均分" number="3" />
+		<area name="request_576"   desc="接收消息数均分" number="3" />
+		<area name="request_577"   desc="接收消息数均分" number="4" />
+		<area name="request_578"   desc="接收消息数均分" number="2" />
+		<area name="request_579"   desc="接收消息数均分" number="3" />
+		<area name="request_580"   desc="接收消息数均分" number="2" />
+	</subject>
+	<subject name="open_order_quene">
+		<area name="response_570"   desc="接收消息数均分" number="2" />
+		<area name="response_571"   desc="接收消息数均分" number="4" />
+		<area name="response_572"   desc="接收消息数均分" number="2" />
+		<area name="response_573"   desc="接收消息数均分" number="2" />
+		<area name="response_574"   desc="接收消息数均分" number="4" />
+		<area name="response_575"   desc="接收消息数均分" number="3" />
+		<area name="response_576"   desc="接收消息数均分" number="3" />
+		<area name="response_577"   desc="接收消息数均分" number="4" />
+		<area name="response_578"   desc="接收消息数均分" number="2" />
+		<area name="response_579"   desc="接收消息数均分" number="3" />
+		<area name="response_580"   desc="接收消息数均分" number="2" />
+	</subject>
+	<subject name="open_ps_quene">
+	    <area name="ps_response_570"   desc="接收消息数均分" number="1" />
+        <area name="ps_response_571"   desc="接收消息数均分" number="1" />
+        <area name="ps_response_572"   desc="接收消息数均分" number="1" />
+        <area name="ps_response_573"   desc="接收消息数均分" number="1" />
+        <area name="ps_response_574"   desc="接收消息数均分" number="1" />
+        <area name="ps_response_575"   desc="接收消息数均分" number="1" />
+        <area name="ps_response_576"   desc="接收消息数均分" number="1" />
+        <area name="ps_response_577"   desc="接收消息数均分" number="1" />
+        <area name="ps_response_578"   desc="接收消息数均分" number="1" />
+        <area name="ps_response_579"   desc="接收消息数均分" number="1" />
+        <area name="ps_response_580"   desc="接收消息数均分" number="1" />
+    </subject>
+</destination-rule-cfg>	

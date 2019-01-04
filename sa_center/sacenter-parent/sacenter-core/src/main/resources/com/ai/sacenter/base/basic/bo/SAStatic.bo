@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="SAStatic" mainattr="ID">
+    <mapingenty type="table">SA_STATIC</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="12" datatype="Long" type="PK" remark="枚举编号">
+        <mapingcol datatype="NUMBER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CODE" maxlength="32" datatype="String" type="COL" remark="枚举编码">
+        <mapingcol datatype="VARCHAR2">CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NAME" maxlength="64" datatype="String" type="COL" remark="枚举名称">
+        <mapingcol datatype="VARCHAR2">NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ALIAS" maxlength="64" datatype="String" type="COL" remark="枚举别名">
+        <mapingcol datatype="VARCHAR2">ALIAS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DESCRIPTION" maxlength="255" datatype="String" type="COL" remark="枚举描述">
+        <mapingcol datatype="VARCHAR2">DESCRIPTION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="KIND" maxlength="32" datatype="String" type="COL" remark="枚举类型">
+        <mapingcol datatype="VARCHAR2">KIND</mapingcol>
+      </attr>
+      <attr floatlength="0" name="VALUE" maxlength="255" datatype="String" type="COL" remark="枚举列值">
+        <mapingcol datatype="VARCHAR2">VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SORT_ID" maxlength="3" datatype="Integer" type="COL" remark="排序ID">
+        <mapingcol datatype="NUMBER">SORT_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTERN" maxlength="64" datatype="String" type="COL" remark="外部编码">
+        <mapingcol datatype="VARCHAR2">EXTERN</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="1" datatype="String" type="COL" remark="状态
+U正常
+X废除">
+        <mapingcol datatype="CHAR">STATE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="SAPersistent" mainattr="ID">
+    <mapingenty type="table">SA_PERSISTENT</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="15" datatype="Long" type="PK">
+        <mapingcol datatype="NUMBER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CODE" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NAME" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DESCRIBE" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">DESCRIBE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PERSISTENT" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PERSISTENT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAILURE" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">FAILURE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="HISTORY" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">HISTORY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CYCLE" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">CYCLE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CONTROL" maxlength="4000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CONTROL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATER" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">CREATER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFIER" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">MODIFIER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFY_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">MODIFY_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_A" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_A</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_B" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_B</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_C" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_C</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_D" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_D</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_E" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_E</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_F" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_F</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_G" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_G</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_H" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_H</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_I" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_I</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_J" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_J</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_K" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_K</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_L" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_L</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_M" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_M</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_N" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_N</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXTEND_ATTR_O" maxlength="1000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXTEND_ATTR_O</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

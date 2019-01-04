@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe>
+  <service id="com.ai.sacenter.receive.order.service.interfaces.IExpireSRV" name="下周期接口服务" interface="com.ai.sacenter.receive.order.service.interfaces.IExpireSRV">
+    <impl-define invoke="Singleton" impl-class="com.ai.sacenter.receive.order.service.impl.ExpireCSVImpl"/>
+  </service>
+</ucmframe>

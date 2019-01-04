@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe id = "CbossMapping" desc = "CBOSS测产品模块">
+   <mappings id = "IAllUserSTSL"   desc="全量用户状态模块">
+      <mapping name = "L_SO_NBR"        mapping = "SO_NBR"           method = "MappingContext"  expr = "IInstanceL.VM_ORDER_ID"    			desc = "用户状态变更流水号"/>
+      <mapping name = "L_USER_STS"      mapping = "USER_STS"         method = "MappingContext"  expr = "VMICMOSO,IUsm2UpdomL.OBLIGATE1"     desc = "用户状态(00正常01单停02停机03预销04销户05过户06改号)"/>
+      <mapping name = "L_BILL_ID"       mapping = "BILL_ID"          method = "MappingContext"  expr = "BILL_ID,IInstanceL.BILL_ID"        	desc = "手机号"/>
+      <mapping name = "L_OLD_BILL_ID"   mapping = "OLD_BILL_ID"      method = "MappingContext"  expr = "OLD_BILL_ID"        	            desc = "旧手机号"/>
+      <mapping name = "L_REGION_CODE"   mapping = "REGION_CODE"      method = "MappingCenter"   desc = "地市代码"/>
+      <mapping name = "L_USER_ID"       mapping = "USER_ID"          method = "MappingContext"  expr = "IInstanceL.USER_ID"        			desc = "用户id"/>
+      <mapping name = "L_COMMIT_DATE"   mapping = "COMMIT_DATE"      method = "MappingSysdate"  desc = "数据插入时间"/>
+      <mapping name = "L_REGION_ID"     mapping = "REGION_ID"        method = "MappingCenter"   desc = "地区编号"/>
+      <mapping name = "L_PROC_STS"      mapping = "STS"              method = "MappingDirect"   expr = "1"                         			desc = "数据状态"/>
+      <mapping name = "OPRTIME"         mapping = "STS_CHG_TIME"     method = "MappingSysdate"  desc = "状态变化时间"/>                     					
+      <mapping name = "LOprTime"        mapping = "STS_OPR_TIME"     method = "MappingSysdate"  desc = "状态操作时间"/>                     					
+  </mappings>                                                                                                                               					
+                                                                                                                                            					
+  <mappings id = "IPlatUserSTSL"   desc="小平台用户状态模块">                                                                               					
+      <mapping name = "L_SO_NBR"        mapping = "SO_NBR"           method = "MappingGenSID"   expr = "I_OPEN_RADIUS_INDEX"       			desc = "用户状态变更流水号"/>
+      <mapping name = "L_MSO_NBR"       mapping = "MSO_NBR"          method = "MappingContext"  expr = "IInstanceL.VM_ORDER_ID"    			desc = "用户状态主流水号"/>
+      <mapping name = "L_REGION_CODE"   mapping = "REGION_CODE"      method = "MappingCenter"   desc = "地市代码"/>                					
+      <mapping name = "L_USER_ID"       mapping = "USER_ID"          method = "MappingContext"  expr = "IInstanceL.USER_ID"        			desc = "用户id"/>
+      <mapping name = "L_BUSI_TYPE"     mapping = "BUSI_TYPE"        method = "MappingContext"  expr = "IUsm2UpdomL.PS_TYPE"       			desc = "业务类型"/>
+      <mapping name = "L_ACT_TYPE"      mapping = "ACT_TYPE"         method = "MappingContext"  expr = "L_ACT_TYPE,IUsm2UpdomL.PS_SERVICE"  desc = "操作类型"/>
+      <mapping name = "VMICMTDK"        mapping = "BRAND"            method = "MappingSplite"   expr = "GOTONE=0;SZX=1;CTK=1;DZK=1;MZONE=2;*=3"  desc = "用户品牌(0全球通1神州行2动感地带3其它省内品牌)"/>
+      <mapping name = "L_USER_STS"      mapping = "USER_STS"         method = "MappingContext"  expr = "VMICMOSO,IUsm2UpdomL.OBLIGATE1"     desc = "用户状态(00正常01单停02停机03预销04销户05过户06改号)"/>
+      <mapping name = "L_ROUTE_CODE"    mapping = "PDC_ROUTE_CODE"   method = "MappingContext"  expr = "L_PS_ROUTE_CODE,IUsm2UpdomL.PS_ROUTE_CODE"          desc = "接口路由编码"/>
+      <mapping name = "L_BILL_ID"       mapping = "BILL_ID"          method = "MappingContext"  expr = "BILL_ID,IInstanceL.BILL_ID"        	desc = "手机号"/>
+      <mapping name = "L_OLD_BILL_ID"   mapping = "OLD_BILL_ID"      method = "MappingContext"  expr = "OLD_BILL_ID"        	            desc = "旧手机号"/>
+      <mapping name = "L_COMMIT_DATE"   mapping = "COMMIT_DATE"      method = "MappingSysdate"  desc = "数据插入时间"/>
+      <mapping name = "L_REGION_ID"     mapping = "REGION_ID"        method = "MappingCenter"   desc = "地区编号"/>
+      <mapping name = "L_STS"           mapping = "STS"              method = "MappingDirect"   expr = "1"                         			desc = "数据状态"/>
+      <mapping name = "L_OPRSRC"        mapping = "SRC"              method = "MappingVeloci"   expr = "$IUcm2KernL.getVMISrc($IInstanceL)" desc = "受理渠道"/>
+      <mapping name = "VMICMRST"        mapping = "RESULT"           method = "MappingDirect"   expr = "0"                         			desc = "受理渠道成功描述"/>
+      <mapping name = "OPRRCFLG"        mapping = "RECONFIRM_FLAG"   method = "MappingDirect"   expr = "1"                         			desc = "是否二次确认"/>
+      <mapping name = "L_ORDER_FLAG"    mapping = "ORDER_FLAG"       method = "MappingDirect"   expr = "1"                         			desc = "是否被动"/>
+      <mapping name = "L_ORDER_ID"      mapping = "EXT2"             method = "MappingContext"  expr = "IInstanceL.VM_ORDER_ID"    			desc = "产品订单编号"/>
+  </mappings>
+  
+  <mappings id = "IUserRadiusL"   desc="小平台用户订购模块">
+      <mapping name = "L_SO_NBR"        mapping = "SO_NBR"           method = "MappingGenSID"   expr = "I_OPEN_RADIUS_INDEX"       			desc = "订购流水号"/>
+      <mapping name = "VMICMSGT"        mapping = "MSO_NBR"          method = "MappingDirect"   expr = "0"                         			desc = "批次订购流水号"/>
+      <mapping name = "L_REGION_CODE"   mapping = "REGION_CODE"      method = "MappingCenter"   desc = "地市代码"/>                										
+      <mapping name = "L_USER_ID"       mapping = "USER_ID"          method = "MappingContext"  expr = "IInstanceL.USER_ID"        			desc = "用户id"/>
+      <mapping name = "L_BUSI_TYPE"     mapping = "BUSI_TYPE"        method = "MappingContext"  expr = "IUsm2UpdomL.PS_TYPE"       			desc = "业务类型"/>
+      <mapping name = "L_ACT_TYPE"      mapping = "ACT_TYPE"         method = "MappingContext"  expr = "L_ACT_TYPE,IUsm2UpdomL.PS_SERVICE"  desc = "操作类型"/>
+      <mapping name = "VMICMTDK"        mapping = "BRAND"            method = "MappingSplite"   expr = "GOTONE=0;SZX=1;CTK=1;DZK=1;MZONE=2;*=3"  desc = "用户品牌(0全球通1神州行2动感地带3其它省内品牌)"/>
+      <mapping name = "L_USER_STS"      mapping = "USER_STS"         method = "MappingContext"  expr = "VMICMOSO,IUsm2UpdomL.OBLIGATE1"     desc = "用户状态(00正常01单停02停机03预销04销户05过户06改号)"/>
+      <mapping name = "L_ROUTE_CODE"    mapping = "PDC_ROUTE_CODE"   method = "MappingContext"  expr = "L_PS_ROUTE_CODE,IUsm2UpdomL.PS_ROUTE_CODE"          desc = "接口路由编码"/>
+      <mapping name = "L_BILL_ID"       mapping = "BILL_ID"          method = "MappingContext"  expr = "BILL_ID,IInstanceL.BILL_ID"   		desc = "手机号"/>
+      <mapping name = "L_COMMIT_DATE"   mapping = "COMMIT_DATE"      method = "MappingSysdate"  desc = "数据插入时间"/>
+      <mapping name = "L_REGION_ID"     mapping = "REGION_ID"        method = "MappingCenter"   desc = "地区编号"/>
+      <mapping name = "L_PROC_STS"      mapping = "STS"              method = "MappingDirect"   expr = "1"                         			desc = "数据状态"/>
+      <mapping name = "OPRCMSGT"        mapping = "PKG_SEQ"          method = "MappingDirect"   desc = "批量包编号"/>
+      <mapping name = "OPRCNUMB"        mapping = "SINGLE_SEQ"       method = "MappingDirect"   desc = "批量包序号"/>
+      <mapping name = "L_OPRSRC"        mapping = "SRC"              method = "MappingVeloci"   expr = "$IUcm2KernL.getVMISrc($IInstanceL)" desc = "受理渠道"/>
+      <mapping name = "VMICMRST"        mapping = "RESULT"           method = "MappingDirect"   expr = "0"                         			desc = "受理渠道成功描述"/>
+      <mapping name = "OPRRCFLG"        mapping = "RECONFIRM_FLAG"   method = "MappingDirect"   expr = "0"                         			desc = "是否二次确认"/>
+      <mapping name = "L_CB_FLAG"       mapping = "CALLBACK_FLAG"    method = "MappingDirect"   expr = "0"                         			desc = "是否需要回执"/>
+      <mapping name = "L_ORDER_FLAG"    mapping = "ORDER_FLAG"       method = "MappingDirect"   expr = "0"                         			desc = "是否被动"/>
+      <mapping name = "L_ORDER_ID"      mapping = "EXT2"             method = "MappingContext"  expr = "IInstanceL.VM_ORDER_ID"    			desc = "产品订单编号"/>
+      <mapping name = "L_VM_CUST_OID"   mapping = "EXT1"             method = "MappingContext"  expr = "IInstanceL.VM_CUST_OID"    			desc = "客户订单编号"/>
+      <mapping name = "L_SEQ_ID"        mapping = "EXT3"             method = "MappingDirect"  expr = "0"    			                    desc = "SEQ_ID"/>
+  </mappings>
+  
+  <mappings id = "IUserBrandL" desc="用户品牌变更">
+      <mapping name = "ORDER_ID"        mapping = "SO_NBR"           method = "MappingGenSID"   expr = "I_OPEN_RADIUS_INDEX"       			desc = "主工单号"/>
+      <mapping name = "L_USER_ID"       mapping = "USER_ID"          method = "MappingContext"  expr = "IInstanceL.USER_ID"    				desc = "用户id"/>
+      <mapping name = "L_BILL_ID"       mapping = "BILL_ID"          method = "MappingContext"  expr = "IInstanceL.BILL_ID"        			desc = "用户号码"/>
+      <mapping name = "L_USER_STS"      mapping = "USER_STS"         method = "MappingContext"  expr = "VMICMOSO,IUsm2UpdomL.OBLIGATE1"     desc = "用户状态(00正常01单停02停机03预销04销户05过户06改号)"/>
+      <mapping name = "VMICMTDK"        mapping = "BRAND"            method = "MappingSplite"   expr = "GOTONE=0;SZX=1;CTK=1;DZK=1;MZONE=2;*=3"       desc = "用户品牌"/>
+      <mapping name = "VMICOTDK"        mapping = "OLD_BRAND"        method = "MappingSplite"   expr = "GOTONE=0;SZX=1;CTK=1;DZK=1;MZONE=2;*=3"       desc = "用户原品牌"/>
+      <mapping name = "L_REGION_CODE"   mapping = "REGION_CODE"      method = "MappingCenter"   desc = "地市代码"/>
+      <mapping name = "L_COMMIT_DATE"   mapping = "COMMIT_DATE"      method = "MappingSysdate"  desc = "数据插入时间"/>
+      <mapping name = "L_REGION_ID"     mapping = "REGION_ID"        method = "MappingCenter"   desc = "地区编号"/>
+      <mapping name = "L_STS"           mapping = "STS"              method = "MappingDirect"   expr = "1"                         			desc = "数据状态"/>
+      <mapping name = "L_ORDER_ID"      mapping = "EXT2"             method = "MappingContext"  expr = "IInstanceL.VM_ORDER_ID"    			desc = "订单编号"/> 
+  </mappings>
+
+  <mappings id = "IDsmpSwitchL"   desc="DSMP业务开关模块">
+      <mapping name = "L_SO_NBR"        mapping = "SO_NBR"           method = "MappingGenSID"   expr = "I_OPEN_RADIUS_INDEX"       			desc = "订购流水号"/>
+      <mapping name = "VMI_BACTH_ID"    mapping = "MSO_NBR"          method = "MappingDirect"   expr = "0"                         			desc = "批次订购流水号"/>
+      <mapping name = "L_REGION_CODE"   mapping = "REGION_CODE"      method = "MappingCenter"   desc = "地市代码"/>
+      <mapping name = "L_USER_ID"       mapping = "USER_ID"          method = "MappingContext"  expr = "IInstanceL.USER_ID"         		desc = "用户id"/>
+      <mapping name = "L_BUSI_TYPE"     mapping = "BUSI_TYPE"        method = "MappingContext"  expr = "IUsm2UpdomL.PS_TYPE"        		desc = "业务类型"/>
+      <mapping name = "L_ACT_TYPE"      mapping = "ACT_TYPE"         method = "MappingContext"  expr = "IUsm2UpdomL.PS_SERVICE"     		desc = "操作类型"/>
+      <mapping name = "VMICMTDK"        mapping = "BRAND"            method = "MappingSplite"   expr = "GOTONE=0;SZX=1;CTK=1;DZK=1;MZONE=2;*=3"  	desc = "用户品牌(0全球通1神州行2动感地带3其它省内品牌)"/>
+      <mapping name = "L_USER_STS"      mapping = "USER_STS"         method = "MappingContext"  expr = "VMICMOSO,IUsm2UpdomL.OBLIGATE1"     desc = "用户状态(00正常01单停02停机03预销04销户05过户06改号)"/>
+      <mapping name = "L_ROUTE_CODE"    mapping = "PDC_ROUTE_CODE"   method = "MappingContext"  expr = "IUsm2UpdomL.PS_ROUTE_CODE"          desc = "接口路由编码"/>
+      <mapping name = "L_BILL_ID"       mapping = "BILL_ID"          method = "MappingContext"  expr = "IInstanceL.BILL_ID"        			desc = "手机号"/>
+      <mapping name = "L_COMMIT_DATE"   mapping = "COMMIT_DATE"      method = "MappingSysdate"  desc = "数据插入时间"/>
+      <mapping name = "L_REGION_ID"     mapping = "REGION_ID"        method = "MappingCenter"   desc = "地区编号"/>
+      <mapping name = "L_PROC_STS"      mapping = "STS"              method = "MappingDirect"   expr = "1"                         			desc = "数据状态"/>
+      <mapping name = "OPRCMSGT"        mapping = "PKG_SEQ"          method = "MappingDirect"   desc = "VGOP批量包编号"/>
+      <mapping name = "OPRCNUMB"        mapping = "SINGLE_SEQ"       method = "MappingDirect"   desc = "VGOP批量包序号"/>
+      <mapping name = "L_OPRSRC"        mapping = "SRC"              method = "MappingDirect"   expr = "0"   								desc = "受理渠道"/>
+      <mapping name = "OPRRCFLG"        mapping = "RECONFIRM_FLAG"   method = "MappingDirect"   expr = "0"                         			desc = "是否二次确认"/>
+      <mapping name = "L_ORDER_FLAG"    mapping = "ORDER_FLAG"       method = "MappingDirect"   expr = "0"                         			desc = "是否被动"/>
+      <mapping name = "LDSwitch"        mapping = "EXT1"             method = "MappingDirect"   nullable = "false"                 			desc = "总开关"/>
+      <mapping name = "L_ORDER_ID"      mapping = "EXT2"             method = "MappingContext"  expr = "IInstanceL.VM_ORDER_ID"    			desc = "订单编号"/>    
+  </mappings>
+
+</ucmframe>

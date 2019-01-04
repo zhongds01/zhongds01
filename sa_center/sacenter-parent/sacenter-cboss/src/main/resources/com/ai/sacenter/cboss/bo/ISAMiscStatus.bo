@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="kt1" name="ISAMiscStatus" mainattr="SO_NBR">
+    <mapingenty type="table">{ISA_MISC_STATUS}</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="SO_NBR" maxlength="15" datatype="Long" type="PK">
+        <mapingcol datatype="NUMBER">SO_NBR</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">ORDER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OFFER_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">OFFER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">TASK_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CATEGORY" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CATEGORY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">USER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BILL_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SUB_BILL_ID" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">SUB_BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SUB_PLAN_NO" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">SUB_PLAN_NO</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">ORDER_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OLD_BILL_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">OLD_BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_STS" maxlength="2" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">USER_STS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STS" maxlength="2" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">STS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG_ID" maxlength="8" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMMIT_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">COMMIT_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STS_CHG_TIME" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">STS_CHG_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STS_OPR_TIME" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">STS_OPR_TIME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_CODE" maxlength="14" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">DONE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">DONE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARK" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REMARK</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REV1" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REV1</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REV2" maxlength="20" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">REV2</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REV3" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REV3</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STOP_TYPE" maxlength="20" datatype="Integer" type="VIRTUAL" />
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

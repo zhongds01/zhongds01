@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="GB2312"?> 
+<ucmframe id = "UcmMicroMapping" desc = "开通测产品模块[开通测]">
+  <mappings id = "IUcm2CommL" desc = "普通公共属性模块[开通测]">
+     <mapping name = "OPRTIME"              mapping = "OPRTIME"       method = "MappingSysdate"   expr = "yyyyMMddHHmmss" 			desc = "操作时间"/>
+     <mapping name = "OPRSRC"               mapping = "OPRSRC"        method = "MappingDirect"    expr = "8"              			desc = "操作来源"/>
+     <mapping name = "VMIPRIORI"            mapping = "VMIPRIORI"     method = "MappingDirect"    desc = "统一开通优先级"/>
+     <mapping name = "VMICMSGT"             mapping = "VMICMSGT"      method = "MappingDirect"    desc = "批量流水号"/>
+     <mapping name = "VMILOCTY"             mapping = "VMILOCTY"      method = "MappingDirect"    desc = "区县编码"/>
+     <mapping name = "VMICMPID"             mapping = "VMICMPID"      method = "MappingDirect"    desc = "产品规格编号"/>
+     <mapping name = "VMICPIID"             mapping = "VMICPIID"      method = "MappingDirect"    desc = "基本策划编号"/>
+     <mapping name = "VMICPTID"             mapping = "VMICPTID"      method = "MappingDirect"    desc = "支付方式[0后付费1预付费]"/>
+     <mapping name = "VMICMSID"             mapping = "VMICMSID"      method = "MappingDirect"    desc = "主服务编号"/>
+     <mapping name = "VMICMOSS"             mapping = "VMICMOSS"      method = "MappingDirect"    desc = "用户停开状态"/>
+     <mapping name = "VMICMOTS"             mapping = "VMICMOTS"      method = "MappingDirect"    desc = "用q户停开机串"/>
+     <mapping name = "VMICMOSI"             mapping = "VMICMOSI"      method = "MappingDirect"    desc = "用户实例状态"/>
+     <mapping name = "OLDVMICMOSI"          mapping = "OLDVMICMOSI"   method = "MappingDirect"    desc = "用户老实例状态"/>
+     <mapping name = "VMICMSRC"             mapping = "VMICMSRC"      method = "MappingDirect"    desc = "营业受理渠道类型"/>
+     <mapping name = "VMICMRST"             mapping = "VMICMRST"      method = "MappingDirect"    desc = "营业受理是否成功(1异常0成功)"/>
+     <mapping name = "VMICMGFG"             mapping = "VMICMGFG"      method = "MappingDirect"    desc = "营业受理触发全量"/>
+     <mapping name = "VMICMCSP"             mapping = "VMICMCSP"      method = "MappingDirect"    desc = "是否发平台或内容计费(两位AB{0否1是}{A为平台B为内容计费)"/>
+     <mapping name = "VMICMBSI"             mapping = "VMICMBSI"      method = "MappingDirect"    desc = "营业业务操作编号"/>
+     <!---maohuiyun add 20140506 信息-2014-7162-->
+     <mapping name = "VMICMRDO"             mapping = "VMICMRDO"      method = "MappingSplite"    expr = "1=REDO"   desc = "前台发起重做标志[1转重做机制]"/>
+      <!---LIDY add 20140612 csos进程停复机发不发HLR标志 -->
+     <mapping name = "NOT_SEND_HLR"         mapping = "NOT_SEND_HLR"  method = "MappingSplite"    expr = "TRUE=TRUE;FLASE=FLASE"   desc = "csos进程停复机发不发HLR标志"/> 
+     <mapping name = "OPRCMSGT"             mapping = "OPRCMSGT"      method = "MappingDirect"    desc = "平台下发批量交易流水号[一级BOSS]"/>
+     <mapping name = "OPRCNUMB"             mapping = "OPRCNUMB"      method = "MappingDirect"    desc = "平台下发批量单条流水号[一级BOSS]"/>
+     <mapping name = "OPRRCFLG"             mapping = "OPRRCFLG"      method = "MappingDirect"    desc = "平台二次确认标识[一级BOSS]"/>
+     <mapping name = "VMIFUNPAR"            mapping = "VMIFUNPAR"     method = "MappingDirect"    desc = "(JT)区分功能变更(0),参数变更(1),黑白名单变更(企信通2)"/> 
+     <mapping name = "VMICMRSFG"            mapping = "VMICMRSFG"     method = "MappingDirect"    desc = "产生服务动作原因代码[一级BOSS]"/>
+     <mapping name = "VMITYCODE"            mapping = "VMITYCODE"     method = "MappingDirect"    desc = "业务类型[一级BOSS]"/>
+     <mapping name = "OPRREASION"           mapping = "OPRREASION"    method = "MappingDirect"    desc = "操作原因[一级BOSS]"/>
+     <mapping name = "VMHLWFLG"             mapping = "VMHLWFLG"      method = "MappingDirect"    desc = "互联网三大业务标识[一级BOSS]"/>
+     <!-- add by fengliang 信息-2015-4055 关于下发WLAN默认开通  start -->
+     <mapping name = "WLANCHANGE"             mapping = "WLANCHANGE"      method = "MappingDirect"    desc = "集团WLAN密码修改标识[CBOSS]"/>
+     <mapping name = "WLANMODIFY"             mapping = "WLANMODIFY"      method = "MappingDirect"    desc = "集团WLAN密码重置标识[CBOSS]"/>
+     <!-- add by fengliang 信息-2015-4055 关于下发WLAN默认开通  end -->
+     
+     <!-- add by lidy 2014-07-15 虚拟运营商 4GBOSSOprCode -->
+     <mapping name = "4GBOSSOprCode"        mapping = "4GBOSSOprCode"  method = "MappingDirect"   desc = "虚拟运营商号码操作编码"/>
+     <mapping name = "4GBOSSPARAM"          mapping = "4GBOSSPARAM"    method = "MappingDirect"   desc = "4GBOSS转售业务开通参数"/>
+     <!-- add by fengliang 信息-2016-14097 -->
+     <mapping name = "COOPCHANNEL"        mapping = "COOPCHANNEL"  method = "MappingDirect"   desc = "咪咕一级话费计费增加合作渠道标示"/>
+     <!-- add by fengliang 信息-2017-12736-异地改号 -->
+     <mapping name = "YDGHYWVO"        mapping = "YDGHYWVO"  method = "MappingDirect"   desc = "异地改号业务标示volte用户异地改号"/>
+     <mapping name = "YDGHYWNVO"        mapping = "YDGHYWNVO"  method = "MappingDirect"   desc = "异地改号业务标示非volte用户"/>
+  </mappings>                                                                                                             						 
+                                                                                                                          						 
+  <mappings id = "IGsm2CommL" desc = "普通GSM公共模块[开通测]">                                                           						 
+      <mapping name = "NEWMSDN"        	    mapping = "NEWMSDN"       method = "MappingDirect"    desc = "新用户号码"/>
+      <mapping name = "SIMFLG"         	    mapping = "SIMFLG"        method = "MappingDirect"    desc = "用户SIM类型(2G普通卡,空USIM卡)"/>
+      <mapping name = "SIMPSTS"         	mapping = "SIMPSTS"       method = "MappingDirect"    desc = "用户SIM状态(0未匹配未开通1已匹配未开通2已匹配已开通)"/>
+      <mapping name = "SIMOSTS"         	mapping = "SIMOSTS"       method = "MappingDirect"    desc = "用户SIM老系统状态(202预开通203开通204开户取消)"/>
+      <mapping name = "SIMPOSI"        	    mapping = "SIMPOSI"       method = "MappingDirect"    desc = "用户SIM鉴权状态"/>
+      <mapping name = "USIMOPC"        	    mapping = "USIMOPC"       method = "MappingDirect"    desc = "USIM卡OPC"/>
+      <mapping name = "NEWIMSI"        	    mapping = "NEWIMSI"       method = "MappingDirect"    desc = "新用户IMSI"/>
+      <mapping name = "KI"             	    mapping = "KI"            method = "MappingDirect"    desc = "KI"/>
+      <mapping name = "NEWKI"          	    mapping = "NEWKI"         method = "MappingDirect"    desc = "新KI"/>
+      <mapping name = "VMICMTDK"       		mapping = "VMICMTDK"      method = "MappingDirect"    desc = "用户品牌"/>
+      <mapping name = "VMICOTDK"       		mapping = "VMICOTDK"      method = "MappingDirect"    desc = "老用户品牌"/> 
+      <!--停开机位-->
+      <mapping name = "VMICMOST"            mapping = "VMICMOST"      method = "MappingExist"     desc = "停开机位">
+         <mapping name = "VMICMOST"            mapping = "VMICMOST"      method = "MappingDirect"    desc = "用户停开机类型[停开机位]"/>
+         <mapping name = "VMICMOTB"            mapping = "VMICMOTB"      method = "MappingDirect"    desc = "用户停开机位值[停开机位]"/>
+         <mapping name = "STOPUSER"       	   mapping = "STOPUSER"      method = "MappingDirect"    desc = "双停用户标志[停开机位]"/>
+         <mapping name = "BAOCUSER"       	   mapping = "BAOCUSER"      method = "MappingDirect"    desc = "单停用户标志[停开机位]"/>
+      </mapping>
+      <mapping name = "LPCCGRADE"            mapping = "LPCCGRADE"       method = "MappingDirect"        desc = "PCC(30铜牌20银牌10金牌)"/> 
+  </mappings> 
+  
+  <mappings id = "IGsm2HlrfL" desc = "普通GSM程控模块[开通测]">
+      <mapping name = "270000090114" 				mapping = "IDD"  				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "IDD"/>
+	  <mapping name = "270000090113"                mapping = "DDD"                 method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "国内长权"/>
+	  <mapping name = "270000090117" 				mapping = "IR" 					method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "国际漫游"/>
+	  <mapping name = "270000090116"                mapping = "NR"                  method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "国内漫游"/>
+ 	  <mapping name = "270000090200" 				mapping = "NRX" 			    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "限制国内漫游"/>
+	  <mapping name = "270000090108" 				mapping = "BAGC" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "呼叫限制"/>
+	  <mapping name = "270000090103" 				mapping = "CLIP" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "主叫显示"/>
+	  <mapping name = "270000090105" 				mapping = "CLIR" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "去电不显示"/>
+  	  <mapping name = "270000090105"                mapping = "CLIPX"               method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "禁止去电显示"/>
+ 	  <mapping name = "270000090107"                mapping = "CH"                  method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "呼叫保持"/>
+      <mapping name = "270000090106" 				mapping = "CW" 					method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "呼叫等待"/>
+	  <mapping name = "270000090110" 				mapping = "MS" 					method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "三方通话"/>
+  	  <mapping name = "270000090101" 				mapping = "VM"   		        method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "语音信箱（经典版）"/>
+	  <mapping name = "270000090112" 				mapping = "CFM" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "转移呼叫"/>
+	  <mapping name = "270000050005" 				mapping = "SMS" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "点对点短信"/>
+	  <mapping name = "270000080235" 				mapping = "SMSI" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "单向短信[垃圾短信举报停]"/>
+	  <mapping name = "270000091194" 				mapping = "SRMP" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "骚扰电话停"/>
+	  <mapping name = "270000090109" 				mapping = "BAOC"  				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "呼出限制"/>
+	  <mapping name = "270000080138" 				mapping = "BAIC" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "呼入限制"/>
+	  <mapping name = "270000090126" 				mapping = "BOSCF" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "国际前转"/>
+	  <mapping name = "270000090102" 				mapping = "FAX" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "传真服务"/>
+	  <mapping name = "270000090130" 				mapping = "MPTY" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "会议电话"/>
+	  <mapping name = "270000090132" 				mapping = "XWMS" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "西文移动秘书"/>
+	  <mapping name = "270000090118" 				mapping = "ZWMS" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "中文移动秘书"/>
+	  <mapping name = "270000090119" 				mapping = "OCCF" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "全球呼"/>
+	  <mapping name = "270000090120" 				mapping = "XCCF" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "润讯呼"/>
+	  <mapping name = "270000090121" 				mapping = "TCCF" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "华东呼"/>
+	  <mapping name = "270000090141" 				mapping = "MBELL" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "彩铃业务"/>
+	  <!-- add by fengliang 集团彩铃和个人彩铃分离  集客-2016-11564-->
+	  <mapping name = "270000090331"                mapping = "MJTCLSPLIT"       	    method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;DE=DE;*=DU" desc = "集团彩铃"/>
+	  <mapping name = "270000090155"                mapping = "CFMS"                method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "移动调度呼叫转移"/>
+ 	  <mapping name = "270000090155"                mapping = "WDCFM"               method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "移动调度呼叫转移"/>
+ 	  <mapping name = "270000090123"                mapping = "WDCFM"               method = "MappingExist"       desc = "异地呼转">
+		 <mapping name = "270000090123"                mapping = "WDCFM"              method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"              desc = "异地呼转"/>
+	     <mapping name = "270000090123"                mapping = "WDCFMNO"            method = "MappingDepend"      expr = "WDCFM,A270000090123_PROP_L.HJZY_MNUM"  desc = "异地呼转转移号码"/>
+	     <mapping name = "270000090123"                mapping = "WDCFMNO4GBOSS"            method = "MappingDepend"      expr = "WDCFM,WDCFMNO4GBOSS"  desc = "4GBOSS异地呼转转移号码"/>
+	  </mapping>
+	  <mapping name = "270000090135" 				mapping = "WLAN" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "wlansim"/>
+	  <mapping name = "270000080102" 				mapping = "VMSG" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "视频留言（HLR）"/>
+	  <mapping name = "270000080103" 				mapping = "MRBT" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "多媒体彩铃（HLR）"/>
+	  <mapping name = "270000090484" 				mapping = "PPOC" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "POC"/>
+	  <mapping name = "270000080115" 				mapping = "MY2G" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "是否允许2g国内漫游"/>
+	  <mapping name = "270000080101" 				mapping = "KSDH" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "可视电话"/>
+	  <mapping name = "270000080116" 				mapping = "VSHR" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "视频共享（HLR）"/>
+	  <mapping name = "270000080058" 				mapping = "TTTDGH" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "铁通TD标准固话产品"/>
+	  <mapping name = "270000080071" 				mapping = "ZJHZ" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "主叫回执"/>
+	  <mapping name = "310090112002" 				mapping = "IUCFM" 				method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "iuser呼叫转移"/>
+  	  <mapping name = "270000050001"                mapping = "YYFW"                method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "语音服务"/>
+  	  <mapping name = "270000050001" 			    mapping = "SIMCARD" 	        method = "MappingDepend"      expr = "YYFW,A270000050001_PROP_L.SIMCARD"         desc = "用户SIMCRAD类型"/>
+  	  <!-- 信息-2016-9449	YWZC000174062	《关于下发VoLTE业务自动开通功能支撑系统配套改造工作要求的通知》-客户管理等 -->
+      <mapping name = "390000214002" 			    mapping = "APN_IMS" 	        method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"         desc = "volte自动开通"/>
+      <!-- 信息-2016-9449	YWZC000174062	《关于下发VoLTE业务自动开通功能支撑系统配套改造工作要求的通知》-客户管理等 -->
+  	  <!-- 信息-2016-15956-YWZC000188196-关于配合完成“呼死你”应急防护支撑工作的通知-客户管理等 start -->
+  	  <mapping name = "390000214571" 			    mapping = "HSNFH" 	        method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"         desc = "呼死你 应急防护业务"/>
+  	  <!-- 信息-2016-15956-YWZC000188196-关于配合完成“呼死你”应急防护支撑工作的通知-客户管理等 start -->
+  	  <!-- add by fushuan 市场-2017-8855-YWZC000220834-关于适配VoLTE业务增加呼叫限制、呼叫等待两个功能激活/去激活操作界面的需求-客户管理等 -->
+        <mapping name = "390000211902"                 mapping = "VOLTE_HJZY"           method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "呼叫转移激活" />
+        <mapping name = "390000211903"                 mapping = "VOLTE_HJBS"           method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "呼叫闭锁激活" />
+  	  <!-- 信息-2017-23203-YWZC000247894-关于和多号虚拟副号支持VoLTE功能的支撑系统改造的通知-crm-开通 -->
+  	  <mapping name = "390020003190"                 mapping = "HDH_ZHM_SIFC"           method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "和多号主号码SIFC" />
+  	  <mapping name = "390020003193"                 mapping = "HDH_FHM_SIFC"           method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "和多号副号码SIFC" />
+  	  
+  	  <mapping name = "270000080200"			    mapping = "BAOCX"			    method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "限制语音呼叫"/>                              	  
+  	  <mapping name = "270000080200" 			    mapping = "SIMCARD" 	        method = "MappingDepend"      expr = "BAOCX,A270000080200_PROP_L.SIMCARD"         desc = "用户SIMCRAD类型"/>
+  	  <mapping name = "270000090621"                mapping = "DWLMIS"              method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "关闭WLAN SIM自动认证"/>
+ 	  <mapping name = "270000090136"   				mapping = "IPZTC"         		method = "MappingExist"    	  desc = "IP直通车[IPBUS][IN]">
+          <mapping name = "270000090136"   			mapping = "IPZTC"     			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;X=X;U=U;E=E;*=DU"                 desc = "IP直通车[IPBUS][IN]"/>
+          <mapping name = "270000090136"   			mapping = "BBILL"     			method = "MappingDepend"      expr = "IPZTC,A270000090136_PROP_L.BBILL"   			  desc = "IP直通车成员号码[IPBUS][IN]"/>
+          <mapping name = "270000090136"   			mapping = "BPSWD"     			method = "MappingDepend"      expr = "IPZTC,A270000090136_PROP_L.BPSWD"   			  desc = "IP直通车成员密码[IPBUS][IN]"/>
+          <mapping name = "270000090136"   			mapping = "BMOSI"     			method = "MappingDepend"      expr = "IPZTC,A270000090136_PROP_L.BMOSI"   			  desc = "IP直通车成员状态[IPBUS][IN]"/>
+          <mapping name = "270000090136"   			mapping = "BPFLG"     			method = "MappingDepend"      expr = "IPZTC,A270000090136_PROP_L.BPFLG"           	  desc = "IP直通车密码类型[IPBUS][IN]"/>
+          <mapping name = "270000090136"   			mapping = "BIDDI"     			method = "MappingDepend"      expr = "IPZTC,A270000090136_PROP_L.BIDDI"   			  desc = "IP直通车呼出限制标记[IPBUS][IN]"/>
+          <mapping name = "270000090136"   			mapping = "BLOCK"     			method = "MappingDepend"      expr = "IPZTC,A270000090136_PROP_L.BLOCK"   			  desc = "IP直通车加锁标志[IPBUS][IN]"/>
+          <mapping name = "270000090136"   			mapping = "IPFLG"    			method = "MappingDepend"      expr = "IPZTC,A270000090136_PROP_L.IPFLG"  			  desc = "IP直通车首次订购标志[IPBUS][IN]"/>
+      </mapping>
+ 	  <mapping name = "270000080186"                mapping = "ITT"                 method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "IMS国际长话"/>
+ 	  <mapping name = "270000080182"                mapping = "NTT"                 method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "IMS国内长话"/>
+ 	  <mapping name = "270000080181"                mapping = "NSOIP"               method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "IMS主叫显示"/>
+ 	  <mapping name = "270000080183"                mapping = "NSECT"               method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "IMS呼叫转移"/>
+ 	  <mapping name = "270000080184"                mapping = "NSFAX"               method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "IMS传真"/>
+ 	  <mapping name = "270000080185"                mapping = "NSCW"                method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "IMS呼叫等待"/>
+ 	  <!-- add by fengliang  集客-2015-3208 M2M基础语音功能  取消限制语音呼叫 start-->
+ 	  <mapping name = "390000099940"			    mapping = "UNBAOCX"			    method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "M2M基础语音功能取消限制语音呼叫"/>
+ 	  <!-- add by fengliang  集客-2015-3208 M2M基础语音功能  取消限制语音呼叫 end-->
+ 	  <!-- 国内一卡多号虚拟副号 -->
+   	  <mapping name = "380000189761"                mapping = "GNYKDHFH"            method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "国内一卡多号虚拟副号"/>
+   	  <!-- add by fengliang -->
+      <!-- volte语音包 add by fengliang -->
+      <!-- 增加下周期工单月底发开通不触发用户实例中volte的问题  亚信-2017-812-集团彩铃不能使用问题修复 -->
+      <mapping name = "390000046803"                mapping = "VOLTE"            method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;DE=DE;*=DU" desc = "volte语音包"/>
+      <!-- add by fengliang 信息-2017-12462-关于下发VoLTE支持视频彩铃业务的支撑方案的通知 -->
+	  <mapping name = "390000213452"                 mapping = "VVr"            method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;DE=DE;*=DU" desc = "volte视频彩铃"/>
+      <!-- add by fengliang 信息-2016-19213 hss或者as上查询到的用户呼转类型和号码 -->
+      <mapping name = "390000046803"                mapping = "CFUREAL"            method = "MappingDepend"      expr = "VOLTE,A390000046803_PROP_L.CFUREAL" desc = "volte语音包"/>
+      <mapping name = "390000046803"                mapping = "CFUNO"            method = "MappingDepend"        expr = "VOLTE,A390000046803_PROP_L.CFUNO"   desc = "volte语音包"/>
+      <mapping name = "390000046803"                mapping = "CFBREAL"            method = "MappingDepend"      expr = "VOLTE,A390000046803_PROP_L.CFBREAL" desc = "volte语音包"/>
+      <mapping name = "390000046803"                mapping = "CFBNO"            method = "MappingDepend"        expr = "VOLTE,A390000046803_PROP_L.CFBNO" desc = "volte语音包"/>
+      <mapping name = "390000046803"                mapping = "CFNRCREAL"            method = "MappingDepend"    expr = "VOLTE,A390000046803_PROP_L.CFNRCREAL" desc = "volte语音包"/>
+      <mapping name = "390000046803"                mapping = "CFNRCNO"            method = "MappingDepend"      expr = "VOLTE,A390000046803_PROP_L.CFNRCNO" desc = "volte语音包"/>
+      <mapping name = "390000046803"                mapping = "CFNRYREAL"            method = "MappingDepend"    expr = "VOLTE,A390000046803_PROP_L.CFNRYREAL" desc = "volte语音包"/>
+      <mapping name = "390000046803"                mapping = "CFNRYNO"            method = "MappingDepend"      expr = "VOLTE,A390000046803_PROP_L.CFNRYNO" desc = "volte语音包"/>
+      
+      <mapping name = "390000100432"            mapping = "LPCCFLG"      method = "MappingExist"     desc = "同步PCC标识">
+         <mapping name = "390000100432"            mapping = "LPCCFLG"      method = "MappingDirect"    desc = "同步PCC标识"/>
+         <mapping name = "390000100432"            mapping = "LPCCFLAG"      method = "MappingDepend"   expr = "LPCCFLG,A390000100432_PROP_L.390000100433"  desc = "同步PCC标识"/>
+         <mapping name = "390000100432"            mapping = "PCCQY_TB"      method = "MappingDepend"   expr = "LPCCFLG,A390000100432_PROP_L.PCCQY_TB"  desc = "同步PCC标识需要发送签约属性标识"/>
+         <mapping name = "390000100432"            mapping = "E_NEXT_FLAG"     method = "MappingDepend"   expr = "LPCCFLG,A390000100432_PROP_L.E_NEXT"  desc = "次月退订本月上发"/>
+      </mapping> 
+      <!-- 信息-2016-19841-YWZC000196830-系统优化-POP位置营销开通优化-客户管理 -->
+      <mapping name = "POP_EFFECTIVEDATE"          mapping = "POP_EFFECTIVEDATE"            method = "MappingExist"    desc = "策略SESSIONPOLICYSTARTDATETIME">
+            <mapping name = "POP_EFFECTIVEDATE"          mapping = "POP_EFFECTIVEDATE"            method = "MappingDirect"    desc = "策略SESSIONPOLICYSTARTDATETIME"/>
+      </mapping>
+      <!-- 亚信-2017-19065-YWZC000237388-订购国内定向视频包报空问题修复-客户管理等 -->      
+      <mapping name = "RWK_SUB_ST"          mapping = "RWK_SUB_ST"            method = "MappingExist"    desc = "任我看任我用-副号停复机处理">
+            <mapping name = "RWK_SUB_ST"          mapping = "RWK_SUB_ST"            method = "MappingDirect"    desc = "任我看任我用-副号停复机处理"/>
+      </mapping>
+      <mapping name = "RWY_SUB_ST"          mapping = "RWY_SUB_ST"            method = "MappingExist"    desc = "任我看任我用-副号停复机处理">
+            <mapping name = "RWY_SUB_ST"          mapping = "RWY_SUB_ST"            method = "MappingDirect"    desc = "任我看任我用-副号停复机处理"/>
+      </mapping>
+      
+      <mapping name = "RWY_SUB_CE"          mapping = "RWY_SUB_CE"            method = "MappingExist"    desc = "任我看-副号停订购退订处理">
+            <mapping name = "RWY_SUB_CE"          mapping = "RWY_SUB_CE"            method = "MappingDirect"    desc = "任我看-副号停订购退订处理"/>
+      </mapping>
+      <!--add by fushuan 市场-2017-21778-YWZC000244684-魔都地铁流量包及促销活动开发需求-crm-开通 -->
+       <mapping name = "pcc_opr"        mapping = "pcc_opr"            method = "MappingExist"    desc = "pcc-业务策略">
+            <mapping name = "pcc_opr"          	    mapping = "pcc_opr"            	method = "MappingDirect"    desc = "用户订购业务 操作"/>
+            <mapping name = "ServiceCode"          	mapping = "ServiceCode"            method = "MappingDirect"    desc = "用户订购业务唯一代码"/>
+            <mapping name = "ServiceBillingType"    mapping = "ServiceBillingType"     method = "MappingDirect"    desc = "业务的计费方式"/>
+            <mapping name = "ServiceStartDateTime"  mapping = "ServiceStartDateTime"   method = "MappingDirect"    desc = "业务策略生效时间"/>
+            <mapping name = "ServiceEndDateTime"    mapping = "ServiceEndDateTime"     method = "MappingDirect"    desc = "业务策略失效时间"/>
+            <mapping name = "ServiceUsageState"     mapping = "ServiceUsageState"      method = "MappingDirect"    desc = "业务配额状态"/>
+      </mapping>
+  </mappings>                                                                                  	  
+                                                                                               	  
+  <mappings id = "IGsm2NetcL" desc = "普通上网程控模块[开通测]">                               	  
+     <mapping name = "270000080132" 				mapping = "GPRSJK" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "GPRS实时监控"/>
+     <mapping name = "270000053001"                 mapping = "GPRS"            method = "MappingExist"       desc = "GPRS">
+		 <mapping name = "270000053001"               mapping = "GPRS"            method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "GPRS"/>
+	  </mapping>
+	 <!-- add by fengliang 集客-2015-22140-系统自动关闭“企业随e行（mifi版）”业务号码的4G功能的功能优化需求 -->
+	 <mapping name = "390000212021"                 mapping = "GPRSNO4G"            method = "MappingExist"       desc = "无4G的GPRS,wap不限速，net不限速">
+		 <mapping name = "390000212021"               mapping = "GPRSNO4G"            method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "无4G的GPRS,wap不限速，net不限速"/>
+	  </mapping>
+	 <mapping name = "270000021001" 				mapping = "WAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "WAP服务"/>
+	 <mapping name = "270000090111" 				mapping = "DATA" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "数据服务"/>
+	 <mapping name = "270000090124" 				mapping = "GPS" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "GPS"/>
+	 <mapping name = "270000090595" 				mapping = "GPS" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "GPS"/>
+	 <mapping name = "270000080248" 				mapping = "GPRST"   		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "gprs暂停"/>
+	 <mapping name = "270000080249" 				mapping = "CMMM" 	  		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "cmmm暂停服务"/>
+	 <mapping name = "270000053010" 				mapping = "CMDMAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "GPRS"/>
+	 <mapping name = "310050001175" 				mapping = "BAOCX" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "任e行服务(CMNET)"/>
+	 <mapping name = "310050001175" 				mapping = "CMNET" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "任e行服务(CMNET)"/>
+	 <!-- ADD BY LIDY 配置移动数据暂停产品变量，专门服务WAP20号码 -->
+	 <mapping name = "310080248001" 				mapping = "GPRSTCP"   		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "gprs暂停"/>
+  </mappings>                                                                                  	  
+                                                                                               	  
+  <mappings id = "IGsm2NetaL" desc = "普通上网程控模块[开通测]"> 
+     <mapping name = "270000090399" 				mapping = "CWTAP"   		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "车务通专用APN"/>
+     <mapping name = "270000090284" 				mapping = "EWLGRAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "E物流专用APN"/>
+	 <mapping name = "270000053005" 				mapping = "PSMLAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "加密PUSHMAIL专用APN"/>
+	 <mapping name = "270000091101" 				mapping = "BLBYAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "BlackBerry专用APN"/>
+	 <mapping name = "272999999933" 				mapping = "BLBYAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "BlackBerry专用APN"/>
+	 <mapping name = "270000090570" 				mapping = "WCNRSWAP"  		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "未成年人手机上网专用APN"/>
+	 <mapping name = "270000090209" 				mapping = "CMMMAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "MobileMarket专用APN"/>
+	 <mapping name = "270000090204" 				mapping = "MPOC" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "个人手机POC对讲"/>
+	 <mapping name = "1270000090408"                mapping = "QZYAP"           method = "MappingExist"       desc = "企业接入点APN">
+	   <mapping name = "1270000090408" 	              mapping = "QZYAPFLAG" 		   method = "MappingDirect"   desc = "企业接入点APN"/>
+	   <mapping name = "1270000090408" 	              mapping = "QZYAP" 		   method = "MappingContext" 	 expr = "A1270000090408_PROP_L.JTIZYAPN_ID" desc = "企业接入点APN"/>
+	 </mapping>
+	 <mapping name = "1272999999783"                mapping = "QYJTAP"           method = "MappingExist"       desc = "企业接入点APN(静态)">
+	   <mapping name = "1272999999783" 	              mapping = "QYJTAPDQ" 		   method = "MappingContext" 	 expr = "A1272999999783_PROP_L.QYJTAPIP_STATE" desc = "企业接入点APN"/>
+	   <mapping name = "1272999999783" 	              mapping = "QYJTAP" 		   method = "MappingContext" 	 expr = "A1272999999783_PROP_L.QYJTAPIP_ID" desc = "企业接入点APN(静态ip)"/>
+	   <mapping name = "1272999999783" 				  	mapping = "QYJTAPIP" 			method = "MappingDepend" 	  expr = "QYJTAP,A1272999999783_PROP_L.QYJTAPIP_IP"   desc = "企业专网APN静态IP地址"/>
+	 </mapping>
+	 <mapping name = "1310053001025" 				mapping = "YLSMAPN" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "银联APN"/>
+	 <mapping name = "1310090317019" 				mapping = "ZGYXAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "中国银行专用APN"/>
+	 <mapping name = "1310090317020" 				mapping = "HFYXAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "汇丰银行专用APN"/>
+	 <mapping name = "1310090317021" 				mapping = "YSJTAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "银商集团专用APN"/>
+	 <mapping name = "1310090317008" 				mapping = "BGGFAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "宝钢专用APN"/>
+	 <mapping name = "1310090518001" 				mapping = "JZDHJKAP"  		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "基站动环监控专用APN"/>
+	 <mapping name = "1310090379001" 				mapping = "JTWGWAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "家庭网关专用APN"/>
+	 <mapping name = "1310090317022" 				mapping = "XMZAP"     		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "西门子专用APN"/>
+	 <mapping name = "1310090317023" 				mapping = "BSHWJAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "宝山环卫局专用APN"/>
+	 <mapping name = "1310090317016" 				mapping = "GXZYAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "工行专用APN"/>
+	 <mapping name = "1310090317041" 				mapping = "GSYXPAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "工行专用APN（PROD）"/>
+	 <mapping name = "1310090317042" 				mapping = "GSYXTAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "工行专用APN（TEST）"/>
+	 <mapping name = "1310053001036" 				mapping = "WYZYAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "apn的gprs"/>
+	 <mapping name = "1310090317002" 				mapping = "NGSZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "农工商专用APN"/>
+	 <mapping name = "1310053001055" 				mapping = "TFZYAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "通服"/>
+	 <mapping name = "1310090317003" 				mapping = "LBKDZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "联邦快递APN"/>
+	 <mapping name = "1310090317004" 				mapping = "JTYXSHFXAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "交行专用APN"/>
+	 <mapping name = "1310053001069" 				mapping = "APNZYTCAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "APN自由套餐"/>
+	 <mapping name = "1310090317005" 				mapping = "XAYSAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "西安杨森APN"/>
+	 <mapping name = "1310090317006" 				mapping = "QSGSAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "强生公司APN"/>
+	 <mapping name = "1310090317007" 				mapping = "ZYHDAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "众宇华德APN"/>
+	 <mapping name = "1310053004001" 				mapping = "SJBGXTAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "上海移动手机办公系统APN"/>
+	 <mapping name = "1310050001304" 				mapping = "CGTLDBAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "城管通领导版APN"/>
+	 <mapping name = "1310090317011" 				mapping = "HSJZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "海事局APN"/>
+	 <mapping name = "1310090317015" 				mapping = "LBQZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "立佰趣专用APN"/>
+	 <mapping name = "1310090317017" 				mapping = "DTLBGPSAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "大田联邦GPS专用APN"/>
+	 <mapping name = "1310053001147" 				mapping = "DTLBGPSUAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "大田联邦GPS-APN-uat"/>
+	 <mapping name = "1310053001144" 				mapping = "DTLBGPSPAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "大田联邦GPS-APN-pro"/>
+	 <mapping name = "1310090317018" 				mapping = "WJSHZDAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "武警总队专用APN"/>
+	 <mapping name = "1310090505001" 				mapping = "SHMVMAP" 	    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "视频监控APN"/>
+	 <mapping name = "1310090317047" 				mapping = "ZQZYAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "直钱专用APN"/>
+	 <mapping name = "1310090317048" 				mapping = "TLZFZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "通联支付专用APN"/>
+	 <mapping name = "1310090398001" 				mapping = "BSZYAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "百事专用APN"/>
+	 <mapping name = "1310091067001" 				mapping = "JWTZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "警窝通专用APN"/>
+	 <mapping name = "1310090317012" 				mapping = "SHYXZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "上海银行专用APN"/>
+	 <mapping name = "1310090317024" 				mapping = "FDYGJJAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "浦东现代有轨交通专用APN"/>
+	 <mapping name = "1310090317050" 				mapping = "WCXXZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "文聪信息专用APN"/>
+	 <mapping name = "1310090317025" 				mapping = "SHDLZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "上海市电力专用APN"/>
+	 <mapping name = "1310090317028" 				mapping = "DKQNZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "点控其能专用APN"/>
+	 <mapping name = "1310090317051" 				mapping = "YHKQZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "液化空气专用APN"/>
+	 <mapping name = "1310090317026" 				mapping = "XYYXZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "兴业银行专用APN指令apn_201"/>
+	 <mapping name = "2310090317026" 				mapping = "XYYXZYAP1" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "兴业银行专用APN指令67"/>
+	 <mapping name = "1310090317049" 				mapping = "SHZQZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "直钱信息服务专用APN"/>
+	 <mapping name = "1310090317027" 				mapping = "DZJTZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "大众交通专用APN"/>
+	 <mapping name = "1310090317043" 				mapping = "SDYKTZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "杉德银卡通专用APN"/>
+	 <mapping name = "1310090317046" 				mapping = "SYZYAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "商益专用APN"/>
+	 <mapping name = "1310091129001" 				mapping = "SHHGZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "上海海关专用APN"/>	 
+	 <mapping name = "1310091200001" 				mapping = "KZXKSHAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "空中写卡APN"/>	 
+	 <mapping name = "1310053001171" 				mapping = "ZSYXAP" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "招商银行专用APN"/> 	
+	 <mapping name = "1310053001310" 				mapping = "SDYKTZYAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "杉德银卡通专用APN"/> 	
+	 <!-- add by fengliang 信息-2015-21475-关于下发和对讲业务支撑实施方案的通知  -->
+	 <mapping name = "390000210897" 				mapping = "HDJGNAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "和对讲功能专用APN"/> 	
+	 <!--静态APN-->
+	 <mapping name = "1310091114001" 				mapping = "SHDLJTAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "上海市电力专用APN(静态ip)"/>
+	 <mapping name = "1310091129003" 				mapping = "SHYXJTAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "上海银行专用APN(静态ip)"/>
+	 <mapping name = "1310091129004" 				mapping = "FDYGJJJTAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "浦东现代有轨交通专用APN(静态ip)"/>
+	 <mapping name = "1310091129002" 				mapping = "YHKQZYJTAP" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "液化空气专用APN(静态ip)"/> 
+	 <mapping name = "272999999783"                 mapping = "QZYJTAP"         method = "MappingExist"       desc = "企业专网APN静态IP">
+	 	<mapping name = "272999999783" 					mapping = "QZYJTAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"       desc = "企业专网APN静态成员"/>
+	    <mapping name = "272999999783" 				  	mapping = "QZYJTAPIP" 			method = "MappingDepend" 	  expr = "QZYJTAP,A272999999783_PROP_L.JTIQZYJTAP_IP"   desc = "企业专网APN静态IP地址"/>
+	 </mapping>
+	
+	 <!--add by gongec 2014-9-17 关于新增PCC限速服务策划的需求 start -->
+	 <mapping name = "390000042550" 					mapping = "PCCAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;X=X;U=U;E=E;*=DU"       desc = "PCC超套限速服务"/>
+	 <mapping name = "390000042550" 				  	mapping = "PCCAPIP" 			method = "MappingDepend" 	  expr = "PCCAP,A390000042550_PROP_L.390000023354"   desc = "PCC超套限速服务"/>
+	 <!--add by gongec 2014-9-17 关于新增PCC限速服务策划的需求 end -->
+	 
+	 <!-- add by fengliang 2015-03-30 数据-2014-19146 start -->
+	 <mapping name = "390000023352" 					mapping = "PCCQY" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;X=X;U=U;E=E;*=DU"       desc = "PCC属性签约信息"/>
+	 <mapping name = "390000023352" 				  	mapping = "PCCQYIP" 			method = "MappingDepend" 	  expr = "PCCQY,A390000023352_PROP_L.390000023353"   desc = "PCC属性签约信息"/>
+	 <!-- add by fengliang 2015-03-30 数据-2014-19146 end -->
+	 <!-- add by fengliang 信息-2015-9935-彩印业务  start -->
+	 <mapping name = "390000099899"              mapping = "CYYW"           method = "MappingExist"       desc = "彩印业务">
+		 <mapping name = "390000099899"                 mapping = "CYYW"            method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "彩印业务"/>
+		 <mapping name = "390000099899"                 mapping = "CYZJ"            method = "MappingDepend"      expr = "CYYW,A390000099899_PROP_L.CYZJ"  desc = "彩印业务主叫"/>
+		 <mapping name = "390000099899"                 mapping = "CYBJ"            method = "MappingDepend"      expr = "CYYW,A390000099899_PROP_L.CYBJ" desc = "彩印业务被叫"/>
+		 <mapping name = "390000099899"                 mapping = "CYZBJ"            method = "MappingDepend"      expr = "CYYW,A390000099899_PROP_L.CYZBJ" desc = "彩印业务主被叫"/>
+	 </mapping>
+	 <!-- add by fengliang 信息-2015-9935-彩印业务  end -->
+	 <mapping name = "380000021150"                 mapping = "BLBM"            method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "邮箱办公BlackBerry"/>
+	 <mapping name = "380000188062"                 mapping = "ONLYCMNET"         method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "APN用户叠加接入点（APN用户叠加CMNET功能）"/>
+	 <!--APN业务转化通用变量与GPRS业务进行互斥判断 以下APN功能都会连带开通PDPID=1,PDPID=2-->
+	 <mapping name = "1310050001304" 				mapping = "APNYW" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "城管通领导版APN"/>
+     <mapping name = "1310053001025" 				mapping = "APNYW" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "银联APN"/>
+     <mapping name = "1310053001036" 				mapping = "APNYW" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "apn的gprs"/>
+     <mapping name = "1310053001055" 				mapping = "APNYW" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "通服"/>
+     <mapping name = "1310053001069" 				mapping = "APNYW" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "APN自由套餐"/>
+     <mapping name = "1310053001310" 				mapping = "APNYW" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "杉德银卡通专用APN"/> 	
+     <mapping name = "1310090317027" 				mapping = "APNYW" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "大众交通专用APN"/>  
+     <mapping name = "1310090317005" 				mapping = "APNYW" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "西安杨森APN"/> 
+     <mapping name = "1310090317017" 				mapping = "APNYW" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "大田联邦GPS专用APN"/>             
+     <mapping name = "1310053001147" 				mapping = "APNYW" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "大田联邦GPS-APN-uat"/>            
+     <mapping name = "1310053001144" 				mapping = "APNYW" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "大田联邦GPS-APN-pro"/>   
+     <mapping name = "1310090317006" 				mapping = "APNYW" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "强生公司APN"/>
+     <mapping name = "1310090317008" 				mapping = "APNYW" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "宝钢专用APN"/>
+     <mapping name = "1310090317019" 				mapping = "APNYW" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "中国银行专用APN"/>                  
+     <mapping name = "1310090317020" 				mapping = "APNYW" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "汇丰银行专用APN"/>                  
+     <mapping name = "1310090317021" 				mapping = "APNYW" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "银商集团专用APN"/>  
+     <mapping name = "1310090317016" 				mapping = "APNYW" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "工行专用APN"/>                      
+     <mapping name = "1310090317007" 				mapping = "APNYW" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "众宇华德APN"/> 
+     <mapping name = "1310090317002" 				mapping = "APNYW" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "农工商专用APN"/>                  
+     <mapping name = "1310090317018" 				mapping = "APNYW" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "武警总队专用APN"/>
+     <mapping name = "1310090317003" 				mapping = "APNYW" 		    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "联邦快递APN"/>
+     <mapping name = "380000021150"                 mapping = "APNYW"           method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "邮箱办公BlackBerry"/>
+     <!--APN业务转化通用变量与GPRS业务进行互斥判断结束 -->
+     <!-- add by fengliang  数据-2017-4492-YWZC000210917-本地物联网业务语音白名单功能需求-客户管理等-->
+     <mapping name = "390020004931"                 mapping = "WLWWHITENUMLIST"           method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "物联网语音白名单" />
+  </mappings>  
+  
+  <mappings id = "IGsm2OthfL" desc = "普通其他程控模块[开通测]">
+     <mapping name = "270000090340"              mapping = "SMPJK"          method = "MappingExist"       desc = "智能网监控">
+	    <mapping name = "270000090340" 				mapping = "SMPJK" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"             desc = "智能网监控"/>
+	    <mapping name = "270000090340" 				mapping = "SMPJKDZ" 		method = "MappingDepend" 	  expr = "SMPJK,A270000090340_PROP_L.262100000143" desc = "智能网监控地址"/>
+	 </mapping>
+	 <mapping name = "270000090610"              mapping = "8NUMBER"          method = "MappingExist"       desc = "8位号码升级包">
+	    <mapping name = "270000090610" 				mapping = "8NUMBER" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"             desc = "8位号码升级包"/>
+	    <mapping name = "270000090610" 				mapping = "8NUMBERGD" 		method = "MappingDepend" 	  expr = "8NUMBER,A270000090610_PROP_L.262100000110" desc = "固定号码"/>
+	    <mapping name = "270000090610" 				mapping = "8NUMBERMR" 		method = "MappingDepend" 	  expr = "8NUMBER,A270000090610_PROP_L.262100000111" desc = "默认号码"/>
+	 </mapping>
+	 <!--modify by fengliang 信息-2017-12047-小区优惠平台下线优化  -->
+	 <!-- <mapping name = "270000091090" 			 mapping = "XQYH" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "小区优惠功能"/> -->
+	 <mapping name = "1270000080072" 		     mapping = "YYYX1" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "语音功能优先（低）"/>
+	 <mapping name = "1270000080073" 		     mapping = "YYYX2" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "语音功能优先（中）"/>
+	 <mapping name = "1270000080074" 		     mapping = "YYYX3" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "语音功能优先（高）"/>
+	 <mapping name = "1270000080245" 		     mapping = "IMSPBX" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "IMS-PBX"/>
+	 <mapping name = "1270000080088" 		     mapping = "WAPLB" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "WAP20限速开关"/>
+	 <mapping name = "1270000080089" 		     mapping = "CMWAP" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "GPRS关闭NET指令"/>
+	 <mapping name = "1270000080090" 		     mapping = "WAP64K" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "WAP20限速64Kps"/>
+	 <mapping name = "1270000080091" 		     mapping = "WAP64KT" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "WAP限速64K(关NET)"/>
+	 <mapping name = "1270000080092" 		     mapping = "WAP128KT" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "WAP限速128K(关NET)"/>
+	 <mapping name = "1270000080093" 		     mapping = "WAP128K" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "WAP限速128kps"/>
+	 <mapping name = "1270000080094" 		     mapping = "WAP20K" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "WAP限速20K("/>
+	 <!--add by fengliang 信息-2015-4273 20150320  -->
+	 <mapping name = "1270000080095" 		     mapping = "WAP_UNLIMIT_A" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "WAP不限速，net不限速"/>
+	 <mapping name = "1270000080096" 		     mapping = "WAP_UNLIMIT" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "WAP不限速，无net"/>
+	 <mapping name = "1270000080097" 		     mapping = "WAP_CLNET" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "4G用户WAP20限速128K(关net)"/>
+	 <mapping name = "270000090352"              mapping = "CVPMN"          method = "MappingExist"       desc = "短号VPMN">
+	    <mapping name = "270000090352" 				mapping = "CVPMN" 		  method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "短号V网成员"/>
+	 </mapping>
+	 <mapping name = "1270000090352"             mapping = "PVPN"           method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "PVPN-GPRS"/>
+	 <mapping name = "270000085001" 			 mapping = "CMFQ" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "崇明分区业务"/>
+	 <mapping name = "270000090341"              mapping = "SIMM"           method = "MappingExist"       desc = "国际一卡多号">
+	    <mapping name = "270000090341" 			 mapping = "SIMM" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "国际一卡多号"/>
+	    <mapping name = "310090342001" 			 mapping = "SIMM_XGWZ" 	    method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "一卡多号(香港万众)"/>
+	    <mapping name = "310090341001" 			 mapping = "SIMM_XGSMT" 	method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "一卡多号(香港数码通)"/>
+	    <mapping name = "310090347001" 			 mapping = "SIMM_HG" 		method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "韩国一卡多号"/>
+	    <mapping name = "310090622001" 			 mapping = "SIMM_CMPAK"     method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "一卡多号(巴基斯坦CMPAK)"/>    
+	 </mapping>
+	 <mapping name = "270000090153"              mapping = "YJSH"           method = "MappingExist"       desc = "省一卡双号">
+	    <mapping name = "270000090153" 				mapping = "YJSH" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "省一卡双号"/>
+	    <mapping name = "270000090153" 				mapping = "YJSHMNUM" 	    method = "MappingDepend" 	  expr = "YJSH,YJSHMNUM"               desc = "省一卡双号副号码号码"/>
+	    <mapping name = "270000090153" 				mapping = "YJSHIMSI" 	    method = "MappingDepend" 	  expr = "YJSH,YJSHIMSI"               desc = "省一卡双号副号码IMSI"/>
+	    <mapping name = "270000090153" 				mapping = "YJSHMOSI" 	    method = "MappingDepend" 	  expr = "YJSH,YJSHMOSI"               desc = "省一卡双号副号码逻辑开机"/>
+	 </mapping>
+	 <mapping name = "270000090933"              mapping = "FHSYH"          method = "MappingExist"       desc = "副号随意换">
+	    <mapping name = "270000090933" 				mapping = "FHSYH" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;X=X;U=U;E=E;*=DU"  desc = "副号随意换"/>
+	    <mapping name = "270000090933" 				mapping = "FHSYHMNUM" 	    method = "MappingDepend" 	  expr = "FHSYH,A270000090933_PROP_L.FHSYH_FHMNUM"   desc = "副号随意换副号码号码"/>
+	    <mapping name = "270000090933" 				mapping = "FHSYHOMNUM" 	    method = "MappingDepend" 	  expr = "FHSYH,A270000090933_PROP_L.FHSYH_FHMONUM"  desc = "副号随意换旧副号码号码"/>
+	    <mapping name = "270000090933" 				mapping = "FHSYHIMSI" 	    method = "MappingDepend" 	  expr = "FHSYH,A270000090933_PROP_L.FHSYH_FHIMSI"   desc = "副号随意换副号码IMSI"/>
+	    <mapping name = "270000090933" 				mapping = "FHSYHMOSI" 	    method = "MappingDepend" 	  expr = "FHSYH,A270000090933_PROP_L.262100000013_S" desc = "副号随意换副号码状态"/>
+	    <mapping name = "270000090933" 				mapping = "FHSYHLGOS" 	    method = "MappingDepend" 	  expr = "FHSYH,A270000090933_PROP_L.262100000014"   desc = "副号随意换逻辑开机"/>
+	    <mapping name = "270000090933" 				mapping = "FHSYHLGIS" 	    method = "MappingDepend" 	  expr = "FHSYH,A270000090933_PROP_L.262100000014_S" desc = "副号随意换逻辑开状态"/>
+	 </mapping>
+	 <mapping name = "380000010393"              mapping = "GHFHSYH"          method = "MappingExist"       desc = "铁通无线固话8+11副号随意换">
+	    <mapping name = "380000010393" 				mapping = "GHFHSYH" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;X=X;U=U;E=E;*=DU"  desc = "铁通无线固话8+11副号随意换"/>
+	    <mapping name = "380000010393" 				mapping = "GHFHSYHMNUM" 	    method = "MappingDepend" 	  expr = "GHFHSYH,A380000010393_PROP_L.GHFHSYH_MNUM"    desc = "铁通无线固话8+11副号随意换副号码号码"/>
+	    <mapping name = "380000010393" 			    mapping = "SIMCARD" 	        method = "MappingDepend"      expr = "GHFHSYH,A380000010393_PROP_L.SIMCARD"         desc = "用户SIMCRAD类型"/>
+	 </mapping>
+	 <mapping name = "380000040442" 			 mapping = "MAINJTDH" 	    method = "MappingExist"       desc = "家庭短号[主号]">
+	    <mapping name = "380000040442" 				mapping = "MAINJTDH" 	    method = "MappingSplite" 	   expr = "C=C;EC=U;CE=U;X=X;U=U;E=E;*=DU"  				desc = "家庭短号"/>
+	    <mapping name = "380000040442" 				mapping = "INTCODE" 		method = "MappingDepend" 	   expr = "MAINJTDH,A380000040442_PROP_L.JTDH_INTCODE"      desc = "群组编号"/>
+	    <mapping name = "380000040442" 				mapping = "INFOTABLE" 	    method = "MappingDepend" 	   expr = "MAINJTDH,A380000040442_PROP_L.JTDH_INFO_TABLE"   desc = "子号码信息列表"/>
+	    <mapping name = "380000040442" 				mapping = "MEMBILL" 		method = "MappingDepend" 	   expr = "MAINJTDH,A380000040442_PROP_L.JTDH_MEM_BILL"     desc = "副号号码列表"/>
+	 	<mapping name = "380000040442" 				mapping = "MEMPHONE" 		method = "MappingDepend" 	   expr = "MAINJTDH,A380000040442_PROP_L.JTDH_MEM_PHONE"    desc = "副号短号列表"/>
+	 </mapping>
+	 <mapping name = "380000040443" 			 mapping = "MEMJTDH" 		method = "MappingExist"       desc = "家庭短号[副号]">
+	    <mapping name = "380000040443" 				mapping = "MEMJTDH" 		method = "MappingSplite" 	   expr = "C=C;EC=U;CE=U;X=X;U=U;E=E;*=DU"  			    desc = "家庭短号"/>
+	    <mapping name = "380000040443" 			    mapping = "MAINBILL" 		method = "MappingDepend" 	   expr = "MEMJTDH,A380000040443_PROP_L.JTDH_MAINNO"        desc = "主号码"/>
+	    <mapping name = "380000040443" 				mapping = "MAINSUB" 		method = "MappingDepend" 	   expr = "MEMJTDH,A380000040443_PROP_L.JTDH_MAIN_SUB"      desc = "主号码imsi"/>
+	    <mapping name = "380000040443" 				mapping = "MAINUSER" 		method = "MappingDepend" 	   expr = "MEMJTDH,A380000040443_PROP_L.JTDH_MAIN_USER"     desc = "主号码user"/>
+	    <mapping name = "380000040443" 				mapping = "INTCODE" 		method = "MappingDepend" 	   expr = "MEMJTDH,A380000040443_PROP_L.JTDH_INTCODE"     	desc = "群组编号"/>
+	 	<mapping name = "380000040443" 				mapping = "APPLYFOR" 		method = "MappingDepend" 	   expr = "MEMJTDH,A380000040443_PROP_L.JTDH_APPLY_FOR"     desc = "是否是组网"/>
+	 </mapping>
+	 <mapping name = "380000010545" 			 mapping = "DXSMS" 			method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"                           desc = "单向短信（只能收不能发）"/>
+	 <mapping name = "380000035015" 			 mapping = "WAP20" 			method = "MappingExist"                                                                      desc = "wap20套餐">
+	 	<mapping name = "380000035015"             mapping = "WAP20"        method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"                           desc = "wap20套餐"/>
+	   	<mapping name = "380000035015" 	           mapping = "WAPDATA" 		method = "MappingDepend" 	   expr = "WAP20,A380000035015_PROP_L.262100000109"              desc = "wap20套餐属性"/>
+	 </mapping>
+	 <mapping name = "380000180405" 			 mapping = "TDLET" 			method = "MappingExist"       desc = "TD-LTE关联产品服务">
+	    <mapping name = "380000180405" 			 mapping = "TDLET" 			method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"                      desc = "TD-LTE关联产品服务"/>
+	    <mapping name = "380000180405" 			 mapping = "TDLETOPC" 	    method = "MappingDepend"       expr = "TDLET,A380000180405_PROP_L.TDLETOPC"             desc = "4G用户的OPC"/>
+	    <mapping name = "380000180405" 			 mapping = "TDLETKI" 	    method = "MappingDepend"       expr = "TDLET,A380000180405_PROP_L.TDLETKI"              desc = "4G用户的KI"/>
+	 </mapping>
+	 <mapping name = "380000180903" 			 mapping = "TDLTELGPRS" 	method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"                      desc = "TD-LTE流量封顶限制"/> 
+	 <!--add by zhoutq 数据-2015-6792 20150723  -->
+	 <mapping name = "380000021394" 				mapping = "SHSDKSL" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "移动杉德卡业务受理"/>
+     <mapping name = "380000021394" 			 mapping = "BDYDSDK" 		method = "MappingExist"       desc = "移动杉德卡业务">
+       <mapping name = "380000021394" 			 mapping = "BDYDSDK"  		method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			            desc = "移动杉德卡业务"/>
+       <mapping name = "380000021394" 			 mapping = "UICCID" 	    method = "MappingDepend"       expr = "BDYDSDK,A380000021394_PROP_L.UICCID"              desc = "UICCID"/>
+       <mapping name = "380000021394" 			 mapping = "USERSN" 	    method = "MappingDepend"       expr = "BDYDSDK,A380000021394_PROP_L.USERSN"              desc = "USERSN"/>
+       <mapping name = "380000021394" 			 mapping = "OLDUICCID" 	    method = "MappingDepend"       expr = "BDYDSDK,A380000021394_PROP_L.OLDUICCID"           desc = "OLDUICCID"/>
+       <mapping name = "380000021394" 			 mapping = "OLDUSERSN" 	    method = "MappingDepend"       expr = "BDYDSDK,A380000021394_PROP_L.OLDUSERSN"           desc = "OLDUSERSN"/>
+     </mapping>
+     
+     <!--add by fushuan 数据-2017-4690-新增和目产品云存储套餐需求-crm-开通 start -->
+     <mapping name = "390000214987"			mapping = "HMYCC" 			method = "MappingExist" 	  desc = "和目云存储">
+     	<mapping name = "390000214987" 	    mapping = "HMYCC"  		    method = "MappingSplite"      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"  desc = "和目云存储"/>
+     	<mapping name = "390000214987" 		mapping = "HM_OPR_VAl"  	method = "MappingDepend"      expr = "HMYCC,A390000214987_PROP_L.HM_OPR"  desc = "和目云存储"/>
+     	<mapping name = "390000214987" 		mapping = "HM_OPR_SRC_VAL"  method = "MappingDepend"      expr = "HMYCC,A390000214987_PROP_L.HM_OPR_SRC"  desc = "和目云存储"/>
+     </mapping>
+     <!--add by fushuan 数据-2017-4690-新增和目产品云存储套餐需求-crm-开通 end -->  
+     <mapping name = "380000021289" 			 mapping = "VMFV" 			method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"                       desc = "语音信箱"/>
+     <mapping name = "380000530083" 			 mapping = "SOCLIP" 	    method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"                       desc = "来电强显"/>
+     <mapping name = "390000001082" 			 mapping = "WAP20TNET" 	    method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"                       desc = "WAP20暂停CMNET功能"/>
+     <mapping name = "380000185229" 			 mapping = "HLWDSJCB" 	    method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"                       desc = "互联网电视基础包服务"/>
+     <mapping name = "1380000185232" 			 mapping = "HLWDSLNB" 	    method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"                       desc = "互联网电视两年包"/>
+     <!-- add by fengliang 信息-2017-11038-关于下发一号多终端业务支撑改造方案的通知 -->
+     <mapping name = "390020005024"              mapping = "YHDZD"          method = "MappingExist"       desc = "一号多终端">
+	    <mapping name = "390020005024" 				mapping = "YHDZDYW" 			method = "MappingSplite" 	  expr = "C=C;EC=U;CE=U;X=X;U=U;E=E;*=DU"  desc = "一号多终端"/>
+	    <mapping name = "390020005024" 				mapping = "YHDZDFHM" 			method = "MappingDepend" 	  expr = "YHDZDYW,A390020005024_PROP_L.390020005025"  desc = "一号多终端副号码"/>
+	 </mapping>
+  </mappings>   
+</ucmframe>

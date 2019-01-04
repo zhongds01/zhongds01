@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="gb2312"?>
+<CacheConfig>
+
+    <!-- 配置来源配置 -->
+    <ConfigKind name="config">
+        <ConfigItem name="configSrc" remark="配置来源，FILE:文件；DB:数据库">FILE</ConfigItem>
+    </ConfigKind>
+
+    <!-- Zookeeper配置-->
+    <ConfigKind name="zk">
+        <ConfigItem name="zkServerList" remark="zk服务器列表">20.26.25.37:2181,20.26.25.38:2181,20.26.25.39:2181</ConfigItem>
+        <ConfigItem name="zkCatalog" remark="zk目录">/aicache</ConfigItem>
+    </ConfigKind>
+
+    <!-- 缓存路由配置 -->
+    <cache_routers>
+        <cache_router data_type="SACENTER" cache_type="redis" belong_group="SACENTER" status="U"/>
+    </cache_routers>
+
+    <!-- 缓存参数配置 -->
+    <cache_parameters>
+        <parameter server_code="COMMON" parameter_name="Serialization" parameter_value="java" state="U"/>
+        <parameter server_code="REDIS" parameter_name="MaxActive" parameter_value="40" state="U"/>
+        <parameter server_code="REDIS" parameter_name="MaxIdle" parameter_value="20" state="U"/>
+        <parameter server_code="REDIS" parameter_name="MaxWait" parameter_value="5000" state="U"/>
+        <parameter server_code="REDIS" parameter_name="TestOnBorrow" parameter_value="true" state="U"/>
+        <parameter server_code="REDIS" parameter_name="NeedWriteSYN" parameter_value="true" state="U"/>
+    </cache_parameters>
+
+    <!-- 缓存服务器配置 -->
+    <cache_servers>
+        <server server_code="M" server_ip="20.26.25.40" server_port="38001"
+                belong_group="SACENTER" group_sort="1" use_type="1" requirepass="" state="U" remarks="" />
+        <server server_code="M" server_ip="20.26.25.40" server_port="38001"
+                belong_group="SACENTER" group_sort="1" use_type="2" requirepass="" state="U" remarks="" />
+    </cache_servers>
+
+</CacheConfig>

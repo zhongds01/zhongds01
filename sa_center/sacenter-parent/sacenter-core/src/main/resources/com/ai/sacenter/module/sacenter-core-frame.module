@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sacenter name="服务开通核心服务模块">
+   <module file="com/ai/sacenter/module/proxy/ucmframe-proxy-frame.xml" name = "即开即通代理模块" use="true"/>
+   <module file="com/ai/sacenter/module/proxy/ucmframe-gen-ui-vm.xml" name = "即开即通构造用户接口模块" use="true"/>
+</sacenter>

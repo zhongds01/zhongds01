@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe id = "UcmCbossMapping" desc = "开通测CBOSS模块">
+   <mappings id = "ICbossGernL" desc = "CBOSS产品功能模块[开通测]">
+      <!--手机邮箱商务版-->
+      <mapping name = "270000053005"                mapping = "PSML"            method = "MappingExist"    desc = "手机邮箱商务版[PSML][一级BOSS]">
+		 <mapping name = "270000053005"                mapping = "PSMLSIGNUP"      method = "MappingDirect"    desc = "手机邮箱商务版[PSML][一级BOSS]"/>
+	  </mapping>
+      <!--手机邮箱个人版-->
+      <mapping name = "270000090618"                mapping = "PPML"            method = "MappingExist"    desc = "手机邮箱个人版[PPML][一级BOSS]">
+		 <mapping name = "270000090618"                mapping = "PPMLSIGNUP"      method = "MappingDirect"    desc = "手机邮箱个人版[PPML][一级BOSS]"/>
+		 <mapping name = "270000090618"                mapping = "PPMLSPID"        method = "MappingDepend"    expr = "PPMLSIGNUP,PPMLSPID"    desc = "手机邮箱个人版企业代码[PPML][一级BOSS]"/>
+		 <mapping name = "270000090618"                mapping = "PPMLBIZCODE"     method = "MappingDepend"    expr = "PPMLSIGNUP,PPMLBIZCODE" desc = "手机邮箱个人版业务代码[PPML][一级BOSS]"/>
+		 <mapping name = "270000090618"                mapping = "PPMLGLOBAL"      method = "MappingDepend"    expr = "PPMLSIGNUP,PPMLGLOBAL"  desc = "手机邮箱个人版是否全网[PPML][一级BOSS]"/>
+	  </mapping>
+      <!--集团WLAN-->
+	  <mapping name="270000015001" 				    mapping="WLAN" 				method="MappingExist"	  desc="集团WLAN[WLAN][一级BOSS]">
+	     <mapping  name = "270000015001"               mapping = "WLANSIGNUP"       method = "MappingDirect"   desc="集团WLAN[WLAN][一级BOSS]" />
+	     <mapping  name = "270000015001"               mapping = "WLANPSWD"   	    method = "MappingDepend"   expr="WLANSIGNUP,A270000015001_PROP_L.262100000015_D"    	desc="集团WLAN业务密码[WLAN][一级BOSS]"/>
+		 <mapping  name = "270000015001"               mapping = "WLANSPID"   	    method = "MappingDepend"   expr="WLANSIGNUP,WLANSPID"    	desc="集团WLAN企业代码[WLAN][一级BOSS]"/>
+		 <mapping  name = "270000015001"               mapping = "WLANBIZCODE"	    method = "MappingDepend"   expr="WLANSIGNUP,WLANBIZCODE" 	desc="集团WLAN业务代码[WLAN][一级BOSS]"/>
+		 <mapping  name = "270000015001"               mapping = "WLANBIZOODE" 		method = "MappingDepend"   expr="WLANSIGNUP,WLANBIZOODE"    desc="集团WLAN旧套餐[WLAN][一级BOSS]"/>
+		 <mapping  name = "270000015001"               mapping = "WLANBLFLG"  	    method = "MappingDepend"   expr="WLANSIGNUP,WLANBLFLG"   	desc="集团WLAN计费类型[WLAN][一级BOSS]"/>
+		 <mapping  name = "270000015001"               mapping = "WLANINFOCODE"     method = "MappingDepend"   expr="WLANSIGNUP,WLANINFOCODE"   desc="集团WLAN基础信息代码[WLAN][一级BOSS]"/>
+         <mapping  name = "270000015001"               mapping = "WLANINFOVALUE"    method = "MappingDepend"   expr="WLANSIGNUP,WLANINFOVALUE"  desc="集团WLAN基础信息值[WLAN][一级BOSS]"/>
+         <mapping  name = "270000015001"               mapping = "WLANGLOBAL" 	    method = "MappingDepend"   expr="WLANSIGNUP,WLANGLOBAL"  	desc="集团WLAN是否全网[WLAN][一级BOSS]"/>
+	  	 <mapping  name = "270000015001"               mapping = "WLANOLDPWD" 	    method = "MappingDepend"   expr="WLANSIGNUP,A270000015001_PROP_L.OLDPWD"  	desc="集团WLAN旧密码[WLAN][一级BOSS]"/>
+	  </mapping>
+	  <mapping name = "270000015003" 			    mapping = "WLANGJMY"  		method = "MappingSplite"  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "WLAN国际漫游"/>
+	  <mapping name = "270000090383" 			    mapping = "LWLAN"  		    method = "MappingSplite"  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "WLAN封顶限制(CMCC热点)"/>
+	  <!--WLAN自动认证专属资费-->
+	  <mapping name="270000090592" 				    mapping="CZDWLAN" 		    method="MappingExist"	  desc="自动认证专属资费[DWLAN][一级BOSS]">
+	     <mapping  name = "270000090592"               mapping = "CZDWLANSIGNUP"        method = "MappingDirect"   desc="自动认证专属资费[ZDWLAN][一级BOSS]" />
+	     <mapping  name = "270000090592"               mapping = "CZDWLANPSWD"   	    method = "MappingDepend"   expr="CZDWLANSIGNUP,A270000015001_PROP_L.262100000015_D"    	desc="自动认证专属资费业务密码[DWLAN][一级BOSS]"/>
+		 <mapping  name = "270000090592"               mapping = "CZDWLANSPID"   	    method = "MappingDepend"   expr="CZDWLANSIGNUP,CZDWLANSPID"    	 desc="自动认证专属资费企业代码[DWLAN][一级BOSS]"/>
+		 <mapping  name = "270000090592"               mapping = "CZDWLANBIZCODE"	    method = "MappingDepend"   expr="CZDWLANSIGNUP,CZDWLANBIZCODE" 	 desc="自动认证专属资费业务代码[DWLAN][一级BOSS]"/>
+		 <mapping  name = "270000090592"               mapping = "CZDWLANBLFLG"  	    method = "MappingDepend"   expr="CZDWLANSIGNUP,CZDWLANBLFLG"   	 desc="自动认证专属资费计费类型[DWLAN][一级BOSS]"/>
+		 <mapping  name = "270000090592"               mapping = "CZDWLANINFOCODE"      method = "MappingDepend"   expr="CZDWLANSIGNUP,CZDWLANINFOCODE"  desc = "自动认证专属资费基础信息代码[DWLAN][一级BOSS]"/>
+         <mapping  name = "270000090592"               mapping = "CZDWLANINFOVALUE"     method = "MappingDepend"   expr="CZDWLANSIGNUP,CZDWLANINFOVALUE" desc = "自动认证专属资费基础信息值[DWLAN][一级BOSS]"/>
+         <mapping  name = "270000090592"               mapping = "CZDWLANGLOBAL" 	    method = "MappingDepend"   expr="CZDWLANSIGNUP,CZDWLANGLOBAL"  	 desc="自动认证专属资费是否全网[DWLAN][一级BOSS]"/>
+	  </mapping>  
+	  <!--自动认证专属资费WLAN-->
+	  <mapping name="272999999825" 				    mapping="DWLAN" 		    method="MappingExist"	  desc="自动认证专属资费[DWLAN][一级BOSS]">
+	     <mapping  name = "272999999825"               mapping = "DWLANSIGNUP"      method = "MappingDirect"   desc="自动认证专属资费[DWLAN][一级BOSS]" />
+	     <mapping  name = "272999999825"               mapping = "DWLANPSWD"   	    method = "MappingDepend"   expr="DWLANSIGNUP,DWLANPSWD"    	desc="自动认证专属资费业务密码[DWLAN][一级BOSS]"/>
+		 <mapping  name = "272999999825"               mapping = "DWLANSPID"   	    method = "MappingDepend"   expr="DWLANSIGNUP,DWLANSPID"    	desc="自动认证专属资费企业代码[DWLAN][一级BOSS]"/>
+		 <mapping  name = "272999999825"               mapping = "DWLANBIZCODE"	    method = "MappingDepend"   expr="DWLANSIGNUP,DWLANBIZCODE" 	desc="自动认证专属资费业务代码[DWLAN][一级BOSS]"/>
+		 <mapping  name = "272999999825"               mapping = "DWLANBLFLG"  	    method = "MappingDepend"   expr="DWLANSIGNUP,DWLANBLFLG"   	desc="自动认证专属资费计费类型[DWLAN][一级BOSS]"/>
+		 <mapping  name = "272999999825"               mapping = "DWLANINFOCODE"    method = "MappingDepend"   expr="DWLANSIGNUP,DWLANINFOCODE"    desc = "自动认证专属资费基础信息代码[DWLAN][一级BOSS]"/>
+         <mapping  name = "272999999825"               mapping = "DWLANINFOVALUE"   method = "MappingDepend"   expr="DWLANSIGNUP,DWLANINFOVALUE"   desc = "自动认证专属资费基础信息值[DWLAN][一级BOSS]"/>
+         <mapping  name = "272999999825"               mapping = "DWLANGLOBAL" 	    method = "MappingDepend"   expr="DWLANSIGNUP,DWLANGLOBAL"  	desc="自动认证专属资费是否全网[DWLAN][一级BOSS]"/>
+	  </mapping>
+	  <!--Blackberry个人版-->
+      <mapping name = "270000091101"                mapping = "BLBY"            method = "MappingExist"    desc = "黑莓个人版[BLBY][一级BOSS]">
+         <mapping name = "270000091101"                mapping = "BLBYSIGNUP"       method = "MappingDirect"   desc = "黑莓个人版[BLBY][一级BOSS]"/>
+         <mapping name = "270000091101"                mapping = "BLBYSERVTYPE"     method = "MappingDepend"   expr = "BLBYSIGNUP,BLBYSERVTYPE"       desc = "黑莓个人版业务类型[BLBY][一级BOSS]"/>
+      </mapping>
+      <!--BlackBerry扩展版-->
+      <!--<mapping name = "270000053007"                mapping = "BLBG"            method = "MappingExist"    desc = "黑莓扩展版[BLBY][一级BOSS]">
+         <mapping name = "270000053007"                mapping = "BLBGSIGNUP"       method = "MappingDirect"   desc = "黑莓扩展版[BLBY][一级BOSS]"/>
+         <mapping name = "270000053007"                mapping = "BLBGSERVTYPE"     method = "MappingDepend"   expr = "BLBGSIGNUP,BLBGSERVTYPE"       desc = "黑莓扩展版业务类型[BLBY][一级BOSS]"/>
+      </mapping>-->
+      <!--BlackBerry集团版-->
+      <mapping name = "272999999933"                mapping = "BLBJ"            method = "MappingExist"    desc = "黑莓集团版[BLBY][一级BOSS]">
+         <mapping name = "272999999933"                mapping = "BLBJSIGNUP"       method = "MappingDirect"   desc = "黑莓集团版[BLBY][一级BOSS]"/>
+         <mapping name = "272999999933"                mapping = "BLBJSERVTYPE"     method = "MappingDepend"   expr = "BLBJSIGNUP,MBLBRYYWLX"       desc = "黑莓集团版业务类型[BLBY][一级BOSS]"/>
+         <mapping name = "272999999933"                mapping = "BLBJKFMS"         method = "MappingDepend"   expr = "BLBJSIGNUP,A272999999933_PROP_L.260000002314"       desc = "黑莓集团版开放模式(1MAS版2ADC版）[BLBY][一级BOSS]"/>
+      </mapping>
+      <!--BlackBerry两地行版-->
+      <mapping name = "270000053011"                mapping = "BLBX"            method = "MappingExist"    desc = "黑莓两地行版[BLBY][一级BOSS]">
+         <mapping name = "270000053011"                mapping = "BLBXSIGNUP"       method = "MappingDirect"   desc = "黑莓两地行版[BLBY][一级BOSS]"/>
+      </mapping>
+      
+      <!--飞信-->
+      <mapping name = "270000080011"                mapping = "IMPS"            method = "MappingExist"    desc = "飞信[IMPS][一级BOSS]">
+         <mapping name = "270000080011"                mapping = "IMPSSIGNUP"      method = "MappingDirect"    desc = "飞信[IMPS][一级BOSS]"/>
+	     <mapping name = "270000080011"                mapping = "IMPSSPID"        method = "MappingDepend"   expr = "IMPSSIGNUP,IMPSSPID"       desc = "飞信企业代码[IMPS][一级BOSS]"/>
+	     <mapping name = "270000080011"                mapping = "IMPSBIZCODE"     method = "MappingDepend"   expr = "IMPSSIGNUP,IMPSBIZCODE"    desc = "飞信业务代码[IMPS][一级BOSS]"/>
+	     <mapping name = "270000080011"                mapping = "IMPSBLFLG"       method = "MappingDepend"   expr = "IMPSSIGNUP,IMPSBLFLG"      desc = "飞信业务计费类型[IMPS][一级BOSS]"/>
+	     <mapping name = "270000080011"                mapping = "IMPSGLOBAL"      method = "MappingDepend"   expr = "IMPSSIGNUP,IMPSGLOBAL"     desc = "飞信是否全网[IMPS][一级BOSS]"/>
+	     <mapping name = "270000080011"                mapping = "IMPLDBYEXDATE"      method = "MappingDepend"   expr = "IMPSSIGNUP,A270000080011_PROP_L.IMPLDBYEXDATE"    desc = "飞信失效时间（飞信大包月业务需要用到）[IMPS][一级BOSS]"/>
+	     <mapping name = "270000080011"                mapping = "IMPLDBYEFDATE"      method = "MappingDepend"   expr = "IMPSSIGNUP,A270000080011_PROP_L.IMPLDBYEFDATE"    desc = "飞信生效效时间（飞信大包月业务需要用到）[IMPS][一级BOSS]"/>
+	     <mapping name = "380000116323"                mapping = "IMPSFXDBY"          method = "MappingDirect"       desc = "飞信大包月"/>
+         <mapping name = "380000116327"                mapping = "IMPSFXDBY"          method = "MappingDirect"       desc = "飞信大包月"/>
+         <mapping name = "380000116325"                mapping = "IMPSFXDBY"          method = "MappingDirect"       desc = "飞信大包月"/>
+         <mapping name = "310080011001"                mapping = "BASEHLW"            method = "MappingDirect"       desc = "飞信基础免费产品"/>
+         <mapping name = "270000080011"                mapping = "HLWYW"           method = "MappingDirect"   desc = "飞信[IMPS][一级BOSS]"/>
+         
+      </mapping>
+      <!--号薄管家[VGOP]-->
+      <mapping name = "270000090338"                mapping = "PIMM"            method = "MappingExist"    desc = "号薄管家[PIMM][一级BOSS]">
+	     <mapping name = "270000090338"                mapping = "PIMMSIGNUP"      method = "MappingDirect"   desc = "号薄管家[PIMM][一级BOSS]"/>
+	     <mapping name = "270000090338"                mapping = "PIMMSPID"        method = "MappingDepend"   expr = "PIMMSIGNUP,PIMMSPID"      desc = "号薄管家企业代码[PIMM][一级BOSS]"/>
+	     <mapping name = "270000090338"                mapping = "PIMMBIZCODE"     method = "MappingDepend"   expr = "PIMMSIGNUP,PIMMBIZCODE"   desc = "号薄管家业务代码[PIMM][一级BOSS]"/>
+	     <mapping name = "270000090338"                mapping = "PIMMBLFLG"       method = "MappingDepend"   expr = "PIMMSIGNUP,PIMMBLFLG"     desc = "号薄管家业务计费类型[PIMM][一级BOSS]"/>
+	     <mapping name = "270000090338"                mapping = "PIMMINFOCODE"    method = "MappingDepend"   expr = "PIMMSIGNUP,PIMMINFOCODE"  desc = "号薄管家扩展代码[PIMM][一级BOSS]"/>
+	     <mapping name = "270000090338"                mapping = "PIMMINFOVALUE"   method = "MappingDepend"   expr = "PIMMSIGNUP,PIMMINFOVALUE" desc = "号薄管家扩展信息[PIMM][一级BOSS]"/>
+	     <mapping name = "270000090338"                mapping = "PIMMGLOBAL"      method = "MappingDepend"   expr = "PIMMSIGNUP,PIMMGLOBAL"    desc = "号薄管家是否全网[PIMM][一级BOSS]"/>
+      </mapping>
+      <!--北京通用下载-->
+      <mapping name = "270000090349"                mapping = "BJDP"            method = "MappingExist"    desc = "北京通用下载[BJDP][一级BOSS]">
+         <mapping name = "270000090349"                mapping = "BJDPSIGNUP"      method = "MappingDirect"   desc = "北京通用下载[BJDP][一级BOSS]"/>
+         <mapping name = "270000090349"                mapping = "BJDPSPID"        method = "MappingDepend"   expr = "BJDPSIGNUP,BJDPSPID"       desc = "北京通用下载企业代码[BJDP][一级BOSS]"/>
+         <mapping name = "270000090349"                mapping = "BJDPBIZCODE"     method = "MappingDepend"   expr = "BJDPSIGNUP,BJDPBIZCODE"    desc = "北京通用下载业务代码[BJDP][一级BOSS]"/>
+         <mapping name = "270000090349"                mapping = "BJDPBLFLG"       method = "MappingDepend"   expr = "BJDPSIGNUP,BJDPBLFLG"      desc = "北京通用下载计费类型[BJDP][一级BOSS]"/>
+         <mapping name = "270000090349"                mapping = "BJDPGLOBAL"      method = "MappingDepend"   expr = "BJDPSIGNUP,BJDPGLOBAL"     desc = "北京通用下载是否全网[BJDP][一级BOSS]"/>
+      </mapping>
+      <!--无线音乐俱乐部会员-->
+      <mapping name = "270000090160"                mapping = "MUSC"            method = "MappingExist"    desc = "无线音乐俱乐部会员[MUSC][一级BOSS]">
+		 <mapping name = "270000090160"                mapping = "MUSCSIGNUP"      method = "MappingDirect"   desc = "无线音乐俱乐部会员[MUSC][一级BOSS]"/>
+     	 <mapping name = "270000090160"                mapping = "MUSCCRBFG"       method = "MappingDepend"   expr = "MUSCSIGNUP,MUSCCRBFG"     desc = "无线音乐俱乐部会员是否彩铃用户[MUSC][一级BOSS]"/>
+     	 <mapping name = "270000090160"                mapping = "MUSCLEVEL"       method = "MappingDepend"   expr = "MUSCSIGNUP,MUSCLEVEL"     desc = "无线音乐俱乐部会员级别代码[MUSC][一级BOSS]"/>
+     	 <mapping name = "270000090160"                mapping = "MUSCHLEVEL"      method = "MappingDepend"   expr = "MUSCSIGNUP,MUSCHLEVEL"    desc = "无线音乐俱乐部会员当月最高会员级别[MUSC][一级BOSS]"/>
+     	 <mapping name = "270000090160"                mapping = "MUSCGLOBAL"      method = "MappingDepend"   expr = "MUSCSIGNUP,MUSCGLOBAL"    desc = "手机支付是否全网[MPAY][一级BOSS]"/>
+	  </mapping>
+	  <!--无线音乐下载-->
+      <mapping name = "272999999804"                mapping = "MSDP"            method = "MappingExist"    desc = "无线音乐下载[MSDP][一级BOSS]">
+		 <mapping name = "272999999804"                mapping = "MSDPSIGNUP"      method = "MappingDirect"   desc = "无线音乐下载[MSDP][一级BOSS]"/>
+     	 <mapping name = "272999999804"                mapping = "MSDPSPID"        method = "MappingDepend"   expr = "MSDPSIGNUP,MSDPSPID"      desc = "无线音乐下载企业代码[MSDP][一级BOSS]"/>
+     	 <mapping name = "272999999804"                mapping = "MSDPBIZCODE"     method = "MappingDepend"   expr = "MSDPSIGNUP,MSDPBIZCODE"   desc = "无线音乐下载业务代码[MSDP][一级BOSS]"/>
+     	 <mapping name = "272999999804"                mapping = "MSDPLEVEL"       method = "MappingDepend"   expr = "MSDPSIGNUP,MSDPLEVEL"     desc = "无线音乐下载级别代码[MSDP][一级BOSS]"/>
+     	 <mapping name = "272999999804"                mapping = "MSDPMBELL"       method = "MappingDepend"   expr = "MSDPSIGNUP,MSDPMBELL"     desc = "无线音乐下载是否彩铃用户[MSDP][一级BOSS]"/>
+     	 <mapping name = "272999999804"                mapping = "MSDPBLFLG"       method = "MappingDepend"   expr = "MSDPSIGNUP,MSDPBLFLG"     desc = "无线音乐下载业务计费类型[MSDP][一级BOSS]"/>
+     	 <mapping name = "272999999804"                mapping = "MSDPGLOBAL"      method = "MappingDepend"   expr = "MSDPSIGNUP,MSDPGLOBAL"    desc = "无线音乐下载是否全网[MSDP][一级BOSS]"/>
+	  </mapping>
+	  <!--老铃音乐盒-->
+      <mapping name = "270000090175"                mapping = "MSBX"            method = "MappingExist"    desc = "老铃音乐盒[CRBT][省彩铃平台]">
+		 <mapping name = "270000090175"                mapping = "MSBXSIGNUP"      method = "MappingDirect"   desc = "老铃音乐盒[CRBT][省彩铃平台]"/>
+     	 <mapping name = "270000090175"                mapping = "MSBXSPID"        method = "MappingDepend"   expr = "MSBXSIGNUP,MSBXSPID"      desc = "老铃音乐盒企业代码[CRBT][省彩铃平台]"/>
+     	 <mapping name = "270000090175"                mapping = "MSBXBIZCODE"     method = "MappingDepend"   expr = "MSBXSIGNUP,MSBXBIZCODE"   desc = "老铃音乐盒业务代码[CRBT][省彩铃平台]"/>
+     	 <mapping name = "270000090175"                mapping = "MSBXBLFLG"       method = "MappingDepend"   expr = "MSBXSIGNUP,MSBXBLFLG"     desc = "老铃音乐盒业务计费类型[CRBT][省彩铃平台]"/>
+	  </mapping>
+	  <!--铃音盒-->
+      <mapping name = "272999999851"                mapping = "MXBX"            method = "MappingExist"    desc = "铃音盒[CRBT][省彩铃平台]">
+		 <mapping name = "272999999851"                mapping = "MXBXSIGNUP"      method = "MappingDirect"   desc = "铃音盒[CRBT][省彩铃平台]"/>
+     	 <mapping name = "272999999851"                mapping = "MXBXSPID"        method = "MappingDepend"   expr = "MXBXSIGNUP,MXBXSPID"      desc = "铃音盒企业代码[CRBT][省彩铃平台]"/>
+     	 <mapping name = "272999999851"                mapping = "MXBXBIZCODE"     method = "MappingDepend"   expr = "MXBXSIGNUP,MXBXBIZCODE"   desc = "铃音盒业务代码[CRBT][省彩铃平台]"/>
+     	 <mapping name = "272999999851"                mapping = "MXBXBLFLG"       method = "MappingDepend"   expr = "MXBXSIGNUP,MXBXBLFLG"     desc = "铃音盒业务计费类型[CRBT][省彩铃平台]"/>
+	  </mapping>
+	  <!--省彩铃彩铃之家-->
+      <mapping name = "270000090378"                mapping = "MSRH"            method = "MappingExist"    desc = "彩铃之家[MSRH][省彩铃平台]">
+		 <mapping name = "270000090378"                mapping = "MSRHSIGNUP"      method = "MappingDirect"   desc = "彩铃之家[MSRH][省彩铃平台]"/>
+      </mapping>
+      <!--国际VOIP-->
+      <mapping name = "270000091228"                mapping = "VOIP"            method = "MappingExist"    desc = "国际VOIP[VOIP][VOIP平台]">
+		 <mapping name = "270000091228"                mapping = "VOIPSIGNUP"      method = "MappingDirect"   desc = "国际VOIP[VOIP][VOIP平台]"/>
+      </mapping>
+      <!--139手机邮箱-->
+      <mapping name = "270000090451"                mapping = "MBOX"            method = "MappingExist"    desc = "手机邮箱[MBOX][一级BOSS]">
+		 <mapping name = "270000090451"                mapping = "MBOXSIGNUP"      method = "MappingDirect"   desc = "手机邮箱[MBOX][一级BOSS]"/>
+		 <mapping name = "270000090451"                mapping = "MBOXSPID"        method = "MappingDepend"   expr = "MBOXSIGNUP,MBOXSPID"       desc = "手机邮箱企业代码[MBOX][一级BOSS]"/>
+		 <mapping name = "270000090451"                mapping = "MBOXBIZCODE"     method = "MappingDepend"   expr = "MBOXSIGNUP,MBOXBIZCODE"    desc = "手机邮箱业务代码[MBOX][一级BOSS]"/>
+		 <mapping name = "270000090451"                mapping = "MBOXBLFLG"       method = "MappingDepend"   expr = "MBOXSIGNUP,MBOXBLFLG"      desc = "手机邮箱计费类型[MBOX][一级BOSS]"/>
+		 <mapping name = "270000090451"                mapping = "MBOXGLOBAL"      method = "MappingDepend"   expr = "MBOXSIGNUP,MBOXGLOBAL"     desc = "手机邮箱是否全网[MBOX][一级BOSS]"/>
+         <mapping name = "310090451006"                mapping = "BASEHLW"         method = "MappingDirect"   desc = "139邮箱基础免费产品"/>
+         <mapping name = "270000090451"                mapping = "HLWYW"           method = "MappingDirect"   desc = "手机邮箱[MBOX][一级BOSS]"/>
+      </mapping>
+      <!--手机导航-->
+      <mapping name = "272999999812"                mapping = "NIAP"            method = "MappingExist"    desc = "手机导航[NIAP][一级BOSS]">
+		 <mapping name = "272999999812"                mapping = "NIAPSIGNUP"      method = "MappingDirect"   desc = "手机导航[NIAP][一级BOSS]"/>
+		 <mapping name = "272999999812"                mapping = "NIAPSPID"        method = "MappingDepend"   expr = "NIAPSIGNUP,NIAPSPID"      desc = "手机导航企业代码[NIAP][一级BOSS]"/>
+		 <mapping name = "272999999812"                mapping = "NIAPBIZCODE"     method = "MappingDepend"   expr = "NIAPSIGNUP,NIAPBIZCODE"   desc = "手机导航业务代码[NIAP][一级BOSS]"/>
+		 <mapping name = "272999999812"                mapping = "NIAPBLFLG"       method = "MappingDepend"   expr = "NIAPSIGNUP,NIAPBLFLG"     desc = "手机导航计费类型[NIAP][一级BOSS]"/>
+		 <mapping name = "272999999812"                mapping = "NIAPGLOBAL"      method = "MappingDepend"   expr = "NIAPSIGNUP,NIAPGLOBAL"    desc = "272999999812是否全网[NIAP][一级BOSS]"/>
+      </mapping>
+      <!--手机地图-->
+      <mapping name = "272999999816"                mapping = "MGIS"            method = "MappingExist"    desc = "手机地图[MGIS][一级BOSS]">
+         <mapping name = "272999999816"                mapping = "MGISSIGNUP"      method = "MappingDirect"   desc = "手机地图[MGIS][一级BOSS]"/>
+         <mapping name = "272999999816"                mapping = "MGISSPID"        method = "MappingDepend"   expr = "MGISSIGNUP,MGISSPID"      desc = "手机地图企业代码[MGIS][一级BOSS]"/>
+         <mapping name = "272999999816"                mapping = "MGISBIZCODE"     method = "MappingDepend"   expr = "MGISSIGNUP,MGISBIZCODE"   desc = "手机地图业务代码[MGIS][一级BOSS]"/>
+         <mapping name = "272999999816"                mapping = "MGISBLFLG"       method = "MappingDepend"   expr = "MGISSIGNUP,MGISBLFLG"     desc = "手机地图计费类型[MGIS][一级BOSS]"/>
+         <mapping name = "272999999816"                mapping = "MGISGLOBAL"      method = "MappingDepend"   expr = "MGISSIGNUP,MGISGLOBAL"    desc = "手机地图是否全网[MGIS][一级BOSS]"/>
+	  </mapping>
+	  <!--手机游戏-->
+      <mapping name = "272999999801"                mapping = "CMGP"            method = "MappingExist"    desc = "手机游戏[CMGP][一级BOSS]">
+         <mapping name = "272999999801"                mapping = "CMGPSIGNUP"      method = "MappingDirect"   desc = "手机游戏[CMGP][一级BOSS]"/>
+         <mapping name = "272999999801"                mapping = "CMGPSPID"        method = "MappingDepend"   expr = "CMGPSIGNUP,CMGPSPID"       desc = "手机游戏企业代码[CMGP][一级BOSS]"/>
+         <mapping name = "272999999801"                mapping = "CMGPBIZCODE"     method = "MappingDepend"   expr = "CMGPSIGNUP,CMGPBIZCODE"    desc = "手机游戏业务代码[CMGP][一级BOSS]"/>
+         <mapping name = "272999999801"                mapping = "CMGPBLFLG"       method = "MappingDepend"   expr = "CMGPSIGNUP,CMGPBLFLG"      desc = "手机游戏计费类型[CMGP][一级BOSS]"/>
+         <mapping name = "272999999801"                mapping = "CMGPCHARGE"      method = "MappingDepend"   expr = "CMGPSIGNUP,CMGPCHARGE"     desc = "手机游戏充值金额[CMGP][一级BOSS]"/>
+         <mapping name = "272999999801"                mapping = "CMGPCEAFLG"      method = "MappingDepend"   expr = "CMGPSIGNUP,CMGPCEAFLG"     desc = "手机游戏退订标记[CMGP][一级BOSS]"/>
+         <mapping name = "272999999801"                mapping = "CMGPGLOBAL"      method = "MappingDepend"   expr = "CMGPSIGNUP,CMGPGLOBAL"     desc = "手机游戏是否全网[CMGP][一级BOSS]"/>
+      </mapping>
+      <!-- add by fengliang 信息-2016-14097-关于下发《咪咕一级话费计费系统包月业务支撑系统实施方案》的通知 -->
+      <mapping name = "390000214380"                mapping = "MIGU"            method = "MappingExist"    desc = "咪咕统一话费计费[MIGU][一级BOSS]">
+         <mapping name = "390000214380"                mapping = "MIGUSIGNUP"      method = "MappingDirect"   desc = "咪咕统一话费计费[MIGU][一级BOSS]"/>
+         <mapping name = "390000214380"                mapping = "MIGUSPID"        method = "MappingDepend"   expr = "MIGUSIGNUP,MIGUSPID"       desc = "咪咕统一话费计费企业代码[MIGU][一级BOSS]"/>
+         <mapping name = "390000214380"                mapping = "MIGUBIZCODE"     method = "MappingDepend"   expr = "MIGUSIGNUP,MIGUBIZCODE"    desc = "咪咕统一话费计费业务代码[MIGU][一级BOSS]"/>
+         <mapping name = "390000214380"                mapping = "MIGUBLFLG"       method = "MappingDepend"   expr = "MIGUSIGNUP,MIGUBLFLG"      desc = "咪咕统一话费计费计费类型[MIGU][一级BOSS]"/>
+         <mapping name = "390000214380"                mapping = "MIGUCHARGE"      method = "MappingDepend"   expr = "MIGUSIGNUP,MIGUCHARGE"     desc = "咪咕统一话费计费充值金额[MIGU][一级BOSS]"/>
+         <mapping name = "390000214380"                mapping = "MIGUCEAFLG"      method = "MappingDepend"   expr = "MIGUSIGNUP,MIGUCEAFLG"     desc = "咪咕统一话费计费退订标记[MIGU][一级BOSS]"/>
+         <mapping name = "390000214380"                mapping = "MIGUGLOBAL"      method = "MappingDepend"   expr = "MIGUSIGNUP,MIGUGLOBAL"     desc = "咪咕统一话费计费是否全网[MIGU][一级BOSS]"/>
+         <mapping name = "390000214380"                mapping = "COOPCHANNEL"      method = "MappingDepend"   expr = "MIGUSIGNUP,A390000214380_PROP_L.MIGUCHANNEL"     desc = "咪咕统一话费计费受理渠道[MIGU][一级BOSS]"/>
+      </mapping>
+      <!-- 信息-2016-19352-YWZC000203940-关于下发互联网公司全业务计费业务支撑系统实施方案的通知-CRM开通 start -->
+      <mapping name = "390000212988"                mapping = "HULIANJFSIGNUP"            method = "MappingExist"    desc = "咪咕统一话费计费[MIGU][一级BOSS]">
+         <mapping name = "390000212988"                mapping = "HULIANJFSIGNUP"      method = "MappingDirect"   desc = "咪咕统一话费计费[MIGU][一级BOSS]"/>
+         <mapping name = "390000212988"                mapping = "HULIANJFSPID"        method = "MappingDepend"   expr = "HULIANJFSIGNUP,HULIANJFSPID"       desc = "咪咕统一话费计费企业代码[MIGU][一级BOSS]"/>
+         <mapping name = "390000212988"                mapping = "HULIANJFBIZCODE"     method = "MappingDepend"   expr = "HULIANJFSIGNUP,HULIANJFBIZCODE"    desc = "咪咕统一话费计费业务代码[MIGU][一级BOSS]"/>
+         <mapping name = "390000212988"                mapping = "HULIANJFBLFLG"       method = "MappingDepend"   expr = "HULIANJFSIGNUP,HULIANJFBLFLG"      desc = "咪咕统一话费计费计费类型[MIGU][一级BOSS]"/>
+         <mapping name = "390000212988"                mapping = "HULIANJFCHARGE"      method = "MappingDepend"   expr = "HULIANJFSIGNUP,HULIANJFCHARGE"     desc = "咪咕统一话费计费充值金额[MIGU][一级BOSS]"/>
+         <mapping name = "390000212988"                mapping = "HULIANJFCEAFLG"      method = "MappingDepend"   expr = "HULIANJFSIGNUP,HULIANJFCEAFLG"     desc = "咪咕统一话费计费退订标记[MIGU][一级BOSS]"/>
+         <mapping name = "390000212988"                mapping = "HULIANJFGLOBAL"      method = "MappingDepend"   expr = "HULIANJFSIGNUP,HULIANJFGLOBAL"     desc = "咪咕统一话费计费是否全网[MIGU][一级BOSS]"/>
+      </mapping>
+	  <!-- 信息-2016-19352-YWZC000203940-关于下发互联网公司全业务计费业务支撑系统实施方案的通知-CRM开通 end -->
+      <!-- add by fushuan 信息-2017-9279-任我看及任我用”套餐流量单独结算支撑改造的通知-客户管理等 -->
+      <mapping name = "390020004903"                mapping = "RWK_SIGNUP"            		 method = "MappingExist"    desc = "任我看  ">
+         <mapping name = "390020004903"             mapping = "RWK_SIGNUP"      	  		 method = "MappingDirect"   desc = "任我看"/>
+         <mapping name = "390020004903"             mapping = "BUSSINESS_VAL"         		 method = "MappingDepend"   expr = "RWK_SIGNUP,A390020004903_PROP_L.BUSSINESS"   			desc = "任我看"/>
+         <mapping name = "390020004903"             mapping = "RWK_SP_ID_VAL"      		 method = "MappingDepend"   expr = "RWK_SIGNUP,A390020004903_PROP_L.RWK_SP_ID"   		desc = "任我看"/>
+         <mapping name = "390020004903"             mapping = "RWK_PACKAGE_CODE_VAL"      method = "MappingDepend"   expr = "RWK_SIGNUP,A390020004903_PROP_L.RWK_PACKAGE_CODE"   	desc = "任我看"/>
+         <mapping name = "390020004903"             mapping = "RWK_SP_ID_E_VAL"           method = "MappingDepend"   expr = "RWK_SIGNUP,A390020004903_PROP_L.RWK_SP_ID_E"   		desc = "任我看"/>
+         <mapping name = "390020004903"             mapping = "RWK_PACKAGE_CODE_E_VAL"    method = "MappingDepend"   expr = "RWK_SIGNUP,A390020004903_PROP_L.RWK_PACKAGE_CODE_E"  desc = "任我看"/>
+         <mapping name = "390020004903"             mapping = "RWK_SUB_USER_VAL"          method = "MappingDepend"   expr = "RWK_SIGNUP,A390020004903_PROP_L.RWK_SUB_USER"   	    desc = "任我看-上网伴侣4g多终端副卡"/>
+         <mapping name = "390020004903"             mapping = "RWK_NEXT_CANCLE_VAL"       method = "MappingDepend"   expr = "RWK_SIGNUP,A390020004903_PROP_L.RWK_NEXT_CANCLE"  	desc = "任我看-取消下周期套餐"/>
+         <mapping name = "390020004903"             mapping = "IS_SUB_BILL_VAL"               method = "MappingDepend"   expr = "RWK_SIGNUP,A390020004903_PROP_L.IS_SUB_BILL"  	desc = "任我看 "/>
+      </mapping>
+       <mapping name = "390020004904"               mapping = "RWY_SIGNUP"            		 method = "MappingExist"    desc = "任我用  ">
+         <mapping name = "390020004904"             mapping = "RWY_SIGNUP"            		 method = "MappingDirect"   desc = "任我用"/>
+         <mapping name = "390020004904"             mapping = "BUSSINESS_VAL"         		 method = "MappingDepend"   expr = "RWY_SIGNUP,A390020004904_PROP_L.BUSSINESS"   			desc = "任我用"/>
+         <mapping name = "390020004904"             mapping = "RWY_SP_ID_VAL"      		  method = "MappingDepend"    expr = "RWY_SIGNUP,A390020004904_PROP_L.RWY_SP_ID"   		desc = "任我用"/>
+         <mapping name = "390020004904"             mapping = "RWY_PACKAGE_CODE_VAL"      method = "MappingDepend"   expr = "RWY_SIGNUP,A390020004904_PROP_L.RWY_PACKAGE_CODE"    desc = "任我用"/>
+         <mapping name = "390020004904"             mapping = "RWY_SP_ID_E_VAL"           method = "MappingDepend"   expr = "RWY_SIGNUP,A390020004904_PROP_L.RWY_SP_ID_E"   		desc = "任我用"/>
+         <mapping name = "390020004904"             mapping = "RWY_PACKAGE_CODE_E_VAL"    method = "MappingDepend"   expr = "RWY_SIGNUP,A390020004904_PROP_L.RWY_PACKAGE_CODE_E"  desc = "任我用"/>
+         <mapping name = "390020004904"             mapping = "RWY_SUB_USER_VAL"          method = "MappingDepend"   expr = "RWY_SIGNUP,A390020004904_PROP_L.RWY_SUB_USER"   	    desc = "任我用-上网伴侣4g多终端副卡"/>
+         <mapping name = "390020004904"             mapping = "RWY_NEXT_CANCLE_VAL"       method = "MappingDepend"   expr = "RWY_SIGNUP,A390020004904_PROP_L.RWY_NEXT_CANCLE"  	desc = "任我用 "/>
+         <mapping name = "390020004904"             mapping = "IS_SUB_BILL_VAL"           method = "MappingDepend"   expr = "RWY_SIGNUP,A390020004904_PROP_L.IS_SUB_BILL"  	desc = "任我用"/>
+      </mapping>
+      <!-- add by fushuan 信息-2017-9279-任我看及任我用”套餐流量单独结算支撑改造的通知-客户管理等 -->
+      <!--手机视频-->
+      <mapping name = "272999999814"                mapping = "STMM"            method = "MappingExist"    desc = "手机视频[STMM][一级BOSS]">
+         <mapping name = "272999999814"                mapping = "STMMSIGNUP"      method = "MappingDirect"   desc = "手机视频[STMM][一级BOSS]"/>
+         <mapping name = "272999999814"                mapping = "STMMSPID"        method = "MappingDepend"   expr = "STMMSIGNUP,STMMSPID"       desc = "手机视频企业代码[STMM][一级BOSS]"/>
+         <mapping name = "272999999814"                mapping = "STMMBIZCODE"     method = "MappingDepend"   expr = "STMMSIGNUP,STMMBIZCODE"    desc = "手机视频业务代码[STMM][一级BOSS]"/>
+         <mapping name = "272999999814"                mapping = "STMMCHGFLG"      method = "MappingDepend"   expr = "STMMSIGNUP,STMMCHGFLG"     desc = "手机视频业务变更标识[STMM][一级BOSS]"/>
+         <mapping name = "272999999814"                mapping = "STMMBLFLG"       method = "MappingDepend"   expr = "STMMSIGNUP,STMMBLFLG"      desc = "手机视频业务计费类型[STMM][一级BOSS]"/>
+         <mapping name = "272999999814"                mapping = "STMMGLOBAL"      method = "MappingDepend"   expr = "STMMSIGNUP,STMMGLOBAL"     desc = "手机视频是否全网[STMM][一级BOSS]"/>
+      </mapping>
+	  <!--手机钱包 -->
+	  <mapping name = "272999999817"                mapping = "CASH"            method = "MappingExist"    desc = "手机钱包[CASH][一级BOSS]">
+		 <mapping name = "272999999817"                mapping = "CASHSIGNUP"      method = "MappingDirect"   desc = "手机钱包[CASH][一级BOSS]"/>
+	     <mapping name = "272999999817"                mapping = "CASHSPID"        method = "MappingDepend"   expr = "CASHSIGNUP,CASHSPID"      desc = "手机钱包企业代码[CASH][一级BOSS]"/>
+	     <mapping name = "272999999817"                mapping = "CASHBIZCODE"     method = "MappingDepend"   expr = "CASHSIGNUP,CASHBIZCODE"   desc = "手机钱包业务代码[CASH][一级BOSS]"/>
+	     <mapping name = "272999999817"                mapping = "CASHBLFLG"       method = "MappingDepend"   expr = "CASHSIGNUP,CASHBLFLG"     desc = "手机钱包计费类型[CASH][一级BOSS]"/>
+	     <mapping name = "272999999817"                mapping = "CASHGLOBAL"      method = "MappingDepend"   expr = "CASHSIGNUP,CASHGLOBAL"    desc = "手机钱包是否全网[CASH][一级BOSS]"/>
+	  </mapping>
+	  <!--国际漫游一卡多号-->
+	  <mapping name = "270000090341"                mapping = "SIMM"            method = "MappingExist"   desc = "国际漫游一卡多号[SIMM][一级BOSS]">
+		 <mapping name = "270000090341"                mapping = "SIMMSIGNUP"     method = "MappingDirect"   desc = "国际漫游一卡多号[SIMM][一级BOSS]"/>
+		 <mapping name = "270000090341"                mapping = "SIMMBIFLG"      method = "MappingDepend"   expr = "SIMMSIGNUP,SIMMBIFLG"     desc = "国际漫游一卡多号副号码类型[SIMM][一级BOSS]"/>
+	     <mapping name = "270000090341"                mapping = "SIMMFMSL"       method = "MappingDepend"   expr = "SIMMSIGNUP,SIMMFMSL"      desc = "国际漫游一卡多号副号码[SIMM][一级BOSS]"/>
+	     <mapping name = "270000090341"                mapping = "SIMMPLAN"       method = "MappingDepend"   expr = "SIMMSIGNUP,SIMMPLAN"      desc = "国际漫游一卡多号套餐[SIMM][一级BOSS]"/>
+	  </mapping>
+	  <!--国际漫游优选-->
+	  <mapping name = "1270000080013"               mapping = "IMXP"            method = "MappingExist"   desc = "国际漫游优选[IMXP][一级BOSS]">
+		 <mapping name = "1270000080013"               mapping = "IMXPSIGNUP"     method = "MappingDirect"   desc = "国际漫游优选[IMXP][一级BOSS]"/>
+		 <mapping name = "270000080013"                mapping = "IMXPGHGRTC"     method = "MappingDirect"   desc = "香港日套餐[IMXP][一级BOSS]"/>
+		 <mapping name = "270000053032"                mapping = "IMXPGGMRTC"     method = "MappingDirect"   desc = "国际漫游日套餐[IMXP][一级BOSS]"/>
+		 <mapping name = "390000047948"                mapping = "IMXPGGMRTT"     method = "MappingDirect"   desc = "国际漫游包天优惠"/>
+		 <!-- add by fengliang  信息-2016-1915  -->
+		 <!-- modify by fengliang  信息-2016-15093 -->
+		 <mapping name = "390020001784"                mapping = "IMXPGTLRTC"     method = "MappingDirect"   desc = "泰国日套餐[IMXP][一级BOSS]"/>
+		
+	  </mapping>
+	  <!--手机对讲个人版 -->
+	  <mapping name = "270000090484"                mapping = "PPOC"            method = "MappingExist"    desc = "个人手机对讲[ppoc][一级BOSS]">
+		 <mapping name = "270000090484"                mapping = "PPOCSIGNUP"      method = "MappingDirect"   desc = "手机对讲个人版[PPOC][一级BOSS]"/>
+	     <mapping name = "270000090484"                mapping = "PPOCSPID"        method = "MappingDepend"   expr = "PPOCSIGNUP,PPOCSPID"      desc = "手机对讲个人版企业代码[PPOC][一级BOSS]"/>
+	     <mapping name = "270000090484"                mapping = "PPOCBIZCODE"     method = "MappingDepend"   expr = "PPOCSIGNUP,PPOCBIZCODE"   desc = "手机对讲个人版业务代码[PPOC][一级BOSS]"/>
+	     <mapping name = "270000090484"                mapping = "PPOCBLFLG"       method = "MappingDepend"   expr = "PPOCSIGNUP,PPOCBLFLG"     desc = "手机对讲个人版业务计费类型[PPOC][一级BOSS]"/>
+	     <mapping name = "270000090484"                mapping = "PPOCGLOBAL"      method = "MappingDepend"   expr = "PPOCSIGNUP,PPOCGLOBAL"    desc = "手机对讲个人版是否全网[PPOC][一级BOSS]"/>
+	  </mapping>
+	  <!--12580向前包月-->
+      <mapping name = "272999999811"                mapping = "IV"            method = "MappingExist"    desc = "12580向前包月[IV][一级BOSS]">
+	     <mapping name = "272999999811"                mapping = "IVSIGNUP"        method = "MappingDirect"   desc = "12580向前[1258][一级BOSS]"/>
+	     <mapping name = "272999999811"                mapping = "IVSPID"          method = "MappingDepend"   expr = "IVSIGNUP,IVSPID"          desc = "12580向前企业代码[1258][一级BOSS]"/>
+	     <mapping name = "272999999811"                mapping = "IVBIZCODE"       method = "MappingDepend"   expr = "IVSIGNUP,IVBIZCODE"       desc = "12580向前业务代码[1258][一级BOSS]"/>
+	     <mapping name = "272999999811"                mapping = "IVBLFLG"         method = "MappingDepend"   expr = "IVSIGNUP,IVBLFLG"         desc = "12580向前业务计费类型[1258][一级BOSS]"/>
+	     <mapping name = "272999999811"                mapping = "IVGLOBAL"        method = "MappingDepend"   expr = "IVSIGNUP,IVGLOBAL"        desc = "12580向前是否全网[1258][一级BOSS]"/>
+	  </mapping>
+	  <!--手机支付 -->
+	  <mapping name = "270000090201"                mapping = "MPAY"            method = "MappingExist"    desc = "手机支付[MPAY][一级BOSS]">
+		 <mapping name = "270000090201"                mapping = "MPAYSIGNUP"      method = "MappingDirect"   desc = "手机支付[MPAY][一级BOSS]"/>
+	     <mapping name = "270000090201"                mapping = "MPAYSPID"        method = "MappingDepend"   expr = "MPAYSIGNUP,MPAYSPID"      desc = "手机支付企业代码[MPAY][一级BOSS]"/>
+	     <mapping name = "270000090201"                mapping = "MPAYBIZCODE"     method = "MappingDepend"   expr = "MPAYSIGNUP,MPAYBIZCODE"   desc = "手机支付业务代码[MPAY][一级BOSS]"/>
+	     <mapping name = "270000090201"                mapping = "MPAYBLFLG"       method = "MappingDepend"   expr = "MPAYSIGNUP,MPAYBLFLG"     desc = "手机支付业务计费类型[MPAY][一级BOSS]"/>
+	     <mapping name = "270000090201"                mapping = "MPAYGLOBAL"      method = "MappingDepend"   expr = "MPAYSIGNUP,MPAYGLOBAL"    desc = "手机支付是否全网[MPAY][一级BOSS]"/>
+	  	 <mapping name = "270000090201"                mapping = "CARDTYPE"      method = "MappingDepend"   expr = "MPAYSIGNUP,A270000090201_PROP_L.CardType"    desc = "手机支付证件类型[MPAY][一级BOSS]"/>
+	  	 <mapping name = "270000090201"                mapping = "CARDNUM"      method = "MappingDepend"   expr = "MPAYSIGNUP,A270000090201_PROP_L.CardNum"    desc = "手机支付证件号码[MPAY][一级BOSS]"/>
+	  	 <mapping name = "270000090201"                mapping = "NAME"      method = "MappingDepend"   expr = "MPAYSIGNUP,A270000090201_PROP_L.Name"    desc = "手机支付用户姓名[MPAY][一级BOSS]"/>
+	  	 <mapping name = "270000090201"                mapping = "REGVER"      method = "MappingDepend"   expr = "MPAYSIGNUP,A270000090201_PROP_L.RegVer"    desc = "手机支付版本号[MPAY][一级BOSS]"/>
+	  	 <mapping name = "270000090201"                mapping = "REQNUM"      method = "MappingDepend"   expr = "MPAYSIGNUP,A270000090201_PROP_L.ReqNum"    desc = "手机支付交易码[MPAY][一级BOSS]"/>
+	  	 <mapping name = "270000090201"                mapping = "ACTIONUSERID"      method = "MappingDepend"   expr = "MPAYSIGNUP,A270000090201_PROP_L.ActionUserID"    desc = "手机支付操作员[MPAY][一级BOSS]"/>
+	  	 <mapping name = "270000090201"                mapping = "ACTIONID"      method = "MappingDepend"   expr = "MPAYSIGNUP,A270000090201_PROP_L.ActionID"    desc = "手机支付组织id[MPAY][一级BOSS]"/>
+	  </mapping>
+	  <!--手机电视-->
+      <mapping name = "270000080172"                mapping = "CMMB"            method = "MappingExist"    desc = "手机电视[CMMB][一级BOSS]">
+	     <mapping name = "270000080172"                mapping = "CMMBSIGNUP"      method = "MappingDirect"   desc = "手机电视[CMMB][一级BOSS]"/>
+		 <mapping name = "270000080172"                mapping = "CMMBSPID"        method = "MappingDepend"   expr = "CMMBSIGNUP,CMMBSPID"      desc = "手机电视企业代码[CMMB][一级BOSS]"/>
+		 <mapping name = "270000080172"                mapping = "CMMBBIZCODE"     method = "MappingDepend"   expr = "CMMBSIGNUP,CMMBBIZCODE"   desc = "手机电视业务代码[CMMB][一级BOSS]"/>
+		 <mapping name = "270000080172"                mapping = "CMMBBLFLG"       method = "MappingDepend"   expr = "CMMBSIGNUP,CMMBBLFLG"     desc = "手机电视计费类型[CMMB][一级BOSS]"/>
+		 <mapping name = "270000080172"                mapping = "CMMBGLOBAL"      method = "MappingDepend"   expr = "CMMBSIGNUP,CMMBGLOBAL"    desc = "手机电视是否全网[CMMB][一级BOSS]"/>
+	  </mapping>
+	  <!--手机电视功能暂停-->
+	  <mapping name = "390000001144" 			    mapping = "CMMBZT" 	        method = "MappingSplite"   expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"   desc = "手机电视功能暂停[CMMB][一级BOSS]"/>
+	  <!--农信通个人版-->
+	  <mapping name = "272999999805"                mapping = "RINP"            method = "MappingExist"    desc = "农信通[RINP][一级BOSS]">
+		 <mapping name = "272999999805"                mapping = "RINPSIGNUP"      method = "MappingDirect"   desc = "农信通个人版[RINP][一级BOSS]"/>
+	     <mapping name = "272999999805"                mapping = "RINPSPID"        method = "MappingDepend"   expr = "RINPSIGNUP,RINPSPID"      desc = "农信通个人版企业代码[RINP][一级BOSS]"/>
+	     <mapping name = "272999999805"                mapping = "RINPBIZCODE"     method = "MappingDepend"   expr = "RINPSIGNUP,RINPBIZCODE"   desc = "农信通个人版业务代码[RINP][一级BOSS]"/>
+	     <mapping name = "272999999805"                mapping = "RINPBLFLG"       method = "MappingDepend"   expr = "RINPSIGNUP,RINPBLFLG"     desc = "农信通个人版计费类型[RINP][一级BOSS]"/>
+	     <mapping name = "272999999805"                mapping = "RINPREGIONAL"    method = "MappingDepend"   expr = "RINPSIGNUP,RINPREGIONAL"  desc = "农信通个人版地区编号[RINP][一级BOSS]"/>
+	     <mapping name = "272999999805"                mapping = "RINPGLOBAL"      method = "MappingDepend"   expr = "RINPSIGNUP,RINPGLOBAL"    desc = "农信通个人版是否全网[RINP][一级BOSS]"/>
+	  </mapping>
+	  <!--手机动漫-->
+      <mapping name = "272999999806"                mapping = "MCSP"            method = "MappingExist"    desc = "手机动漫[MCSP][一级BOSS]">
+		 <mapping name = "272999999806"                mapping = "MCSPSIGNUP"      method = "MappingDirect"   desc = "手机动漫[MCSP][一级BOSS]"/>
+		 <mapping name = "272999999806"                mapping = "MCSPSPID"        method = "MappingDepend"   expr = "MCSPSIGNUP,MCSPSPID"      desc = "手机动漫企业代码[MCSP][一级BOSS]"/>
+		 <mapping name = "272999999806"                mapping = "MCSPBIZCODE"     method = "MappingDepend"   expr = "MCSPSIGNUP,MCSPBIZCODE"   desc = "手机动漫业务代码[MCSP][一级BOSS]"/>
+		 <mapping name = "272999999806"                mapping = "MCSPBLFLG"       method = "MappingDepend"   expr = "MCSPSIGNUP,MCSPBLFLG"     desc = "手机动漫计费类型[MCSP][一级BOSS]"/>
+		 <mapping name = "272999999806"                mapping = "MCSPGLOBAL"      method = "MappingDepend"   expr = "MCSPSIGNUP,MCSPGLOBAL"    desc = "手机动漫是否全网[MCSP][一级BOSS]"/>
+	  </mapping>
+	  <!--彩印业务-->
+      <mapping name = "390000099899"                mapping = "CYPT"            method = "MappingExist"    desc = "彩印业务[MCSP][一级BOSS]">
+		 <mapping name = "390000099899"                mapping = "CYPTSIGNUP"      method = "MappingDirect"   desc = "彩印业务[MCSP][一级BOSS]"/>
+		 <mapping name = "390000099899"                mapping = "CYPTSPID"        method = "MappingDepend"   expr = "CYPTSIGNUP,CYPTSPID"      desc = "彩印业务企业代码[MCSP][一级BOSS]"/>
+		 <mapping name = "390000099899"                mapping = "CYPTBIZCODE"     method = "MappingDepend"   expr = "CYPTSIGNUP,CYPTBIZCODE"   desc = "彩印业务业务代码[MCSP][一级BOSS]"/>
+		 <mapping name = "390000099899"                mapping = "CYPTBLFLG"       method = "MappingDepend"   expr = "CYPTSIGNUP,CYPTBLFLG"     desc = "彩印业务计费类型[MCSP][一级BOSS]"/>
+		 <mapping name = "390000099899"                mapping = "CYPTGLOBAL"      method = "MappingDepend"   expr = "CYPTSIGNUP,CYPTGLOBAL"    desc = "彩印业务是否全网[MCSP][一级BOSS]"/>
+	  </mapping>
+	   <!--和生活业务 信息-2015-16789-关于下发和生活业务支撑系统实施方案的通知 zhoutq 20150921-->
+      <mapping name = "390020001124"                mapping = "HSHYW"            method = "MappingExist"    desc = "和生活业务[MCSP][一级BOSS]">
+		 <mapping name = "390020001124"                mapping = "HSHYWSIGNUP"      method = "MappingDirect"   desc = "和生活业务[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001124"                mapping = "HSHYWSPID"        method = "MappingDepend"   expr = "HSHYWSIGNUP,HSHYWSPID"      desc = "和生活业务企业代码[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001124"                mapping = "HSHYWBIZCODE"     method = "MappingDepend"   expr = "HSHYWSIGNUP,HSHYWBIZCODE"   desc = "和生活业务业务代码[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001124"                mapping = "HSHYWBLFLG"       method = "MappingDepend"   expr = "HSHYWSIGNUP,HSHYWBLFLG"     desc = "和生活业务计费类型[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001124"                mapping = "HSHYWGLOBAL"      method = "MappingDepend"   expr = "HSHYWSIGNUP,HSHYWGLOBAL"    desc = "和生活业务是否全网[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001124"                mapping = "HSHYWOLDSPID"      method = "MappingDepend"   expr = "HSHYWSIGNUP,A390020001124_PROP_L.HSHYWOLDSPID"    desc = "和生活业务退订的企业代码[MCSP][一级BOSS]"/>
+	  	 <mapping name = "390020001124"                mapping = "HSHYWOLDBIZCODE"      method = "MappingDepend"   expr = "HSHYWSIGNUP,A390020001124_PROP_L.HSHYWOLDBIZCODE"    desc = "和生活业务退订的业务代码[MCSP][一级BOSS]"/>
+	  </mapping>
+	  <!--add by fengliang 信息-2015-18646  关于下发和飞信业务支撑改造要求的通知 -->
+	  <mapping name = "390020001255"                mapping = "HFXYW"            method = "MappingExist"    desc = "和飞信业务[MCSP][一级BOSS]">
+		 <mapping name = "390020001255"                mapping = "HFXYWSIGNUP"      method = "MappingDirect"   desc = "和飞信业务[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001255"                mapping = "HFXYWSPID"        method = "MappingDepend"   expr = "HFXYWSIGNUP,HFXYWSPID"      desc = "和飞信业务企业代码[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001255"                mapping = "HFXYWBIZCODE"     method = "MappingDepend"   expr = "HFXYWSIGNUP,HFXYWBIZCODE"   desc = "和飞信业务业务代码[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001255"                mapping = "HFXYWBLFLG"       method = "MappingDepend"   expr = "HFXYWSIGNUP,HFXYWBLFLG"     desc = "和飞信业务计费类型[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001255"                mapping = "HFXYWGLOBAL"      method = "MappingDepend"   expr = "HFXYWSIGNUP,HFXYWGLOBAL"    desc = "和飞信业务是否全网[MCSP][一级BOSS]"/>
+	  	 <mapping name = "390020001255"                mapping = "HFXYWOSSTATE"     method = "MappingDepend"   expr = "HFXYWSIGNUP,A390020001255_PROP_L.HFXYWOSSTATE" desc = "和飞信业务停机标示[MCSP][一级BOSS]"/>
+	  </mapping>
+	  <!-- add by fengliang 信息-2016-4501-关于下发《和校园全网增值产品业务支撑系统实施方案V2.0》的通知 -->
+	  <mapping name = "390020001905"                mapping = "HJYYW"            method = "MappingExist"    desc = "和教育业务[MCSP][一级BOSS]">
+		 <mapping name = "390020001905"                mapping = "HJYYWSIGNUP"      method = "MappingDirect"   desc = "和教育业务[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001905"                mapping = "HJYYWSPID"        method = "MappingDepend"   expr = "HJYYWSIGNUP,HJYYWSPID"      desc = "和教育业务企业代码[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001905"                mapping = "HJYYWBIZCODE"     method = "MappingDepend"   expr = "HJYYWSIGNUP,HJYYWBIZCODE"   desc = "和教育业务业务代码[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001905"                mapping = "HJYYWBLFLG"       method = "MappingDepend"   expr = "HJYYWSIGNUP,HJYYWBLFLG"     desc = "和教育业务计费类型[MCSP][一级BOSS]"/>
+		 <mapping name = "390020001905"                mapping = "HJYYWGLOBAL"      method = "MappingDepend"   expr = "HJYYWSIGNUP,HJYYWGLOBAL"    desc = "和教育业务是否全网[MCSP][一级BOSS]"/>
+	  </mapping>
+	  <!--手机微博-->
+	  
+      <mapping name = "270000090613"                mapping = "MBLG"            method = "MappingExist"    desc = "移动微博[MCSP][一级BOSS]">
+		 <mapping name = "270000090613"                mapping = "MBLGSIGNUP"      method = "MappingDirect"   desc = "移动微博[MCSP][一级BOSS]"/>
+		 <mapping name = "270000090613"                mapping = "MBLGSPID"        method = "MappingDepend"   expr = "MBLGSIGNUP,MBLGSPID"      desc = "移动微博企业代码[MCSP][一级BOSS]"/>
+		 <mapping name = "270000090613"                mapping = "MBLGBIZCODE"     method = "MappingDepend"   expr = "MBLGSIGNUP,MBLGBIZCODE"   desc = "移动微博业务代码[MCSP][一级BOSS]"/>
+		 <mapping name = "270000090613"                mapping = "MBLGBLFLG"       method = "MappingDepend"   expr = "MBLGSIGNUP,MBLGBLFLG"     desc = "移动微博计费类型[MCSP][一级BOSS]"/>
+		 <mapping name = "270000090613"                mapping = "MBLGGLOBAL"      method = "MappingDepend"   expr = "MBLGSIGNUP,MBLGGLOBAL"    desc = "移动微博是否全网[MCSP][一级BOSS]"/>
+	  </mapping>
+	  <!--手机冲浪-->
+      <mapping name = "270000090614"                mapping = "SJCL"            method = "MappingExist"    desc = "手机冲浪[SJCL][一级BOSS]">
+		 <mapping name = "270000090614"                mapping = "SJCLSIGNUP"      method = "MappingDirect"   desc = "手机冲浪[SJCL][一级BOSS]"/>
+		 <mapping name = "270000090614"                mapping = "SJCLSPID"        method = "MappingDepend"   expr = "SJCLSIGNUP,SJCLSPID"      desc = "手机冲浪企业代码[SJCL][一级BOSS]"/>
+		 <mapping name = "270000090614"                mapping = "SJCLBIZCODE"     method = "MappingDepend"   expr = "SJCLSIGNUP,SJCLBIZCODE"   desc = "手机冲浪业务代码[SJCL][一级BOSS]"/>
+		 <mapping name = "270000090614"                mapping = "SJCLBLFLG"       method = "MappingDepend"   expr = "SJCLSIGNUP,SJCLBLFLG"     desc = "手机冲浪计费类型[SJCL][一级BOSS]"/>
+		 <mapping name = "270000090614"                mapping = "SJCLGLOBAL"      method = "MappingDepend"   expr = "SJCLSIGNUP,SJCLGLOBAL"    desc = "手机冲浪是否全网[SJCL][一级BOSS]"/>
+	  </mapping>
+	  <!--手机便民卡-->
+      <mapping name = "270000090615"                mapping = "BMPT"            method = "MappingExist"    desc = "手机便民卡BMPT][一级BOSS]">
+		 <mapping name = "270000090615"                mapping = "BMPTSIGNUP"      method = "MappingDirect"   desc = "手机便民卡[BMPT][一级BOSS]"/>
+		 <mapping name = "270000090615"                mapping = "BMPTSPID"        method = "MappingDepend"   expr = "BMPTSIGNUP,BMPTSPID"      desc = "手机便民卡企业代码[BMPT][一级BOSS]"/>
+		 <mapping name = "270000090615"                mapping = "BMPTBIZCODE"     method = "MappingDepend"   expr = "BMPTSIGNUP,BMPTBIZCODE"   desc = "手机便民卡业务代码[BMPT][一级BOSS]"/>
+		 <mapping name = "270000090615"                mapping = "BMPTBLFLG"       method = "MappingDepend"   expr = "BMPTSIGNUP,BMPTBLFLG"     desc = "手机便民卡计费类型[BMPT][一级BOSS]"/>
+	  </mapping>
+	  <!--手机阅读-->
+	  <mapping name="272999999810"                  mapping="CMRD" 	            method="MappingExist"	   desc="手机阅读[VGOP][一级BOSS]">
+	     <mapping name="272999999810"                  mapping="CMRDSIGNUP"        method="MappingDirect"     desc="手机阅读[VGOP][一级BOSS]" />
+		 <mapping name="272999999810"                  mapping="CMRDUSIM"          method="MappingDepend"     expr="CMRDSIGNUP,CMRDUSIM"    desc="手机阅读绑定号码[VGOP][一级BOSS]"/>
+		 <mapping name="272999999810"                  mapping="CMRDSPID"          method="MappingDepend"     expr="CMRDSIGNUP,CMRDSPID"    desc="手机阅读企业代码[VGOP][一级BOSS]"/>
+		 <mapping name="272999999810"                  mapping="CMRDBIZCODE"       method="MappingDepend"     expr="CMRDSIGNUP,CMRDBIZCODE" desc="手机阅读业务代码[VGOP][一级BOSS]"/>
+		 <mapping name="272999999810"                  mapping="CMRDBLFLG"         method="MappingDepend"     expr="CMRDSIGNUP,CMRDBLFLG"   desc="手机阅读业务计费类型[VGOP][一级BOSS]"/>
+		 <mapping name="272999999810"                  mapping="CMRDGLOBAL"        method="MappingDepend"     expr="CMRDSIGNUP,CMRDGLOBAL"  desc="手机阅读是否全网[VGOP][一级BOSS]"/>
+	  </mapping>
+	  <!--随e行3G上网本-->
+      <mapping name = "270000053016"                mapping = "SWPT"            method = "MappingExist"    desc = "随e行3G上网本[EWPT][一级BOSS]">
+	     <mapping name = "270000053016"                mapping = "SWPTSIGNUP"      method = "MappingDirect"   desc = "随e行3G上网本[SYPT][一级BOSS]"/>
+	     <mapping name = "270000053016"                mapping = "SWPTUSIM"        method = "MappingDepend"   expr = "SWPTSIGNUP,SWPTUSIM"       desc = "随e行3G上网本内置USIM卡号码[EWPT][一级BOSS]"/>
+	     <mapping name = "270000053016"                mapping = "SWPTBIZCODE"     method = "MappingDepend"   expr = "SWPTSIGNUP,SWPTBIZCODE"    desc = "随e行3G上网本业务代码[EWPT][一级BOSS]"/>
+	     <mapping name = "270000053016"                mapping = "SWPTGLOBAL"      method = "MappingDepend"   expr = "SWPTSIGNUP,SWPTGLOBAL"     desc = "随e行3G上网本是否全网[EWPT][一级BOSS]"/>
+	  </mapping>
+	  <mapping name = "310053020001"                mapping = "LSWPT"           method = "MappingDirect"   desc = "随e行3G上网本流量封顶[SYPT][一级BOSS]"/>
+	  <!--多媒体彩铃-->
+ 	  <mapping name = "270000080103"                mapping = "MRBT"            method = "MappingExist"    desc = "多媒体彩铃[MRBT][一级BOSS]">
+	     <mapping name = "270000080103"                mapping = "MRBTSIGNUP"      method = "MappingDirect"   desc = "多媒体彩铃[MRBT][一级BOSS]"/>
+	     <mapping name = "270000080103"                mapping = "MRBTSPID"        method = "MappingDepend"   expr = "MRBTSIGNUP,MRBTSPID"        desc = "多媒体彩铃企业代码[MRBT][一级BOSS]"/>
+	     <mapping name = "270000080103"                mapping = "MRBTBIZCODE"     method = "MappingDepend"   expr = "MRBTSIGNUP,MRBTBIZCODE"     desc = "多媒体彩铃业务代码[MRBT][一级BOSS]"/>
+	     <mapping name = "270000080103"                mapping = "MRBTBLFLG"       method = "MappingDepend"   expr = "MRBTSIGNUP,MRBTBLFLG"       desc = "多媒体彩铃业务计费类型[MRBT][一级BOSS]"/>
+	     <mapping name = "270000080103"                mapping = "MRBTGLOBAL"      method = "MappingDepend"   expr = "MRBTSIGNUP,MRBTGLOBAL"      desc = "多媒体彩铃是否全网[MRBT][一级BOSS]"/>
+	  </mapping>
+	  <!--视频留言-->
+      <mapping name = "270000080102"                mapping = "VMX"            method = "MappingExist"    desc = "视频留言[VMX][一级BOSS]">
+		 <mapping name = "270000080102"                mapping = "VMXSIGNUP"       method = "MappingDirect"   desc = "视频留言[VMX][一级BOSS]"/>
+		 <mapping name = "270000080102"                mapping = "VMXPSWD"         method = "MappingDepend"   expr = "VMXSIGNUP,VMXPSWD"        desc = "视频留言用户密码[VMX][一级BOSS]"/>
+		 <mapping name = "270000080102"                mapping = "VMXSPID"         method = "MappingDepend"   expr = "VMXSIGNUP,VMXSPID"        desc = "视频留言企业代码[VMX][一级BOSS]"/>
+		 <mapping name = "270000080102"                mapping = "VMXBIZCODE"      method = "MappingDepend"   expr = "VMXSIGNUP,VMXBIZCODE"     desc = "视频留言业务代码[VMX][一级BOSS]"/>
+		 <mapping name = "270000080102"                mapping = "VMXPLAN"         method = "MappingDepend"   expr = "VMXSIGNUP,VMXPLAN"        desc = "视频留言业务提供的套餐[VMX][一级BOSS]"/>
+		 <mapping name = "270000080102"                mapping = "VMXBLFLG"        method = "MappingDepend"   expr = "VMXSIGNUP,VMXBLFLG"       desc = "视频留言业务计费类型[VMX][一级BOSS]"/>
+		 <mapping name = "270000080102"                mapping = "VMXGLOBAL"       method = "MappingDepend"   expr = "VMXSIGNUP,VMXGLOBAL"      desc = "视频留言是否全网[VMX][一级BOSS]"/>
+      </mapping>
+      <!--视频会议-->
+      <mapping name = "270000080100"                mapping = "VC2P"            method = "MappingExist"    desc = "视频会议[VC2P][一级BOSS]">
+		 <mapping name = "270000080100"                mapping = "VC2PSIGNUP"      method = "MappingDirect"   desc = "视频会议[VC2P][一级BOSS]"/>
+		 <mapping name = "270000080100"                mapping = "VC2PSPID"        method = "MappingDepend"   expr = "VC2PSIGNUP,VC2PSPID"      desc = "视频会议企业代码[VC2P][一级BOSS]"/>
+		 <mapping name = "270000080100"                mapping = "VC2PBIZCODE"     method = "MappingDepend"   expr = "VC2PSIGNUP,VC2PBIZCODE"   desc = "视频会议业务代码[VC2P][一级BOSS]"/>
+		 <mapping name = "270000080100"                mapping = "VC2PBLFLG"       method = "MappingDepend"   expr = "VC2PSIGNUP,VC2PBLFLG"     desc = "视频会议计费类型[VC2P][一级BOSS]"/>
+		 <mapping name = "270000080100"                mapping = "VC2PGLOBAL"      method = "MappingDepend"   expr = "VC2PSIGNUP,VC2PGLOBAL"    desc = "视频会议是否全网[VC2P][一级BOSS]"/>
+      </mapping>
+      <!--视频共享-->
+      <mapping name = "270000080116"                mapping = "VSHR"            method = "MappingExist"    desc = "视频共享[VSHR][一级BOSS]">
+		 <mapping name = "270000080116"                mapping = "VSHRSIGNUP"      method = "MappingDirect"   desc = "视频共享[VSHR][一级BOSS]"/>
+		 <mapping name = "270000080116"                mapping = "VSHRSPID"        method = "MappingDepend"   expr = "VSHRSIGNUP,VSHRSPID"        desc = "视频共享企业代码[VSHR][一级BOSS]"/>
+		 <mapping name = "270000080116"                mapping = "VSHRBIZCODE"     method = "MappingDepend"   expr = "VSHRSIGNUP,VSHRBIZCODE"     desc = "视频共享业务代码[VSHR][一级BOSS]"/>
+		 <mapping name = "270000080116"                mapping = "VSHRBLFLG"       method = "MappingDepend"   expr = "VSHRSIGNUP,VSHRBLFLG"       desc = "视频共享业务计费类型[VSHR][一级BOSS]"/>
+		 <mapping name = "270000080116"                mapping = "VSHRGLOBAL"      method = "MappingDepend"   expr = "VSHRSIGNUP,VSHRGLOBAL"      desc = "视频共享是否全网[VSHR][一级BOSS]"/>
+      </mapping>
+      <!--移动梦网深度运营-->
+      <mapping name = "272999999807"                mapping = "MDOP"            method = "MappingExist"    desc = "移动梦网深度运营[MDOP][一级BOSS]">
+		 <mapping name = "272999999807"               mapping = "MDOPSIGNUP"      method = "MappingDirect"   desc = "移动梦网深度运营[MDOP][一级BOSS]"/>
+     	 <mapping name = "272999999807"               mapping = "MDOPSPID"        method = "MappingDepend"   expr = "MDOPSIGNUP,MDOPSPID"      desc = "移动梦网深度运营企业代码[MDOP][一级BOSS]"/>
+     	 <mapping name = "272999999807"               mapping = "MDOPBIZCODE"     method = "MappingDepend"   expr = "MDOPSIGNUP,MDOPBIZCODE"   desc = "移动梦网深度运营业务代码[MDOP][一级BOSS]"/>
+     	 <mapping name = "272999999807"               mapping = "MDOPBLFLG"       method = "MappingDepend"   expr = "MDOPSIGNUP,MDOPBLFLG"     desc = "移动梦网深度运营业务计费类型[MDOP][一级BOSS]"/>
+     	 <mapping name = "272999999807"               mapping = "MDOPGLOBAL"      method = "MappingDepend"   expr = "MDOPSIGNUP,MDOPGLOBAL"    desc = "移动梦网深度运营是否全网[MDOP][一级BOSS]"/>
+	  </mapping>
+	  <!--宜居通[HSCS]-->
+      <mapping name = "270000091158"                mapping = "HSCS"            method = "MappingExist"    desc = "宜居通[HSCS][一级BOSS]">
+	     <mapping name = "270000091158"                mapping = "HSCSSIGNUP"      method = "MappingDirect"   desc = "宜居通[HSCS][一级BOSS]"/>
+     	 <mapping name = "270000091158"                mapping = "HSCSSPID"        method = "MappingDepend"   expr = "HSCSSIGNUP,HSCSSPID"      desc = "宜居通企业代码[HSCS][一级BOSS]"/>
+     	 <mapping name = "270000091158"                mapping = "HSCSBIZCODE"     method = "MappingDepend"   expr = "HSCSSIGNUP,HSCSBIZCODE"   desc = "宜居通业务代码[HSCS][一级BOSS]"/>
+     	 <mapping name = "270000091158"                mapping = "HSCSBLFLG"       method = "MappingDepend"   expr = "HSCSSIGNUP,HSCSBLFLG"     desc = "宜居通业务计费类型[HSCS][一级BOSS]"/>
+     	 <mapping name = "270000091158"                mapping = "HSCSGLOBAL"      method = "MappingDepend"   expr = "HSCSSIGNUP,HSCSGLOBAL"    desc = "宜居通是否全网[HSCS][一级BOSS]"/>
+	  </mapping>
+	  <!--彩云通信录[MTXL]-->
+      <mapping name = "270000090384"                mapping = "MTXL"            method = "MappingExist"    desc = "彩云通信录[MTXL][一级BOSS]">
+	     <mapping name = "270000090384"                mapping = "MTXLSIGNUP"      method = "MappingDirect"   desc = "宜居通[MTXL][一级BOSS]"/>
+	     <mapping name = "270000090384"                mapping = "MTXLPSWD"        method = "MappingDepend"   expr = "MTXLSIGNUP,MTXLPSWD"      desc = "彩云通信录业务密码[MTXL][一级BOSS]"/>
+     	 <mapping name = "270000090384"                mapping = "MTXLSPID"        method = "MappingDepend"   expr = "MTXLSIGNUP,MTXLSPID"      desc = "彩云通信录企业代码[MTXL][一级BOSS]"/>
+     	 <mapping name = "270000090384"                mapping = "MTXLBIZCODE"     method = "MappingDepend"   expr = "MTXLSIGNUP,MTXLBIZCODE"   desc = "彩云通信录业务代码[MTXL][一级BOSS]"/>
+     	 <mapping name = "270000090384"                mapping = "MTXLBLFLG"       method = "MappingDepend"   expr = "MTXLSIGNUP,MTXLBLFLG"     desc = "彩云通信录业务计费类型[MTXL][一级BOSS]"/>
+     	 <mapping name = "270000090384"                mapping = "MTXLGLOBAL"      method = "MappingDepend"   expr = "MTXLSIGNUP,MTXLGLOBAL"    desc = "彩云通信录是否全网[MTXL][一级BOSS]"/>
+	  </mapping>
+	  <!--网状网彩云[MCLD]-->
+      <mapping name = "272999999852"                mapping = "MCLD"            method = "MappingExist"    desc = "网状网彩云[MCLD][一级BOSS]">
+	     <mapping name = "272999999852"                mapping = "MCLDSIGNUP"      method = "MappingDirect"   desc = "网状网彩云[MCLD][一级BOSS]"/>
+	     <mapping name = "272999999852"                mapping = "MCLDPSWD"        method = "MappingDepend"   expr = "MCLDSIGNUP,MCLDPSWD"      desc = "网状网彩云业务密码[MCLD][一级BOSS]"/>
+     	 <mapping name = "272999999852"                mapping = "MCLDSPID"        method = "MappingDepend"   expr = "MCLDSIGNUP,MCLDSPID"      desc = "网状网彩云企业代码[MCLD][一级BOSS]"/>
+     	 <mapping name = "272999999852"                mapping = "MCLDBIZCODE"     method = "MappingDepend"   expr = "MCLDSIGNUP,MCLDBIZCODE"   desc = "网状网彩云业务代码[MCLD][一级BOSS]"/>
+     	 <mapping name = "272999999852"                mapping = "MCLDBLFLG"       method = "MappingDepend"   expr = "MCLDSIGNUP,MCLDBLFLG"     desc = "网状网彩云业务计费类型[MCLD][一级BOSS]"/>
+     	 <mapping name = "272999999852"                mapping = "MCLDGLOBAL"      method = "MappingDepend"   expr = "MCLDSIGNUP,MCLDGLOBAL"    desc = "网状网彩云是否全网[MCLD][一级BOSS]"/>
+	     <mapping name = "314100302294"                mapping = "BASEHLW"         method = "MappingDirect"   desc = "彩云基础免费产品"/>
+	     <mapping name = "272999999852"                mapping = "HLWYW"           method = "MappingDirect"   desc = "网状网彩云[MCLD][一级BOSS]"/>
+	  </mapping>
+      <!--梦网彩信[DSMP]-->
+      <mapping name = "272999999834"         mapping = "DMMS"              method = "MappingExist"    desc = "梦网彩信[DMMS][一级BOSS]">
+	     <mapping name = "272999999834"         mapping = "DMMSSIGNUP"       method = "MappingDirect"    desc = "梦网彩信[DMMS][一级BOSS]"/>
+	     <mapping name = "272999999834"         mapping = "DMMSSPID"         method = "MappingDepend"    expr = "DMMSSIGNUP,DMMSSPID"      desc = "梦网彩信企业代码[DMMS][一级BOSS]"/>
+	     <mapping name = "272999999834"         mapping = "DMMSBIZCODE"      method = "MappingDepend"    expr = "DMMSSIGNUP,DMMSBIZCODE"   desc = "梦网彩信业务代码[DMMS][一级BOSS]"/>
+	     <mapping name = "272999999834"         mapping = "DMMSBLFLG"        method = "MappingDepend"    expr = "DMMSSIGNUP,DMMSBLFLG"     desc = "梦网彩信业务计费类型[DMMS][一级BOSS]"/>
+	     <mapping name = "272999999834"         mapping = "DMMSPIFLG"        method = "MappingDepend"    expr = "DMMSSIGNUP,DMMSPIFLG"     desc = "梦网彩信平台类型[DMMS][一级BOSS]"/>
+	     <mapping name = "272999999834"         mapping = "DMMSPOFLG"        method = "MappingDepend"    expr = "DMMSSIGNUP,DMMSPOFLG"     desc = "梦网彩信产品受理[DMMS][一级BOSS]"/>
+	     <mapping name = "272999999834"         mapping = "DMMSTMSISDN"      method = "MappingDepend"    expr = "DMMSSIGNUP,TMSISDN"       desc = "梦网彩信被赠送用户手机号[DMMS][一级BOSS]"/>
+	     <mapping name = "272999999834"         mapping = "DMMSGLOBAL"       method = "MappingDepend"    expr = "DMMSSIGNUP,DMMSGLOBAL"    desc = "梦网彩信是否全网[DMMS][一级BOSS]"/>
+     </mapping>
+     <!-- add by fengliang 信息-2016-4501 和校园指定业务，区别于一般和校园业务，需要发原来的梦网彩信[dsmp]，又要发和教育平台 -->
+     <mapping name = "390020001906"         mapping = "HXYYW"              method = "MappingExist"    desc = "和校园指定业务[HXYYW][一级BOSS]">
+	     <mapping name = "390020001906"         mapping = "HXYYWSIGNUP"       method = "MappingDirect"    desc = "和校园指定业务[HXYYW][一级BOSS]"/>
+	     <mapping name = "390020001906"         mapping = "HXYYWSPID"         method = "MappingDepend"    expr = "HXYYWSIGNUP,HXYYWSPID"      desc = "和校园指定业务企业代码[HXYYW][一级BOSS]"/>
+	     <mapping name = "390020001906"         mapping = "HXYYWBIZCODE"      method = "MappingDepend"    expr = "HXYYWSIGNUP,HXYYWBIZCODE"   desc = "和校园指定业务业务代码[HXYYW][一级BOSS]"/>
+	     <mapping name = "390020001906"         mapping = "HXYYWBLFLG"        method = "MappingDepend"    expr = "HXYYWSIGNUP,HXYYWBLFLG"     desc = "和校园指定业务计费类型[HXYYW][一级BOSS]"/>
+	     <mapping name = "390020001906"         mapping = "HXYYWPIFLG"        method = "MappingDepend"    expr = "HXYYWSIGNUP,HXYYWPIFLG"     desc = "和校园指定业务平台类型[HXYYW][一级BOSS]"/>
+	     <mapping name = "390020001906"         mapping = "HXYYWPOFLG"        method = "MappingDepend"    expr = "HXYYWSIGNUP,HXYYWPOFLG"     desc = "和校园指定业务产品受理[HXYYW][一级BOSS]"/>
+	     <mapping name = "390020001906"         mapping = "HXYYWTMSISDN"      method = "MappingDepend"    expr = "HXYYWSIGNUP,TMSISDN"       desc = "和校园指定业务被赠送用户手机号[HXYYW][一级BOSS]"/>
+	     <mapping name = "390020001906"         mapping = "HXYYWGLOBAL"       method = "MappingDepend"    expr = "HXYYWSIGNUP,HXYYWGLOBAL"    desc = "和校园指定业务是否全网[HXYYW][一级BOSS]"/>
+	     <mapping name = "390020001906"         mapping = "HXYYWSPIDBAK"        method = "MappingDepend"    expr = "HXYYWSIGNUP,A390020001906_PROP_L.HXYYWSPIDBAK"    desc = "和校园业务全网SPID[HXYYW][一级BOSS]"/>
+	     <mapping name = "390020001906"         mapping = "HXYYWBIZCODEBAK"     method = "MappingDepend"    expr = "HXYYWSIGNUP,A390020001906_PROP_L.HXYYWBIZCODEBAK"    desc = "和校园业务全网BIZCODE[HXYYW][一级BOSS]"/>
+     </mapping>
+     <mapping name = "270000090530"         mapping = "DMMSFHZX"              method = "MappingExist"    desc = "全球通凤凰资讯包[DMMS][一级BOSS]">
+         <mapping name = "270000090530"         mapping = "DMMSFHZX"       method = "MappingSplite"      expr = "C=C/C;E=E/E;*=DU/DU"      desc = "全球通凤凰资讯包[DMMS][一级BOSS]"/>
+         <mapping name = "270000090530"         mapping = "DMMSFHZXSPID"         method = "MappingSplite"    expr = "C=801234/801234;E=801234/801234;*=801234/801234"        desc = "全球通凤凰资讯包企业代码[DMMS][一级BOSS]"/>
+	     <mapping name = "270000090530"         mapping = "DMMSFHZXBIZCODE"      method = "MappingSplite"    expr = "C=110362/110361;E=110362/110361;*=110362/110361"        desc = "全球通凤凰资讯包业务代码[DMMS][一级BOSS]"/>
+	     <mapping name = "270000090530"         mapping = "DMMSFHZXBLFLG"        method = "MappingSplite"    expr = "C=3/3;E=3/3;*=3/3"                  desc = "全球通凤凰资讯包业务计费类型[DMMS][一级BOSS]"/>
+	     <mapping name = "270000090530"         mapping = "DMMSFHZXPIFLG"        method = "MappingSplite"    expr = "C=G/G;E=G/G;*=G/G"                  desc = "全球通凤凰资讯包平台类型[DMMS][一级BOSS]"/>
+	     <mapping name = "270000090530"         mapping = "DMMSFHZXGLOBAL"       method = "MappingSplite"    expr = "C=G/G;E=G/G;*=G/G"                  desc = "全球通凤凰资讯包是否全网[DMMS][一级BOSS]"/>
+     </mapping>
+     <!--WAP[DSMP]-->
+ 	 <mapping name="272999999835" 			 mapping="DWAP" 			   method="MappingExist"	   desc="WAP[DSMP][一级BOSS]">
+	    <mapping   name="272999999835" 		    mapping="DWAPSIGNUP"         method="MappingDirect"      desc="WAP[DSMP][一级BOSS]"/>
+ 		<mapping   name="272999999835"       	mapping="DWAPSPID" 	   	     method="MappingDepend" 	 expr="DWAPSIGNUP,DWAPSPID" 	   desc="WAP企业代码[DSMP][一级BOSS]"/>
+ 		<mapping   name="272999999835"          mapping="DWAPBIZCODE"  	     method="MappingDepend" 	 expr="DWAPSIGNUP,DWAPBIZCODE" 	   desc="WAP业务代码[DSMP][一级BOSS]"/>
+ 		<mapping   name="272999999835"      	mapping="DWAPBLFLG" 	     method="MappingDepend" 	 expr="DWAPSIGNUP,DWAPBLFLG" 	   desc="WAP业务计费类型[DSMP][一级BOSS]"/>
+ 		<mapping   name="272999999835"      	mapping="DWAPPOFLG" 	     method="MappingDepend" 	 expr="DWAPSIGNUP,DWAPPOFLG" 	   desc="WAP业务产品受理[DSMP][一级BOSS]"/>
+ 		<mapping   name="272999999835"      	mapping="DWAPTMSISDN"  	     method="MappingDepend" 	 expr="DWAPSIGNUP,TMSISDN" 		   desc="WAP被赠送用户手机号[DSMP][一级BOSS]"/>
+ 		<mapping   name="272999999835"      	mapping="DWAPGLOBAL"   	     method="MappingDepend" 	 expr="DWAPSIGNUP,DWAPGLOBAL"  	   desc="WAP是否全网[DSMP][一级BOSS]"/>
+     </mapping>
+     <!--手机动画[DSMP]-->
+  	 <mapping  name="272999999836" 		     mapping="DMAT" 			   method="MappingExist"	   desc="手机动画[DSMP][一级BOSS]">
+		<mapping   name="272999999836"         mapping="DMATSIGNUP"          method="MappingDirect"      desc="手机动画[DSMP][一级BOSS]"/>
+		<mapping   name="272999999836"	       mapping="DMATSPID" 	         method="MappingDepend" 	 expr="DMATSIGNUP,DMATSPID" 	  desc="手机动画企业代码[DSMP][一级BOSS]"/>
+  		<mapping   name="272999999836"	       mapping="DMATBIZCODE"         method="MappingDepend" 	 expr="DMATSIGNUP,DMATBIZCODE"    desc="手机动画业务代码[DSMP][一级BOSS]"/>
+  		<mapping   name="272999999836"	       mapping="DMATBLFLG" 	         method="MappingDepend" 	 expr="DMATSIGNUP,DMATBLFLG" 	  desc="手机动画业务计费类型[DSMP][一级BOSS]"/>
+    	<mapping   name="272999999836"	       mapping="DMATPOFLG" 	         method="MappingDepend" 	 expr="DMATSIGNUP,DMATPOFLG" 	  desc="手机动画产品受理[DSMP][一级BOSS]"/>
+        <mapping   name="272999999836"	       mapping="DMATTMSISDN"         method="MappingDepend" 	 expr="DMATSIGNUP,TMSISDN" 		  desc="手机动画被赠送用户手机号[DSMP][一级BOSS]"/>
+        <mapping   name="272999999836"	       mapping="DMATGLOBAL"          method="MappingDepend" 	 expr="DMATSIGNUP,DMATGLOBAL"     desc="手机动画是否全网[DSMP][一级BOSS]"/>
+      </mapping>
+      <!--梦网结算短信[DSMP]-->
+      <mapping name="272999999837" 	         mapping="SSMS" 		       method="MappingExist"	   desc="分省结算短信[DSMP][一级BOSS]">
+	     <mapping name="272999999837"           mapping="SSMSSIGNUP"      	 method="MappingDirect"   	 desc="分省结算短信[DSMP][一级BOSS]"/>
+	     <mapping name="272999999837"      	    mapping="SSMSSPID" 	  	     method="MappingDepend" 	 expr="SSMSSIGNUP,SSMSSPID"        desc="分省结算短信企业代码[DSMP][一级BOSS]"/>
+	     <mapping name="272999999837"     	    mapping="SSMSBIZCODE" 		 method="MappingDepend" 	 expr="SSMSSIGNUP,SSMSBIZCODE" 	   desc="分省结算短信业务代码[DSMP][一级BOSS]"/>
+	     <mapping name="272999999837"     	    mapping="SSMSBLFLG" 		 method="MappingDepend" 	 expr="SSMSSIGNUP,SSMSBLFLG" 	   desc="分省结算短信业务计费类型[DSMP][一级BOSS]"/>
+	     <mapping name="272999999837"           mapping="SSMSPIFLG"          method="MappingDepend"      expr="SSMSSIGNUP,SSMSPIFLG"       desc="分省结算短信平台类型[DSMP][一级BOSS]"/>
+	     <mapping name="272999999837"    	    mapping="SSMSPOFLG" 		 method="MappingDepend" 	 expr="SSMSSIGNUP,SSMSPOFLG" 	   desc="分省结算短信产品受理[DSMP][一级BOSS]"/>
+	     <mapping name="272999999837"    	    mapping="SSMSBOFLG" 		 method="MappingDepend" 	 expr="SSMSSIGNUP,SSMSBOFLG" 	   desc="分省结算短信业务类型[DSMP][一级BOSS]"/>
+	     <mapping name="272999999837"    	    mapping="SSMSTMSISDN" 	     method="MappingDepend" 	 expr="SSMSSIGNUP,TMSISDN" 		   desc="分省结算短信被赠送用户手机号[DSMP][一级BOSS]"/>
+	     <mapping name="272999999837"           mapping="SSMSGLOBAL"  		 method="MappingDepend" 	 expr="SSMSSIGNUP,SSMSGLOBAL"  	   desc="分省结算短信是否全网[DSMP][一级BOSS]"/>
+      </mapping>
+      
+      <!--移动市场[DSMP]-->
+      <mapping name = "272999999839"                mapping = "DMMT"            method = "MappingExist"    desc = "移动市场[DMMT][一级BOSS]">
+		 <mapping name = "272999999839"                mapping = "DMMTSIGNUP"      method = "MappingDirect"   desc = "移动市场[DMMT][一级BOSS]"/>
+		 <mapping name = "272999999839"                mapping = "DMMTSPID"        method = "MappingDepend"   expr = "DMMTSIGNUP,DMMTSPID"      desc = "移动市场企业代码[DMMT][一级BOSS]"/>
+		 <mapping name = "272999999839"                mapping = "DMMTBIZCODE"     method = "MappingDepend"   expr = "DMMTSIGNUP,DMMTBIZCODE"   desc = "移动市场业务代码[DMMT][一级BOSS]"/>
+		 <mapping name = "272999999839"                mapping = "DMMTBLFLG"       method = "MappingDepend"   expr = "DMMTSIGNUP,DMMTBLFLG"     desc = "移动市场业务计费类型[DMMT][一级BOSS]"/>
+		 <mapping name = "272999999839"                mapping = "DMMTPOFLG"       method = "MappingDepend"   expr = "DMMTSIGNUP,DMMTPOFLG"     desc = "移动市场产品受理[DMMT][一级BOSS]"/>
+		 <mapping name = "272999999839"                mapping = "DMMTTMSISDN"     method = "MappingDepend"   expr = "DMMTSIGNUP,TMSISDN"       desc = "移动市场被赠送用户手机号[DMMT][一级BOSS]"/>
+		 <mapping name = "272999999839"                mapping = "DMMTGLOBAL"      method = "MappingDepend"   expr = "DMMTSIGNUP,DMMTGLOBAL"    desc = "移动市场是否全网[DMMT][一级BOSS]"/>
+      </mapping>
+      <!--WIDGET[DSMP]-->
+      <mapping name = "272999999840"                mapping = "DWGT"            method = "MappingExist"    desc = "widget[DWGT][一级BOSS]">
+		 <mapping name = "272999999840"                mapping = "DWGTSIGNUP"      method = "MappingDirect"   desc = "widget[DWGT][一级BOSS]"/>
+		 <mapping name = "272999999840"                mapping = "DWGTSPID"        method = "MappingDepend"   expr = "DWGTSIGNUP,DWGTSPID"      desc = "widget企业代码[DWGT][一级BOSS]"/>
+		 <mapping name = "272999999840"                mapping = "DWGTBIZCODE"     method = "MappingDepend"   expr = "DWGTSIGNUP,DWGTBIZCODE"   desc = "widget业务代码[DWGT][一级BOSS]"/>
+		 <mapping name = "272999999840"                mapping = "DWGTBLFLG"       method = "MappingDepend"   expr = "DWGTSIGNUP,DWGTBLFLG"     desc = "widget业务计费类型[DWGT][一级BOSS]"/>
+		 <mapping name = "272999999840"                mapping = "DWGTPOFLG"       method = "MappingDepend"   expr = "DWGTSIGNUP,DWGTPOFLG"     desc = "widget产品受理[DWGT][一级BOSS]"/>
+		 <mapping name = "272999999840"                mapping = "DWGTTMSISDN"     method = "MappingDepend"   expr = "DWGTSIGNUP,TMSISDN"       desc = "widget被赠送用户手机号[DWGT][一级BOSS]"/>
+		 <mapping name = "272999999840"                mapping = "DWGTGLOBAL"      method = "MappingDepend"   expr = "DWGTSIGNUP,DWGTGLOBAL"    desc = "widget是否全网[DWGT][一级BOSS]"/>
+      </mapping>
+      <!--手机钱包NFC-->
+      <mapping name = "272999999853"                mapping = "NFCP"            method = "MappingExist"    desc = "手机钱包[NFCP][一级BOSS]">
+		 <mapping name = "272999999853"                mapping = "NFCPSIGNUP"      method = "MappingDirect"   desc = "手机钱包[NFCP][一级BOSS]"/>
+		 <mapping name = "272999999853"                mapping = "NFCPSPID"       method = "MappingDepend"   expr = "NFCPSIGNUP,NFCPSPID"      desc = "手机钱包企业代码[NFCP][一级BOSS]"/>
+		 <mapping name = "272999999853"                mapping = "NFCPBIZCODE"     method = "MappingDepend"   expr = "NFCPSIGNUP,NFCPBIZCODE"   desc = "手机钱包业务代码[NFCP][一级BOSS]"/>
+		 <mapping name = "272999999853"                mapping = "NFCPBLFLG"       method = "MappingDepend"   expr = "NFCPSIGNUP,NFCPBLFLG"     desc = "手机钱包计费类型[NFCP][一级BOSS]"/>
+		 <mapping name = "272999999853"                mapping = "NFCPGLOBAL"      method = "MappingDepend"   expr = "NFCPSIGNUP,NFCPGLOBAL"    desc = "手机钱包是否全网[NFCP][一级BOSS]"/>
+		 <mapping name = "272999999853"                mapping = "NFCPRESULT"      method = "MappingDepend"   expr = "NFCPSIGNUP,NFCPRESULT"    desc = "手机钱包受理结果确认[NFCP][一级BOSS]"/>
+      </mapping>  
+       <!--用管中心（飞信、139邮箱、彩云业务）-->
+      <mapping name = "1270000080011"                mapping = "YGZX"            method = "MappingExist"       desc = "用管中心[YGZX][一级BOSS]">
+         <mapping name = "1270000080011"                mapping = "YGZXSIGNUP"      method = "MappingDirect"   desc = "用管中心[YGZX][一级BOSS]"/>
+	     <mapping name = "1270000080011"                mapping = "YGZXSPID"        method = "MappingDepend"   expr = "YGZXSIGNUP,YGZXSPID"       desc = "用管中心企业代码[YGZX][一级BOSS]"/>
+	     <mapping name = "1270000080011"                mapping = "YGZXBIZCODE"     method = "MappingDepend"   expr = "YGZXSIGNUP,YGZXBIZCODE"    desc = "用管中心业务代码[YGZX][一级BOSS]"/>
+	     <mapping name = "1270000080011"                mapping = "YGZXBIZCODECT"   method = "MappingDepend"   expr = "YGZXSIGNUP,YGZXBIZCODE"    desc = "用管中心业务代码[YGZX][一级BOSS]"/>	     
+	     <mapping name = "1270000080011"                mapping = "YGZXBLFLG"       method = "MappingDepend"   expr = "YGZXSIGNUP,YGZXBLFLG"      desc = "用管中心计费类型[YGZX][一级BOSS]"/>
+	     <mapping name = "1270000080011"                mapping = "YGZXGLOBAL"      method = "MappingDepend"   expr = "YGZXSIGNUP,YGZXGLOBAL"     desc = "用管中心是否全网[YGZX][一级BOSS]"/>
+	     <mapping name = "1270000080011"                mapping = "YGZXEXPIRE"      method = "MappingDepend"   expr = "YGZXSIGNUP,A1270000080011_PROP_L.EXPIRE"    desc = "飞信失效时间（飞信大包月业务需要用到）[YGZX][一级BOSS]"/>
+	     <mapping name = "310090451006"                 mapping = "YGZXBASE"        method = "MappingDirect"       desc = "三大免费基础业务[YGZX][一级BOSS]"/>
+	     <mapping name = "310080011001"                 mapping = "YGZXBASE"        method = "MappingDirect"       desc = "三大免费基础业务[YGZX][一级BOSS]"/>
+	     <mapping name = "314100302294"                 mapping = "YGZXBASE"        method = "MappingDirect"       desc = "三大免费基础业务[YGZX][一级BOSS]"/>
+	     <mapping name = "380000116323"                 mapping = "IMPSFXDBY"       method = "MappingDirect"       desc = "飞信大包月"/>
+         <mapping name = "380000116327"                 mapping = "IMPSFXDBY"       method = "MappingDirect"       desc = "飞信大包月"/>
+         <mapping name = "380000116325"                 mapping = "IMPSFXDBY"       method = "MappingDirect"       desc = "飞信大包月"/>
+      </mapping>
+      <!--用管中心（飞信、139邮箱、彩云业务）暂停-->
+      <mapping name = "380000021109"                mapping = "STOPMCLD"      method = "MappingDirect"   desc = "彩云暂停[YGZX][一级BOSS]"/>
+      <mapping name = "380000021111"                mapping = "STOPIMPS"      method = "MappingDirect"   desc = "飞信暂停[YGZX][一级BOSS]"/>
+      <mapping name = "380000021113"                mapping = "STOPMBOX"      method = "MappingDirect"   desc = "139邮箱免费版暂停[YGZX][一级BOSS]"/>
+      <!-- add by fushuan 亚信-2016-6702	YWZC000169492	手机支付业务、用管中心平台和本地数据不一致修复问题优化-李超 -->
+      <mapping name = "390000213083" 		 mapping = "YGZXCPXF"  	  method = "MappingSplite"   expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 	desc = "用管中心免费业务修复产品"/>
+      <!--WLW-->
+      <mapping name = "1380000010485"                mapping = "WLWYW"            			   method = "MappingExist"      desc = "短信服务[SMSWLW][一级BOSS]">
+      	<mapping name = "1380000010485"                mapping = "WLWYW"           			   method = "MappingDirect"     desc = "短信服务[SMSWLW][一级BOSS]"/>
+      	 <mapping name = "1380000010485"               mapping = "BUSINESSID1"                 method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.BUSINESSID1"         desc = "物联网BUSINESS[WLW][一级BOSS]"/>
+      	 <mapping name = "1380000010485"               mapping = "BUSINESSID2"                 method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.BUSINESSID2"         desc = "物联网BUSINESS[WLW][一级BOSS]"/>
+	     <mapping name = "1380000010485"               mapping = "WLWOPRCODE_VALUES"           method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWOPRCODE"          desc = "物联网操作类型[WLW][一级BOSS]"/>
+	     <mapping name = "1380000010485"               mapping = "WLWCMTFLAG"                  method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWCMTFLAG"          desc = "物联网沉默期停标志只上发用户状态不上发产品信息[WLW][一级BOSS]"/>
+	     <mapping name = "1380000010485"               mapping = "WLWOPC_VALUES"               method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWOPC"              desc = "物联网OPC[WLW][一级BOSS]"/>
+	     <mapping name = "1380000010485"               mapping = "WLWKI_VALUES"                method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWKI"               desc = "物联网KI[WLW][一级BOSS]"/>
+	     <mapping name = "1380000010485"               mapping = "WLWICCID"                    method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWICCID"            desc = "物联网ICCID[WLW][一级BOSS]"/>
+	     <mapping name = "1380000010485"               mapping = "WLWOLDICCID"                 method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWOLDICCID"         desc = "物联网OLDICCID[WLW][一级BOSS]"/>
+	     <mapping name = "1380000010485"               mapping = "WLWUSEROPENTIME_VALUES"      method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWUSEROPENTIME"          desc = "物联网用开户时间[WLW][一级BOSS]"/>
+	     <mapping name = "1380000010485"               mapping = "WLWMIANPRODID_VALUES"        method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWMIANPRODID"            desc = "物联网主产品编号[WLW][一级BOSS]"/>
+	     <mapping name = "1380000010485"               mapping = "WLWMIANPRODINSTID_VALUES"    method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWMIANPRODINSTID"        desc = "物联网主产品实例编号[WLW][一级BOSS]"/>
+	     <mapping name = "1380000010485"               mapping = "WLWMIANEFFECTIVEDATE_VALUES" method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWMIANEFFECTIVEDATE"     desc = "物联网主产品生效时间[WLW][一级BOSS]"/>
+	     <mapping name = "1380000010485"               mapping = "WLWMIANEXPIREDATE_VALUES"    method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWMIANEXPIREDATE"        desc = "物联网主产品失效时间[WLW][一级BOSS]"/>   
+	     <mapping name = "1380000010485"               mapping = "CONTMOBILE"                  method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.CONTMOBILE"               desc = "物联网联系人电话[WLW][一级BOSS]"/> 	    
+	     <mapping name = "1380000010485"               mapping = "WLWMIANPROD"                 method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWMIANPROD"   desc = "物联网主产品[WLW][一级BOSS]"/>  
+	     <mapping name = "1380000010485"               mapping = "TESTSTATE"                   method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.TESTSTATE"   desc = "物联网主产品[WLW][一级BOSS]"/>  
+	     <mapping name = "1380000010485"               mapping = "TESTPRODSTATE"               method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.TESTPRODSTATE"   desc = "物联网主产品[WLW][一级BOSS]"/>  
+		 <!--add by fengliang 集客-2015-9515 增加物联网卡类型  -->
+		 <mapping name = "1380000010485"               mapping = "WLWSIMCARD"               method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWSIMCARD"   desc = "物联网卡类型[WLW][一级BOSS]"/>
+		 <!-- add by fushuan 信息-2015-24760	YWZC000157602	行车卫士前装业务全网联调测试（信息-2015-20827）-客户管理等-->
+		 <mapping name = "1380000010485"               mapping = "WLWXCWS"               method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWXCWS"   desc = "物联网行车卫士[WLW][一级BOSS]"/>
+		 <!-- add by fengliang 信息-2015-24739 新增物联网空中写卡开户-->	 
+		 <mapping name = "1380000010485"               mapping = "WLWYWKZXK_OLDMOBNUM"               method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWYWKZXK_OLDMOBNUM"   desc = "物联网空中写卡业务旧号码[WLW][一级BOSS]"/>
+		 <mapping name = "1380000010485"               mapping = "WLWYWKZXK_OLDPROVID"               method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWYWKZXK_OLDPROVID"   desc = "物联网空中写卡业务旧号码归属省代码[WLW][一级BOSS]"/>
+		 <!-- add by fengliang 信息-2016-11456-物联网专网空中写卡业务联调测试-->	
+		 <mapping name = "1380000010485"               mapping = "WLWYW_ADDRESS"               method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWYW_ADDRESS"   desc = "物联网空中写卡业务客户地址[WLW][一级BOSS]"/>
+		 <mapping name = "1380000010485"               mapping = "WLWYW_EMAIL"               method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWYW_EMAIL"   desc = "物联网空中写卡业务客户邮箱[WLW][一级BOSS]"/>
+		 <mapping name = "1380000010485"               mapping = "WLWYW_POSTCODE"               method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWYW_POSTCODE"   desc = "物联网空中写卡业务客户邮编[WLW][一级BOSS]"/>
+		 <mapping name = "1380000010485"               mapping = "WLWYW_FAX"               method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWYW_FAX"   desc = "物联网空中写卡业务客户传真[WLW][一级BOSS]"/>
+		 
+		 <mapping name = "380000010714"                mapping = "WLWSMSPKG"                   method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWSMSPKG"     desc = "短信增值产品包（附加产品包，标准）[WLW][一级BOSS]"/>
+		 <mapping name = "380000010715"                mapping = "WLWSMSPKG1"                  method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWSMSPKG1"    desc = "短信增值产品包(优先级1)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010716"                mapping = "WLWSMSPKG2"                  method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWSMSPKG2"    desc = "短信增值产品包(优先级2)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010717"                mapping = "WLWSMSPKG3"                  method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWSMSPKG3"    desc = "短信增值产品包(优先级3)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010718"                mapping = "WLWGPRSPKG"                  method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWGPRSPKG"    desc = "GPRS增值产品包[WLW][一级BOSS]"/>		 
+		 <mapping name = "380000010759"                mapping = "WLWJQKPKG"                   method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWJQKPKG"    desc = "机器卡产品(产品包)[WLW][一级BOSS]"/>		 
+		 <mapping name = "380000010760"                mapping = "WLWWLTPKG"                   method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWWLTPKG"    desc = "物联通产品(产品包)[WLW][一级BOSS]"/>		 		
+		 <mapping name = "380000010484"                mapping = "SMSSMSWLW2BZ_VALUES"      method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW2BZ"     desc = "短信2元套餐(标准)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010486"                mapping = "SMSSMSWLW3BZ_VALUES"      method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW3BZ"     desc = "短信3元套餐(标准)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010487"                mapping = "SMSSMSWLW5BZ_VALUES"      method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW5BZ"     desc = "短信5元套餐(标准)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010488"                mapping = "SMSSMSWLW10BZ_VALUES"     method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW10BZ"    desc = "短信10元套餐(标准)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010489"                mapping = "SMSSMSWLWBZ_VALUES"       method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLWBZ"      desc = "短信基础服务产品[WLW][一级BOSS]"/>
+		 <mapping name = "380000010490"                mapping = "SMSSMSWLW2BZ1_VALUES"     method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW2BZ1"    desc = "短信2元套餐(优先级1)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010491"                mapping = "SMSSMSWLW3BZ1_VALUES"     method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW3BZ1"    desc = "短信3元套餐(优先级1)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010492"                mapping = "SMSSMSWLW5BZ1_VALUES"     method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW5BZ1"    desc = "短信5元套餐(优先级1)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010493"                mapping = "SMSSMSWLW10BZ1_VALUES"    method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW10BZ1"   desc = "短信10元套餐(优先级1)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010494"                mapping = "SMSSMSWLWBZ1_VALUES"      method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLWBZ1"     desc = "短信基础服务产品(优先级1)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010495"                mapping = "SMSSMSWLW2BZ2_VALUES"     method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW2BZ2"    desc = "短信2元套餐(优先级2)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010496"                mapping = "SMSSMSWLW3BZ2_VALUES"     method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW3BZ2"    desc = "短信3元套餐(优先级2)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010497"                mapping = "SMSSMSWLW5BZ2_VALUES"     method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW5BZ2"    desc = "短信5元套餐(优先级2)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010498"                mapping = "SMSSMSWLW210BZ2_VALUES"   method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW10BZ2"   desc = "短信10元套餐(优先级2)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010499"                mapping = "SMSSMSWLWBZ2_VALUES"      method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLWBZ2"     desc = "短信基础服务产品(优先级2)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010500"                mapping = "SMSSMSWLW2BZ3_VALUES"     method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW2BZ3"    desc = "短信2元套餐(优先级3)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010501"                mapping = "SMSSMSWLW3BZ3_VALUES"     method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW3BZ3"    desc = "短信3元套餐(优先级3)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010502"                mapping = "SMSSMSWLW5BZ3_VALUES"     method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW5BZ3"    desc = "短信5元套餐(优先级3)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010503"                mapping = "SMSSMSWLW10BZ3_VALUES"    method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLW10BZ3"   desc = "短信10元套餐(优先级3)[WLW][一级BOSS]"/>
+		 <mapping name = "380000010504"                mapping = "SMSSMSWLWBZ3_VALUES"      method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.SMSSMSWLWBZ3"     desc = "短信基础服务产品(优先级3)[WLW][一级BOSS]"/>	  
+		 <mapping name = "380000010505"                mapping = "GPRSWLW5_VALUES"          method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.GPRSWLW5"         desc = "GPRS5元套餐[WLW][一级BOSS]"/>	      
+         <mapping name = "380000010507"                mapping = "GPRSWLW10_VALUES"         method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.GPRSWLW10"        desc = "GPRS10元套餐[WLW][一级BOSS]"/>
+         <mapping name = "380000010508"                mapping = "GPRSWLW20_VALUES"         method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.GPRSWLW20"        desc = "GPRS20元套餐[WLW][一级BOSS]"/>
+         <mapping name = "380000010509"                mapping = "GPRSWLW30_VALUES"         method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.GPRSWLW30"        desc = "GPRS30元套餐[WLW][一级BOSS]"/>
+         <mapping name = "380000010510"                mapping = "GPRSWLW50_VALUES"         method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.GPRSWLW50"        desc = "GPRS50元套餐[WLW][一级BOSS]"/>
+         <mapping name = "380000010511"                mapping = "GPRSWLW100_VALUES"        method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.GPRSWLW100"       desc = "GPRS100元套餐[WLW][一级BOSS]"/>
+         <mapping name = "380000010512"                mapping = "GPRSWLW200_VALUES"        method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.GPRSWLW200"       desc = "GPRS200元套餐[WLW][一级BOSS]"/>
+         <mapping name = "380000010513"                mapping = "GPRSWLWBZ_VALUES"         method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.GPRSWLWBZ"        desc = "GPRS基础服务产品[WLW][一级BOSS]"/>
+         <mapping name = "380000010514"                mapping = "TXGLWLW_VALUES"           method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.TXGLWLW"          desc = "通信管理产品[WLW][一级BOSS]"/>
+         <mapping name = "380000010516"                mapping = "ZYJQKWLW_VALUES"          method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.ZYJQKWLW"         desc = "专用机器卡[WLW][一级BOSS]"/>
+         <mapping name = "380000010518"                mapping = "JQKCSQTCWLW_VALUES"       method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.JQKCSQTCWLW"      desc = "机器卡测试期套餐[WLW][一级BOSS]"/>
+         <mapping name = "380000010520"                mapping = "ZDGLCPWLW_VALUES"         method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.ZDGLCPWLW"        desc = "终端管理产品[WLW][一级BOSS]"/>
+         <mapping name = "380000010522"                mapping = "WLTCSQTCWLW_VALUES"       method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLTCSQTCWLW"      desc = "物联通测试期套餐[WLW][一级BOSS]"/>
+         <mapping name = "380000010524"                mapping = "WLTMZWLW_VALUES"          method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLTMZWLW"         desc = "物联通模组[WLW][一级BOSS]"/>
+         <mapping name = "380000010543"                mapping = "YLTXCPWLW_VALUES"         method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.YLTXCPWLW"        desc = "余量提醒产品[WLW][一级BOSS]"/>
+     	 
+     	 <!-- add by fengliang 物联网优化 改造 -->
+     	 <mapping name = "390000049179"                mapping = "ZYJQKWLW_VALUES"          method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.ZYJQKWLW"         desc = "专用机器卡[WLW][一级BOSS]-380000010516"/>
+      	 <mapping name = "390000049279"                mapping = "WLWJQKPKG"                   method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWJQKPKG"    desc = "机器卡产品(产品包)[WLW][一级BOSS]-390000049279"/>
+      	 <mapping name = "390000049215"                mapping = "JQKCSQTCWLW_VALUES"       method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.JQKCSQTCWLW"      desc = "机器卡测试期套餐[WLW][一级BOSS]-380000010518"/>
+      	 
+      	 <!-- add by fengliang 车联网  -->
+      	 <mapping name = "390000051004"                mapping = "ZYJQKWLW_VALUES"          method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.ZYJQKWLW"         desc = "车联网专用机器卡[WLW][一级BOSS]-390000051004"/>
+      	 <mapping name = "390000051002"                mapping = "WLWJQKPKG"                   method = "MappingDepend"     expr = "WLWYW,A1380000010485_PROP_L.WLWJQKPKG"    desc = "车联网机器卡产品(产品包)[WLW][一级BOSS]-390000051002"/>
+      	 
+      </mapping>
+      <!-- add by fengliang 车联网增加方向受理流水号 PLATFORMOPRSEQ-->
+      <mapping name = "PLATFORMOPRSEQ"              mapping = "PLATFORMOPRSEQ"            method = "MappingDirect"    desc = "车联网增加方向受理流水号 PLATFORMOPRSEQ"/>
+      <mapping name = "380000185395" 			    mapping = "WLWYYCP"  		          method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			        desc = "物联网语音产品服务[WLW][一级BOSS]"/>
+      <mapping name = "380000185396" 			    mapping = "WLWYWGJMY"  		          method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			        desc = "物联网业务国际漫游服务[WLW][一级BOSS]"/>      
+      <!--add by fengliang 信息-2015-10554 -->
+      <mapping name = "390000090961" 			    mapping = "WLWYWLDXS"  		          method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			        desc = "物联网业务来电显示服务[WLW][一级BOSS]"/>
+      <!-- WLAN自动认证国际及港澳台漫游 -->
+      <mapping name = "380000010896" 				mapping = "HMFWLAN" 		          method = "MappingExist"	  	 desc="WLAN自动认证国际及港澳台漫游[HMFWLAN][一级BOSS]">
+         <mapping name = "380000010896"                mapping = "HMFWLANSIGNUP"      	    method = "MappingDirect"   	   desc = "WLAN自动认证国际及港澳台漫游[HMFWLAN][一级BOSS]"/>
+      </mapping>
+   	  <!-- WLAN包月不限时资费套餐叠加包10元 -->
+	  <mapping name="315306000891" 				    mapping="BY10WLAN" 		              method="MappingExist"	  		 desc="WLAN包月不限时资费套餐叠加包10元[WLANBY10][一级BOSS]">
+	     <mapping  name = "315306000891"              mapping = "BY10WLANSIGNUP"            method = "MappingDirect"   	   desc="WLAN包月不限时资费套餐叠加包10元[WLANBY10][一级BOSS]" />
+	     <mapping  name = "315306000891"              mapping = "BY10WLANPSWD"   	    	method = "MappingDepend"   	   expr="BY10WLANSIGNUP,A270000015001_PROP_L.262100000015_D"   desc = "WLAN包月不限时资费套餐叠加包业务密码[BY10WLAN][一级BOSS]"/>
+		 <mapping  name = "315306000891"              mapping = "BY10WLANSPID"   	    	method = "MappingDepend"   	   expr="BY10WLANSIGNUP,BY10WLANSPID"    	 				   desc = "WLAN包月不限时资费套餐叠加包企业代码[BY10WLAN][一级BOSS]"/>
+		 <mapping  name = "315306000891"              mapping = "BY10WLANBIZCODE"	    	method = "MappingDepend"   	   expr="BY10WLANSIGNUP,BY10WLANBIZCODE" 	 				   desc = "WLAN包月不限时资费套餐叠加包业务代码[BY10WLAN][一级BOSS]"/>
+		 <mapping  name = "315306000891"              mapping = "BY10WLANBLFLG"  	   	 	method = "MappingDepend"   	   expr="BY10WLANSIGNUP,BY10WLANBLFLG"   	 				   desc = "WLAN包月不限时资费套餐叠加包计费类型[BY10WLAN][一级BOSS]"/>
+		 <mapping  name = "315306000891"              mapping = "BY10WLANINFOCODE"      	method = "MappingDepend"   	   expr="BY10WLANSIGNUP,BY10WLANINFOCODE"  					   desc = "WLAN包月不限时资费套餐叠加包基础信息代码[BY10WLAN][一级BOSS]"/>
+         <mapping  name = "315306000891"              mapping = "BY10WLANINFOVALUE"     	method = "MappingDepend"   	   expr="BY10WLANSIGNUP,BY10WLANINFOVALUE" 					   desc = "WLAN包月不限时资费套餐叠加包基础信息值[BY10WLAN][一级BOSS]"/>
+         <mapping  name = "315306000891"              mapping = "BY10WLANGLOBAL" 	    	method = "MappingDepend"   	   expr="BY10WLANSIGNUP,BY10WLANGLOBAL"  	 				   desc = "WLAN包月不限时资费套餐叠加包是否全网[BY10WLAN][一级BOSS]"/>
+	  </mapping>
+	  <mapping name = "380000011417" 			    mapping = "FLWLAN"  		          method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			        desc = "WLAN流量封顶通告(CMCC热点)"/>
+   	  <mapping name = "380000011414" 			    mapping = "TLWLAN"  		          method = "MappingSplite"       expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			        desc = "1G流量封顶通告(CMCC热点)"/>
+   	  <!--Blackberry邮箱办公-->
+      <mapping name = "380000021150"                mapping = "BLBM"                      method = "MappingExist"        desc = "邮箱办公BlackBerry[BLBM][一级BOSS]">
+         <mapping name = "380000021150"                mapping = "BLBMSIGNUP"       		method = "MappingDirect"   	   desc = "邮箱办公BlackBerry[BLBM][一级BOSS]"/>
+         <mapping name = "380000021150"                mapping = "BLBMSERVTYPE"     		method = "MappingDepend"   	   expr = "BLBMSIGNUP,BLBMSERVTYPE"        				desc = "邮箱办公BlackBerry[BLBM][一级BOSS]"/>
+      </mapping>
+      <!--语音信箱-->
+      <mapping name = "380000021289"                mapping = "VMFV"            		  method = "MappingExist"    	 desc = "语音信箱[VMFV][语音信箱平台]">
+		 <mapping name = "380000021289"                mapping = "VMFVSIGNUP"      			method = "MappingDirect"   	   desc = "语音信箱[VMFV][语音信箱平台]"/>
+      	 <mapping name = "380000021289"                mapping = "VMFVSPID"                 method = "MappingDepend"   	   expr = "VMFVSIGNUP,VMFVSPID"        desc = "语音信箱企业代码[VMFV][语音信箱平台]"/>
+		 <mapping name = "380000021289"                mapping = "VMFVBIZCODE"              method = "MappingDepend"   	   expr = "VMFVSIGNUP,VMFVBIZCODE"     desc = "语音信箱业务代码[VMFV][语音信箱平台]"/>
+      	 <mapping name = "380000021289"                mapping = "VMFVBLFLG"                method = "MappingDepend"       expr = "VMFVSIGNUP,VMFVBLFLG"       desc = "语音信箱计费类型[VMFV][语音信箱平台]"/>
+		 <mapping name = "380000021289"                mapping = "VMFVGLOBAL"               method = "MappingDepend"   	   expr = "VMFVSIGNUP,VMFVGLOBAL"      desc = "语音信箱是否全网[VMFV][语音信箱平台]"/>
+      </mapping>
+      <!-- add by fengliang 信息-2015-4055 start -->
+	  <mapping name = "390000090286"                mapping = "WLANSHAR"            method = "MappingExist"            desc = "WLAN流量共享">
+	     <mapping name = "390000090286"             mapping = "WLANSHAR"       	    method = "MappingDirect"           desc = "WLAN流量共享"/>
+	     <mapping name = "390000090286"             mapping = "WLANSHAR_CUR"        method = "MappingDepend"           expr = "WLANSHAR,A390000090286_PROP_L.NowNum"   desc = "wlan流量共享当月终端共享数"/>
+	     <mapping name = "390000090286"             mapping = "WLANSHAR_NEXT"       method = "MappingDepend"           expr = "WLANSHAR,A390000090286_PROP_L.NextNum"   desc = "wlan流量共享当月终端共享数"/>
+	  	 <mapping name = "390000090286"             mapping = "WLANSHAR_PROM"       method = "MappingDepend"           expr = "WLANSHAR,A390000090286_PROP_L.PROM"   desc = "wlan流量共享优惠"/>
+	  </mapping>
+	  <!-- add by fengliang 信息-2015-4055 end -->
+      <!--互联网电视-->
+      <mapping name = "380000185754"                mapping = "WEBTV"            		  method = "MappingExist"    	 desc = "互联网电视[基础包][WEBTV][互联网电视平台]">
+		 <mapping name = "380000185754"                mapping = "WEBTVSIGNUP"      		method = "MappingDirect"   	   desc = "互联网电视[WEBTV][互联网电视平台]"/>
+      	 <mapping name = "380000185754"                mapping = "WEBTVSPID"                method = "MappingDepend"   	   expr = "WEBTVSIGNUP,WEBTVSPID"        desc = "互联网电视企业代码[WEBTV][互联网电视平台]"/>
+		 <mapping name = "380000185754"                mapping = "WEBTVBIZCODE"             method = "MappingDepend"   	   expr = "WEBTVSIGNUP,WEBTVBIZCODE"     desc = "互联网电视业务代码[WEBTV][互联网电视平台]"/>
+      	 <mapping name = "380000185754"                mapping = "WEBTVBLFLG"               method = "MappingDepend"       expr = "WEBTVSIGNUP,WEBTVBLFLG"       desc = "互联网电视计费类型[WEBTV][互联网电视平台]"/>
+		 <mapping name = "380000185754"                mapping = "WEBTVGLOBAL"              method = "MappingDepend"   	   expr = "WEBTVSIGNUP,WEBTVGLOBAL"      desc = "互联网电视是否全网[WEBTV][互联网电视平台]"/>
+		 <mapping name = "380000185754"                mapping = "STBID"                    method = "MappingDepend"   	   expr = "WEBTVSIGNUP,A380000185754_PROP_L.STBID"      desc = "互联网电视机顶盒ID[WEBTV][互联网电视平台]"/>
+      </mapping>
+      <!-- add by fengliang 信息-2015-6371-家庭平台-->
+      <mapping name = "390000090988"                mapping = "JTPT"            		  method = "MappingExist"    	 desc = "家庭开放平台[JTPT][家庭开放平台]">
+		 <mapping name = "390000090988"                mapping = "JTPTSIGNUP"      		method = "MappingDirect"   	   desc = "家庭开放平台[JTPT][家庭开放平台]"/>
+      	 <mapping name = "390000090988"                mapping = "JTPTSPID"                method = "MappingDepend"   	   expr = "JTPTSIGNUP,JTPTSPID"        desc = "家庭开放平台企业代码[JTPT][家庭开放平台]"/>
+		 <mapping name = "390000090988"                mapping = "JTPTBIZCODE"             method = "MappingDepend"   	   expr = "JTPTSIGNUP,JTPTBIZCODE"     desc = "家庭开放平台业务代码[JTPT][家庭开放平台]"/>
+      	 <mapping name = "390000090988"                mapping = "JTPTBLFLG"               method = "MappingDepend"       expr = "JTPTSIGNUP,JTPTBLFLG"       desc = "家庭开放平台计费类型[JTPT][家庭开放平台]"/>
+		 <mapping name = "390000090988"                mapping = "JTPTGLOBAL"              method = "MappingDepend"   	   expr = "JTPTSIGNUP,JTPTGLOBAL"      desc = "家庭开放平台是否全网[JTPT][家庭开放平台]"/>
+      </mapping>
+      <!--随e行客户端营销赠送流量叠加包-->
+      <mapping name = "380000186679"                mapping = "EWLAN"            		  method = "MappingExist"    	 desc = "随e行客户端营销赠送流量叠加包[EWLAN][一级BOSS]">
+		 <mapping name = "380000186679"                mapping = "EWLANSIGNUP"      		method = "MappingDirect"   	   desc = "随e行客户端营销赠送流量叠加包[EWLAN][一级BOSS]"/>
+      	 <mapping name = "380000186679"                mapping = "EWLANSPID"                method = "MappingDepend"   	   expr = "EWLANSIGNUP,EWLANSPID"        desc = "随e行客户端营销赠送流量叠加包代码[EWLAN][一级BOSS]"/>
+		 <mapping name = "380000186679"                mapping = "EWLANBIZCODE"             method = "MappingDepend"   	   expr = "EWLANSIGNUP,EWLANBIZCODE"     desc = "随e行客户端营销赠送流量叠加包代码[EWLAN][一级BOSS]"/>
+      	 <mapping name = "380000186679"                mapping = "EWLANBLFLG"               method = "MappingDepend"       expr = "EWLANSIGNUP,EWLANBLFLG"       desc = "随e行客户端营销赠送流量叠加包类型[EWLAN][一级BOSS]"/>
+		 <mapping name = "380000186679"                mapping = "EWLANGLOBAL"              method = "MappingDepend"   	   expr = "EWLANSIGNUP,EWLANGLOBAL"      desc = "随e行客户端营销赠送流量叠加包是否全网[EWLAN][一级BOSS]"/>
+      </mapping>
+      <!--一卡多号(台湾远传)-->
+	  <mapping name = "270000091108"                mapping = "SIMT"            	      method = "MappingExist"        desc = "台湾远传一卡多号[SIMT][一级BOSS]">
+		 <mapping name = "270000091108"                mapping = "SIMTSIGNUP"     			method = "MappingDirect"   	   desc = "台湾远传一卡多号[SIMT][一级BOSS]"/>
+		 <mapping name = "270000091108"                mapping = "SIMTBIFLG"      			method = "MappingDepend"   	   expr = "SIMTSIGNUP,SIMTBIFLG"     desc = "台湾远传一卡多号副号码类型[SIMT][一级BOSS]"/>
+	     <mapping name = "270000091108"                mapping = "SIMTFMSL"       			method = "MappingDepend"       expr = "SIMTSIGNUP,SIMTFMSL"      desc = "台湾远传一卡多号副号码[SIMT][一级BOSS]"/>
+	     <mapping name = "270000091108"                mapping = "SIMTPLAN"       			method = "MappingDepend"       expr = "SIMTSIGNUP,SIMTPLAN"      desc = "台湾远传一卡多号套餐[SIMT][一级BOSS]"/>
+	  </mapping>
+	  <!-- 4G BOSS业务 -->
+      <mapping name = "1390000000165"                mapping = "LTEB"            		  method = "MappingExist"    	 desc = "4G BOSS[LTEB][4GBOSS平台]">
+		 <mapping name = "1390000000165"               mapping = "LTEB"      		  		method = "MappingDirect"   	   desc = "4G BOSS[LTEB][4GBOSS平台]"/>
+		 <mapping name = "1390000000165"               mapping = "BUSIID"                   method = "MappingDepend"       expr = "LTEB,A1390000000165_PROP_L.BUSIID"         desc = "业务编码[LTEB][4GBOSS平台]"/>
+      </mapping>
+      <!--国内一卡多号(副号一)-->
+	  <mapping name = "380000189716"                mapping = "SIMI"            		  method = "MappingExist"        desc = "国内一卡多号[SIMI][MOSP]">
+		 <mapping name = "380000189716"                mapping = "SIMISIGNUP"     			method = "MappingDirect"   	   desc = "国内一卡多号[SIMI][MOSP]"/>
+		 <mapping name = "380000189716"                mapping = "SIMIFMSISDN"  			method = "MappingDepend"   	   expr = "SIMISIGNUP,A380000189716_PROP_L.380000189718"     desc = "国内一卡多号副号码[SIMI][MOSP]"/>
+	     <mapping name = "380000189716"                mapping = "SIMISPID"       			method = "MappingDepend"   	   expr = "SIMISIGNUP,SIMISPID"        desc = "国内一卡多号企业代码[SIMI][MOSP]"/>
+	     <mapping name = "380000189716"                mapping = "SIMIBIZCODE"       		method = "MappingDepend"   	   expr = "SIMISIGNUP,SIMIBIZCODE"     desc = "国内一卡多号业务代码[SIMI][MOSP]"/>
+	     <mapping name = "380000189716"                mapping = "SIMIBLFLG"       			method = "MappingDepend"   	   expr = "SIMISIGNUP,SIMIBLFLG"       desc = "国内一卡多号计费类型[SIMI][MOSP]"/>
+	  	 <mapping name = "380000189716"                mapping = "SIMIGLOBAL"               method = "MappingDepend"   	   expr = "SIMISIGNUP,SIMIGLOBAL"      desc = "国内一卡多号是否全网[SIMI][MOSP]"/>
+	  </mapping>
+	  <!--国内一卡多号(副号二)-->
+	  <mapping name = "380000189717"                mapping = "SIME"            		  method = "MappingExist"        desc = "国内一卡多号[SIMI][MOSP]">
+		 <mapping name = "380000189717"                mapping = "SIMESIGNUP"     			method = "MappingDirect"   	   desc = "国内一卡多号[SIMI][MOSP]"/>
+		 <mapping name = "380000189717"                mapping = "SIMEFMSISDN"  			method = "MappingDepend"   	   expr = "SIMESIGNUP,A380000189717_PROP_L.380000189718"     desc = "国内一卡多号副号码[SIMI][MOSP]"/>
+	     <mapping name = "380000189717"                mapping = "SIMESPID"       			method = "MappingDepend"   	   expr = "SIMESIGNUP,SIMESPID"         desc = "国内一卡多号企业代码[SIMI][MOSP]"/>
+	     <mapping name = "380000189717"                mapping = "SIMEBIZCODE"       		method = "MappingDepend"   	   expr = "SIMESIGNUP,SIMEBIZCODE"     desc = "国内一卡多号业务代码[SIMI][MOSP]"/>
+	     <mapping name = "380000189717"                mapping = "SIMEBLFLG"       			method = "MappingDepend"   	   expr = "SIMESIGNUP,SIMEBLFLG"       desc = "国内一卡多号计费类型[SIMI][MOSP]"/>
+	  	 <mapping name = "380000189717"                mapping = "SIMEGLOBAL"               method = "MappingDepend"   	   expr = "SIMESIGNUP,SIMEGLOBAL"      desc = "国内一卡多号是否全网[SIMI][MOSP]"/>
+	  </mapping>
+	  <!--国内一卡多号(副号三)-->
+	  <mapping name = "380000189719"                mapping = "SIMS"            		  method = "MappingExist"        desc = "国内一卡多号[SIMI][MOSP]">
+		 <mapping name = "380000189719"                mapping = "SIMSSIGNUP"     			method = "MappingDirect"   	   desc = "国内一卡多号[SIMI][MOSP]"/>
+		 <mapping name = "380000189719"                mapping = "SIMSFMSISDN"  			method = "MappingDepend"   	   expr = "SIMSSIGNUP,A380000189719_PROP_L.380000189718"     desc = "国内一卡多号副号码[SIMI][MOSP]"/>
+	     <mapping name = "380000189719"                mapping = "SIMSSPID"       			method = "MappingDepend"   	   expr = "SIMSSIGNUP,SIMSSPID"        desc = "国内一卡多号企业代码[SIMI][MOSP]"/>
+	     <mapping name = "380000189719"                mapping = "SIMSBIZCODE"       		method = "MappingDepend"   	   expr = "SIMSSIGNUP,SIMSBIZCODE"     desc = "国内一卡多号业务代码[SIMI][MOSP]"/>
+	     <mapping name = "380000189719"                mapping = "SIMSBLFLG"       			method = "MappingDepend"   	   expr = "SIMSSIGNUP,SIMSBLFLG"       desc = "国内一卡多号计费类型[SIMI][MOSP]"/>
+	  	 <mapping name = "380000189719"                mapping = "SIMSGLOBAL"               method = "MappingDepend"   	   expr = "SIMSSIGNUP,SIMSGLOBAL"      desc = "国内一卡多号是否全网[SIMI][MOSP]"/>
+	  </mapping>
+	  <!-- add by fengliang 信息-2015-21692 企业一卡多号-->
+	  <!--企业一卡多号(副号0)  -->
+	  <mapping name = "390000210640"                mapping = "QYSIMA"            		  method = "MappingExist"        desc = "企业一卡多号[SIMI][MOSP]">
+		 <mapping name = "390000210640"                mapping = "QYSIMASIGNUP"     			method = "MappingDirect"   	   desc = "企业一卡多号[SIMI][MOSP]"/>
+		 <mapping name = "390000210640"                mapping = "QYSIMAFMSISDN"  			method = "MappingDepend"   	   expr = "QYSIMASIGNUP,A390000210640_PROP_L.390000210998"     desc = "企业一卡多号副号码[SIMI][MOSP]"/>
+	     <mapping name = "390000210640"                mapping = "QYSIMASPID"       			method = "MappingDepend"   	   expr = "QYSIMASIGNUP,QYSIMASPID"        desc = "企业一卡多号企业代码[SIMI][MOSP]"/>
+	     <mapping name = "390000210640"                mapping = "QYSIMABIZCODE"       		method = "MappingDepend"   	   expr = "QYSIMASIGNUP,QYSIMABIZCODE"     desc = "企业一卡多号业务代码[SIMI][MOSP]"/>
+	     <mapping name = "390000210640"                mapping = "QYSIMABLFLG"       			method = "MappingDepend"   	   expr = "QYSIMASIGNUP,QYSIMABLFLG"       desc = "企业一卡多号计费类型[SIMI][MOSP]"/>
+	  	 <mapping name = "390000210640"                mapping = "QYSIMAGLOBAL"               method = "MappingDepend"   	   expr = "QYSIMASIGNUP,QYSIMAGLOBAL"      desc = "企业一卡多号是否全网[SIMI][MOSP]"/>
+	  </mapping>
+	  <!--企业一卡多号(副号6)  -->
+	  <mapping name = "390000210646"                mapping = "QYSIMB"            		  method = "MappingExist"        desc = "企业一卡多号[SIMI][MOSP]">
+		 <mapping name = "390000210646"                mapping = "QYSIMBSIGNUP"     			method = "MappingDirect"   	   desc = "企业一卡多号[SIMI][MOSP]"/>
+		 <mapping name = "390000210646"                mapping = "QYSIMBFMSISDN"  			method = "MappingDepend"   	   expr = "QYSIMBSIGNUP,A390000210646_PROP_L.390000210998"     desc = "企业一卡多号副号码[SIMI][MOSP]"/>
+	     <mapping name = "390000210646"                mapping = "QYSIMBSPID"       			method = "MappingDepend"   	   expr = "QYSIMBSIGNUP,QYSIMBSPID"        desc = "企业一卡多号企业代码[SIMI][MOSP]"/>
+	     <mapping name = "390000210646"                mapping = "QYSIMBBIZCODE"       		method = "MappingDepend"   	   expr = "QYSIMBSIGNUP,QYSIMBBIZCODE"     desc = "企业一卡多号业务代码[SIMI][MOSP]"/>
+	     <mapping name = "390000210646"                mapping = "QYSIMBBLFLG"       			method = "MappingDepend"   	   expr = "QYSIMBSIGNUP,QYSIMBBLFLG"       desc = "企业一卡多号计费类型[SIMI][MOSP]"/>
+	  	 <mapping name = "390000210646"                mapping = "QYSIMBGLOBAL"               method = "MappingDepend"   	   expr = "QYSIMBSIGNUP,QYSIMBGLOBAL"      desc = "企业一卡多号是否全网[SIMI][MOSP]"/>
+	  </mapping>
+	  <!--企业一卡多号(副号7)  -->
+	  <mapping name = "390000210647"                mapping = "QYSIMC"            		  method = "MappingExist"        desc = "企业一卡多号[SIMI][MOSP]">
+		 <mapping name = "390000210647"                mapping = "QYSIMCSIGNUP"     			method = "MappingDirect"   	   desc = "企业一卡多号[SIMI][MOSP]"/>
+		 <mapping name = "390000210647"                mapping = "QYSIMCFMSISDN"  			method = "MappingDepend"   	   expr = "QYSIMCSIGNUP,A390000210647_PROP_L.390000210998"     desc = "企业一卡多号副号码[SIMI][MOSP]"/>
+	     <mapping name = "390000210647"                mapping = "QYSIMCSPID"       			method = "MappingDepend"   	   expr = "QYSIMCSIGNUP,QYSIMCSPID"        desc = "企业一卡多号企业代码[SIMI][MOSP]"/>
+	     <mapping name = "390000210647"                mapping = "QYSIMCBIZCODE"       		method = "MappingDepend"   	   expr = "QYSIMCSIGNUP,QYSIMCBIZCODE"     desc = "企业一卡多号业务代码[SIMI][MOSP]"/>
+	     <mapping name = "390000210647"                mapping = "QYSIMCBLFLG"       			method = "MappingDepend"   	   expr = "QYSIMCSIGNUP,QYSIMCBLFLG"       desc = "企业一卡多号计费类型[SIMI][MOSP]"/>
+	  	 <mapping name = "390000210647"                mapping = "QYSIMCGLOBAL"               method = "MappingDepend"   	   expr = "QYSIMCSIGNUP,QYSIMCGLOBAL"      desc = "企业一卡多号是否全网[SIMI][MOSP]"/>
+	  </mapping>
+	  <!--企业一卡多号(副号8)  -->
+	  <mapping name = "390000210648"                mapping = "QYSIMD"            		  method = "MappingExist"        desc = "企业一卡多号[SIMI][MOSP]">
+		 <mapping name = "390000210648"                mapping = "QYSIMDSIGNUP"     			method = "MappingDirect"   	   desc = "企业一卡多号[SIMI][MOSP]"/>
+		 <mapping name = "390000210648"                mapping = "QYSIMDFMSISDN"  			method = "MappingDepend"   	   expr = "QYSIMDSIGNUP,A390000210648_PROP_L.390000210998"     desc = "企业一卡多号副号码[SIMI][MOSP]"/>
+	     <mapping name = "390000210648"                mapping = "QYSIMDSPID"       			method = "MappingDepend"   	   expr = "QYSIMDSIGNUP,QYSIMDSPID"        desc = "企业一卡多号企业代码[SIMI][MOSP]"/>
+	     <mapping name = "390000210648"                mapping = "QYSIMDBIZCODE"       		method = "MappingDepend"   	   expr = "QYSIMDSIGNUP,QYSIMDBIZCODE"     desc = "企业一卡多号业务代码[SIMI][MOSP]"/>
+	     <mapping name = "390000210648"                mapping = "QYSIMDBLFLG"       			method = "MappingDepend"   	   expr = "QYSIMDSIGNUP,QYSIMDBLFLG"       desc = "企业一卡多号计费类型[SIMI][MOSP]"/>
+	  	 <mapping name = "390000210648"                mapping = "QYSIMDGLOBAL"               method = "MappingDepend"   	   expr = "QYSIMDSIGNUP,QYSIMDGLOBAL"      desc = "企业一卡多号是否全网[SIMI][MOSP]"/>
+	  </mapping>
+	  <!--一号多终端(副终端一) add by fengliang 信息-2017-11038-关于下发一号多终端业务支撑改造方案的通知  -->
+	  <mapping name = "390020005024"                mapping = "SNMD"            		  method = "MappingExist"          desc = "一号多终端[SNMD][MDRP]">
+		 <mapping name = "390020005024"                mapping = "SNMDSIGNUP"     		  method = "MappingDirect"   	   desc = "一号多终端[SNMD][MDRP]"/>
+		 <mapping name = "390020005024"                mapping = "SNMDMSISDN"  			  method = "MappingDepend"   	   expr = "SNMDSIGNUP,A390020005024_PROP_L.390020005025"     desc = "一号多终端副号码[SNMD][MDRP]"/>
+	     <mapping name = "390020005024"                mapping = "SNMDAUXTYPE"       	  method = "MappingDepend"   	   expr = "SNMDSIGNUP,A390020005024_PROP_L.SNMDAUXTYPE"        desc = "一号多终端副卡类型[SNMD][MDRP]"/>
+	     <mapping name = "390020005024"                mapping = "SNMDAUXICCID"       	  method = "MappingDepend"   	   expr = "SNMDSIGNUP,A390020005024_PROP_L.SNMDAUXICCID"     desc = "一号多终端副号iccid[SNMD][MDRP]"/>
+	     <mapping name = "390020005024"                mapping = "SNMDAUXNICKNAME"        method = "MappingDepend"         expr = "SNMDSIGNUP,A390020005024_PROP_L.SNMDAUXNICKNAME"       desc = "一号多终端副设备昵称[SNMD][MDRP]"/>
+	  	 <mapping name = "390020005024"                mapping = "SNMDEID"                method = "MappingDepend"         expr = "SNMDSIGNUP,A390020005024_PROP_L.SNMDEID"      desc = "一号多终端副设备esim卡eid[SNMD][MDRP]"/>
+	  	 <mapping name = "390020005024"                mapping = "SNMDIMEI"               method = "MappingDepend"         expr = "SNMDSIGNUP,A390020005024_PROP_L.SNMDIMEI"      desc = "一号多终端副设备imei[SNMD][MDRP]"/>
+	  	 <mapping name = "390020005024"                mapping = "SNMDREQDAY"             method = "MappingDepend"         expr = "SNMDSIGNUP,A390020005024_PROP_L.SNMDREQDAY"      desc = "一号多终端对账标示[SNMD][MDRP]"/>
+	  	 <mapping name = "390020005024"                mapping = "SNMDNOTICETIME"         method = "MappingDepend"         expr = "SNMDSIGNUP,A390020005024_PROP_L.SNMDNOTICETIME"      desc = "一号多终端通知请求时间[SNMD][MDRP]"/>
+	  	 <mapping name = "390020005024"                mapping = "SNMDSEQ"                method = "MappingDepend"         expr = "SNMDSIGNUP,A390020005024_PROP_L.SNMDSEQ"      desc = "一号多终端通知请求流水[SNMD][MDRP]"/>
+	  </mapping>
+	  <!--和多号实体副号码状态同步和多号平台     add by fengliang 信息-2017-8482 -->
+	  <mapping name = "390020005049"                mapping = "HDHYW"            		  method = "MappingExist"          desc = "和多号实体副号码状态变更通知平台[SIMI][MOSP]">
+		 <mapping name = "390020005049"                mapping = "HDHYWSIGNUP"     		  method = "MappingDirect"   	   desc = "和多号实体副号码[SIMI][MOSP]"/>
+		 <mapping name = "390020005049"                mapping = "HDHYWSPID"  			  method = "MappingDepend"   	   expr = "HDHYWSIGNUP,A390020005049_PROP_L.HDHYWSPID"     desc = "和多号实体副号码企业代码[SIMI][MOSP]"/>
+	     <mapping name = "390020005049"                mapping = "HDHYWBIZCODE"       	  method = "MappingDepend"   	   expr = "HDHYWSIGNUP,A390020005049_PROP_L.HDHYWBIZCODE"        desc = "和多号实体副号码业务代码[SIMI][MOSP]"/>
+	  </mapping>
+<!-- add by fushuan 信息-2017-20634-YWZC000241465-关于政企产品集中化支撑方案试点的通知-客户管理等 -->
+	  <mapping name = "390020002757"                mapping = "ZQESP"            		  method = "MappingExist"          desc = "政企esp">
+		 <mapping name = "390020002757"                mapping = "ZQESPSIGNUP"     		  method = "MappingDirect"   	   desc = "政企esp"/>
+	  </mapping>
+   </mappings>
+</ucmframe>
+

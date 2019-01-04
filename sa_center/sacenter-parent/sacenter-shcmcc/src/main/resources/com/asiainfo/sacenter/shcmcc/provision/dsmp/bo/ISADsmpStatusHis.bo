@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="cmkt5" name="ISADsmpStatusHis" mainattr="PS_ID">
+    <mapingenty type="table">{ISA_DSMP_STATUS_H}</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="PS_ID" maxlength="15" datatype="Long" type="PK">
+        <mapingcol datatype="NUMBER">PS_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CUST_ORDER" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CUST_ORDER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_CODE" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">DONE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">ORDER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TASK_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">TASK_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CATEGORY" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CATEGORY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">USER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BILL_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SUB_BILL_ID" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">SUB_BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRIORITY" maxlength="10" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">PRIORITY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="START_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">START_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="END_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">END_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RET_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">RET_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PLATFORM" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PLATFORM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DIRECTIVE" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">DIRECTIVE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROGRAM" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PROGRAM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OLD_PS_PARAM" maxlength="4000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">OLD_PS_PARAM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PS_PARAM" maxlength="4000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PS_PARAM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TARGET_PARAM" maxlength="4000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">TARGET_PARAM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PS_STATUS" maxlength="2" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">PS_STATUS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAIL_CODE" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">FAIL_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAIL_DEVICE" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">FAIL_DEVICE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAIL_REASON" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">FAIL_REASON</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FAIL_LOG" maxlength="4000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">FAIL_LOG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STOP_TYPE" maxlength="2" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">STOP_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PS_NET_CODE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PS_NET_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SERVICE_ID" maxlength="5" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">SERVICE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RETRY_TIMES" maxlength="3" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">RETRY_TIMES</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SUB_PLAN_NO" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">SUB_PLAN_NO</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPOSITE" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">COMPOSITE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">ORDER_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NOTES" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">NOTES</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

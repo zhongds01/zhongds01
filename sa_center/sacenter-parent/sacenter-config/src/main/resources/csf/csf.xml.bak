@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="GBK"?>
+<Csf>
+	<Category name="client" description="客户端运行引擎需要的配置">
+		<Item name="csf.retry.policy">
+			<value>RetryNTimes(3)</value>
+			<description>客户端集群策略（重试策略）：重试N次,括号中为0或负数不重试。生产和测试环境建议配置重试“3”次</description>
+		</Item>
+		<Item name="csf.client.serviceinfo.fetcher" description="服务路由方式">
+			<value>com.ai.aif.csf.client.service.info.fetcher.FetchServiceInfoFromServiceRouter</value>
+			<description>
+				客户端获取服务信息的方式
+				从服务路由器获取配置为 com.ai.aif.csf.client.service.info.fetcher.FetchServiceInfoFromServiceRouter。
+				从jvm缓存中获取（通常在开发的时候使用，这样服务路由器可以对开发透明）
+				com.ai.aif.csf.db.client.service.info.fetcher.FetchServiceInfoFromDBCache
+				直连方式配置com.ai.aif.csf.client.service.info.fetcher.FetchDirectServiceInfo
+		</description>
+		</Item>
+
+		<Item name="csf.client.exception.handler">
+			<value>com.ai.aif.csf.client.service.exception.handler.DefaultClientExceptionHandler</value>
+			<description>
+				1、该配置开放对业务异常的处理，可以对异常进行收缩（广西）或其他处理;
+				2、框架默认实现，直接将此类异常抛出，不做处理
+				3、广西异常收缩实现类com.ai.aif.csf.platform.exception.filter.ExceptionShrinkFilter
+			</description>
+		</Item>
+
+		<Item name="csf.client.extend">
+			<value>com.ai.aif.csf.client.service.extend.DefaultClientExtend</value>
+			<description>
+				客户端扩展，可以扩展是否携带用户信息，是否根据regionid路由
+				默认不携带appframe相关的对象
+			</description>
+		</Item>
+
+		<ChildCategory name="client.timeout" description="客户端超时配置">
+			<Item name="csf.client.default.connection.timeout">
+				<value>1000</value>
+				<description>客户端默认连接创建时间，毫秒为单位；必须配置，不配置报错</description>
+			</Item>
+			<Item name="csf.client.default.socket.timeout">
+				<value>80000</value>
+				<description>客户端默认socket不活动最大时间，毫秒为单位；必须配置，不配置报错</description>
+			</Item>
+		</ChildCategory>
+
+
+		<ChildCategory name="client.warmup" description="客户端预热">
+			<Item name="warm.interceptor" description="客户端预热">
+				<value></value>
+				<description>
+					1、预热拦截器，做预热前、预热后、预热失败的处理   以分号;分割
+					2、实现接口com.ai.aif.csf.api.common.warmup.IWarmupInterceptor
+				</description>
+			</Item>
+			<Item name="warm.upper" description="客户端预热">
+				<value></value>
+				<description>
+					1、预热实现类,以分号;分割
+					2、com.ai.aif.csf.api.common.warmup.IWarmUpper
+				</description>
+			</Item>
+		</ChildCategory>
+
+		<ChildCategory name="client.safe.shutdown" description="客户端安全停机">
+			<Item name="safe.shutdown" description="客户端安全停机">
+				<value></value>
+				<description>
+					1、停机时需要完成的任务继承该接口
+					2、实现接口com.ai.aif.csf.api.common.safe.shutdown.ISafeShutdown
+				</description>
+			</Item>
+		</ChildCategory>
+	</Category>
+
+	<Category name="common" description="客户端和服务端都需要的配置">
+		<Item name="csf.integrated.centers">
+			<value>open</value>
+			<description>
+				1、中心集成定义(当前有哪些中心的代码是部署在一起的,以分号分割，比如order;product;
+				2、对于前后端分离/融合中心，前端的该文件都配置为force@remote
+			</description>
+		</Item>
+		<Item name="zk.server.list">
+			<!--<value>10.10.152.204:12181,10.10.152.205:12181,10.10.152.206:12181</value>-->
+			<value>10.10.140.118:2181</value>
+			<description>多个地址用逗号(,)隔开10.10.169.57:2189 10.10.140.118:2181 </description>
+		</Item>
+		<Item name="meta.xml.fetch.model">
+			<value>db</value>
+			<description>描述文件方式服务反射，描述文件内容获取方式，默认为读文件方式</description>
+		</Item>
+		<Item name="kryo.reigster.classes">
+			<value></value>
+			<description>
+				1、kryo序列化需要注册的类，以分号分割；配置需要序列化传输的类；该选项可以不配置，但是配置可以提升序列化性能
+				2、需要保证客户端和服务端的配置项相同
+			</description>
+		</Item>
+		<Item name="turn.on.monitor" description="服务端监控http服务">
+			<value>false</value>
+			<description>
+				Servlet("com.ai.aif.csf.client.monitor.ApplicationCmdMonitorServlet", "/application.commands");
+				Servlet("com.ai.aif.csf.client.monitor.ServiceCmdMonitorServlet", "/service.commands");
+				Servlet("com.ai.aif.csf.executor.monitor.ThreadPoolMonitorServlet", "/threadPool");
+			</description>
+		</Item>
+	</Category>
+
+	<Category name="server" description="服务端需要的配置">
+		<Item name="csf.no.wrapper.exceptions">
+			<value></value>
+			<description>
+				1、异常的完全限定名，多个可以传输的异常以分号;分割
+				2、默认情况异常不传递,配置为空
+				在广西此处应该配置为com.ai.common.i18n.BusinessException
+				3、服务端在调用业务方法，抛出这些异常的时候，不做包装处理，异常序列化传输到客户端
+				4、客户端在获取到这些异常的时候，将异常传递给客户端异常处理接口（csf.client.exception.handler中配置的类）
+			</description>
+		</Item>
+		<Item name="csf.need.upload.connection.num">
+			<value>false</value>
+			<description>是否需要将调用数上报到zookeeper(主要为了做最少连接数负载）true/false </description>
+		</Item>
+		<Item name="service.data.fetch.mode">
+			<value>db</value>
+			<description>服务端获取服务注册信息的来源，目前支持db，redis</description>
+		</Item>
+		<Item name="csf.server.default.timeout">
+			<value>9000000</value>
+			<description>服务端默认超时控制时间，毫秒为单位，系统默认时间为90000毫秒；必须配置，不配置报错；云南为90000</description>
+		</Item>
+		<Item name="csf.host.port">
+			<value>6663</value>
+			<description>服务端口</description>
+		</Item>
+
+		<ChildCategory name="server.filters" description="服务端过滤器配置">
+			<Item name="csf.params.mapping.filter">
+				<value>com.asiainfo.sacenter.shcmcc.util.SHParamMappingFilter</value>
+				<description>
+					<!-- 系统提供的参数映射过滤器,这些过滤器都需要支持开发模式-->
+					# 入参、出参为固定类型、单个的时候使用该过滤器com.ai.aif.csf.executor.request.filter.params.mapping.SingleParamMappingFilter
+					# 支持pojo转化的过滤器:com.ai.aif.csf.executor.request.filter.params.mapping.ParamsMappingFilter
+					# 透传的参数过滤器:com.ai.aif.csf.executor.request.filter.params.mapping.TransportParamsMappingFilter
+					# 服务描述文件过滤器:com.ai.aif.csf.executor.request.filter.params.mapping.MetaParamsMappingFilter
+                    #上海侧配置增加参数非法字符校验：com.ai.common.filter.params.mapping.SHParamMappingFilter
+				</description>
+			</Item>
+			<Item name="csf.remote.custom.filters">
+				<value></value>
+				<description>
+					远程调用自定义过滤器，以分号;分割   多个过滤器，配置在前面的先执行
+					对于广西的服务治理平台，需要配置com.ai.aif.csf.platform.request.fore.handler.PlatformRequestForeFilter来记录渠道信息
+				</description>
+			</Item>
+			<Item name="csf.local.custom.filters">
+				<value></value>
+				<description>本地调用自定义过滤器，以分号;分割多个过滤器，配置在前面的先执行 </description>
+			</Item>
+		</ChildCategory>
+
+		<ChildCategory name="server.threadpool" description="服务端线程池配置">
+			<Item name="threadpool.thread.num">
+				<value></value>
+				<description>服务执行线程数，不配置为Runtime.getRuntime().availableProcessors() + 1;</description>
+			</Item>
+			<Item name="threadpool.queue.length">
+				<vlaue>1000</vlaue>
+				<description>服务执行队列长度</description>
+			</Item>
+		</ChildCategory>
+		<ChildCategory name="server.warmup" description="服务端预热">
+			<Item name="warm.interceptor" description="服务端预热拦截器">
+				<value>com.ai.aif.csf.executor.warm.interceptor.RegisterInterceptor</value>
+				<description>
+					1、预热拦截器，做预热前、预热后、预热失败的处理   以分号;分割
+					2、实现接口com.ai.aif.csf.api.common.warmup.IWarmupInterceptor
+				</description>
+			</Item>
+			<Item name="warm.upper" description="服务端预热">
+				<value></value>
+				<description>
+					1、预热实现类,以分号;分割
+					2、com.ai.aif.csf.api.common.warmup.IWarmUpper
+				</description>
+			</Item>
+		</ChildCategory>
+		<ChildCategory name="server.safe.shutdown" description="服务端安全停机">
+			<Item name="safe.shutdown.timeout" description="服务端停机">
+				<value></value>
+				<description>服务端停机超时时间，默认等于csf.server.default.timeout的值</description>
+			</Item>
+			<Item name="safe.shutdown.custom" description="服务端停机自定义任务">
+				<value></value>
+				<description>
+					1、停机时需要完成的任务继承该接口(自定义任务)
+					2、实现接口com.ai.aif.csf.api.common.safe.shutdown.ISafeShutdown
+				</description>
+			</Item>
+		</ChildCategory>
+	</Category>
+</Csf>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe id="com.ai.ucmframe" desc="服务激活服务配置构造框架">
+   <vm-gen-ui id ="serviceframe" desc="服务代理框架">
+       <template name="Pojo"       template="com/ai/sacenter/module/proxy/ucmframe-gen-pojo-service.vm" desc="简单模式"/>
+       <template name="Singleton"  template="com/ai/sacenter/module/proxy/ucmframe-gen-pojo-service.vm" desc="单例模式"/>
+       <template name="Primitive"  template="com/ai/sacenter/module/proxy/ucmframe-gen-pojo-service.vm" desc="系统拦截器模式"/>
+       <template name="Optimize"   template="com/ai/sacenter/module/proxy/ucmframe-gen-pojo-service.vm" desc="系统拦截器模式"/>
+       <template name="SingletonT" template="com/ai/sacenter/module/proxy/ucmframe-gen-pojo-service.vm" desc="线程单例模式"/>
+   </vm-gen-ui>
+</ucmframe>

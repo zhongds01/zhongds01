@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="SAParallel" mainattr="ID">
+    <mapingenty type="table">SA_PARALLEL</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="10" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORIGINATE" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">ORIGINATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="10" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DESCRIPTION" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">DESCRIPTION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PARALLEL" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">PARALLEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPLEX" maxlength="100" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">COMPLEX</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EFFECTIVE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">EFFECTIVE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXPIRE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">EXPIRE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATER" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">CREATER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFIER" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">MODIFIER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFY_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">MODIFY_DATE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

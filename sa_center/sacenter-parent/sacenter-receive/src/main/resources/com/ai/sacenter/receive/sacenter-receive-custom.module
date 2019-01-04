@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sacenter name="服务开通定单接收模块">
+   <module file="com/ai/sacenter/receive/order/sacenter-receive-service.xml" name = "开通定单接收模块" use="true"/>
+</sacenter>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="so1" name="InsUserOsState" mainattr="A_STOP_DATE">
+    <mapingenty type="table">{INS_USER_OS_STATE}</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="USER_ID" maxlength="12" datatype="Long" type="PK" remark="用户编号">
+        <mapingcol datatype="NUMBER">USER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OS_STATUS" maxlength="20" datatype="String" type="COL" remark="用户停开机状态.按字符存储不同的停开机类型。每一位取值0表示开，1表示停；
+每一位的含义为：
+第一位         管理停开（营业停开）
+第二位         营业停开（管理停开）
+第三位         帐务停开
+第四位         营业的连带停开
+第五位         呼出限制
+第六位         帐务的连带停开
+第七位         管理的连带停开
+第八位         呼出限制的连带停开
+第九位         营业预销
+第十位         帐务预销
+第十一位       管理预销
+第十二位       资金有效期停机
+
+用户停开机时不修改程控功能表中的服务状态，对服务状态判断时要首先判断对应用户信息表中的停开机类型。
+
+个人IP直通车用户时，此字段的第一位值：
+0.激活状态；1.封锁状态
+">
+        <mapingcol datatype="VARCHAR2">OS_STATUS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OS_STATUS_PRE" maxlength="20" datatype="String" type="COL" remark="发送给计费的最近一次停机方式
+">
+        <mapingcol datatype="VARCHAR2">OS_STATUS_PRE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="B_STOP_DATE" maxlength="20" datatype="DateTime" type="COL" remark="最后一次营业停机日期">
+        <mapingcol datatype="DATE">B_STOP_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="A_STOP_DATE" maxlength="20" datatype="DateTime" type="COL" remark="最后一次帐务停机日期">
+        <mapingcol datatype="DATE">A_STOP_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="M_STOP_DATE" maxlength="20" datatype="DateTime" type="COL" remark="最后一次管理停机日期">
+        <mapingcol datatype="DATE">M_STOP_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="R_STOP_DATE" maxlength="20" datatype="DateTime" type="COL" remark="最后一次连带停机日期">
+        <mapingcol datatype="DATE">R_STOP_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="O_STOP_DATE" maxlength="20" datatype="DateTime" type="COL" remark="最后一次呼出限制停日期">
+        <mapingcol datatype="DATE">O_STOP_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_CODE" maxlength="12" datatype="Long" type="COL" remark="当前业务受理编号">
+        <mapingcol datatype="NUMBER">DONE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL" remark="创建日期">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_DATE" maxlength="20" datatype="DateTime" type="COL" remark="当前业务受理日期">
+        <mapingcol datatype="DATE">DONE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EFFECTIVE_DATE" maxlength="20" datatype="DateTime" type="PK" remark="修改对象的生效日期">
+        <mapingcol datatype="DATE">EFFECTIVE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXPIRE_DATE" maxlength="20" datatype="DateTime" type="PK" remark="修改对象的失效日期">
+        <mapingcol datatype="DATE">EXPIRE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OP_ID" maxlength="12" datatype="Long" type="COL" remark="操作员">
+        <mapingcol datatype="NUMBER">OP_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG_ID" maxlength="12" datatype="Long" type="COL" remark="组织单元">
+        <mapingcol datatype="NUMBER">ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL" remark="管理区域标识">
+        <mapingcol datatype="VARCHAR2">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EFFECTIVE_DATE_TYPE" maxlength="6" datatype="Integer" type="COL" remark="0系统计算
+1用户指定">
+        <mapingcol datatype="NUMBER">EFFECTIVE_DATE_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXPIRE_DATE_TYPE" maxlength="6" datatype="Integer" type="COL" remark="0系统计算
+1用户指定">
+        <mapingcol datatype="NUMBER">EXPIRE_DATE_TYPE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

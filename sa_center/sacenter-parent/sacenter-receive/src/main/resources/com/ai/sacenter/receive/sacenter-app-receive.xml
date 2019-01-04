@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gb2312"?>
+<services>
+   <!-- <service id="com.ai.sacenter.receive.teaminvoke.in.interfaces.IUpdbcSV" invoke="pojo" type="primitive">
+       <property name="interfaceClass" value="com.ai.sacenter.receive.teaminvoke.in.interfaces.IUpdbcSV"/>
+       <property name="implClass" value="com.ai.sacenter.receive.teaminvoke.in.impl.UpdbcSVImpl"/>
+       <tx>
+         <method name="orderCompleteAsyn"   txattr="RequiresNew"/>
+         <method name="rocketCompleteAsyn"  txattr="RequiresNew"/>
+       </tx>
+   </service> -->
+</services>

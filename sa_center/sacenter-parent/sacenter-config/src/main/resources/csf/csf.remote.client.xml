@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Csf>
+    <Category name="remote.client" description="remote客户端配置">
+        <Item name="reuseAddress">
+            <value>false</value>
+            <description>控制SO_REUSEADDR套接字选项，该套接字选项通知内核，如果端口忙，但TCP状态位于 TIME_WAIT ，可以重用端口</description>
+        </Item>
+        <Item name="enableTcpNoDelay">
+            <value>true</value>
+            <description>防止小数据包触发Nagle算法，导致socket异常 </description>
+        </Item>
+        <Item name="keepAlive">
+            <value>true</value>
+            <description>TCP keepalive </description>
+        </Item>
+        <Item name="socket.check_connection">
+            <value>true</value>
+            <description>指示在重用连接之前是否需要进行连接检 查</description>
+        </Item>
+        <Item name="clientMaxPoolSize">
+            <value>4</value>
+            <description>客户端连接池的大小 </description>
+        </Item>
+    </Category>
+</Csf>

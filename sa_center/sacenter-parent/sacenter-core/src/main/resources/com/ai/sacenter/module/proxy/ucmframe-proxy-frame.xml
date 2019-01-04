@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe id="com.ai.ucmframe" desc="服务激活代理工厂框架">
+   <proxy id ="serviceframe" desc="服务代理框架">
+       <proxy name="Pojo"        proxy-class="com.ai.sacenter.module.proxy.PojoProxyCreate" desc="简单模式"/>
+       <proxy name="Primitive"   proxy-class="com.ai.sacenter.module.proxy.PojoProxyCreate$PrimitiveProxyCreate" desc="拦截器模式"/>
+       <proxy name="Optimize"    proxy-class="com.ai.sacenter.module.proxy.PojoProxyCreate$OptimizeProxyCreate" desc="拦截器模式"/>
+       <proxy name="Interceptor" proxy-class="com.ai.sacenter.module.proxy.PojoProxyCreate$InterceptorProxyCreate" desc="拦截器模式"/>
+       <proxy name="Singleton"   proxy-class="com.ai.sacenter.module.proxy.SingletonProxyCreate" desc="单例模式"/>
+       <proxy name="SingletonT"  proxy-class="com.ai.sacenter.module.proxy.SingletonProxyCreate$SingletonTProxyCreate" desc="线程单例模式"/>
+   </proxy>
+   <proxy id="platformframe" desc="平台代理框架">
+       <proxy name="Pojo"      proxy-class="com.ai.sacenter.module.proxy.PojoProxyCreate" desc="简单模式"/>
+       <proxy name="Singleton" proxy-class="com.ai.sacenter.module.proxy.SingletonProxyCreate" desc="单例模式"/>
+   </proxy>
+</ucmframe>

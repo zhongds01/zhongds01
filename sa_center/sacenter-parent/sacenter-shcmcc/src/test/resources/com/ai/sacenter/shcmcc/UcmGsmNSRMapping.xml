@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe id = "UcmGsmNSRMapping" desc = "开通测新业务模块">
+   <mappings id = "IGsm2NsrcL" desc = "普通上网程控模块[开通测]">
+        <mapping name = "270000090336" 			mapping = "QCSS"  			method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "全成平台QC"/>
+		<mapping name = "270000090427" 			mapping = "FXXQ" 			method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "飞信心情秀"/>
+		<mapping name = "270000053003"          mapping = "LNAV"            method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"             desc = "手机导航"/>
+		<mapping name = "270000090129" 			mapping = "SJZQJY" 			method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "手机证券交易"/>
+		<mapping name = "270000090125" 			mapping = "BSML" 			method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "基本电子邮件"/>
+		<mapping name = "270000090131" 			mapping = "BSMQI" 			method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "电子邮件全文接收"/>
+		<mapping name = "270000090131" 			mapping = "ESMBI" 			method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "电子邮件服务"/>
+		<mapping name = "270000090128" 			mapping = "SJYH" 			method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "手机银行"/>
+		<mapping name = "270000090156" 			mapping = "LDTX" 			method = "MappingExist" 		desc = "中兴漏话提示">
+			<mapping name = "270000090156" 		  mapping = "LDTX"  	    method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "上海WLAN自动认证日套餐"/>
+			<mapping name = "270000090156"        mapping = "LDTXTDFLAG"      method = "MappingDepend"      expr = "LDTX,A270000090156_PROP_L.LDTXTDFLAG"  desc = "异地呼转转移TD号段标识"/>
+		</mapping>
+		<!--改号通知-->
+		<mapping name = "270000090137"          mapping = "GHTZP"           method = "MappingExist"         desc = "改号通知[NCN]">
+		   <mapping name = "270000090137"         mapping = "GHTZP"           method = "MappingSplite"        expr = "C=C;X=X;E=E"                              desc = "改号通知[NCN]"/>
+		   <mapping name = "270000090137"         mapping = "GHTZODMS"        method = "MappingDepend"        expr = "GHTZP,A270000090137_PROP_L.262100000047"  desc = "改号通知旧号码[NCN]"/>
+		   <mapping name = "270000090137"         mapping = "GHTZNDMS"        method = "MappingDepend"        expr = "GHTZP,A270000090137_PROP_L.262100000048"  desc = "改号通知新号码[NCN]"/>
+        </mapping>
+        <!--LBS个人-->
+        <mapping name = "270000090318" 			mapping = "LBSGR" 			method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "LBS个人"/>
+        <mapping name = "270000090329" 			mapping = "LBSQYGR" 	    method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "LBS企业个人"/>
+        <!--上海WLAN自动认证-->
+        <!--<mapping name = "270000090592"          mapping = "ZDWLAN"          method = "MappingExist"         desc = "上海WLAN自动认证包月套餐">
+           <mapping name = "270000090592" 		  mapping = "ZDWLAN"  		method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			   desc = "上海WLAN自动认证"/>
+           <mapping name = "270000090592" 		  mapping = "ZDWLANPSWD"      method = "MappingDepend" 		expr = "ZDWLAN,A270000090592_PROP_L.262100000015"  desc = "上海WLAN自动认证密码"/>
+        </mapping>-->
+        <mapping name = "270000091191"          mapping = "DYZDWLAN"        method = "MappingExist"         desc = "上海WLAN自动认证日套餐">
+           <mapping name = "270000091191" 		  mapping = "DYZDWLAN"  	  method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			   desc = "上海WLAN自动认证日套餐"/>
+           <mapping name = "270000091191" 		  mapping = "DYZDWLANPSWD"    method = "MappingDepend" 		expr = "DYZDWLAN,A270000091191_PROP_L.262100000015"  desc = "上海WLAN自动认证日套餐密码"/>
+        </mapping>
+		<mapping name = "270000090593" 			mapping = "LZDWLAN"  		method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "WLAN自动认证封顶限制"/>
+		<mapping name = "270000090596" 			mapping = "RZDWLAN"  		method = "MappingSplite" 		expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 			desc = "WLAN自动认证超量叠加包"/>
+		<!--上海校园WLAN-->
+		<mapping name = "1270000016001"         mapping = "XYWLAN"          method = "MappingExist"         desc = "上海校园WLAN产品[LWLAN]">
+		   <mapping name = "1270000016001" 		  mapping = "JXYWLAN"  	      method = "MappingSplite" 		  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海校园WLAN"/>
+		   <mapping name = "1270000016001" 		  mapping = "JXYWLANPSWD"  	  method = "MappingDepend" 		  expr = "JXYWLAN,A1270000016001_PROP_L.262100000015" desc = "上海校园WLAN密码"/>
+		   <mapping name = "1270000016001" 		  mapping = "XYWBIMSI"  	  method = "MappingSplite" 		  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 		   desc = "上海校园WLAN绑定IMSI"/>
+		   <mapping name = "310091209001" 		  mapping = "BXYWLAN"  		  method = "MappingSplite" 		  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 		   desc = "上海校园WLAN基础套餐"/>
+		   <mapping name = "310016001004"         mapping = "XYWLAN"          method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海校园WLAN包月套餐"/>
+           <mapping name = "310016001001"         mapping = "XYWLAN10"        method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海校园WLAN10元套餐"/>
+           <mapping name = "310016001002"         mapping = "XYWLAN20"        method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海校园WLAN20元套餐"/>
+           <mapping name = "310016001005"         mapping = "XYWLAN30"        method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海校园WLAN30元流量套餐(试点)"/>
+           <mapping name = "310016001003"         mapping = "XYWLAN40"        method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海校园WLAN40元套餐"/>
+           <mapping name = "310016001006"         mapping = "XYWLAN50"        method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海校园WLAN50元流量套餐(试点)"/>
+           <mapping name = "310016001007"         mapping = "XYWLAN100"       method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海校园WLAN100元流量套餐(试点)"/>		
+		</mapping>
+		<mapping name = "1310016002001"         mapping = "RXYWLAN"         method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海校园WLAN叠加包"/>
+        <mapping name = "1310016002003"         mapping = "LXYWLAN"         method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海校园WLAN封顶包"/>
+        <!--上海家庭WLAN--> 
+        <mapping name = "270000016003"          mapping = "JTWLAN"          method = "MappingExist"         desc = "上海家庭WLAN产品[LWLAN]">
+           <mapping name = "270000016003" 		  mapping = "JJTWLAN"  	      method = "MappingSplite" 		  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海家庭WLAN"/>
+           <mapping name = "270000016003" 		  mapping = "JJTWLANPSWD"  	  method = "MappingDepend" 		  expr = "JJTWLAN,A270000016003_PROP_L.262100000015" desc = "上海家庭WLAN密码"/>
+           <mapping name = "310016003001"         mapping = "JTWLAN"          method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海家庭WLAN包月套餐"/>
+           <mapping name = "310016004001"         mapping = "RJTWLAN"         method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海家庭WLAN叠加包"/>
+           <mapping name = "310016004002"         mapping = "LJTWLAN"         method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海家庭WLAN封顶限制"/>
+        </mapping>
+        <!--上海手机WLAN-->
+        <mapping name = "270000016007"          mapping = "SJWLAN"          method = "MappingExist"         desc = "上海手机WLAN产品[LWLAN]">
+           <mapping name = "270000016007" 		  mapping = "JSJWLAN"  	      method = "MappingSplite" 		  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海手机WLAN"/>
+           <mapping name = "270000016007" 		  mapping = "JSJWLANPSWD"  	  method = "MappingDepend" 		  expr = "JSJWLAN,A270000016007_PROP_L.262100000015" desc = "上海家庭WLAN密码"/>
+           <mapping name = "310016007001"         mapping = "SJWLAN"          method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海手机WLAN"/> 
+           <mapping name = "310016008001"         mapping = "RSJWLAN"         method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海手机WLAN叠加包"/> 
+           <mapping name = "310016008002"         mapping = "LSJWLAN"         method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海手机WLAN超40G封顶"/> 
+        </mapping>
+        <!--上海大众WLAN--> 
+		<!-- <mapping name = "270000015001"         mapping = "DZWLAN"          method = "MappingExist"         desc = "上海大众WLAN产品[LWLAN]">
+		   <mapping name = "270000015001" 		  mapping = "JDZWLAN"  	      method = "MappingSplite" 		  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "上海大众WLAN"/>
+		   <mapping name = "270000015001" 		  mapping = "DZWLANPSWD"  	  method = "MappingDepend" 		  expr = "JDZWLAN,A270000015001_PROP_L.262100000015" desc = "上海大众WLAN密码"/>
+		   <mapping name = "310015001001" 		  mapping = "BTWLAN"  		  method = "MappingSplite" 		  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" 		   desc = "WLAN标准资费"/>
+		   <mapping name = "310015001008"         mapping = "TWLAN5"          method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN时长5元套餐"/>
+           <mapping name = "310015001009"         mapping = "TWLAN10"         method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN时长10元套餐"/>
+           <mapping name = "310015001013"         mapping = "TWLAN20"         method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN时长20元套餐"/>
+           <mapping name = "310015001005"         mapping = "TWLAN30"         method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN时长30元套餐"/>
+           <mapping name = "310015001006"         mapping = "TWLAN50"         method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN时长50元套餐"/>
+           <mapping name = "310015001007"         mapping = "TWLAN100"        method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN时长100元套餐"/>	
+           <mapping name = "310015001014"         mapping = "TWLAN200"        method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN时长200元套餐"/>
+		   <mapping name = "380000185031"         mapping = "TWLAN5"          method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN流量5元套餐"/>
+           <mapping name = "380000185032"         mapping = "TWLAN5"          method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN流量10元套餐"/>
+           <mapping name = "380000185033"         mapping = "TWLAN5"          method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN流量20元套餐"/>
+           <mapping name = "380000185034"         mapping = "TWLAN5"          method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN流量30元套餐"/>
+           <mapping name = "380000185035"         mapping = "TWLAN5"          method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN流量50元套餐"/>
+           <mapping name = "380000185036"         mapping = "TWLAN5"          method = "MappingSplite"        expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "WLAN流量100元套餐"/>			
+		</mapping>  -->
+        <!--短信增值DCS-->
+		<mapping name = "1270000080071"         mapping = "DCSP"            method = "MappingExist"         desc = "短信增值产品[DCSP]">
+		   <mapping name = "1270000080071"        mapping = "DCSP"            method = "MappingDirect"        desc = "短信增值产品[DCSP]"/>
+		   <mapping name = "270000080071"         mapping = "ZJHZ"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"       desc = "主叫回执[短信增值产品][DCSP]"/>
+		   <mapping name = "270000091040"         mapping = "DXZX"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"       desc = "短信在线[短信增值产品][DCSP]"/>
+		   <mapping name = "270000080072"         mapping = "DXZY"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"       desc = "短信转移[短信增值产品][DCSP]"/>
+		   <mapping name = "270000080072" 		  mapping = "DXZYNUMB"  	  method = "MappingDepend" 		  expr = "DXZY,A1270000080071_PROP_L.262100000131" desc = "短信转移号码"/>
+		   <mapping name = "270000080073"         mapping = "DXQM"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"       desc = "短信签名[短信增值产品][DCSP]"/>
+		   <mapping name = "270000080074"         mapping = "DXCK"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"       desc = "短信仓库[短信增值产品][DCSP]"/>
+		   <mapping name = "270000080075"         mapping = "DXGL"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"       desc = "短信过滤[短信增值产品][DCSP]"/>
+		   <mapping name = "270000080076"         mapping = "BJHZ"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"       desc = "被叫回执[短信增值产品][DCSP]"/>
+		   <mapping name = "270000080052" 		  mapping = "AXDX"  		  method = "MappingSplite" 		  expr = "C=C;DU=DU;E=E" 	   desc = "爱心短信[短信增值产品][DCSP]"/>
+		</mapping>
+		<!--短彩转转赢-->
+		<mapping name = "270000091195"         mapping = "LDSP"             method = "MappingExist"         desc = "短彩转转赢[LDSP]">
+		  <!-- add by fushuan 去掉短彩转转赢业务  数据-2016-15696-YWZC000188427-关于修改手机报包月费内各业务出账科目的需求-客户管理等 -->
+		  <!--  <mapping name = "310091195001"         mapping = "DCBZ"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"        desc = "短彩转转赢标准版"/>
+		   <mapping name = "310050014002"         mapping = "DCBZ"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"        desc = "短彩转转赢新版彩信体验包"/>
+		   <mapping name = "310091195002"         mapping = "DCJB"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"        desc = "短彩转转赢简版"/>
+		   <mapping name = "310091195003"         mapping = "DCDX"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"        desc = "短彩转转赢短信版"/>
+		   <mapping name = "310091195004"         mapping = "DCCX"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"        desc = "短彩转转赢彩信版"/> -->
+		   <mapping name = "310059001030"         mapping = "XCTQ"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"        desc = "炫彩天气"/>
+		   <mapping name = "310059001026"         mapping = "JDCBY"           method = "MappingSplite"        expr = "C=C;DU=DU;E=E"        desc = "驾驶宝"/>
+		</mapping>
+	    <mapping name = "270000053028" 			  mapping = "KJTX" 		   method = "MappingSplite" 	   expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "开机提醒服务"/>
+	    <mapping name = "270000053029" 			  mapping = "KJTXNRC" 	   method = "MappingSplite" 	   expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU" desc = "开机提醒服务(不在服务区)"/>
+		<!--拇指产品功能-->
+		<mapping name = "1270000091103"         mapping = "MZGP"           method = "MappingExist"         desc = "拇指产品功能">
+		   <mapping name = "1270000091103"        mapping = "MZGP"            method = "MappingDirect"        desc = "拇指产品功能"/>
+		   <mapping name = "270000091103" 		  mapping = "MZSXY"   		  method = "MappingSplite" 		  expr = "C=C;DU=DU;E=E" 		 desc = "拇指随心译"/>
+		   <mapping name = "270000091105" 		  mapping = "MZSSX"   		  method = "MappingSplite" 		  expr = "C=C;DU=DU;E=E" 		 desc = "拇指随身学"/>
+		   <mapping name = "270000091106" 		  mapping = "MZSWW"   		  method = "MappingSplite" 		  expr = "C=C;DU=DU;E=E" 		 desc = "拇指随我玩"/>
+		</mapping>
+		<mapping name = "270000090763"          mapping = "SJQB"           method = "MappingExist"         desc = "手机钱包通">
+		   <mapping name = "310090763001" 		  mapping = "SJQB"   		  method = "MappingSplite" 		  expr = "C=C;DU=DU;E=E" 		 desc = "手机钱包通卡"/>
+		</mapping>
+		<!--本地DSP-->
+		<mapping name = "1270000059001"         mapping = "LDSP"           method = "MappingExist"         desc = "本地DSP业务">
+		   <mapping name = "1270000059001"        mapping = "LDSP"            method = "MappingDirect"        desc = "本地DSP业务"/>
+		   <mapping name = "1270000059001"        mapping = "LDSPSPID"        method = "MappingDepend"        expr = "LDSP,LDSPSPID"         desc = "本地DSP业务企业代码"/>
+		   <mapping name = "1270000059001"        mapping = "LDSPBIZCODE"     method = "MappingDepend"        expr = "LDSP,LDSPBIZCODE"      desc = "本地DSP业务业务代码"/>
+		</mapping>
+		<mapping name = "310080232001"         mapping = "SJCP"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "手机彩票"/>
+		<mapping name = "270000080320"         mapping = "SJCPJF"          method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "手机彩票积分版"/>
+		<mapping name = "270000091230"         mapping = "QJCL"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "情景彩铃"/>
+		<mapping name = "270000091223"         mapping = "CZWY"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "成长无忧"/>
+		<!--亲情通IT-->
+		<mapping name = "272999999780"         mapping = "QQTP"            method = "MappingExist"         desc = "亲情通[MISC]">
+		   <mapping name = "272999999780"         mapping = "QQTP"            method = "MappingDirect"        desc = "亲情通"/>
+		   <mapping name = "272999999780"         mapping = "QQTPBILL"        method = "MappingDepend"        expr = "QQTP,A272999999780_PROP_L.QQTCBILL"    desc = "亲情通定位号码"/>
+		   <mapping name = "272999999780"         mapping = "QQTPDQSI"        method = "MappingDepend"        expr = "QQTP,A272999999780_PROP_L.QQTCDQSI"    desc = "亲情通定位状态"/>
+		</mapping>
+		<!--G3伴侣-->
+		<mapping name = "270000091198"         mapping = "FEMTO"           method = "MappingExist"         desc = "G3伴侣[FEMTO]">
+		   <mapping name = "270000091198"         mapping = "FEMTO"           method = "MappingDirect"        desc = "G3伴侣[FEMTO]"/>
+		   <mapping name = "270000091198"         mapping = "FEMTOBILL"       method = "MappingDepend"        expr = "FEMTO,A270000091198_PROP_L.FEMTOBILL"       desc = "G3伴侣内置卡号码[FEMTO]"/>
+		   <mapping name = "270000091198"         mapping = "FEMTOIMSI"       method = "MappingDepend"        expr = "FEMTO,A270000091198_PROP_L.FEMTOIMSI"       desc = "G3伴侣内置卡IMSI[FEMTO]"/>
+		   <mapping name = "270000091198"         mapping = "FEMTOKI"         method = "MappingDepend"        expr = "FEMTO,A270000091198_PROP_L.FEMTOKI"         desc = "G3伴侣内置卡KI[FEMTO]"/>
+		   <mapping name = "270000091198"         mapping = "FEMTOOPC"        method = "MappingDepend"        expr = "FEMTO,A270000091198_PROP_L.FEMTOOPC"        desc = "G3伴侣内置卡OPC[FEMTO]"/>
+		   <mapping name = "270000091198"         mapping = "FEMTONIMSI"      method = "MappingDepend"        expr = "FEMTO,A270000091198_PROP_L.FEMTONIMSI"      desc = "G3伴侣内置卡新IMSI[FEMTO]"/>
+		   <mapping name = "270000091198"         mapping = "FEMTODMAC"       method = "MappingDepend"        expr = "FEMTO,A270000091198_PROP_L.262100000146"    desc = "G3伴侣MAC地址[FEMTO]"/>
+		   <mapping name = "270000091198"         mapping = "FEMTODQSI"       method = "MappingDepend"        expr = "FEMTO,A270000091198_PROP_L.262100000144"    desc = "G3伴侣订购状态(1暂停2恢复3换卡4订购5退订)[FEMTO]"/>
+		</mapping>
+		<!--智能应答-->
+		<mapping name = "380000040268"         mapping = "ZNYD"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "智能应答"/>
+		<!--来电免打扰-->
+		<mapping name = "380000040267"         mapping = "LDMDR"           method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "来电免打扰"/>
+        <!--快速认证手机WLAN -->
+	   	<mapping name = "1380000040294"         mapping = "LMACCMC"        method = "MappingExist"         desc = "快速认证手机WLAN">
+		   <mapping name = "1380000040294" 		  mapping = "LMACCMC"  	      method = "MappingSplite" 		  expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "快速认证手机WLAN"/>
+		   <mapping name = "380000040293" 		  mapping = "LMACSCMC" 	      method = "MappingSplite" 	      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "MAC短信提醒功能(个人大众)"/>
+	       <mapping name = "380000040295" 		  mapping = "LMACBCMC" 	      method = "MappingSplite" 	      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "消费短信提醒功能（个人大众）"/>
+	       <mapping name = "380000040294" 		  mapping = "XYMACSCMC" 	  method = "MappingSplite" 	      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "MAC短信提醒功能(个人校园)"/>
+	       <mapping name = "380000040296" 		  mapping = "XYMACBCMC" 	  method = "MappingSplite" 	      expr = "C=C;EC=U;CE=U;U=U;E=E;*=DU"          desc = "消费短信提醒功能（个人校园）"/>
+	    </mapping>
+	    <!--TD Femto-->
+		<mapping name = "380000230009"         mapping = "TDFEMTO"           method = "MappingExist"         desc = "TD FEMTO[FEMTO]">
+		   <mapping name = "380000230009"         mapping = "TDFEMTO"           method = "MappingDirect"        desc = "TD Femto[FEMTO]"/>
+		   <mapping name = "380000230009"         mapping = "TDFEMTOKI"         method = "MappingDepend"        expr = "TDFEMTO,A380000230009_PROP_L.TDFEMTOKI"         desc = "TD FEMTO KI[FEMTO]"/>
+		   <mapping name = "380000230009"         mapping = "TDFEMTOOPC"        method = "MappingDepend"        expr = "TDFEMTO,A380000230009_PROP_L.TDFEMTOOPC"        desc = "TD FEMTO OPC[FEMTO]"/>
+		   <mapping name = "380000230009"         mapping = "TDFEMTODMAC"       method = "MappingDepend"        expr = "TDFEMTO,A380000230009_PROP_L.262100000146"    desc = "TD FEMTO MAC地址[FEMTO]"/>
+		   <mapping name = "380000230009"         mapping = "TDFEMTODQSI"       method = "MappingDepend"        expr = "TDFEMTO,A380000230009_PROP_L.380000230010"    desc = "TD FEMTO 业务状态(1暂停2恢复3订购)[FEMTO]"/>
+		</mapping>
+		<!--气象助手 -->
+	    <mapping name = "380000010842"         mapping = "QXZS"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "气象助手 "/>
+		<!--掌上气象 -->
+		<mapping name = "380000010845"         mapping = "ZSQX"            method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "掌上气象"/>	 
+		<!--随E行(MiFi版)50元套餐(封顶版) -->
+		<mapping name = "310053001527"         mapping = "LMIFI"           method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "随E行(MiFi版)50元套餐(封顶版)"/>	    
+    	<!--沪惠生活免费会员-->
+		<mapping name = "380000184025"         mapping = "HHSHMFHY"        method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "沪惠生活免费会员"/>
+		<!--沪惠生活静安白领卡会员-->
+		<mapping name = "380000184553"         mapping = "HHSHJABLK"       method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "沪惠生活静安白领卡会员"/>
+		<!--移动交通卡-->
+		<mapping name = "380000184708"         mapping = "SPTCC"       	   method = "MappingSplite"        expr = "C=C;DU=DU;E=E"            desc = "移动交通卡"/>		 
+    </mappings>
+</ucmframe>

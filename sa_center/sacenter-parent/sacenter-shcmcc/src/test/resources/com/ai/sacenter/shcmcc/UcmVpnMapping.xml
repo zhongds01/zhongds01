@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe id="UcmVpnMapping" desc="营业测智能网模块">
+   <mappings id = "IVpmn2GernL" desc="集团VPMN产品模块[统一开通测]">
+      <mapping name = "IUcm2CommL"       mapping = "IUcm2CommL"       method = "MappingModule"    expr = "UcmMicroMapping.IUcm2CommL"  desc = "普通公共属性模块[开通测]"/>
+      <mapping name = "VPMN_GRPID"       mapping = "VPMN_GRPID"       method = "MappingContext"   expr = "IUcm2JTCustL.GROUP_ID"       desc = "集团编号[VPMN]"/>
+      <mapping name = "EC_CODE"          mapping = "EC_CODE"          method = "MappingContext"   expr = "IUcm2JTCustL.EC_CODE"        desc = "全网集团编号[VPMN]"/>
+      <mapping name = "270000090966"     mapping = "JVPMN"            method = "MappingExist"     desc = "VPMN产品[VPMN]">
+         <mapping name = "270000090966"     mapping = "JVPMN"            method = "MappingDirect"    desc = "VPMN产品[VPMN]"/>
+         <mapping name = "270000090355"     mapping = "YDZJ"             method = "MappingDirect"    desc = "是否存在移动总机产品"/>
+      </mapping>
+      <mapping name = "270000091174"     mapping = "JVPMNDX"          method = "MappingDirect"    desc = "VPMN短信产品[VPMN]"/>
+      <mapping name = "272999999959"     mapping = "JVPMNQ"              method = "MappingExist"     desc = "短号VPMN额外[VPMN]">
+         <mapping name = "272999999959"     mapping = "JVPMNQ"           method = "MappingDirect"    desc = "短号VPMN额外[VPMN]"/>
+         <mapping name = "312010015361"     mapping = "JVPMNDHMY"        method = "MappingDirect"    desc = "短号漫游"/>
+      </mapping>
+      <mapping name = "270000090352"     mapping = "PVPMN"            method = "MappingExist"     desc = "集团VPMN[VPMN]">
+         <mapping name = "270000090933" 	mapping = "FHSYH" 			 method = "MappingDirect" 	 desc = "副号随意换"/>
+         <mapping name = "270000053028"     mapping = "KJTX" 			 method = "MappingDirect" 	 desc = "开机提醒服务"/>
+         <mapping name = "270000090427" 	mapping = "FXXQ" 			 method = "MappingDirect" 	 desc = "飞信心情秀"/>
+         <mapping name = "270000090340"     mapping = "SMPJK"            method = "MappingExist"     desc = "智能网监控">
+	        <mapping name = "270000090340" 	  mapping = "SMPJK" 		   method = "MappingDirect"    desc = "智能网监控"/>
+	        <mapping name = "270000090340" 	  mapping = "SMPJKDZ" 		   method = "MappingDepend"    expr = "SMPJK,A270000090340_PROP_L.262100000143" desc = "智能网监控地址"/>
+	     </mapping>
+         <mapping name = "270000090352"     mapping = "PVPMN"            method = "MappingDirect"    desc = "VPMN终端产品[VPMN]"/>
+         <mapping name = "310010015361"     mapping = "PVPMNDHMY"        method = "MappingDirect"    desc = "VPMN终端短号漫游产品[VPMN]"/>
+         <mapping name = "270000090352"     mapping = "VPMN_PHONENO"     method = "MappingContext"   expr = "A270000090352_PROP_L.260000000054"  desc = "VPMN终端短号[VPMN]"/>
+      </mapping>
+      <!-- add by lidy 2014-5-13 融合双跨-->
+      <mapping name = "380000183894"     mapping = "RHSKVPMN"            method = "MappingDirect"     desc = "融合V网(集团)产品[VPMN]"/>
+      <mapping name = "380000183894"     mapping = "HAVE_VPMN"           method = "MappingContext"    expr="A380000183894_PROP_L.HAVE_VPMN"  desc = "融合V网(集团)[VPMN产品]"/>
+   </mappings>
+</ucmframe>

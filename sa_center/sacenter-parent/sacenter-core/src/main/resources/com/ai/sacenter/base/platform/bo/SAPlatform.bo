@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="SAPlatform" mainattr="ID">
+    <mapingenty type="table">SA_PLATFORM</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="32" datatype="String" type="PK" remark="网元编码">
+        <mapingcol datatype="VARCHAR2">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CODE" maxlength="64" datatype="String" type="COL" remark="外围编码">
+        <mapingcol datatype="VARCHAR2">CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NAME" maxlength="64" datatype="String" type="COL" remark="网元名称">
+        <mapingcol datatype="VARCHAR2">NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CATEGORY" maxlength="32" datatype="String" type="COL" remark="网元类型">
+        <mapingcol datatype="VARCHAR2">CATEGORY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DESCRIPTION" maxlength="255" datatype="String" type="COL" remark="网元描述">
+        <mapingcol datatype="VARCHAR2">DESCRIPTION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PARENT_PLATFORM" maxlength="32" datatype="String" type="COL" remark="父级网元">
+        <mapingcol datatype="VARCHAR2">PARENT_PLATFORM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROTOCOL" maxlength="32" datatype="String" type="COL" remark="通信类型
+SOCKET SOCKET协议
+TABLE 表接口
+FTP FTP协议
+WEBSERVICE WEBSERVICE协议
+UCMFRAME 平台协议(立即执行)
+OTHER 其他协议">
+        <mapingcol datatype="VARCHAR2">PROTOCOL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NETWORK" maxlength="32" datatype="String" type="COL" remark="网路编码">
+        <mapingcol datatype="VARCHAR2">NETWORK</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CONTROL" maxlength="4000" datatype="String" type="COL" remark="网元变量
+采用XML格式存储">
+        <mapingcol datatype="VARCHAR2">CONTROL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATER" maxlength="12" datatype="Long" type="COL" remark="创建员工">
+        <mapingcol datatype="NUMBER">CREATER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL" remark="创建日期">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="1" datatype="String" type="COL" remark="操作状态
+U正常
+X废除">
+        <mapingcol datatype="CHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFIER" maxlength="12" datatype="Long" type="COL" remark="更新员工">
+        <mapingcol datatype="NUMBER">MODIFIER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFY_DATE" maxlength="20" datatype="DateTime" type="COL" remark="更新日期">
+        <mapingcol datatype="DATE">MODIFY_DATE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

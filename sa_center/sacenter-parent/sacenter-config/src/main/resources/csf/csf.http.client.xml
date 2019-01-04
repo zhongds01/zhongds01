@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+<Csf>
+    <Category name="http.client" description="http客户端配置">
+        <Item name="keepalive.enable">
+            <value>true</value>
+            <description>是否启用keepalive</description>
+        </Item>
+        <Item name="max.conn.per.route">
+            <value>200</value>
+            <description>每个目标路径（比如：http://127.0.0.1:8080/csf）的最大连接数</description>
+        </Item>
+        <Item name="max.conn.total">
+            <value>500</value>
+            <description>当前客户端应用最多创建多少个tcp连接</description>
+        </Item>
+        <Item name="evict.idle.conn.period">
+            <value>150000</value>
+            <description>连接保持时间，也是驱逐空闲连接的线程扫描间隔</description>
+        </Item>
+
+    </Category>
+</Csf>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="kt1" name="SAQueueFail" mainattr="QUEUE_ID">
+    <mapingenty type="table">{SA_QUEUE_FAIL}</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="QUEUE_ID" maxlength="15" datatype="Long" type="PK">
+        <mapingcol datatype="NUMBER">QUEUE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORDER_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">ORDER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CATEGORY" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">CATEGORY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PLQK_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">PLQK_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_ID" maxlength="15" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">USER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BILL_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PLATFORM" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PLATFORM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROGRAM" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PROGRAM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRIORITY" maxlength="10" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">PRIORITY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PARAM" maxlength="4000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PARAM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PLWK_CODING" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PLWK_CODING</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PLWK_DESCRIBE" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PLWK_DESCRIBE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PLWK_CREATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">PLWK_CREATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PLWK_COMPLETE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">PLWK_COMPLETE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REDO_TIMES" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">REDO_TIMES</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_TIMES" maxlength="4" datatype="Integer" type="COL">
+        <mapingcol datatype="NUMBER">DONE_TIMES</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SRC_SYSTEM" maxlength="64" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">SRC_SYSTEM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STAFF_ID" maxlength="32" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">STAFF_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RESULT" maxlength="2000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">RESULT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="2" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPLETE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">COMPLETE_DATE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

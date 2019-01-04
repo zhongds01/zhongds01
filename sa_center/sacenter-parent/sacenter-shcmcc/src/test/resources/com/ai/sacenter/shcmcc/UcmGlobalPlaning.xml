@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe id="com.ai.ucmframe" desc="统一开通全局规划">
+  <initalize name="com.asiainfo.crm.open.common.IJEnvicLInitImpl$IJExprcLInitImpl">
+    <configitem>
+       <item name="CenterBoss$ICSPIfmpfoVM" value="com/asiainfo/sh/open/frame/table/hangbancboss/CenterBossPIfmpfo.vm" desc="网元多列参数模版"/>
+    </configitem>
+  </initalize>
+  
+  <initalize name="com.asiainfo.crm.open.common.IJEnvicLInitImpl$ICenterLInitImpl">
+    <configitem>
+        <route id = "HangbanZhcsx" desc = "统一开通同步HLR路由">
+           <item name="com.asiainfo.crm.open.frame.socket.ISocketDirectiveImpl" value="kst{CENTER}"/>
+        </route>
+    </configitem>
+  </initalize>
+</ucmframe>

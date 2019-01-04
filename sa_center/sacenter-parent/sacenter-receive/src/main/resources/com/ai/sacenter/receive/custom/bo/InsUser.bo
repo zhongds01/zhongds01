@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="so1" name="InsUser" mainattr="AREA_CODE">
+    <mapingenty type="table">{INS_USER}</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="USER_ID" maxlength="12" datatype="Long" type="PK">
+        <mapingcol datatype="NUMBER">USER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROD_CATALOG_ID" maxlength="12" datatype="Long" type="COL" remark="产品分类编号，如ADSL、GSM、普通电话等产品分类的编号">
+        <mapingcol datatype="NUMBER">PROD_CATALOG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CUST_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">CUST_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BILL_ID" maxlength="30" datatype="String" type="COL" remark="存储定购计费号，或者附属号码的长号">
+        <mapingcol datatype="VARCHAR2">BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SUB_BILL_ID" maxlength="50" datatype="String" type="COL" remark="用于记录除计费号之外的标识号码。">
+        <mapingcol datatype="VARCHAR2">SUB_BILL_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FIRST_USE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">FIRST_USE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="3" datatype="String" type="COL" remark="0-历史,1-在用,2-预销 3-销户
+A-冷冻期销号, C-欠费预销号,D-申请销号,E-欠费销号,F-六合彩停机(HN),G-公话停机,H-开户保留期,I-长通卡回呼业务停机(HN),J-保号期,K-有效期停主叫。">
+        <mapingcol datatype="VARCHAR2">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AREA_CODE" maxlength="40" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">AREA_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OWE_AMOUNT" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">OWE_AMOUNT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PASSWORD_TYPE" maxlength="2" datatype="Integer" type="COL" remark="0：系统自动生成；
+1：用户指定；
+">
+        <mapingcol datatype="NUMBER">PASSWORD_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PASSWORD" maxlength="40" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">PASSWORD</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_TYPE" maxlength="2" datatype="Integer" type="COL" remark="1普通用户、2公免用户、3测试用户">
+        <mapingcol datatype="NUMBER">USER_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NOTICE_FLAG" maxlength="2" datatype="Integer" type="COL" remark="表示针对这个产品在欠费的时候是否可以进行催缴，
+0：可催可停；
+1：不可催，可停；
+2：可催，不可停；
+3：不可催，不可停；
+4：红名单；
+5：公务机；
+6：测试号；
+">
+        <mapingcol datatype="NUMBER">NOTICE_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IS_OUT_NET" maxlength="2" datatype="Integer" type="COL" remark="1 它网
+0 本网">
+        <mapingcol datatype="NUMBER">IS_OUT_NET</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AREA_ID" maxlength="12" datatype="Long" type="COL" remark="表明本实体所对应的产品实例发生在哪个营业区。">
+        <mapingcol datatype="NUMBER">AREA_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BAL_ORG_ID" maxlength="12" datatype="Long" type="COL" remark="营业员可以选择入网时的结算组织。
+缺省为入网营业员所属的组织编号。
+但为了结算，可能系统会批量调整。">
+        <mapingcol datatype="NUMBER">BAL_ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CONT_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">CONT_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="RISK_FLAG" maxlength="1" datatype="Integer" type="COL" remark="1 风险控制用户 0 非风险控制用户 ">
+        <mapingcol datatype="NUMBER">RISK_FLAG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_OP_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">CREATE_OP_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_ORG_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">CREATE_ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OP_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">OP_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_CODE" maxlength="12" datatype="Long" type="COL" remark="当前业务受理编号">
+        <mapingcol datatype="NUMBER">DONE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_DATE" maxlength="20" datatype="DateTime" type="COL" remark="当前业务受理日期">
+        <mapingcol datatype="DATE">DONE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EFFECTIVE_DATE" maxlength="20" datatype="DateTime" type="PK" remark="客户生效日期">
+        <mapingcol datatype="DATE">EFFECTIVE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXPIRE_DATE" maxlength="20" datatype="DateTime" type="PK" remark="客户失效日期">
+        <mapingcol datatype="DATE">EXPIRE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EFFECTIVE_DATE_TYPE" maxlength="6" datatype="Integer" type="COL" remark="0系统计算
+1用户指定">
+        <mapingcol datatype="NUMBER">EFFECTIVE_DATE_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXPIRE_DATE_TYPE" maxlength="6" datatype="Integer" type="COL" remark="0系统计算
+1用户指定">
+        <mapingcol datatype="NUMBER">EXPIRE_DATE_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REMARKS" maxlength="255" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REMARKS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COUNTRY_CODE" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">COUNTRY_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ADDRESS_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">ADDRESS_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ADDRESS_DESC" maxlength="200" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">ADDRESS_DESC</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CUST_TYPE" maxlength="1" datatype="String" type="COL">
+        <mapingcol datatype="CHAR">CUST_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREDIT_LEVEL" maxlength="2" datatype="Integer" type="COL" remark="信用等级">
+        <mapingcol datatype="NUMBER">CREDIT_LEVEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="LAST_TRANS_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">LAST_TRANS_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXCHANGE_ID" maxlength="30" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">EXCHANGE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ACTIVE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">ACTIVE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PRE_DESTORY_TIME" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">PRE_DESTORY_TIME</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

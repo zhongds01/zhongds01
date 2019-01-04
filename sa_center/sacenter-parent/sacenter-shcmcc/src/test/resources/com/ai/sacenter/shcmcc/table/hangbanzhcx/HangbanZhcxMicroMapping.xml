@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe id = "ZhcxMicroMapping" desc="统一开通测接口表模块">
+  <mappings id = "ProvMiscro" desc="开通接口表元素">
+      <mapping name = "L_PS_ID"         mapping = "PS_ID"           method = "MappingGenSID"     expr = "I_OPEN_PROVISION"           		  desc = "开通编号"/>
+      <mapping name = "L_PS_BUSI"       mapping = "BUSI_CODE"       method = "MappingDirect"     expr = "0"                          		  desc = "营业业务代码"/>
+      <mapping name = "L_DONE_CODE"     mapping = "DONE_CODE"       method = "MappingContext"    expr = "IInstanceL.VM_ORDER_ID"     		  desc = "营业工单号"/>
+      <mapping name = "L_PS_TYPE"       mapping = "PS_TYPE"         method = "MappingGenJKI"     desc = "工单类别"/>
+      <mapping name = "L_PRIO_LEVEL"    mapping = "PRIO_LEVEL"      method = "MappingGenJPI"     desc = "开通优先级"/>
+      <mapping name = "L_PS_SERVICE"    mapping = "PS_SERVICE_TYPE" method = "MappingContext"    expr = "IUsm2UpdomL.PS_SERVICE"     		  desc = "开通服务类型"/>
+      <mapping name = "L_PLAN_ID"       mapping = "PLAN_ID"         method = "MappingDirect"     expr = "0"         		                  desc = "用户编号"/>
+      <mapping name = "L_BILL_ID"       mapping = "BILL_ID"         method = "MappingContext"    expr = "BILL_ID,IInstanceL.BILL_ID"          desc = "手机号码"/>
+      <mapping name = "L_SUB_BILL_ID"   mapping = "SUB_BILL_ID"     method = "MappingContext"    expr = "SUB_BILL_ID,IInstanceL.SUB_BILL_ID"  desc = "用户IMSI"/>
+      <mapping name = "L_SYSDATE"       mapping = "SUB_VALID_DATE"  method = "MappingSysdate"    desc = "开通定购生效时间"/>
+      <mapping name = "L_SYSDATE"       mapping = "CREATE_DATE"     method = "MappingSysdate"    desc = "开通工单创建时间"/>
+      <mapping name = "L_SYSDATE"       mapping = "STATUS_UPD_DATE" method = "MappingSysdate"    desc = "开通状态修改时间"/>
+      <mapping name = "L_ACTION_ID"     mapping = "ACTION_ID"       method = "MappingContext"    expr = "IUsm2UpdomL.CODE"           		  desc = "开通操作编号"/>
+      <mapping name = "VMICMOST"        mapping = "STOP_TYPE"       method = "MappingDirect"     desc = "停机类型"/>
+      <mapping name = "L_PS_STATUS"     mapping = "PS_STATUS"       method = "MappingDirect"     expr = "0"                         		  desc = "订购工单状态"/>
+	  <mapping name = "L_NET_CODE"      mapping = "PS_NET_CODE"     method = "MappingLogica"     expr = "IUsm2UpdomL.IControlL.IPlatformL.Platform,IUsm2UpfcmL.EXTEND_SUFFIX_B"         desc = "开通测物理设备"/>
+      <mapping name = "L_PDC_ROUTE"     mapping = "PDC_ROUTE_CODE"  method = "MappingGenJPT"     desc = "缓存规则路由"/>
+      <mapping name = "L_REGION_CODE"   mapping = "REGION_CODE"     method = "MappingLogica"     expr = "IUsm2UpfcmL.REGION_CODE"             desc = "开通测分区"/>
+      <mapping name = "L_USER_ID"       mapping = "REGION_ID"       method = "MappingUserId"     desc = "订购用户归属行政域"/>
+      <mapping name = "L_ORG_ID"        mapping = "ORG_ID"          method = "MappingContext"    expr = "IInstanceL.VM_ORG_ID"    		  	  desc = "业务组织编号"/>
+      <mapping name = "L_OP_ID"         mapping = "OP_ID"           method = "MappingContext"    expr = "IInstanceL.VM_STAFF_ID"    		  desc = "业务操作员"/>
+      <mapping name = "VMICMSID"        mapping = "SERVICE_ID"      method = "MappingDirect"     expr = "0"                         		  desc = "CBS服务ID"/>
+      <mapping name = "L_SUB_PLAN_NO"   mapping = "SUB_PLAN_NO"     method = "MappingDirect"     expr = "0"                         		  desc = "定购计划批号"/>
+      <mapping name = "L_RETRY_TIMES"   mapping = "RETRY_TIMES"     method = "MappingContext"    expr = "IUsm2UpdomL.REDO_TIMES"     		  desc = "工单转重做次数"/>
+      <mapping name = "L_DEAD_LINE"   	mapping = "DEAD_LINE"     	method = "MappingDirect"     expr = "0"     		  					  desc = "配制数"/>
+      <mapping name = "L_SORT_ID"   	mapping = "SORT_ID"     	method = "MappingDirect"     expr = "0"     		  					  desc = "SORT_ID"/>
+      <mapping name = "L_HAND_ID"   	mapping = "HAND_ID"     	method = "MappingDirect"     expr = "0"     		  					  desc = "手工工单编号"/>
+      <mapping name = "L_HAND_OP_ID"   	mapping = "HAND_OP_ID"     	method = "MappingDirect"     expr = "0"     		  					  desc = "手工工单派单人工号"/>
+      <mapping name = "L_RET_OP_ID"   	mapping = "RET_OP_ID"     	method = "MappingDirect"     expr = "0"     		  					  desc = "手工回单人工号"/>
+      <mapping name = "L_RSP_ID"   		mapping = "SP_ID"     		method = "MappingDirect"     expr = "0"     		  					  desc = "归属运营商"/>
+      <mapping name = "L_OLD_PS_ID"   	mapping = "OLD_PS_ID"     	method = "MappingDirect"     expr = "0"     							  desc = "原开通编号"/>
+      <mapping name = "L_ACC_ID"   		mapping = "ACC_ID"     		method = "MappingDirect"     expr = "0"     							  desc = "帐户编号"/>
+      <mapping name = "L_SUB_ID"   		mapping = "SUB_ID"     		method = "MappingContext"    expr = "USER_ID,IInstanceL.USER_ID"                  desc = "定购序号"/>
+  </mappings>
+  
+  <mappings id = "IUpfm2JMfoL" desc = "实时同步报文头[统一开通][开通测]">
+      <mapping name = "L_PS_NET_CODE"  mapping = "PS_NET_CODE"     method = "MappingContext"   expr = "IUsm2UpdomL.IControlL.PLATFORM" length="20" 	desc = "HLR的标识"/>
+      <mapping name = "L_PS_ID"        mapping = "PS_ID"           method = "MappingGenSID"    expr = "I_OPEN_PROVISION"          	   length="16"	desc = "开通编号"/>
+      <mapping name = "L_ACTION_ID"    mapping = "ACTION_ID"       method = "MappingContext"   expr = "IUsm2UpdomL.CODE"           	   length="4"	desc = "操作编号"/>
+      <mapping name = "L_BILl_ID"      mapping = "BILL_ID"         method = "MappingContext"   expr = "IInstanceL.BILL_ID"   	       length="30"   desc = "手机号码"/>
+      <mapping name = "L_FIXG_ID"      mapping = "SERVICE_ID" 	   method = "MappingDirect"    expr = "0"     						   length="4"	desc = "固定编码"/>
+      <mapping name = "L_PS_SERVICE"   mapping = "PS_SERVICE_TYPE" method = "MappingContext"    expr = "IUsm2UpdomL.PS_SERVICE"        desc = "开通服务类型"/>
+  </mappings> 
+  
+  <mappings id = "IUpfm2GMfoL" desc = "移动网实时报文[统一开通][开通测]">
+      <mapping name = "L_PS_NET_CODE"  mapping = "PS_NET_CODE"     method = "MappingLogica"    expr = "IUsm2UpfcmL.EXTEND_SUFFIX_B"    length="20" 	desc = "HLR的标识"/>
+      <mapping name = "L_PS_ID"        mapping = "PS_ID"           method = "MappingGenSID"    expr = "I_OPEN_PROVISION"          	   length="16"	desc = "开通编号"/>
+      <mapping name = "L_ACTION_ID"    mapping = "ACTION_ID"       method = "MappingContext"   expr = "IUsm2UpdomL.CODE"           	   length="4"	desc = "操作编号"/>
+      <mapping name = "L_BILl_ID"      mapping = "BILL_ID"         method = "MappingContext"   expr = "IInstanceL.BILL_ID"   	       length="30"   desc = "手机号码"/>
+      <mapping name = "L_FIXG_ID"      mapping = "SERVICE_ID" 	   method = "MappingDirect"    expr = "0"     						   length="4"	desc = "固定编码"/>
+      <mapping name = "L_PS_SERVICE"   mapping = "PS_SERVICE_TYPE" method = "MappingContext"    expr = "IUsm2UpdomL.PS_SERVICE"        desc = "开通服务类型"/>
+  </mappings> 
+  
+  <mappings id = "IUpfm2GernL" desc = "公共模块[统一开通][开通测]">
+      <mapping name = "OPRSRC"         mapping = "SOURCEID"         method = "MappingDirect"     desc = "受理渠道类型"/>
+      <mapping name = "VMILOCTY"       mapping = "REGIONID"         method = "MappingDirect"     expr = "0"                            desc = "区域编码"/>
+      <mapping name = "VMICMOTS"       mapping = "OSSTATUS"      	method = "MappingDirect"     desc = "用户停开机串"/>
+      <!-- add by lidy 2014-08-26 4G转售业务增加默认参数最终的回执给平台的参数 -->
+      <mapping name = "4GBOSSPARAM"       mapping = "4GBOSSPARAM"      	method = "MappingDirect"     desc = "4GBOSS转售业务开通参数统一开通不使用"/>
+  </mappings> 
+  
+  <mappings id = "JWsoMicro" desc="开通接口表元素">
+      <mapping name = "L_LEN_NET"         	mapping = "LEN_NET"           	method = "MappingDirect"    expr = "120"           			 		length="4" 		desc = "szMML长度"/>
+      <mapping name = "L_HLR_ID"       		mapping = "HLR_ID"         		method = "MappingLogica"    expr = "IUsm2UpfcmL.EXTEND_SUFFIX_B"    length="20"		desc = "HLR的标识"/>
+      <mapping name = "L_PS_ID"       		mapping = "PS_ID"         		method = "MappingGenSID"    expr = "I_OPEN_PROVISION"          		length="16"		desc = "开通编号"/>
+      <mapping name = "L_ACTION_ID"         mapping = "ACTION_ID"           method = "MappingContext"   expr = "IUsm2UpdomL.CODE"           	length="4"		desc = "操作编号"/>
+      <mapping name = "L_BILl_ID"      	 	mapping = "BILL_ID"       		method = "MappingContext"   expr = "BILL_ID,IInstanceL.BILL_ID"   	length="30"     desc = "手机号码"/>
+      <mapping name = "LORGID"    			mapping = "ORG_ID" 				method = "MappingDirect"    expr = "0000"     						length="4"		desc = "固定编码"/>
+      
+      <mapping name = "L_SUB_BILL_ID"     	mapping = "SUB_BILL_ID"       	method = "MappingContext"   expr = "SUB_BILL_ID,IInstanceL.SUB_BILL_ID"     desc = "用户IMSI"/>
+      <mapping name = "L_REGION_CODE"    	mapping = "REGION_CODE"      	method = "MappingUserId"    desc = "订购用户归属行政域"/>
+      <mapping name = "LSYSDATE"       		mapping = "CREATE_DATE"         method = "MappingSysdate"   desc = "开通工单创建时间"/>
+      <mapping name = "L_REGIONID"   		mapping = "REGIONID"     		method = "MappingDirect"    desc = "标识主备HLR"/>     
+  </mappings>
+</ucmframe>

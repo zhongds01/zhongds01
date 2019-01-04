@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe id="UcmJTProMapping" desc="营业测集团产品模块">
+   <mappings id = "IUcm2JTMIL" desc = "集团普通产品[开通测]">
+      <mapping name = "IUcm2CommL"       mapping = "IUcm2CommL"   	  method = "MappingModule"   expr = "UcmMicroMapping.IUcm2CommL"      desc = "普通公共属性模块"/>
+      <mapping name = "VMICMGFG"         mapping = "VMICMGFG"   	  method = "MappingExist"   desc = "营业受理触发全量">
+         <mapping name = "IGsm2HlrfL"      mapping = "IGsm2HlrfL"       method = "MappingModule"   expr = "UcmMicroMapping.IGsm2HlrfL"       desc = "普通GSM程控模块[开通测]"/>
+         <mapping name = "IGsm2OthfL"      mapping = "IGsm2OthfL"       method = "MappingModule"   expr = "UcmMicroMapping.IGsm2OthfL"       desc = "普通上网程控模块[开通测]"/>
+         <mapping name = "IGsm2NetcL"      mapping = "IGsm2NetcL"       method = "MappingModule"   expr = "UcmMicroMapping.IGsm2NetcL"       desc = "普通其他程控模块[开通测]"/>
+         <mapping name = "IGsm2NetaL"      mapping = "IGsm2NetaL"       method = "MappingModule"   expr = "UcmMicroMapping.IGsm2NetaL"       desc = "普通其他程控模块[开通测]"/>
+         <mapping name = "IGsm2NsrcL"      mapping = "IGsm2NsrcL"       method = "MappingModule"   expr = "UcmGsmNSRMapping.IGsm2NsrcL"      desc = "普通其他程控模块[开通测]"/>
+      </mapping>
+      <mapping name = "JTBILL_ID"        mapping = "JTBILL_ID"        method = "MappingContext"  expr = "IInsJTUserL.BILL_ID"             desc = "集团客户帐号"/>      
+      <mapping name = "JTCUST_ID"        mapping = "JTCUST_ID"        method = "MappingContext"  expr = "IUcm2JTCustL.CUST_ID"            desc = "集团客户编号"/> 
+      <mapping name = "JTGROUP_ID"       mapping = "JTGROUP_ID"       method = "MappingContext"  expr = "IUcm2JTCustL.GROUP_ID"           desc = "集团群组编号"/> 
+      <mapping name = "270000090302"     mapping = "QYDXT"            method = "MappingExist"    desc = "企业短信通">
+         <mapping name = "270000090302"     mapping = "QYDXT"            method = "MappingDirect"    desc = "企业短信通产品"/>
+         <mapping name = "270000090302"     mapping = "QYDXTPI"          method = "MappingContext"   expr = "A270000090302_PROP_L.260000000117"       desc = "发送平台"/>
+         <mapping name = "270000090302"     mapping = "QYDXTKI"          method = "MappingContext"   expr = "A270000090302_PROP_L.260000000118"       desc = "开户形式"/>
+         <mapping name = "270000090302"     mapping = "QYDXTCXHBMD"          method = "MappingContext"   expr = "A270000090302_PROP_L.380000183622"   desc = "彩信黑白名单"/>
+         <mapping name = "270000090302"     mapping = "QYDXTCXHZWQM"          method = "MappingContext"   expr = "A270000090302_PROP_L.380000183619"  desc = "彩信中文签名"/>
+         <mapping name = "270000090302"     mapping = "QYDXTCXHYWQM"          method = "MappingContext"   expr = "A270000090302_PROP_L.380000183620"  desc = "彩信英文签名"/>
+         <mapping name = "270000090302"     mapping = "QYDXTCXHMRZW"          method = "MappingContext"   expr = "A270000090302_PROP_L.380000183617"  desc = "彩信默认中文签名"/>
+         <mapping name = "270000090302"     mapping = "QYDXTCXHMRYW"          method = "MappingContext"   expr = "A270000090302_PROP_L.380000183618"  desc = "彩信默认英文签名"/>
+         <mapping name = "270000090302"     mapping = "QYDXTECID"             method = "MappingContext"   expr = "A270000090302_PROP_L.260000000682"  desc = "ECID"/>
+         <mapping name = "270000090302"     mapping = "QYDXTPASSWORD"         method = "MappingContext"   expr = "A270000090302_PROP_L.260000000126"  desc = "PassWord"/>
+         <mapping name = "270000090302"     mapping = "QYDXTRBLIST"           method = "MappingContext"   expr = "A270000090302_PROP_L.260000000855"  desc = "RBList"/>
+         <mapping name = "270000090302"     mapping = "QYDXTSTKFLAG"          method = "MappingContext"   expr = "A270000090302_PROP_L.260000002203"  desc = "STKFlag"/>
+         <mapping name = "270000090302"     mapping = "QYDXTBASESERVCODE"     method = "MappingContext"   expr = "A270000090302_PROP_L.260010002095"  desc = "BaseServCode"/>
+         <mapping name = "270000090302"     mapping = "QYDXTORDERATTR"        method = "MappingContext"   expr = "A270000090302_PROP_L.260000002202"  desc = "OrderAttr"/>
+         <mapping name = "270000090302"     mapping = "QYDXTPRODUCTID"        method = "MappingContext"   expr = "A270000090302_PROP_L.PRODUCT_ID"    desc = "PRODUCT_ID"/>
+         <mapping name = "270000090302"     mapping = "QYDXTORGTYPE"          method = "MappingContext"   expr = "A270000090302_PROP_L.260000000118"  desc = "orgType"/>
+         <mapping name = "270000090302"     mapping = "QYDXTORGSIGNINFO"      method = "MappingContext"   expr = "A270000090302_PROP_L.260000000124"  desc = "orgSignInfo"/>
+         <mapping name = "270000090302"     mapping = "QYDXTVIRMOBLE"         method = "MappingContext"   expr = "A270000090302_PROP_L.260000000392"  desc = "virtualMobile"/>
+         <mapping name = "270000090302"     mapping = "QYDXTUSERNAME"         method = "MappingContext"   expr = "A270000090302_PROP_L.260000000125"  desc = "userName"/>
+         <mapping name = "270000090302"     mapping = "QYDXTSENDTYPEA"        method = "MappingContext"   expr = "A270000090302_PROP_L.260000000880"  desc = "sendTypeA"/>
+         <mapping name = "270000090302"     mapping = "QYDXTSENDTYPEB"        method = "MappingContext"   expr = "A270000090302_PROP_L.260000000881"  desc = "sendTypeB"/>
+         <mapping name = "270000090302"     mapping = "QYDXTSENDTYPEC"        method = "MappingContext"   expr = "A270000090302_PROP_L.260000000882"  desc = "sendTypeC"/>
+         <mapping name = "270000090302"     mapping = "QYDXTSENDTYPED"        method = "MappingContext"   expr = "A270000090302_PROP_L.260000000883"  desc = "sendTypeD"/>
+         <mapping name = "270000090302"     mapping = "QYDXTSENDTYPEE"        method = "MappingContext"   expr = "A270000090302_PROP_L.260000000884"  desc = "sendTypeE"/>
+         <mapping name = "270000090302"     mapping = "QYDXTSERVICEID1"       method = "MappingContext"   expr = "A270000090302_PROP_L.260000001005"  desc = "serviceId1"/>
+         <mapping name = "270000090302"     mapping = "QYDXTCORPLINKMOBILE"   method = "MappingContext"   expr = "A270000090302_PROP_L.260010004126"  desc = "CORP_LINKMOBILE"/>
+         <mapping name = "270000090302"     mapping = "QYDXTMTIP"             method = "MappingContext"   expr = "A270000090302_PROP_L.260010004127"  desc = "MT_IP"/>
+         <mapping name = "270000090302"     mapping = "CONTACT_PHONE"         method = "MappingContext"  expr = "IUcm2JTCustL.CONTACT_PHONE"             desc = "联系电话"/>
+         <mapping name = "270000090302"     mapping = "CONTACT_NAME"          method = "MappingContext"  expr = "IUcm2JTCustL.CONTACT_NAME"             desc = "联系电话"/>
+         <mapping name = "270000090302"     mapping = "COUNTY_ID"             method = "MappingContext"  expr = "IUcm2JTCustL.INSTANCE.COUNTY_ID"       desc = "IUcm2JTCustL.INSTANCE.COUNTY_ID"/>
+         <mapping name = "270000090302"     mapping = "CUST_LEVEL"            method = "MappingContext"  expr = "IUcm2JTCustL.CUST_LEVEL"              desc = "IUcm2JTCustL.CUST_LEVEL"/>
+         <mapping name = "270000090302"     mapping = "CUST_NAME"             method = "MappingContext"  expr = "IUcm2JTCustL.CUST_NAME"                desc = "IUcm2JTCustL.CUST_NAME"/>
+         <mapping name = "270000090302"     mapping = "VOCATION"              method = "MappingContext"  expr = "IUcm2JTCustL.VOCATION"                 desc = "IUcm2JTCustL.VOCATION"/>
+         <mapping name = "270000090302"     mapping = "PARTY_ID"              method = "MappingContext"  expr = "IUcm2JTCustL.INSTANCE.PARTY_ID"         desc = "IUcm2JTCustL.PARTY_ID"/>
+         <mapping name = "270000090302"     mapping = "REGION_TYPE"           method = "MappingContext"  expr = "IUcm2JTCustL.INSTANCE.REGION_TYPE"   desc = "IUcm2JTCustL.REGION_TYPE"/>
+         <mapping name = "270000090302"     mapping = "DISTRICT_NAME"         method = "MappingContext"  expr = "IUcm2JTCustL.DISTRICT_NAME"          desc = "IUcm2JTCustL.DISTRICT_NAME"/>
+         
+         <mapping name = "271010014957"     mapping = "QXTXNHMC"         method = "MappingDirect"    desc = "企信通虚拟号码池"/>
+		 <mapping name = "270000091222"     mapping = "QYDXTCX"          method = "MappingExist"    desc = "企业短信通彩信功能">
+		 	<mapping name = "270000091222"     mapping = "QYDXTCX"        method = "MappingDirect"    desc = "企业短信通彩信功能"/>
+		 	<mapping name = "270000091222"     mapping = "QXTCXPKG"       method = "MappingContext"   expr = "A270000091222_PROP_L.PRODUCT_ID" desc = "企业短信通彩信功能"/>
+		 </mapping>
+      </mapping>
+      <mapping name = "271010014539"     mapping = "QXTZZHXFW"            method = "MappingExist"    desc = "企信通子帐号虚服务">
+           <mapping name = "271010014539"     mapping = "QXTZZHXFW"        method = "MappingDirect"           desc = "企信通子帐号虚服务"/>
+           <mapping name = "271010014539"     mapping = "QXTZZHXFWZT"      method = "MappingContext"          expr = "A271010014539_PROP_L.380000183451"   desc = "企信通子帐号虚服务暂停标志"/>
+      </mapping>
+      <mapping name = "1270000090302"    mapping = "QXTXNH"           method = "MappingDirect"           desc = "个人语音服务-企信通虚拟号"/>
+	  <mapping name = "272999999944"     mapping = "JQYYX"            method = "MappingDirect"           desc = "企业邮箱产品"/>
+      <mapping name = "270000090354"     mapping = "JQYMP"         	  method = "MappingDirect"           desc = "企业名片产品"/>
+      <mapping name = "270000090362"     mapping = "CXT"         	  method = "MappingDirect"           desc = "集团彩信通产品"/>
+      <mapping name = "270000090460"     mapping = "JCXT"         	  method = "MappingDirect"           desc = "集团财信通产品"/>
+      <mapping name = "270000089018"     mapping = "MJCXT"         	  method = "MappingDirect"           desc = "财信通20元彩信"/>
+      <mapping name = "270000089010"     mapping = "MJCXT"         	  method = "MappingDirect"           desc = "财信通1元短信"/>
+	  <mapping name = "270000089011"     mapping = "MJCXT"         	  method = "MappingDirect"           desc = "财信通2元短信"/>
+      <mapping name = "270000089009"     mapping = "MJCXT"         	  method = "MappingDirect"           desc = "财信通0.5元短信"/>
+      <mapping name = "270000089014"     mapping = "MJCXT"         	  method = "MappingDirect"           desc = "财信通1元彩信"/>
+      <mapping name = "270000089015"     mapping = "MJCXT"         	  method = "MappingDirect"           desc = "财信通2元彩信"/>
+      <mapping name = "270000089013"     mapping = "MJCXT"         	  method = "MappingDirect"           desc = "财信通4元短信"/>
+      <mapping name = "270000089017"     mapping = "MJCXT"         	  method = "MappingDirect"           desc = "财信通10元彩信"/>
+      <mapping name = "270000089016"     mapping = "MJCXT"         	  method = "MappingDirect"           desc = "财信通5元彩信"/>
+      <mapping name = "270000089012"     mapping = "MJCXT"         	  method = "MappingDirect"           desc = "财信通3元短信"/>
+      <mapping name = "270000090205"     mapping = "JPOC"         	  method = "MappingDirect"           desc = "全网/本地PoC业务"/>
+      <mapping name = "270000090204"     mapping = "MJPOC"         	  method = "MappingDirect"           desc = "全网/本地PoC业务终端"/>
+      <mapping name = "270000090356"     mapping = "JIDC"         	  method = "MappingDirect"           desc = "IDC业务(浦东，怒江)"/>
+      <mapping name = "270000080151"     mapping = "JOTA"        	  method = "MappingDirect"           desc = "OTA智能菜单"/>
+	  <mapping name = "270000080150"     mapping = "MJOTA"        	  method = "MappingDirect"           desc = "OTA智能菜单终端"/>
+      <mapping name = "270000090363"     mapping = "YDDLFWQ"          method = "MappingDirect"           desc = "移动代理服务器"/>
+      <!-- add by fengliang 集客-2016-6784-上海“云MAS”产品开发需求 -->
+      <mapping name = "390000213100"     mapping = "CLOUDYDDLFWQ"          method = "MappingDirect"           desc = "省行业网关短流程云MAS"/>
+      <mapping name = "390000213097"     mapping = "LCLOUDYDDLFWQ"          method = "MappingDirect"           desc = "省行业网关长流程云MAS"/>
+      <mapping name = "270000090974"     mapping = "JSJYX2"           method = "MappingExist"            desc = "企业邮箱增强版方案二">
+		<mapping name = "270000090974"     mapping = "JSJYX2"       	method = "MappingDirect"           desc = "企业邮箱增强版方案二"/>
+		<mapping name = "270000090979"     mapping = "JSJYX2KR"       	method = "MappingDirect"           desc = "企业邮箱增强版方案二扩容"/>
+	  </mapping>
+	  <mapping name = "270000090979"     mapping = "JSJYX2KR"         method = "MappingDirect"           desc = "企业邮箱增强版方案二扩容"/>
+   	  <mapping name = "271000001180"     mapping = "MJSJYX2"       	  method = "MappingDirect"           desc = "企业邮箱增强版方案二终端(个人、 网外)"/>
+   	  <mapping name = "271000001168"     mapping = "MJSJYX2"       	  method = "MappingDirect"           desc = "企业邮箱增强版方案二终端(个人， 网内)"/>
+   	  <mapping name = "270000090973"     mapping = "JSJYX1"       	  method = "MappingDirect"           desc = "企业邮箱增强版方案一"/>
+   	  <mapping name = "271000001167"     mapping = "MJSJYX1"       	  method = "MappingDirect"           desc = "企业邮箱增强版方案一终端(个人、 网外)"/>
+   	  <mapping name = "271000001179"     mapping = "MJSJYX1"       	  method = "MappingDirect"           desc = "企业邮箱增强版方案一终端(个人、 网外)"/>
+   	  <mapping name = "272999999932"     mapping = "YYDH"       	  method = "MappingDirect"           desc = "会展行业解决方案语音导航"/>
+  	  <mapping name = "1270000089003"    mapping = "MYYDH"       	  method = "MappingDirect"           desc = "会展行业解决方案语音导航"/>
+  	  
+  	  <mapping name = "270000090991"     mapping = "ZXDDT"      	  method = "MappingExist"            desc = "会展行业解决方案展信点点通50">
+  	  	 <mapping name = "270000090991"     mapping = "ZXDDT"     	   	method = "MappingDirect"         desc = "会展行业解决方案展信点点通50"/>
+  	  	 <mapping name = "270000090991"     mapping = "DDTMBILL"       	method = "MappingDepend"           expr = "ZXDDT,A270000090991_PROP_L.DDTMBILL"    desc = "会展行业解决方案展信点点通50成员号码"/>
+	     <mapping name = "270000090991"     mapping = "DDTMDQSI"       	method = "MappingDepend"           expr = "ZXDDT,A270000090991_PROP_L.DDTMDQSI"    desc = "会展行业解决方案展信点点通50成员状态"/>
+  	  </mapping>
+ 	  <mapping name = "270000090224"     mapping = "JTWLANYW"         method = "MappingDirect"           desc = "集团wlan业务"/>
+	  <mapping name = "271010002114"     mapping = "MJTWLANYW"        method = "MappingDirect"           desc = "集团wlan业务"/>
+	  <mapping name = "270000090368"     mapping = "JTTXL"       	  method = "MappingDirect"           desc = "集团通讯录"/>
+	  <mapping name = "270000090478"     mapping = "CHKSVPMN"         method = "MappingDirect"           desc = "跨省VPMN(集团)"/>
+	  <mapping name = "270000090479"     mapping = "MCHKSVPMN"        method = "MappingDirect"           desc = "跨省VPMN(集团)"/>
+	  <mapping name = "270000090501"     mapping = "SPJKTC"       	  method = "MappingDirect"           desc = "视频监控套餐"/>
+	  <mapping name = "270000090505"     mapping = "MSPJKTC"       	  method = "MappingDirect"           desc = "视频监控套餐"/>
+	  <mapping name = "270000090975"     mapping = "SJYXADC"          method = "MappingDirect"           desc = "手机邮箱(ADC)增值业务"/>
+	  <mapping name = "271000001169"     mapping = "MSJYXADC"         method = "MappingDirect"           desc = "手机邮箱(ADC)增值业务"/>
+	  <mapping name = "270000090953"     mapping = "SJYX"             method = "MappingDirect"           desc = "手机邮箱"/>
+	  <mapping name = "270000090960"     mapping = "MSJYX"            method = "MappingDirect"           desc = "手机邮箱"/>
+	  <mapping name = "272999999943"     mapping = "LBS"       		  method = "MappingDirect"           desc = "LBS"/>
+	  <mapping name = "270000090315"     mapping = "MLBS"       	  method = "MappingDirect"           desc = "LBS"/>
+	  <mapping name = "272999999948"     mapping = "QYIPT"       	  method = "MappingDirect"           desc = "企业ip通"/>
+	  <mapping name = "270000090316"     mapping = "MQYIPT"       	  method = "MappingDirect"           desc = "企业ip通"/>
+	  <mapping name = "270000090133"     mapping = "XXT"       		  method = "MappingDirect"           desc = "校讯通"/>
+	  <mapping name = "270000090371"     mapping = "BLBRYYW"          method = "MappingExist"            desc = "BlackBerry企业产品">
+	     <mapping name = "270000090371"    mapping = "BLBRYYW"       	method = "MappingDirect"           desc = "企业BlackBerry"/>
+	     <mapping name = "270000090371"    mapping = "BLBRYYWKFM"       method = "MappingDepend"           expr = "BLBRYYW,A270000090371_PROP_L.260000002314"   desc = "企业BlackBerry开放模式(1MAS版2ADC版）"/>
+	  </mapping>
+	  <mapping name = "272999999933"     mapping = "MBLBRYYW"         method = "MappingExist"            desc = "BlackBerry终端">
+	     <mapping name = "272999999933"    mapping = "MBLBRYYW"       	method = "MappingDirect"           desc = "BlackBerry终端"/>
+	     <mapping name = "272999999933"    mapping = "MBLBRYYWLX"       method = "MappingDepend"           expr = "MBLBRYYW,MBLBRYYWLX"    desc = "BlackBerry终端类型(BB01黑莓个人版BB02黑莓扩展版）"/>
+	     <mapping name = "272999999933"    mapping = "MBLBRYYWKFM"      method = "MappingDepend"           expr = "MBLBRYYW,A272999999933_PROP_L.260000002314" desc = "BlackBerry终端开放模式(1MAS版2ADC版）"/>
+	  </mapping>
+	  <mapping name = "272999999947"     mapping = "JTCL"       	  method = "MappingDirect"           desc = "集团彩铃"/>
+	  <mapping name = "270000090331"     mapping = "MJTCL"       	  method = "MappingDirect"           desc = "集团彩铃"/>
+	  <mapping name = "270000090363"     mapping = "YDDLFWQ"       	  method = "MappingDirect"           desc = "移动代理服务器"/>
+	  <mapping name = "271010015261"     mapping = "YDDLFWQZZH"         method = "MappingExist"            desc = "移动代理服务器子账号虚服务">
+	      <mapping name = "271010015261"     mapping = "YDDLFWQZZH"       method = "MappingDirect"           desc = "移动代理服务器子账号虚服务"/>
+	      <mapping name = "271010015261"     mapping = "YDDLFWQZZHZT"     method = "MappingContext"       expr = "A271010015261_PROP_L.380000183451"    desc = "移动代理服务器子账号虚服务暂停状态"/>
+	      <mapping name = "271010015261"     mapping = "ECName_DX"     method = "MappingContext"       expr = "IUcm2JTCustL.CUST_NAME"    desc = "IUcm2JTCustL.CUST_NAME"/>
+	 	  <mapping name = "271010015261"     mapping = "ECID_DX"     method = "MappingContext"       expr = "A271010015261_PROP_L.260000000674"    desc = "ECID"/>
+	 	  <mapping name = "271010015261"     mapping = "BIZATTRTYPE_DX"     method = "MappingContext"       expr = "A271010015261_PROP_L.260000000855"    desc = "BizAttrType"/>
+	 	  <mapping name = "271010015261"     mapping = "YDDLBIZCODE_DX"     method = "MappingContext"       expr = "A271010015261_PROP_L.260000000813"    desc = "BizCode"/>
+	 	  <mapping name = "271010015261"     mapping = "ISTEXTSIGN_DX"     method = "MappingContext"       expr = "A271010015261_PROP_L.390000000184"    desc = "ISTextSign"/>
+	 	  <mapping name = "271010015261"     mapping = "DEFAULTSINGLANG_DX"     method = "MappingContext"       expr = "A271010015261_PROP_L.260000001002"    desc = "DefaultSignLang"/>
+	  	  <mapping name = "271010015261"     mapping = "TEXTSIGNZH_DX"     method = "MappingContext"       expr = "A271010015261_PROP_L.260000000675"    desc = "TextSignZh"/>
+	  	  <mapping name = "271010015261"     mapping = "TEXTSIGNEN_DX"     method = "MappingContext"       expr = "A271010015261_PROP_L.260000001001"    desc = "TextSignEn"/>
+	  </mapping>
+	  <mapping name = "380000021234"     mapping = "YDDLFWQCXZZH"         method = "MappingExist"            desc = "移动代理服务器（彩信）子账号虚服务">
+	      <mapping name = "380000021234"     mapping = "YDDLFWQCXZZH"       method = "MappingDirect"           desc = "移动代理服务器（彩信）子账号虚服务"/>
+	      <mapping name = "380000021234"     mapping = "YDDLFWQCXZZHZT"     method = "MappingContext"       expr = "A380000021234_PROP_L.380000183451"    desc = "移动代理服务器（彩信）子账号虚服务暂停状态"/>
+	 	  <mapping name = "380000021234"     mapping = "ECName_CX"     method = "MappingContext"       expr = "IUcm2JTCustL.CUST_NAME"    desc = "IUcm2JTCustL.CUST_NAME"/>
+	 	  <mapping name = "380000021234"     mapping = "ECID_CX"     method = "MappingContext"       expr = "A380000021234_PROP_L.260000000674"    desc = "ECID"/>
+	 	  <mapping name = "380000021234"     mapping = "BIZATTRTYPE_CX"     method = "MappingContext"       expr = "A380000021234_PROP_L.260000000855"    desc = "BizAttrType"/>
+	 	  <mapping name = "380000021234"     mapping = "ISTEXTSIGN_CX"     method = "MappingContext"       expr = "A380000021234_PROP_L.390000000184"    desc = "ISTextSign"/>
+	 	  <mapping name = "380000021234"     mapping = "DEFAULTSINGLANG_CX"     method = "MappingContext"       expr = "A380000021234_PROP_L.380000021236"    desc = "DefaultSignLang"/>
+	 	  <mapping name = "380000021234"     mapping = "DEFAULTSINGLANG_CX_I"     method = "MappingContext"       expr = "A380000021234_PROP_L.380000021235"    desc = "DefaultSignLang"/>
+	  	  <mapping name = "380000021234"     mapping = "TEXTSIGNZH_CX"     method = "MappingContext"       expr = "A380000021234_PROP_L.380000021238"    desc = "TextSignZh"/>
+	  	  <mapping name = "380000021234"     mapping = "TEXTSIGNEN_CX"     method = "MappingContext"       expr = "A380000021234_PROP_L.380000021237"    desc = "TextSignEn"/>
+	  </mapping>
+	  <mapping name = "12270000090364"   mapping = "UDDLFWQXGQM"	  method = "MappingExist"            desc = "移动代理服务器修改企业签名">
+	  		<mapping name = "270000090363"     mapping = "YDDLFWQ"          method = "MappingDirect"           desc = "移动代理服务器"/>
+	  		<mapping name = "270000090367"     mapping = "YDDLSMS"       	  method = "MappingDirect"           desc = "移动代理服务器全网本地端口"/>
+	  		<mapping name = "270000091212"     mapping = "YDDLMMSFW"        method = "MappingDirect"           desc = "移动代理服务器MAS彩信服务"/>
+	  		<mapping name = "270000090363"     mapping = "BASESERVCODE"        method = "MappingContext"   expr = "A270000090363_PROP_L.260000000673"  desc = "BaseServCode"/>
+	  		<mapping name = "270000090363"     mapping = "BIZATTRTYPE"        method = "MappingContext"   expr = "A270000090363_PROP_L.260000000855"  desc = "BizAttrType"/>
+	  		<mapping name = "270000090363"     mapping = "BIZCODE"        method = "MappingContext"   expr = "A270000090363_PROP_L.260000000813"  desc = "BizCode"/>
+	  		<mapping name = "270000090363"     mapping = "ECID"        method = "MappingContext"   expr = "A270000090363_PROP_L.260000000674"  desc = "ECID"/>
+	  		<mapping name = "270000090363"     mapping = "DEFSIGNLANG"        method = "MappingContext"   expr = "A270000090363_PROP_L.260000001002"  desc = "DEFSIGNLANG"/>
+	  		<mapping name = "270000090363"     mapping = "TEXTEN"        method = "MappingContext"   expr = "A270000090363_PROP_L.260000001001"  desc = "TEXTEN"/>
+	  		<mapping name = "270000090363"     mapping = "TEXTZH"        method = "MappingContext"   expr = "A270000090363_PROP_L.260000000675"  desc = "TEXTZH"/>
+	  </mapping>
+	  <mapping name = "270000090363"     mapping = "BASESERVCODE"       method = "MappingContext"   expr = "A270000090363_PROP_L.260000000673"  desc = "BaseServCode"/>
+	  <mapping name = "270000090363"     mapping = "BIZATTRTYPE"        method = "MappingContext"   expr = "A270000090363_PROP_L.260000000855"  desc = "BizAttrType"/>
+	  <mapping name = "270000090363"     mapping = "BIZCODE"            method = "MappingContext"   expr = "A270000090363_PROP_L.260000000813"  desc = "BizCode"/>
+	  <mapping name = "270000090363"     mapping = "ECID"               method = "MappingContext"   expr = "A270000090363_PROP_L.260000000674"  desc = "ECID"/>
+	  <mapping name = "270000090363"     mapping = "DEFSIGNLANG"        method = "MappingContext"   expr = "A270000090363_PROP_L.260000001002"  desc = "DEFSIGNLANG"/>
+	  <mapping name = "270000090363"     mapping = "TEXTEN"             method = "MappingContext"   expr = "A270000090363_PROP_L.260000001001"  desc = "TEXTEN"/>
+	  <mapping name = "270000090363"     mapping = "TEXTZH"             method = "MappingContext"   expr = "A270000090363_PROP_L.260000000675"  desc = "TEXTZH"/>
+	  <mapping name = "270000090363"     mapping = "YDDLMQMBG"          method = "MappingContext"   expr = "A270000090363_PROP_L.390000000184"  desc = "YDDLMQMBG"/>
+	  <mapping name = "270000090225"     mapping = "YDDLFWQJWT"       method = "MappingDirect"           desc = "移动代理服务器警务通上行短信"/>
+	  <mapping name = "270000090364"     mapping = "YDDLFWQDK"        method = "MappingDirect"           desc = "移动代理服务器端口"/>
+	  <mapping name = "270000091212"     mapping = "YDDLMMSFW"        method = "MappingDirect"           desc = "移动代理服务器MAS彩信服务"/>
+	  <mapping name = "270000090367"     mapping = "YDDLSMS"       	  method = "MappingDirect"           desc = "移动代理服务器全网本地端口"/>
+	  <mapping name = "270000091215"     mapping = "YDDLMMS"       	  method = "MappingDirect"           desc = "移动代理服务器MAS彩信端口"/>
+	  <mapping name = "270000091213"     mapping = "YDDLMMSSL"        method = "MappingDirect"           desc = "移动代理服务器MAS彩信端口速率"/>
+	  <mapping name = "271010003192"     mapping = "YDDLFWQDD"        method = "MappingDirect"           desc = "移动代理服务器订购点播业务"/>
+	  <mapping name = "270000090241"     mapping = "QYCXCX"           method = "MappingDirect"           desc = "企业彩讯彩信(集团)"/>
+	  <mapping name = "270000090261"     mapping = "MQYCXCX"          method = "MappingDirect"           desc = "企业彩讯彩信(成员)"/>
+	  <mapping name = "270000090980"     mapping = "SJYXPMTC"         method = "MappingDirect"           desc = "手邮PushEmail"/>
+	  <mapping name = "270000090978"     mapping = "MSJYXPMTC"        method = "MappingDirect"           desc = "手邮PushEmail"/>
+	  <mapping name = "270000091071"     mapping = "QWMASYW"       	  method = "MappingDirect"           desc = "主办省全网MAS业务准入"/>
+	  <mapping name = "270000090964"     mapping = "YDOAYW"       	  method = "MappingDirect"           desc = "移动OA业务"/>
+	  <mapping name = "270000090965"     mapping = "MYDOAYW"       	  method = "MappingDirect"           desc = "移动OA业务"/>
+	  <mapping name = "270000090380"     mapping = "YDDDYW"           method = "MappingDirect"           desc = "移动调度业务"/>
+	  <mapping name = "270000053008"     mapping = "MYDDDYW"          method = "MappingDirect"           desc = "移动调度业务"/>
+	  <mapping name = "270000053009"     mapping = "MYDDDYW"          method = "MappingDirect"           desc = "移动调度业务"/>
+	  <mapping name = "270000091098"     mapping = "M2MTDXYW"         method = "MappingDirect"           desc = "M2M通道型业务"/>
+	  <mapping name = "271010002868"     mapping = "MM2MTDXYW"        method = "MappingDirect"           desc = "M2M通道型业务"/>
+	  <mapping name = "271010002877"     mapping = "MM2MTDXYW"        method = "MappingDirect"           desc = "M2M通道型业务"/>
+	  <mapping name = "270000090345"     mapping = "DXT"       		  method = "MappingDirect"           desc = "队信通"/>
+	  <!--农信通ADC版-->
+	  <mapping name = "270000090385"     mapping = "NXT"       		  method = "MappingDirect"           desc = "农信通ADC版"/>
+	  <mapping name = "270000090431"     mapping = "NXTZYTC"          method = "MappingDirect"           desc = "农信通专业ADC版"/>
+	  <mapping name = "271000002704"     mapping = "MNXTTC"           method = "MappingExist"            desc = "农信通ADC版成员">
+	     <mapping name = "271000002704"     mapping = "MNXTTC"           method = "MappingDirect"          desc = "农信通ADC版成员"/>
+	     <mapping name = "271000002704"     mapping = "MNXTTCPID"        method = "MappingDepend"          expr = "MNXTTC,MNXTTCPID" desc = "农信通ADC版成员产品清单"/>
+	  </mapping>
+	  <mapping name = "270000090976"     mapping = "SYWPTC"       	  method = "MappingDirect"           desc = "手邮WapPush"/>
+	  <mapping name = "270000090977"     mapping = "MSYWPTC"       	  method = "MappingDirect"           desc = "手邮WapPush"/>
+	  <mapping name = "270000080139"     mapping = "TXGJ"        	  method = "MappingDirect"           desc = "通信管家"/>
+	  <mapping name = "270000080140"     mapping = "MTXGJ"        	  method = "MappingDirect"           desc = "通信管家"/>
+	  <mapping name = "270000091102"     mapping = "ZPJPJC"           method = "MappingExist"            desc = "照片即拍即传">
+	     <mapping name = "270000091102"     mapping = "ZPJPJC"       	  method = "MappingDirect"         desc = "照片即拍即传"/>
+	     <mapping name = "270000091102"     mapping = "JPJMBILL"       	  method = "MappingDepend"         expr = "ZPJPJC,A270000091102_PROP_L.JPJMBILL"    desc = "照片即拍即传成员号码"/>
+	     <mapping name = "270000091102"     mapping = "JPJMDQTP"       	  method = "MappingDepend"         expr = "ZPJPJC,A270000091102_PROP_L.JPJMDQTP"    desc = "照片即拍即传成员订购类型"/>
+	     <mapping name = "270000091102"     mapping = "JPJMCMAC"       	  method = "MappingDepend"         expr = "ZPJPJC,A270000091102_PROP_L.JPJMCMAC"    desc = "照片即拍即传成员MAC地址"/>
+	     <mapping name = "270000091102"     mapping = "JPJMSXRQ"       	  method = "MappingDepend"         expr = "ZPJPJC,A270000091102_PROP_L.JPJMSXRQ"    desc = "照片即拍即传成员失效日期"/>
+	     <mapping name = "270000091102"     mapping = "JPJMDQSI"       	  method = "MappingDepend"         expr = "ZPJPJC,A270000091102_PROP_L.JPJMDQSI"    desc = "照片即拍即传成员状态"/>
+	  </mapping>
+	  <mapping name = "270000080157"     mapping = "JTTFPSZF"         method = "MappingDirect"           desc = "集团统付商品个人帐单代付"/>
+	  <mapping name = "271010002756"     mapping = "MJTTFPSZF"        method = "MappingDirect"           desc = "集团统付商品个人帐单代付（终端）"/>
+	  <mapping name = "270000080163"     mapping = "CMNETKDT"         method = "MappingDirect"           desc = "CMNET宽带通"/>
+	  <mapping name = "270000089057"     mapping = "QYHJPT"       	  method = "MappingDirect"           desc = "点击拨号-企业呼叫平台"/>
+	  <mapping name = "271010014687"     mapping = "MQYHJPT"       	  method = "MappingDirect"           desc = "点击拨号-企业呼叫平台"/>
+	  <mapping name = "270000089060"     mapping = "WSKFPT"       	  method = "MappingDirect"           desc = "点击拨号-网上客服平台"/>
+	  <mapping name = "271010014666"     mapping = "MWSKFPT"       	  method = "MappingDirect"           desc = "点击拨号-网上客服平台"/>
+	  <mapping name = "270000090210"     mapping = "ZYKX"       	  method = "MappingDirect"           desc = "医信通(集团版)中医快讯"/>
+	  <mapping name = "270000090211"     mapping = "MZYKX"       	  method = "MappingDirect"           desc = "医信通(集团版)中医快讯"/>
+	  <mapping name = "270000090212"     mapping = "ZYXX"       	  method = "MappingDirect"           desc = "医信通(集团版)中医学习"/>
+	  <mapping name = "270000090213"     mapping = "MZYXX"       	  method = "MappingDirect"           desc = "医信通(集团版)中医学习"/>
+	  <mapping name = "270000090214"     mapping = "YLTX"       	  method = "MappingDirect"           desc = "医信通(集团版)医疗提醒"/>
+	  <mapping name = "270000090215"     mapping = "MYLTX"       	  method = "MappingDirect"           desc = "医信通(集团版)医疗提醒"/>
+	  <mapping name = "270000090216"     mapping = "YQHL"       	  method = "MappingDirect"           desc = "医信通(集团版)孕期护理"/>
+	  <mapping name = "270000090217"     mapping = "MYQHL"       	  method = "MappingDirect"           desc = "医信通(集团版)孕期护理"/>
+	  <mapping name = "270000090218"     mapping = "YNTZ"       	  method = "MappingDirect"           desc = "医信通(集团版)院内通知"/>
+	  <mapping name = "271100090219"     mapping = "MYNTZ"       	  method = "MappingDirect"           desc = "医信通(集团版)院内通知"/>
+	  <mapping name = "270000090220"     mapping = "NZTJT"       	  method = "MappingDirect"           desc = "农政通(集团)"/>
+	  <mapping name = "270000090221"     mapping = "MNZTJT"       	  method = "MappingDirect"           desc = "农政通(集团)"/>
+	  <mapping name = "270000090242"     mapping = "QYCXDX"       	  method = "MappingDirect"           desc = "企业彩讯短信(集团)"/>
+	  <mapping name = "270000090262"     mapping = "MQYCXDX"       	  method = "MappingDirect"           desc = "企业彩讯短信(集团)"/>
+	  <mapping name = "270000090243"     mapping = "SHTCX"       	  method = "MappingDirect"           desc = "商户通彩信(集团)"/>
+	  <mapping name = "270000090263"     mapping = "MSHTCX"       	  method = "MappingDirect"           desc = "商户通彩信(集团)"/>
+	  <mapping name = "270000090244"     mapping = "SHTDX"       	  method = "MappingDirect"           desc = "商户通短信(集团)"/>
+	  <mapping name = "270000090264"     mapping = "MSHTDX"       	  method = "MappingDirect"           desc = "商户通短信(集团)"/>
+	  <mapping name = "270000090245"     mapping = "XYBCX"       	  method = "MappingDirect"           desc = "行业宝彩信(集团)"/>
+	  <mapping name = "270000090265"     mapping = "MXYBCX"       	  method = "MappingDirect"           desc = "行业宝彩信(集团)"/>
+	  <mapping name = "270000090246"     mapping = "XYRKCX"       	  method = "MappingDirect"           desc = "行业日刊彩信(集团)"/>
+	  <mapping name = "270000090266"     mapping = "MXYRKCX"       	  method = "MappingDirect"           desc = "行业日刊彩信(集团)"/>
+	  <mapping name = "270000090247"     mapping = "XYZKCX"       	  method = "MappingDirect"           desc = "行业周刊彩信(集团)"/>
+	  <mapping name = "270000090267"     mapping = "MXYZKCX"       	  method = "MappingDirect"           desc = "行业周刊彩信(集团)"/>
+	  <mapping name = "270000090248"     mapping = "YHXZCX"       	  method = "MappingDirect"           desc = "移动会议信息助理彩信(集团)"/>
+	  <mapping name = "270000090268"     mapping = "MYHXZCX"       	  method = "MappingDirect"           desc = "移动会议信息助理彩信(集团)"/>
+	  <mapping name = "270000090249"     mapping = "YHXZDX"       	  method = "MappingDirect"           desc = "移动会议信息助理短信(集团)"/>
+	  <mapping name = "270000090269"     mapping = "MYHXZDX"       	  method = "MappingDirect"           desc = "移动会议信息助理短信(集团)"/>
+	  <mapping name = "270000090281"     mapping = "EWLGRPS"       	  method = "MappingDirect"           desc = "e物流GRPS(集团)"/>
+	  <mapping name = "270000090284"     mapping = "MEWLGRPS"         method = "MappingDirect"           desc = "e物流GRPS(集团)"/>
+	  <mapping name = "270000090282"     mapping = "EWLDX"            method = "MappingDirect"           desc = "e物流短信(集团)"/>
+	  <mapping name = "270000090285"     mapping = "MEWLDX"           method = "MappingDirect"           desc = "e物流短信(集团)"/>
+	  <mapping name = "270000090355"     mapping = "YDZJYW"           method = "MappingExist"            desc = "移动总机业务">
+	     <mapping name = "270000090355"     mapping = "YDZJYW"       	 method = "MappingDirect"          desc = "移动总机业务"/>
+	     <mapping name = "270000090355"     mapping = "EXIVPMN"          method = "MappingContext"         expr="A270000090355_PROP_L.HAVE_VPMN"  desc = "移动总机业务[VPMN产品]"/>
+	  </mapping>
+	  <mapping name = "270000090332"     mapping = "MYDZJYW"          method = "MappingExist"            desc = "移动总机终端">
+	     <mapping name = "270000090332"     mapping = "MYDZJYW"       	 method = "MappingDirect"          desc = "移动总机终端"/>
+	     <mapping name = "270000090352"     mapping = "PVPMN"            method = "MappingDirect"          desc = "移动总机终端[VPMN终端产品]"/>
+	  </mapping>
+	  <mapping name = "270000090332"     mapping = "MYDZJYW"       	  method = "MappingDirect"           desc = "移动总机业务"/>
+	  <mapping name = "270000090376"     mapping = "XQDX"       	  method = "MappingDirect"           desc = "小区短信"/>
+	  <mapping name = "272999999940"     mapping = "CWTYW"       	  method = "MappingDirect"           desc = "车务通业务"/>
+	  <mapping name = "270000090399"     mapping = "MCWTYW"       	  method = "MappingDirect"           desc = "车务通业务"/>
+	  <mapping name = "270000090482"     mapping = "BDCWT"       	  method = "MappingDirect"           desc = "本地车务通"/>
+	  <mapping name = "270000090483"     mapping = "MBDCWT"       	  method = "MappingDirect"           desc = "本地车务通"/>
+	  <mapping name = "270000090562"     mapping = "QYFXBD"       	  method = "MappingDirect"           desc = "企业飞信(本地)"/>
+	  <mapping name = "270000090564"     mapping = "MQYFXBD"       	  method = "MappingDirect"           desc = "企业飞信(本地)"/>
+	  <mapping name = "270000090563"     mapping = "QYFXQW"       	  method = "MappingDirect"           desc = "企业飞信(全网)"/>
+	  <mapping name = "270000090564"     mapping = "MQYFXQW"       	  method = "MappingDirect"           desc = "企业飞信(全网)本省"/>
+	  <mapping name = "271010014691"     mapping = "MQYFXQW"       	  method = "MappingDirect"           desc = "企业飞信(全网)他省"/>
+	  <mapping name = "270000090590"     mapping = "RHTXZHYY"         method = "MappingExist"            desc = "融合通信综合语音">
+	  	  <mapping name = "270000090590"   mapping = "RHTXZHYY"         method = "MappingDirect"           desc = "融合通信综合语音"/>
+	  	  <mapping name = "270000091174"   mapping = "RHTXDX"           method = "MappingDirect"           desc = "融合通信综合语音短信功能"/>
+	  </mapping>
+	  <mapping name = "2270000090586"    mapping = "RHTXRHZJGNBG"     method = "MappingDirect"           desc = "融合总机功能变更"/>
+	  <mapping name = "270000090586"     mapping = "RHZJHMBG"         method = "MappingDirect"           desc = "融合通信综合语音(融合总机号码变更)"/>
+	  <mapping name = "270000080245"     mapping = "MRHTXZHYY"        method = "MappingExist"            desc = "融合通信综合语音(手机号码终端)">
+	  	<mapping name = "270000080245"     mapping = "MRHTXZHYY"        method = "MappingDirect"           desc = "融合通信综合语音(手机号码终端)"/>
+	  	<mapping name = "270000091175"     mapping = "MRHTXDHDXCY"      method = "MappingDirect"           desc = "融合通信综合语音短号短信成员"/>
+	  	<mapping name = "310090701001"     mapping = "IMSCFCTX" 		method = "MappingDirect" 	       desc = "IMS呼叫范围(群内)"/>
+	  	<mapping name = "310090720001"     mapping = "IMSCFCLC" 		method = "MappingDirect" 	       desc = "IMS呼叫范围(本地)"/>
+	  	<mapping name = "310090721001"     mapping = "IMSCFDDD" 		method = "MappingDirect" 	       desc = "IMS呼叫范围(国内长途)"/>
+	  	<mapping name = "310090722001"     mapping = "IMSCFIDD" 		method = "MappingDirect" 	       desc = "IMS呼叫范围(国际长途)"/>
+	  </mapping>
+	  <mapping name = "170000080240"     mapping = "MRHDID"        	  method = "MappingExist"            desc = "融合通信综合语音(DID终端)">
+	  	 <mapping name = "170000080240"     mapping = "MRHDID"        	method = "MappingDirect"         desc = "融合通信综合语音(DID终端)"/>
+	  	 <mapping name = "310080246001"     mapping = "MRHDIDYDZX"      method = "MappingDirect"           desc = "融合通信综合语音(DID终端)远端坐席"/>
+	  </mapping>
+	  <mapping name = "271010002989"     mapping = "MRHXN"            method = "MappingExist"           desc = "融合通信综合语音(虚拟号终端)">
+	     <mapping name = "271010002989"     mapping = "MRHXN"            method = "MappingDirect"           desc = "融合通信综合语音(虚拟号终端)"/>
+	     <mapping name = "313010002992"     mapping = "MRHXNYDZX"        method = "MappingDirect"           desc = "融合通信综合语音(虚拟号终端)远端坐席"/>
+	  </mapping>
+	  <mapping name = "1310080246001"    mapping = "MRHBCFC"           method = "MappingExist"           desc = "融合通信综合语音(成员补充功能)">
+	  	 <mapping name = "1310080246001"    mapping = "MRHBCFC"         method = "MappingDirect"           desc = "融合通信综合语音(成员补充功能)"/>
+	     <mapping name = "310090734001"     mapping = "MRHDIDTCXZ"      method = "MappingDirect"           desc = "融合通信综合语音(DID终端)IMS透传号码限制拨打功能"/>
+	  	 <mapping name = "310090701001"     mapping = "MRHDIDQXCT"      method = "MappingDirect"           desc = "融合通信综合语音(DID终端)群内"/>
+	  	 <mapping name = "310090720001"     mapping = "MRHDIDBDCT"      method = "MappingDirect"           desc = "融合通信综合语音(DID终端)本地"/>
+	  	 <mapping name = "310090721001"     mapping = "MRHDIDGNCT"      method = "MappingDirect"           desc = "融合通信综合语音(DID终端)国内长途"/>
+	  	 <mapping name = "310090722001"     mapping = "MRHDIDGJCT"      method = "MappingDirect"           desc = "融合通信综合语音(DID终端)国际长途"/>
+	 	  <!-- add by fengliang 集客-2016-8591 新增参数，区别DID号码和普通手机号 -->
+	     <mapping name = "310090700001"     mapping = "MRHDIDBCYWTC"      method = "MappingDirect"           desc = "融合通信综合语音(DID终端)补充业务套餐"/>
+	  </mapping>
+	  <!-- add by fengliang 标识是否是铁通迁移用户  信息-2017-10701-铁通迁移固话资费 -->
+	  <mapping name = "390020004928"    mapping = "MRHDIDTT"           method = "MappingExist"           desc = "标识是否是铁通迁移用户">
+	  	 <mapping name = "390020004928"     mapping = "MRHDIDTTYH"      method = "MappingDirect"           desc = "标识是否是铁通迁移用户"/>
+	  	 <mapping name = "390020004928"     mapping = "MRHDIDTTYHFLAG"  	method = "MappingDepend"   	   expr = "MRHDIDTTYH,A390020004928_PROP_L.390020004929"     desc = "标识是否是铁通迁移用户"/>
+	  </mapping>
+	  <mapping name = "270000090258"     mapping = "ZHVWTCCY"         method = "MappingDirect"           desc = "综合V网套餐一成员"/>
+	  <mapping name = "1270000090590"    mapping = "MRHZJBWSJ"        method = "MappingExist"            desc = "融合通信综合语音总机本网手机/移动总机成员添加">
+	  	 <mapping name = "1270000090590"    mapping = "MRHZJBWSJ"       method = "MappingDirect"           desc = "融合通信综合语音总机本网手机/移动总机成员添加"/>
+	  </mapping>
+	  <mapping name = "IMXASNAME"        mapping = "IMXASNAME"        method = "MappingContext"          expr = "A270000090590_PROP_L.380000029168"             desc = "IMS虚拟集团编号"/>
+	  <mapping name = "IMSCBNUM"         mapping = "IMSCBNUM"         method = "MappingContext"  		 expr = "A270000090586_PROP_L.260010001295"             desc = "IMS外呼铁通号"/>
+	  <mapping name = "1270000080240"    mapping = "MRHZJWW"          method = "MappingDirect"           desc = "融合通信综合语音(总机外网成员终端)"/>
+	  <mapping name = "380000010341"     mapping = "RHTXYYSHWT"       method = "MappingDirect"           desc = "融合通信综合语音运营商话务台"/>
+	  <mapping name = "3270000090590"    mapping = "RHTXZHYYTF"       method = "MappingDirect"           desc = "融合通信综合语音业务暂停恢复"/>
+	  <mapping name = "2270000080240"    mapping = "HMGXBG"           method = "MappingDirect"           desc = "融合总机号码关系变更"/>
+	  <mapping name = "3270000080240"    mapping = "MRHTXCY"          method = "MappingDirect"           desc = "融合通信综合语音成员业务暂停、恢复"/>
+	  <mapping name = "1271010002989"    mapping = "MRHTXPSWSZ"       method = "MappingDirect"           desc = "融合通信综合语音客户端注册密码设置"/>
+	  <mapping name = "380000010379"     mapping = "MRHTXRHZJGR"      method = "MappingDirect"           desc = "融合总机（个人）(手机号码/DID号码/虚拟号都是订购同一个服务)"/>
+	  <mapping name = "270000090594"     mapping = "GPSYW"       	  method = "MappingDirect"           desc = "GPS业务（集团）"/>
+	  <mapping name = "270000090595"     mapping = "GPSYWGR"       	  method = "MappingDirect"           desc = "GPS业务（个人）"/>
+	  <mapping name = "270000090732"     mapping = "GKXTYTXXM"        method = "MappingDirect"           desc = "国开行统一通信项目"/>
+	  <mapping name = "270000090733"     mapping = "MGKXTYTXXM"       method = "MappingDirect"           desc = "国开行统一通信项目/终端"/>
+	  <mapping name = "270000090736"     mapping = "WXYW"       	  method = "MappingDirect"           desc = "网信业务"/>
+	  <mapping name = "271010014737"     mapping = "MWXYW"       	  method = "MappingDirect"           desc = "网信业务"/>
+	  <mapping name = "270000090951"     mapping = "YMZC"      	 	  method = "MappingDirect"           desc = "域名注册"/>
+	  <mapping name = "270000080149"     mapping = "ZHT"      	 	  method = "MappingDirect"           desc = "展会通"/>
+	  <mapping name = "272999999939"     mapping = "MYDCRM"       	  method = "MappingDirect"           desc = "移动CRM"/>
+	  <mapping name = "270000090961"     mapping = "YDCRM"       	  method = "MappingDirect"           desc = "移动CRM"/>
+	  <mapping name = "271010001481"     mapping = "QYYKT"            method = "MappingDirect"           desc = "企业一卡通"/>
+	  <mapping name = "270000091057"     mapping = "MQYYKT"           method = "MappingDirect"           desc = "企业一卡通短信"/>
+	  <mapping name = "270000091058"     mapping = "MQYYKT"           method = "MappingDirect"           desc = "企业一卡通彩信"/>
+	  <mapping name = "270000091059"     mapping = "MQYYKT"           method = "MappingDirect"           desc = "企业一卡通其他"/>
+	  <mapping name = "270000091069"     mapping = "KYQCX"      	  method = "MappingDirect"           desc = "跨省集团业务全网彩信"/>
+	  <mapping name = "271010001578"     mapping = "MKYQCX"      	  method = "MappingDirect"           desc = "跨省集团业务全网彩信"/>
+	  <mapping name = "270000091070"     mapping = "KYQDX"      	  method = "MappingDirect"           desc = "跨省集团业务全网短信"/>
+	  <mapping name = "271010001577"     mapping = "MKYQDX"      	  method = "MappingDirect"           desc = "跨省集团业务全网短信"/>
+
+	  <mapping name = "270000091072"     mapping = "QWMASCX"      	  method = "MappingDirect"           desc = "主办省全网MAS彩信"/>
+	  <mapping name = "271010001744"     mapping = "MQWMASCX"      	  method = "MappingDirect"           desc = "主办省全网MAS彩信"/>
+	  <mapping name = "271010002063"     mapping = "MQWMASCX"      	  method = "MappingDirect"           desc = "主办省全网MAS彩信"/>
+	  <mapping name = "271010002064"     mapping = "MQWMASCX"      	  method = "MappingDirect"           desc = "主办省全网MAS彩信"/>
+	  <mapping name = "271010002065"     mapping = "MQWMASCX"      	  method = "MappingDirect"           desc = "主办省全网MAS彩信"/>
+	  <mapping name = "271010002066"     mapping = "MQWMASCX"      	  method = "MappingDirect"           desc = "主办省全网MAS彩信"/>
+	  <mapping name = "271010002067"     mapping = "MQWMASCX"      	  method = "MappingDirect"           desc = "主办省全网MAS彩信"/>
+	  <mapping name = "271010002068"     mapping = "MQWMASCX"      	  method = "MappingDirect"           desc = "主办省全网MAS彩信"/>
+	  <mapping name = "271010002069"     mapping = "MQWMASCX"      	  method = "MappingDirect"           desc = "主办省全网MAS彩信"/>
+	  <mapping name = "270000091080"     mapping = "TGSBLBY"       	  method = "MappingDirect"           desc = "托管式BlackBerry"/>
+	  <mapping name = "270000091082"     mapping = "QWMASDX"       	  method = "MappingDirect"           desc = "主办省全网MAS800短信"/>
+	  <mapping name = "271010002051"     mapping = "MQWMASDX"      	  method = "MappingDirect"           desc = "主办省全网MAS800短信"/>
+	  <mapping name = "271010002050"     mapping = "MQWMASDX"      	  method = "MappingDirect"           desc = "主办省全网MAS800短信"/>
+	  <mapping name = "271010002047"     mapping = "MQWMASDX"      	  method = "MappingDirect"           desc = "主办省全网MAS800短信"/>
+	  <mapping name = "271010002046"     mapping = "MQWMASDX"      	  method = "MappingDirect"           desc = "主办省全网MAS800短信"/>
+	  <mapping name = "271010002048"     mapping = "MQWMASDX"      	  method = "MappingDirect"           desc = "主办省全网MAS800短信"/>
+	  <mapping name = "271010002049"     mapping = "MQWMASDX"      	  method = "MappingDirect"           desc = "主办省全网MAS800短信"/>
+	  <mapping name = "271010002052"     mapping = "MQWMASDX"      	  method = "MappingDirect"           desc = "主办省全网MAS800短信"/>
+	  <mapping name = "270000091091"     mapping = "YKTYW"       	  method = "MappingDirect"           desc = "一卡通业务"/>
+	  <mapping name = "270000091059"     mapping = "MYKTYW"       	  method = "MappingDirect"           desc = "一卡通业务"/>
+	  <mapping name = "270000091058"     mapping = "MYKTYW"       	  method = "MappingDirect"           desc = "一卡通业务"/>
+	  <mapping name = "270000091057"     mapping = "MYKTYW"       	  method = "MappingDirect"           desc = "一卡通业务"/>
+	  <mapping name = "270000091097"     mapping = "RHTXYD"       	  method = "MappingDirect"           desc = "融合通信移动400"/>
+	  <mapping name = "270000091104"     mapping = "KSAPNMY"          method = "MappingDirect"           desc = "跨省APN漫游业务"/>
+	  <mapping name = "270000091170"     mapping = "CMIMSJT"       	  method = "MappingDirect"           desc = "CM-IMS集团多媒体彩铃业务"/>
+	  <mapping name = "270000091171"     mapping = "MCMIMSJT"         method = "MappingDirect"           desc = "CM-IMS集团多媒体彩铃业务"/>
+	  <mapping name = "270000091173"     mapping = "YDHYDH"           method = "MappingDirect"           desc = "集团移动会议电话"/>
+	  <mapping name = "271010004242"     mapping = "MYDHYDH"          method = "MappingDirect"           desc = "集团移动会议电话"/>
+  	  <mapping name = "270000091005"     mapping = "YDSLL"            method = "MappingDirect"           desc = "集团移动400业务"/>
+  	  <mapping name = "270000090353"     mapping = "MVPMNDJ"          method = "MappingDirect"           desc = "综合VPMN叠加PBX成员操作"/>
+      <mapping name = "380000183779"     mapping = "HLWDSJCB"         method = "MappingDirect"           desc = "互联网电视基础包"/>
+      <mapping name = "380000183789"     mapping = "JTHLWDS"          method = "MappingDirect"           desc = "集团互联网电视"/>
+      <mapping name = "380000530068"     mapping = "M2MGLPT"            method = "MappingExist"            desc = "M2M管理平台">
+         <mapping name = "380000530068"     mapping = "M2MGLPT"            method = "MappingDirect"        desc = "M2M管理平台"/>
+         <mapping name = "380000530208"     mapping = "M2MLLTJ"            method = "MappingDirect"          desc = "流量统计功能"/>
+         <mapping name = "380000530210"     mapping = "M2MBZHZD"           method = "MappingDirect"          desc = "标准化终端功能"/>
+         <mapping name = "380000530212"     mapping = "M2MXSZYAPN"         method = "MappingDirect"          desc = "小松专用功能"/>
+         <mapping name = "380000530214"     mapping = "M2MZYAPN"           method = "MappingDirect"          desc = "专用功能"/>
+         <mapping name = "380000530216"     mapping = "M2MJCGN"            method = "MappingDirect"          desc = "基础功能"/>
+         <mapping name = "380000530218"     mapping = "M2MWZT"             method = "MappingDirect"          desc = "位置通-M2M"/>
+         <mapping name = "M2MLLTJ"     mapping = "M2MLLTJ"           method = "MappingIfElse"         expr = "#{M2MLLTJ} == 'NULL'" desc = "标准化终端功能">
+           <mapping name = "380000530068"     mapping = "M2MLLTJ"            method = "MappingSplite"        expr = "*=N"   desc = "流量统计功能"/>
+         </mapping>
+         <mapping name = "M2MBZHZD"     mapping = "M2MBZHZD"           method = "MappingIfElse"         expr = "#{M2MBZHZD} == 'NULL'" desc = "标准化终端功能">   
+            <mapping name = "380000530068"     mapping = "M2MBZHZD"           method = "MappingSplite"        expr = "*=N"   desc = "标准化终端功能"/>
+         </mapping>
+         <mapping name = "M2MXSZYAPN"     mapping = "M2MXSZYAPN"           method = "MappingIfElse"         expr = "#{M2MXSZYAPN} == 'NULL'" desc = "小松专用功能">   
+            <mapping name = "380000530068"     mapping = "M2MXSZYAPN"         method = "MappingSplite"        expr = "*=N"   desc = "小松专用功能"/>
+         </mapping>
+         <mapping name = "M2MZYAPN"     mapping = "M2MZYAPN"           method = "MappingIfElse"         expr = "#{M2MZYAPN} == 'NULL'" desc = "专用功能">
+            <mapping name = "380000530068"     mapping = "M2MZYAPN"           method = "MappingSplite"        expr = "*=N"   desc = "专用功能"/>
+         </mapping>
+         <mapping name = "M2MJCGN"     mapping = "M2MJCGN"           method = "MappingIfElse"         expr = "#{M2MJCGN} == 'NULL'" desc = "基础功能">
+            <mapping name = "380000530068"     mapping = "M2MJCGN"            method = "MappingSplite"        expr = "*=N"   desc = "基础功能"/>
+         </mapping>
+         <mapping name = "M2MWZT"     mapping = "M2MWZT"           method = "MappingIfElse"         expr = "#{M2MWZT} == 'NULL'" desc = "位置通-M2M">
+            <mapping name = "380000530068"     mapping = "M2MWZT"             method = "MappingSplite"        expr = "*=N"   desc = "位置通-M2M"/>
+         </mapping>
+         <mapping name = "380000530068"     mapping = "M2MCP1"             method = "MappingSplite"          expr = "*=1" desc = "M2M产品1"/>
+         <mapping name = "380000530068"     mapping = "M2MCP2"             method = "MappingSplite"          expr = "*=2" desc = "M2M产品2"/>
+         <mapping name = "380000530068"     mapping = "M2MCP3"             method = "MappingSplite"          expr = "*=3" desc = "M2M产品3"/>
+         <mapping name = "380000530068"     mapping = "M2MCP4"             method = "MappingSplite"          expr = "*=4" desc = "M2M产品4"/>
+         <mapping name = "380000530068"     mapping = "M2MCP5"             method = "MappingSplite"          expr = "*=5" desc = "M2M产品5"/>
+         <mapping name = "380000530068"     mapping = "M2MCP6"             method = "MappingSplite"          expr = "*=6" desc = "M2M产品6"/>
+         <mapping name = "380000530068"     mapping = "M2MZTC"             method = "MappingSplite"          expr = "*=C" desc = "M2M状态C"/>
+         <mapping name = "380000530068"     mapping = "M2MZTE"             method = "MappingSplite"          expr = "*=E" desc = "M2M状态E"/>
+         <mapping name = "380000530068"     mapping = "M2MZTX"             method = "MappingSplite"          expr = "*=X" desc = "M2M状态X"/>
+      </mapping>
+      <!-- add by lidy 2014-07-31 集客-2014-7209 移动办公套件产品计费开发需求-移动办公套件产品计费开发需求    -->
+      <mapping name = "390000021220"     mapping = "ZQCYJCTCY"        method = "MappingDirect"           desc = "政企彩云基础服务"/>
+      <mapping name = "390000021345"     mapping = "ZQCYYDOA"         method = "MappingDirect"           desc = "政企彩云移动OA业务"/>
+      <mapping name = "390000021346"     mapping = "ZQCYQYYX"         method = "MappingDirect"           desc = "政企彩云企业邮箱"/>
+      <!-- add by lidy 2014-10-28 集客-2014-8729 邮箱办公套件业务同步到ADC平台的优化需求      -->
+      <mapping name = "270000091217"     mapping = "YXBGTJ"         method = "MappingDirect"           desc = "邮箱办公套件"/>
+   </mappings>
+   
+   <mappings id = "IUcm2JTMCL" desc = "集团成员产品[营业测]">
+      <!--maohuiyun modify 20140406 信息-2014-6777-->
+      <mapping name = "270000090352"     mapping = "CVPMN"            method = "MappingExist"            desc = "短号V网成员">
+         <mapping name = "270000090352"     mapping = "CVPMN"            method = "MappingDirect"          desc = "短号V网成员"/>
+         <mapping name = "270000090352"     mapping = "CVPMN_PHONENO"    method = "MappingContext"         expr = "A270000090352_PROP_L.260000000054"  desc = "短号V网成员短号"/>
+         <mapping name = "270000091175"     mapping = "CVPMNDHDX"        method = "MappingDirect"          desc = "短号V网成员短号短信"/>
+      </mapping>
+      
+      <mapping name = "270000090595" 	 mapping = "GPSDXCY" 	      method = "MappingDirect"           desc = "GPS短信集团成员"/>
+      <mapping name = "270000091171"     mapping = "IMSMRBCY"         method = "MappingDirect"           desc = "CM-IMS集团多媒体彩铃业务"/>
+      <mapping name = "270000090315"     mapping = "LBSQPCY"       	  method = "MappingDirect"           desc = "LBS企业成员"/>
+      <mapping name = "271010002868"     mapping = "M2MGPRSCY"        method = "MappingDirect"           desc = "M2M集团GPRS版成员"/>
+      <mapping name = "271010002877"     mapping = "M2MSMSSCY"        method = "MappingDirect"           desc = "M2M集团短信版成员"/>
+      <mapping name = "270000080150"     mapping = "JTOTACY"          method = "MappingDirect"           desc = "OTA智能菜单终端"/>
+      <mapping name = "270000090204"     mapping = "JTPOCCY"          method = "MappingDirect"           desc = "全网本地PoC业务终端"/>
+      <mapping name = "270000090284"     mapping = "JEWLGRPSCY"       method = "MappingDirect"           desc = "集团e物流GRPS版终端"/>
+	  <mapping name = "270000090285"     mapping = "JEWLSMSCY"        method = "MappingDirect"           desc = "集团e物流短信版终端"/>
+	  <mapping name = "271010002114"     mapping = "JTWLANCY"         method = "MappingDirect"           desc = "集团WLAN终端"/>
+	  <mapping name = "270000090331"     mapping = "JTMBELLCY"        method = "MappingDirect"           desc = "集团彩铃成员"/>
+	  <mapping name = "271000002704"     mapping = "JNXTTCCY"         method = "MappingExist"            desc = "农信通ADC版成员">
+	     <mapping name = "271000002704"     mapping = "JNXTTCCY"           method = "MappingDirect"          desc = "农信通ADC版成员"/>
+	     <mapping name = "271000002704"     mapping = "JNXTTCCYPID"        method = "MappingDepend"          expr = "JNXTTCCY,JNXTTCCYPID"   desc = "农信通ADC版成员产品清单"/>
+	  </mapping>
+	  <mapping name = "270000090221"     mapping = "JNZTJTCY"         method = "MappingDirect"           desc = "集团农政通终端"/>
+	  <mapping name = "270000090316"     mapping = "JQYIPTCY"         method = "MappingDirect"           desc = "企业IP通终端"/>
+	  <mapping name = "270000090965"     mapping = "JYDOACY"       	  method = "MappingDirect"           desc = "移动OA企业终端"/>
+	  <mapping name = "271000001169"     mapping = "JSJYXADCCY"       method = "MappingDirect"           desc = "手机邮箱(ADC)增值终端"/>
+	  <mapping name = "270000090978"     mapping = "JSJYXPMCY"        method = "MappingDirect"           desc = "手机邮箱PushEmail终端"/>
+	  <mapping name = "270000090977"     mapping = "JSYWPTCY"         method = "MappingDirect"           desc = "手机邮箱WapPush终端"/>
+	  <mapping name = "270000090332"     mapping = "JYDZJCY"          method = "MappingDirect"           desc = "移动总机终端"/>
+	  <mapping name = "270000090353"     mapping = "JZHVPBXCY"        method = "MappingDirect"           desc = "综合VPMN叠加PBX成员"/>
+	  <!--maohuiyun modify 20140406 信息-2014-6777-->
+	  <!--<mapping name = "270000080245"     mapping = "JRHZHYYSJCY"      method = "MappingDirect"          desc = "融合通信综合语音手机版终端)"/>-->
+	  <mapping name = "270000080245"     mapping = "JRHZHYYSJCY"      method = "MappingExist"            desc = "融合通信综合语音手机版终端)">
+         <mapping name = "270000080245"     mapping = "JRHZHYYSJCY"      method = "MappingDirect"          desc = "融合通信综合语音手机版终端)"/>
+         <mapping name = "270000091175"     mapping = "JRHZHYYSJCYDHDX"  method = "MappingDirect"          desc = "融合通信综合语音短号短信"/>
+      </mapping>
+      
+      <mapping name = "270000090399"     mapping = "JCWTCY"       	  method = "MappingDirect"           desc = "车务通终端"/>
+	  <mapping name = "270000090483"     mapping = "JBCWTCY"       	  method = "MappingDirect"           desc = "本地车务通终端"/>
+	  <mapping name = "271010014687"     mapping = "JQYHJPTCY"        method = "MappingDirect"           desc = "点击拨号企业呼叫平台终端"/>
+	  <mapping name = "271010014666"     mapping = "JWSKFPTCY"        method = "MappingDirect"           desc = "点击拨号网上客服平台终端"/>
+	  <mapping name = "271010002756"     mapping = "JTTFPSZFCY"       method = "MappingDirect"           desc = "集团统付商品个人帐单代终端"/>
+	  <mapping name = "270000090733"     mapping = "JGKXTYTCY"        method = "MappingDirect"           desc = "国开行统一通信项目终端"/>
+	  <mapping name = "271010004242"     mapping = "JYDHYDHCY"        method = "MappingDirect"           desc = "集团移动会议电话成员"/>
+	  <mapping name = "270000090479"     mapping = "JKSVPMNCY"        method = "MappingDirect"           desc = "跨省VPMN成员"/>
+	  <mapping name = "271010001578"     mapping = "JKYQCXCY"      	  method = "MappingDirect"           desc = "跨省集团全网彩信成员"/>
+	  <mapping name = "271010001577"     mapping = "JKYQDXCY"      	  method = "MappingDirect"           desc = "跨省集团全网短信成员"/>
+   </mappings>
+   
+   <mappings id = "IUcm2JTDD" desc = "集团信息同步[营业测]">
+	  <mapping name = "IUcm2CommL"     mapping = "IUcm2CommL"    method = "MappingModule"   expr = "UcmMicroMapping.IUcm2CommL"   desc = "公共属性模块"/>
+      <mapping name = "IGsm2CommL"     mapping = "IGsm2CommL"    method = "MappingModule"   expr = "UcmMicroMapping.IGsm2CommL"   desc = "GSM公共模块"/>
+      <mapping name = "1012"               mapping = "QWSYN"             method = "MappingExist"    								desc = "全网新业务同步">
+      	  <mapping name ="1012"             mapping = "QWSYN"       		method = "MappingDirect"      desc = "开关"/>
+          <mapping name ="PASSWORD"      	mapping = "PASSWORD"            method = "MappingDirect"      desc = "宽带密码"/>
+          <mapping name ="USERNAME"      	mapping = "USERNAME"            method = "MappingDirect"      desc = "用户名称"/>
+          <mapping name ="VALIDATE"      	mapping = "VALIDATE"            method = "MappingDirect"      desc = "生效日期"/>
+          <mapping name ="PRICEID"      	mapping = "PRICEID"             method = "MappingDirect"       desc = "计费号"/>
+      </mapping>
+      <mapping name = "1015"               mapping = "QWSYN"             method = "MappingExist"    								desc = "全网新业务同步">
+      	  <mapping name ="1015"             mapping = "QWSYN"       		method = "MappingDirect"      desc = "开关"/>
+          <mapping name ="PASSWORD"      	mapping = "PASSWORD"            method = "MappingDirect"      desc = "宽带密码"/>
+          <mapping name ="USERNAME"      	mapping = "USERNAME"            method = "MappingDirect"      desc = "用户名称"/>
+          <mapping name ="VALIDATE"      	mapping = "VALIDATE"            method = "MappingDirect"      desc = "生效日期"/>
+          <mapping name ="PRICEID"      	mapping = "PRICEID"             method = "MappingDirect"       desc = "计费号"/>
+      </mapping>  
+      <mapping name = "1011"               mapping = "XYWLAN"              method = "MappingExist"    								desc = "校园WLAN体验">
+      	  <mapping name ="1011"             mapping = "XYWLAN"       		method = "MappingDirect"      desc = "开关"/>
+          <mapping name ="PASSWORD"      	mapping = "PASSWORD"            method = "MappingDirect"      desc = "宽带密码"/>
+          <mapping name ="USERNAME"      	mapping = "USERNAME"            method = "MappingDirect"      desc = "用户名称"/>
+          <mapping name ="EDUTYPE"      	mapping = "EDUTYPE"             method = "MappingDirect"      desc = "教育类型"/>
+      </mapping>
+      <mapping name = "6003"               mapping = "SCHOOLSYN"              method = "MappingExist"    								desc = "校园WLAN密码同步">
+      	  <mapping name ="6003"             mapping = "SCHOOLSYN"       		method = "MappingDirect"      desc = "开关"/>
+          <mapping name ="PASSWORD"      	mapping = "PASSWORD"            method = "MappingDirect"      desc = "宽带密码"/>
+          <mapping name ="USERNAME"      	mapping = "USERNAME"            method = "MappingDirect"      desc = "用户名称"/>
+      </mapping>
+      <mapping name = "2102000"            mapping = "BFRHTXPT"              method = "MappingExist"    								desc = "后台发融合通信平台">
+      	  <mapping name ="2102000"          mapping = "BFRHTXPT"       		method = "MappingDirect"      desc = "融合通信"/>
+      	  <mapping name ="2102"             mapping = "RHTX_AS"       		method = "MappingDirect"      desc = "融合通信AS平台"/>
+      	  <mapping name ="2003"             mapping = "RHTX_HSS"       		method = "MappingDirect"      desc = "融合通信HSS平台"/>
+      	  <mapping name ="2005"             mapping = "RHTX_ENUM"           method = "MappingDirect"      desc = "融合通信ENUM平台"/>
+      	  <mapping name ="6666"             mapping = "RHTX_HLR"       		method = "MappingDirect"      desc = "融合通信HLR平台"/>
+      	 <!-- add by fengliang 信息-2016-6088 新增dcs平台 -->
+      	  <mapping name ="2002"             mapping = "RHTX_DCS"       		method = "MappingDirect"      desc = "融合通信DCS平台"/>
+      	  <mapping name ="OPENTYPE"      	mapping = "OPENTYPE"            method = "MappingDirect"      desc = "操作类型 1：增加   2：删除"/>
+          <mapping name ="ASNAME"      	    mapping = "ASNAME"              method = "MappingDirect"      desc = "集团编号"/>
+          <mapping name ="USERNAME"      	mapping = "USERNAME"            method = "MappingDirect"      desc = "用户号码"/>
+          <mapping name ="SHORTNUMBER"      mapping = "SHORTNUMBER"         method = "MappingDirect"      desc = "用户短号"/>
+          <mapping name ="HSS_PWD"          mapping = "HSS_PWD"             method = "MappingDirect"      desc = "HSS密码"/>
+          <mapping name ="RHZJ_FLAG"        mapping = "RHZJ_FLAG"           method = "MappingDirect"      desc = "融合总机标识"/>
+      </mapping>
+      <mapping name = "8020000"            mapping = "MBLBRYYW"              method = "MappingExist"      desc = "后台补发成员bb业务">
+      	  <mapping name ="MBLBRYYW"         mapping = "MBLBRYYW"       		method = "MappingDirect"      desc = "操作类型C 订购   E 退订 T 暂停 R 恢复 "/>
+      	  <mapping name ="BLBJSIGNUP"       mapping = "BLBJSIGNUP"          method = "MappingDirect"      desc = "操作类型C 订购   E 退订  T 暂停 R 恢复 "/>
+      	  <mapping name ="MBLBRYYWLX"       mapping = "MBLBRYYWLX"          method = "MappingDirect"      desc = "业务类型 BBO1 普通版  BBO2 扩展版"/>
+      </mapping>
+      <!-- add by fushuan  信息-2016-13504-YWZC000182235-子账号流控与短信签名池需求-客户管理等 -->
+       <mapping name = "DXQMC"            mapping = "DXQMC"           method = "MappingExist"      desc = "后台补发成员bb业务">
+      	  <mapping name ="DXQMC"            mapping = "DXQMC"       	method = "MappingDirect"      desc = "短信签名池同步 "/>
+      	  <mapping name ="SP"            mapping = "SP"       		method = "MappingDirect"      desc = "短信签名池同步 "/>
+      	  <mapping name ="SIGNATURE"     mapping = "SIGNATURE"      method = "MappingDirect"      desc = "短信签名池同步 "/>
+      	  <mapping name ="OPERATE"       mapping = "OPERATE"        method = "MappingDirect"      desc = "短信签名池同步 1-增加 2-删除"/>
+      	  <mapping name ="LANGUAGE"      mapping = "LANGUAGE"       method = "MappingDirect"      desc = "短信签名池同步1-中文 2-英文" />
+      </mapping>
+      <!-- add by fushuan  信息-2016-13504-YWZC000182235-子账号流控与短信签名池需求-客户管理等 -->
+      <!-- add by fushuan	数据-2017-4492-YWZC000210917-本地物联网业务语音白名单功能需求-客户管理等 -->
+      <mapping name = "WLWYYBMD"            mapping = "WLWYYBMD"       method = "MappingExist"      desc = "物联网语音白名单">
+      	  <mapping name ="WLWYYBMD"            mapping = "WLWYYBMD"          method = "MappingDirect"      desc = "物联网语音白名单 "/>
+      	  <mapping name ="WHITENUMBER"         mapping = "WHITENUMBER"       method = "MappingDirect"      desc = "物联网语音白名单 "/>
+      	  <mapping name ="GROUPID"             mapping = "GROUPID"       	 method = "MappingDirect"      desc = "物联网语音白名单 "/>
+      	  <mapping name ="OPER"                mapping = "OPER"       		 method = "MappingDirect"      desc = "物联网语音白名单 "/>
+      	  <mapping name ="AJXNUMBER"           mapping = "AJXNUMBER"         method = "MappingDirect"      desc = "物联网语音白名单 "/>
+      	  <mapping name ="TYPE"                mapping = "TYPE"       		 method = "MappingDirect"      desc = "物联网语音白名单 "/>
+      	  <mapping name ="JQNOL"                mapping = "JQNOL"       		 method = "MappingDirect"      desc = "查询接口走ktv4和v2的开关"/>
+      </mapping>
+      <!-- add by fushuan	数据-2017-4492-YWZC000210917-本地物联网业务语音白名单功能需求-客户管理等 -->
+   </mappings>
+</ucmframe>

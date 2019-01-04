@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ucmframe name="开通缓存">
+   <item name = "CACHE_ROUTER" desc = "缓存路由">
+        <item id = "DATABASE" cache = "DATABASE" group = "KT_CFG"   persistence = "com.ai.sacenter.cache.impl.DialectSystemImpl" desc = "数据库路由"/>
+        <item id = "KTREDIS"  cache = "REDIS"    group = "KTREDIS"  persistence = "com.ai.sacenter.cache.impl.RedisClusterImpl" desc = "REDIS路由"/>
+     </item>
+     <item name = "CACHE_PARAMETERS" desc = "缓存参数配置">
+       <item name = "KTREDIS" desc = "REDIS缓存">
+         <item name = "MaxActive" desc = "">40</item>
+         <item name = "MaxIdle" desc = "">20</item>
+         <item name = "MaxWait" desc = "">5000</item>
+         <item name = "TestOnBorrow" desc = "">true</item>
+         <item name = "NeedWriteSYN" desc = "">true</item>
+      </item>
+     </item>
+     <item name = "CACHE_SERVERS" desc = "缓存服务器配置">
+       <item name = "KTREDIS" desc = "归属服务组">
+           <item id = "M254038001" type = "MASTER" desc = "主集群1">redis://10.10.147.187:50001?timeout=120000&amp;connecttimeout=600</item>
+           <item id = "M254038002" type = "MASTER" desc = "主集群2">redis://10.10.147.187:50002?timeout=120000&amp;connecttimeout=600</item>
+           <item id = "M254038003" type = "MASTER" desc = "主集群3">redis://10.10.147.187:50003?timeout=120000&amp;connecttimeout=600</item>
+           <item id = "B254038001" type = "SLAVE" desc = "备用集群1">redis://10.10.147.182:50001?timeout=120000&amp;connecttimeout=600</item>
+           <item id = "B254038002" type = "SLAVE" desc = "备用集群2">redis://10.10.147.182:50002?timeout=120000&amp;connecttimeout=600</item>
+           <item id = "B254038003" type = "SLAVE" desc = "备用集群3">redis://10.10.147.182:50003?timeout=120000&amp;connecttimeout=600</item>
+       </item>
+     </item>
+</ucmframe>

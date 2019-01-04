@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="SACenterWrapper" mainattr="ID">
+    <mapingenty type="table">SA_CENTER_WRAPPER</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="15" datatype="Long" type="PK" remark="路由转换编号">
+        <mapingcol datatype="NUMBER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="IMPLCLASS" maxlength="200" datatype="String" type="COL" remark="路由接入类">
+        <mapingcol datatype="VARCHAR2">IMPLCLASS</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PLATFORM" maxlength="32" datatype="String" type="COL" remark="网元编码">
+        <mapingcol datatype="VARCHAR2">PLATFORM</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DESCRIPTION" maxlength="255" datatype="String" type="COL" remark="路由描述">
+        <mapingcol datatype="VARCHAR2">DESCRIPTION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="FUNCTION" maxlength="200" datatype="String" type="COL" remark="路由转换类">
+        <mapingcol datatype="VARCHAR2">FUNCTION</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CENTER" maxlength="32" datatype="String" type="COL" remark="中心类型">
+        <mapingcol datatype="VARCHAR2">CENTER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CATEGORY" maxlength="32" datatype="String" type="COL" remark="路由类型">
+        <mapingcol datatype="VARCHAR2">CATEGORY</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PSMLFLG" maxlength="1" datatype="String" type="COL" remark="压栈标志
+Y压栈转换
+N路由转换">
+        <mapingcol datatype="CHAR">PSMLFLG</mapingcol>
+      </attr>
+      <attr floatlength="0" name="COMPLEX" maxlength="200" datatype="String" type="COL" remark="中心映射">
+        <mapingcol datatype="VARCHAR2">COMPLEX</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATER" maxlength="12" datatype="Long" type="COL" remark="创建员工">
+        <mapingcol datatype="NUMBER">CREATER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL" remark="创建日期">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="1" datatype="String" type="COL" remark="路由状态
+U正常
+X废除">
+        <mapingcol datatype="CHAR">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFIER" maxlength="12" datatype="Long" type="COL" remark="更新员工">
+        <mapingcol datatype="NUMBER">MODIFIER</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MODIFY_DATE" maxlength="20" datatype="DateTime" type="COL" remark="更新日期">
+        <mapingcol datatype="DATE">MODIFY_DATE</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

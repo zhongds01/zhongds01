@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="so1" name="InsSrvAttr" mainattr="ATTR_ID">
+    <mapingenty type="table">{INS_SRV_ATTR}</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ATTR_INST_ID" maxlength="14" datatype="Long" type="PK">
+        <mapingcol datatype="NUMBER">ATTR_INST_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="PROD_SRV_RELAT_ID" maxlength="14" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">PROD_SRV_RELAT_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="USER_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">USER_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SERVICE_ID" maxlength="12" datatype="Long" type="COL" remark="service_id">
+        <mapingcol datatype="NUMBER">SERVICE_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ATTR_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">ATTR_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ATTR_VALUE" maxlength="4000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">ATTR_VALUE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ATTR_TEXT" maxlength="4000" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">ATTR_TEXT</mapingcol>
+      </attr>
+      <attr floatlength="0" name="STATE" maxlength="2" datatype="Integer" type="COL" remark="1正常">
+        <mapingcol datatype="NUMBER">STATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_CODE" maxlength="12" datatype="Long" type="COL" remark="当前业务受理编号">
+        <mapingcol datatype="NUMBER">DONE_CODE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="CREATE_DATE" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">CREATE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="DONE_DATE" maxlength="20" datatype="DateTime" type="COL" remark="当前业务受理日期">
+        <mapingcol datatype="DATE">DONE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EFFECTIVE_DATE" maxlength="20" datatype="DateTime" type="PK" remark="客户生效日期">
+        <mapingcol datatype="DATE">EFFECTIVE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXPIRE_DATE" maxlength="20" datatype="DateTime" type="PK" remark="客户失效日期">
+        <mapingcol datatype="DATE">EXPIRE_DATE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OP_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">OP_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ORG_ID" maxlength="12" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">ORG_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="REGION_ID" maxlength="6" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">REGION_ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EFFECTIVE_DATE_TYPE" maxlength="6" datatype="Integer" type="COL" remark="0系统计算
+1用户指定">
+        <mapingcol datatype="NUMBER">EFFECTIVE_DATE_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="EXPIRE_DATE_TYPE" maxlength="6" datatype="Integer" type="COL" remark="0系统计算
+1用户指定">
+        <mapingcol datatype="NUMBER">EXPIRE_DATE_TYPE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="OFFER_INST_ID" maxlength="14" datatype="Long" type="COL" remark="策划实例编号">
+        <mapingcol datatype="NUMBER">OFFER_INST_ID</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>
