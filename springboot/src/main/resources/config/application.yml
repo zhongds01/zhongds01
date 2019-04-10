@@ -1,0 +1,10 @@
+server:
+  servlet:
+    context-path: /hello2
+  port: 8088
+
+
+name: 仲东生
+age: 19
+content: "name:${name},age:${age}"
+logging.level.com.example.springboot

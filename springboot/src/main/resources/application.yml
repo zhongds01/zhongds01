@@ -1,0 +1,44 @@
+#person:
+#  name: 仲东生
+#  age: 18
+#  birth: 2019/03/21
+#  isbig: false
+#  dog:
+#    name: tom
+#    age: 9
+#  map:
+#    k1: v1
+#    k2: v2
+## map: {k1: v1,k2: v2}
+#  list:
+#    - list1
+#    - list2
+#  array:
+#    - array1
+#    - array2
+## array: [array1,array2]
+
+#主配置（在这里指定用哪个环境，默认为自己）
+server:
+  port: 8188
+  servlet:
+    context-path: /hello
+spring:
+  profiles:
+    active: test
+---
+#开发环境
+server:
+  port: 8118
+  servlet:
+    context-path: /hellodev
+spring:
+  profiles: dev
+---
+#测试环境
+server:
+  port: 8818
+  servlet:
+      context-path: /hellotest
+spring:
+  profiles: test

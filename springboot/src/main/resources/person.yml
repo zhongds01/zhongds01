@@ -1,0 +1,19 @@
+person:
+  name: 仲东生11
+  age: 18
+  birth: 2019/03/21
+  isbig: false
+  dog:
+    name: tom
+    age: 9
+  map:
+    k1: v1
+    k2: v2
+# map: {k1: v1,k2: v2}
+  list:
+    - list1
+    - list2
+  array:
+    - array1
+    - array2
+# array: [array1,array2]
