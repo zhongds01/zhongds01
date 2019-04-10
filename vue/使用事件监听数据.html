@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="lib/vue-2.5.22.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="firstName" @keyup="listen()"/>+
+			<input type="text" v-model="secondName" @keyup="listen()" />=
+			<input type="text" v-model="lastName"/>
+			<p>{{lastName}}</p>
+			<p>{{lastName}}</p>
+			<p>{{lastName}}</p>
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					firstName:'',
+					secondName:'',
+					lastName:''
+				},
+				methods:{
+					listen:function(){
+						console.log("监听了一次");
+						this.lastName = this.firstName + this.secondName;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

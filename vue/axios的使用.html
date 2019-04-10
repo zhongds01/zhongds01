@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="lib/vue-2.5.22.js" ></script>
+	</head>
+	<body>
+		<script>
+			function testAsync(){
+				var p = new Promise(function test1(success,error){
+					setTimeout(function(){
+					console.log("running");
+					success("ok");
+				},2000);
+				});
+				return p;
+			}
+			function testAsync1(){
+				var p = new Promise(function test2(success,error){
+					setTimeout(function(){
+					console.log("running");
+					success("ok1");
+				},2000);
+				});
+				return p;
+			}
+			function testAsync2(){
+				var p = new Promise(function(success,error){
+					setTimeout(function(){
+					console.log("running");
+					success("ok2");
+				},2000);
+				});
+				return p;
+			}
+				
+			testAsync().then(function(data){
+				console.log(data);
+				return testAsync1();
+			}).then(function(data){
+				console.log(data);
+				return testAsync2();
+			}).then(function(data){
+				console.log(data);
+			});
+			
+			//testAsync();
+			
+		</script>
+	</body>
+</html>

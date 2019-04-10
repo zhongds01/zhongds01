@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="lib/vue-2.5.22.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			<mycomponent :zimsg="msg"></mycomponent>
+		</div>
+		
+		<template id="mytemplate">
+			<div>
+				<h2>这是{{name}}的自定义模板，年龄为{{age}}</h2>
+				<p>{{zimsg}}</p>
+				<button @click="change()">测试能否修改父组件的数据</button>
+			</div>	
+		</template>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					'msg':'父组件的数据'
+				},
+				methods:{},
+				components:{
+					mycomponent:{
+						template:'#mytemplate',
+						data:function(){
+							return {
+								'name':'zds',
+								'age':12,
+								'flag':false
+							}
+						},
+						props:[
+							'zimsg'
+						],
+						methods:{
+							change(){
+								this.zimsg = '修改父组件数据';
+								this.name = 'zcs';
+							}
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

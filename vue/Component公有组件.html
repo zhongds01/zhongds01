@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="lib/vue-2.5.22.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app1">
+			<mycomponent></mycomponent>
+		</div>
+		<div id="app2">
+			<mycomponent1></mycomponent>
+			
+		</div>
+		<div id="app3">
+			<my-component2></my-component2>
+		</div>
+		<template id="myTemplate">
+			<div>
+				<h1>这是通过引用template方式创建组件</h1>
+				<span>ok</span>
+			</div>
+			
+		</template>
+		<script>
+			//使用Vue.Component创建//mycomponent如果包含大写，前端使用时将大写转换为-小写
+			Vue.component('mycomponent',{
+				//template制定了要展示的HTML的结构
+				template:'<div><p>{{name}} says:This is myComponent</p><button @click="changeName()">点击修改姓名</button></div>',
+				data:function(){
+					return{
+						name:'tom'
+					}
+				},
+				methods:{
+					changeName(){
+						this.name = 'Jacak';
+					}
+				}
+			});
+			//使用Vue.Extend创建(与第一种创建方式差不多)
+			Vue.component('mycomponent1',Vue.extend({
+				template:'<div><p>says:This is myComponent</p></div>'
+			}));
+			//使用template模板(最常用)
+			Vue.component('myComponent2',{
+				template:'#myTemplate'
+			});
+			new Vue({
+				el:'#app1',
+			});
+			
+			new Vue({
+				el:'#app2',
+			});
+			
+			new Vue({
+				el:'#app3',
+			});
+		</script>
+	</body>
+</html>

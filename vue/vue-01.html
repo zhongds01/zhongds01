@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue</title>
+		<script type="text/javascript" src="lib/vue-2.5.22.js" ></script>
+		<style>
+			[v-cloak]{
+				display: none;
+			}
+			.red{
+				color: red;
+			}
+			.small{
+				font-size: small;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+				<p v-cloak>{{msg}}111</p>
+				<p v-text="msg"></p>
+			</div>
+			<hr />
+			<div>
+				<p v-bind:class="['red','small']">{{msg}}</p>
+				<p v-bind:class="['red',isSmall ? 'small':'']">{{msg}}</p>
+				<p v-bind:class="['red',{'small':isSmall}]" v-text="msg"></p>
+				<p v-bind:class="{'red':isRed,'small':isSmall}">{{msg}}</p>
+				<p v-bind:style="{color:'red'}">{{msg}}11</p>
+				<p v-bind:style="mystyle">{{msg}}111</p>
+				<p v-bind:style="[mystyle,mystyle1]">{{msg}}1111</p>
+			</div>
+			<hr />
+			<div>
+				<p id="msg">{{msg01}}</p>
+				<input type="button" value="修改msg" @click="msg01 = 'hello'" />
+				<p v-text="msg01"></p>
+				<p v-html="msg01"></p>
+			</div>
+			<div>
+				<a href="vue-01.html#app" v-bind:href="url">点我跳转百度</a>
+				<a href="vue-01.html#app" :href="url">点我跳转百度</a>
+			</div>
+			<div>
+				<button v-on:click="test(msg)">测试</button>
+				<button @dblclick="test2()">测试2</button>
+			</div>
+			<div>
+				msg:<input type="text" v-bind:value="msg"/>
+				msg:<input type="text" v-model="msg"/>
+				msg:<textarea>{{msg}}</textarea>
+			</div>
+			<hr />
+			<h3>测试v-for</h3>
+			<ul v-for="(arr,index) in arrs">
+				<li>index:{{index}}&nbsp;&nbsp;value:{{arr}}</li>
+			</ul>
+			<ul v-for="(arr,index) in arrs1":key="arr.name">
+				<li>index:{{index}}&nbsp;&nbsp;name:{{arr.name}}&nbsp;&nbsp;age:{{arr.age}}</li>
+			</ul>
+			<ul v-for="(val,key,index) in objs":key="val"> 
+				<li>index:{{index}}&nbsp;&nbsp;{{key}}:{{val}}</li>
+			</ul>
+			<p v-for="count in 10">{{count}}</p>
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					msg:'Vue',
+					url:'http://www.baidu.com',
+					msg01:'<h1>New Vue</h1>',
+					isSmall:false,
+					isRed:true,
+					mystyle:{color: 'red'},
+					mystyle1:{'font-size':'small'},
+					//数组
+					arrs:[1,2,3,4],
+					//对象数组
+					arrs1:[
+						{'name':'jack','age':10},
+						{'name':'tom','age':11},
+						{'name':'tony','age':12},
+						{'name':'lucy','age':13}
+						],
+					//对象
+					objs:{'name':'zds','age':10,'sex':'男'}
+				},
+				methods:{
+					test:function(msg){
+						alert(msg);
+					},
+					test2:function(){
+						alert(this.msg);
+					}
+				},
+				beforeCreate(){
+					console.log("beforeCreate中的"+this.msg);
+				},
+				created(){
+					console.log("create中的"+this.msg);
+				},
+				
+				beforeMount(){
+					console.log("beforeMount中的"+this.msg);
+					//虽然已经加载完毕，但并么有渲染到页面
+					console.log(document.getElementById('msg').innerText);
+				},
+				mounted(){
+					console.log("mounted中的"+this.msg);
+					console.log(document.getElementById('msg').innerText);
+				},
+				beforeUpdate(){
+					console.log("页面上的元素值为"+document.getElementById('msg').innerText);
+					console.log("data中的msg为"+this.msg01);
+				},
+				updated(){
+					console.log("页面上的元素值为"+document.getElementById('msg').innerText);
+					console.log("data中的msg为"+this.msg01);
+				},
+				beforeDestroy(){
+					console.log("销毁前的"+this.msg01);
+				},
+				destroyed(){
+					console.log("销毁后的"+this.msg01);
+				}
+			})
+		</script>
+	</body>
+</html>

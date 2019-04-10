@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="./lib/vue-2.5.22.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			name:<input type="text" v-model="name" />
+			age: <input type="text" v-model="age" />
+			<input type="button" value="add" @click="add(name,age)" />
+			<ul v-for="(arr,index) in arrs":key="arr.name">
+				<li><input type="checkbox" />name:{{arr.name}}&nbsp;age:{{arr.age}}</li>
+			</ul>
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					name:'',
+					age:'',
+					arrs:[
+						{'name':'tom','age':10},
+						{'name':'jack','age':12},
+						{'name':'tony','age':13},
+						{'name':'jhon','age':15}
+					]
+				},
+				methods:{
+					add:function(name,age){
+						this.arrs.unshift({'name':name,'age':age});
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

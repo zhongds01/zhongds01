@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="lib/vue-2.5.22.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" value="切换显示" v-on:click="flag=!flag" />
+			<p v-if="flag">v-if</p>
+			<p v-show="flag">v-show</p>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el:'#app',
+			data:{
+				flag:true
+			}
+		})
+	</script>
+</html>

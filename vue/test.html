@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="lib/jquery-3.3.1.min.js" ></script>
+		<script type="text/javascript" src="lib/axios-0.18.0.js" ></script>
+	</head>
+	<body>
+		<script>
+			$.ajax({
+				type:"post",
+				url:"json.xml",
+				async:true,
+				success:function(data){
+					console.log(data);
+				},
+				error:function(data){
+					console.log(data);
+				}
+			});
+			//axios.all使用
+			function getUserAccount() {
+  				return axios.get('json.xml').then(function(res){
+				console.log(res.data);
+			}).catch(function(error){
+				console.log(error);
+			});
+			};
+ 
+			function getUserPermissions() {
+  				return axios.get('json.xml').then(function(res){
+				console.log(res.data);
+			}).catch(function(error){
+				console.log(error);
+			});
+			};
+			axios.all([getUserAccount(),getUserPermissions()]).then(axios.spread(function(acct,perms){
+				console.log(1);
+			}));
+			//拦截request请求
+			axios.interceptors.request.use(function(config){
+				console.log("拦截了请求");
+				return config;
+			})
+			//拦截response请求
+			axios.interceptors.response.use(function(response){
+				console.log("拦截了回复请求");
+				return response;
+			})
+			//简写get请求
+			axios.get('json.xml',{
+				params:{
+					userId:1
+				},
+				headers:{
+					token:'jack'
+				}
+			}).then(function(res){
+				console.log(res);
+			}).catch(function(error){
+				console.log(error);
+			});
+			//简写post请求
+			axios.post("json.json",{
+				firstName: 'Fred',
+    			lastName: 'Flintstone'
+			},{
+				token:'rose'
+			}).then(function(res){
+				console.log(res);
+			}).catch(function(error){
+				console.log("error:"+error);
+			});
+			//全局配置axios的post请求
+			axios({
+ 				method: 'post',
+  				url: 'json.xml',
+  				data: {
+    				firstName: 'Fred',
+    				lastName: 'Flintstone'
+  				},
+  				headers:{
+  					token:'lucy_post'
+  				}
+			}).then(function(res){
+				console.log(res.data);
+			}).catch(function(error){
+				console.log("error:"+error);
+			});
+			////全局配置axios的get请求
+			axios({
+  				method:'get',
+  				url:'json.xml',
+  				params:{
+  					userId:2
+  				},
+  				headers:{
+  					token:'lucy_get'
+  				}
+			}).then(function(res){
+				console.log(res.data);
+			}).catch(function(error){
+				console.log("error:"+error);
+			});
+		</script>
+	</body>
+</html>

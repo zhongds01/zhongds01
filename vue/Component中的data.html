@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="lib/vue-2.5.22.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			<component :is="'mycomponent'"></component>
+			<mycomponent></mycomponent>
+		</div>
+		
+		<template id="mytemplate">
+			<div>
+				<h2>这是{{name}}的自定义模板，年龄为{{age}}</h2>
+				<span v-if="flag">检测flag是够有效</span>
+				<button @click="flag=!flag">点击切换flag</button>
+			</div>	
+		</template>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{},
+				methods:{},
+				components:{
+					mycomponent:{
+						template:'#mytemplate',
+						data:function(){
+							return {
+								'name':'zds',
+								'age':12,
+								'flag':false
+							}
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

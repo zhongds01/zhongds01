@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="lib/vue-2.5.22.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{msg | msgfilter() | msgfilter1(1,'hello')}}</p>
+			<p>{{msg1 | msgfilter1(1,'hello')| msgfilter() }}</p>
+			<div>
+				<input type="text" @keyup.enter="submit()" />
+			</div>
+		</div>
+	</body>
+	<script>
+		//过滤器的格式Vue.filter('过滤器名称',function(data){}),data为需要过滤的,如果过滤器有参数，在data后加
+		Vue.filter('msgfilter',function(data){
+			return data.replace('msg','MSG');
+		})
+		new Vue({
+			el:'#app',
+			data:{
+				msg:'msginfo',
+				msg1:'msg1info'
+			},
+			methods:{
+				submit:function(){
+					alert(1);
+				}
+			},
+			//私有过滤器
+			filters:{
+				msgfilter1:function(data,pattern1,pattern2){
+					return data.replace('info','INFO'+pattern1+pattern2);
+				}
+			}
+		})
+		
+		
+	</script>
+</html>

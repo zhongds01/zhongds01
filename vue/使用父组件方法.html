@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="lib/vue-2.5.22.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			<mycomponent @func="show"></mycomponent>
+		</div>
+		<template id="mytemplate">
+			<div>
+				<h2>这是自定义模板</h2>
+				<button @click="myclick()">测试父组件的方法能否成功</button>
+			</div>	
+		</template>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					datafromson:null,
+				},
+				methods:{
+					show(data){
+						console.log("这是父组件的show()方法...");
+						this.datafromson = data;
+					}
+				},
+				components:{
+					mycomponent:{
+						template:'#mytemplate',
+						data:function(){
+							return{
+								person:{'name':'zds','age':10},
+								'msg':'hello'
+							}
+						},
+						methods:{
+							myclick(){
+								//emit是触发调用的意思
+								this.$emit('func',this.msg);
+							}
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
