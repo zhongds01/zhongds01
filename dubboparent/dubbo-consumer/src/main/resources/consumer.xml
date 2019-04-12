@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+	
+	
+	
+	<context:component-scan base-package="com.zds.service.impl" />
+	<!-- consumer's application name, used for tracing dependency relationship (not a matching criterion),
+	don't set it same as provider -->
+	<dubbo:application name="dubbo-consumer"/>
+	<!-- use multicast registry center to discover service -->
+	<dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+	<!-- generate proxy for the remote service, then demoService can be used in the same way as the
+	local regular interface -->
+	<dubbo:reference id="demoService" check="false" interface="com.zds.service.DemoService"/>
+	<dubbo:reference interface="com.zds.service.UserService" id="userService" />
+</beans>
