@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd 
+    http://www.springframework.org/schema/mvc 
+    http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context-4.3.xsd 
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-4.3.xsd 
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+<!--    &lt;!&ndash; 加载属性文件 &ndash;&gt;
+    <context:property-placeholder
+               location="classpath:resource.properties" />-->
+	<!-- 配置包扫描器，扫描@Controller注解的类 -->
+	<context:component-scan base-package="com.zds.controller" />
+    <!-- 注解驱动：配置处理器映射器和适配器 -->
+    <mvc:annotation-driven />
+    <!--配置静态资源的访问映射，此配置中的文件，将不被前端控制器拦截 -->
+    <mvc:resources location="/js/" mapping="/js/**" />
+    <mvc:resources location="/css/" mapping="/css/**" />
+    <mvc:resources location="/img/" mapping="/img/**" />
+    <!-- 配置视图解释器ViewResolver -->
+	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 设置前缀 -->
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<!-- 设置后缀 -->
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 100M -->
+		<property name="maxUploadSize" value="104857600" />
+		<property name="maxInMemorySize" value="4096" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+</beans>

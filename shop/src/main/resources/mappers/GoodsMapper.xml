@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zds.dao.GoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.zds.bean.Goods" >
+    <result column="GOODS_ID" property="goodsId" jdbcType="DECIMAL" />
+    <result column="GOODS_NAME" property="goodsName" jdbcType="VARCHAR" />
+    <result column="GOODS_CATA" property="goodsCata" jdbcType="VARCHAR" />
+    <result column="GOODS_PRICE" property="goodsPrice" jdbcType="FLOAT" />
+    <result column="GOODS_STOCK" property="goodsStock" jdbcType="DECIMAL" />
+    <result column="GOODS_PIC" property="goodsPic" jdbcType="VARCHAR" />
+    <result column="GOODS_DESC" property="goodsDesc" jdbcType="VARCHAR" />
+    <result column="GOODS_COMMENT" property="goodsComment" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    GOODS_ID, GOODS_NAME, GOODS_CATA, GOODS_PRICE, GOODS_STOCK, GOODS_PIC, GOODS_DESC, 
+    GOODS_COMMENT, STATE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zds.bean.GoodsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from GOODS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.zds.bean.GoodsExample" >
+    delete from GOODS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zds.bean.Goods" >
+    insert into GOODS (GOODS_ID, GOODS_NAME, GOODS_CATA, 
+      GOODS_PRICE, GOODS_STOCK, GOODS_PIC, 
+      GOODS_DESC, GOODS_COMMENT, STATE
+      )
+    values (ZDS_GOODS_SEQ.nextval, #{goodsName,jdbcType=VARCHAR}, #{goodsCata,jdbcType=VARCHAR},
+      #{goodsPrice,jdbcType=FLOAT}, #{goodsStock,jdbcType=DECIMAL}, #{goodsPic,jdbcType=VARCHAR}, 
+      #{goodsDesc,jdbcType=VARCHAR}, #{goodsComment,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zds.bean.Goods" >
+    insert into GOODS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="goodsId != null" >
+        GOODS_ID,
+      </if>
+      <if test="goodsName != null" >
+        GOODS_NAME,
+      </if>
+      <if test="goodsCata != null" >
+        GOODS_CATA,
+      </if>
+      <if test="goodsPrice != null" >
+        GOODS_PRICE,
+      </if>
+      <if test="goodsStock != null" >
+        GOODS_STOCK,
+      </if>
+      <if test="goodsPic != null" >
+        GOODS_PIC,
+      </if>
+      <if test="goodsDesc != null" >
+        GOODS_DESC,
+      </if>
+      <if test="goodsComment != null" >
+        GOODS_COMMENT,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="goodsId != null" >
+        #{goodsId,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsName != null" >
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsCata != null" >
+        #{goodsCata,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsPrice != null" >
+        #{goodsPrice,jdbcType=FLOAT},
+      </if>
+      <if test="goodsStock != null" >
+        #{goodsStock,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsPic != null" >
+        #{goodsPic,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsDesc != null" >
+        #{goodsDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsComment != null" >
+        #{goodsComment,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zds.bean.GoodsExample" resultType="java.lang.Integer" >
+    select count(*) from GOODS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update GOODS
+    <set >
+      <if test="record.goodsId != null" >
+        GOODS_ID = #{record.goodsId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.goodsName != null" >
+        GOODS_NAME = #{record.goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsCata != null" >
+        GOODS_CATA = #{record.goodsCata,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsPrice != null" >
+        GOODS_PRICE = #{record.goodsPrice,jdbcType=FLOAT},
+      </if>
+      <if test="record.goodsStock != null" >
+        GOODS_STOCK = #{record.goodsStock,jdbcType=DECIMAL},
+      </if>
+      <if test="record.goodsPic != null" >
+        GOODS_PIC = #{record.goodsPic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsDesc != null" >
+        GOODS_DESC = #{record.goodsDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsComment != null" >
+        GOODS_COMMENT = #{record.goodsComment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null" >
+        STATE = #{record.state,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update GOODS
+    set GOODS_ID = #{record.goodsId,jdbcType=DECIMAL},
+      GOODS_NAME = #{record.goodsName,jdbcType=VARCHAR},
+      GOODS_CATA = #{record.goodsCata,jdbcType=VARCHAR},
+      GOODS_PRICE = #{record.goodsPrice,jdbcType=FLOAT},
+      GOODS_STOCK = #{record.goodsStock,jdbcType=DECIMAL},
+      GOODS_PIC = #{record.goodsPic,jdbcType=VARCHAR},
+      GOODS_DESC = #{record.goodsDesc,jdbcType=VARCHAR},
+      GOODS_COMMENT = #{record.goodsComment,jdbcType=VARCHAR},
+      STATE = #{record.state,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+  <select id="selectByKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from GOODS
+    where GOODS_ID = #{goodsId,jdbcType=DECIMAL}
+  </select>
+  <select id="selectRecommendGoods" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select * from ( select * from goods order by dbms_random.value()) where rownum &lt; 4 AND goods_cata = #{goodsCata,jdbcType=VARCHAR} AND STATE = 'U'
+  </select>
+
+</mapper>

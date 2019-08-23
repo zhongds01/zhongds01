@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <!--声明文档兼容模式，表示使用IE浏览器的最新模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--设置视口的宽度(值为设备的理想宽度)，页面初始缩放值<理想宽度/可见宽度>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>管理员登陆</title>
+
+    <!-- 引入Bootstrap核心样式文件 -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 引入jQuery核心js文件 -->
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <!-- 引入BootStrap核心js文件 -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script	src="./js/vue-2.5.22.min..js"></script>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1 >管理员门户网站</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="carousel slide" id="carousel-80425">
+                <ol class="carousel-indicators">
+                    <li class="active" data-slide-to="0" data-target="#carousel-80425">
+                    </li>
+                    <li data-slide-to="1" data-target="#carousel-80425">
+                    </li>
+                    <li data-slide-to="2" data-target="#carousel-80425">
+                    </li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img alt="" src="/img/5.jpg" />
+                        <div class="carousel-caption">
+                            <h4>
+                                First Thumbnail label
+                            </h4>
+                            <p>
+                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img alt="" src="/img/6.jpg" />
+                        <div class="carousel-caption">
+                            <h4>
+                                Second Thumbnail label
+                            </h4>
+                            <p>
+                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img alt="" src="/img/5.jpg" />
+                        <div class="carousel-caption">
+                            <h4>
+                                Third Thumbnail label
+                            </h4>
+                            <p>
+                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                            </p>
+                        </div>
+                    </div>
+                </div> <a class="left carousel-control" href="#carousel-80425" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-80425" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <div class="col-sm-4 column col-sm-offset-1" id="app" style="background-color:rgba(199,237,204,0.15);border-radius: 29px">
+            <form class="form-horizontal" role="form">
+                <div class="form-group" align="center">
+                    <h2>Admin Login!</h2>
+                </div>
+                <div class="form-group">
+                    <label for="inputName" class="col-md-2 control-label">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="inputName" placeholder="Name" v-model="adminName"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span style="display: none" class="col-md-offset-3 text-danger" id="nullName"></span>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-md-2 control-label">
+                        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                    </label>
+                    <div class="col-md-9">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" v-model="adminPwd"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span style="display: none" class="col-md-offset-3 text-danger" id="nullPassword"></span>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-9">
+                        <input type="button" class="btn btn-default col-md-12" value="登陆" style="background-color: #3083ff" @click="submit(adminName,adminPwd)"/>
+                        <br><br><br><br><br>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div style="background-color: black" class="navbar-fixed-bottom">
+    <h4 align="center">Tel:13260906627</h4>
+    <h4 align="center">Email:zhongds01@163.com</h4>
+    <h4 align="center">Copyright © 2019 zhongds All Rights Reserved</h4>
+</div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            adminName:'',
+            adminPwd:''
+        },
+        methods:{
+            submit:function (adminName,adminPwd) {
+                if (adminName === "admin"&&adminPwd === "admin"){
+                    location.href="/toManager.action";
+                }
+                else{
+                    alert("请输入正确的管理员信息!");
+                    location.reload();
+                }
+            }
+        }
+    });
+</script>
+</body>

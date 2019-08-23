@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zds.dao.CustomMapper" >
+  <resultMap id="BaseResultMap" type="com.zds.bean.Custom" >
+    <id column="CUST_ID" property="custId" jdbcType="DECIMAL" />
+    <result column="CUST_NAME" property="custName" jdbcType="VARCHAR" />
+    <result column="CUST_PWD" property="custPwd" jdbcType="VARCHAR" />
+    <result column="CUST_SEX" property="custSex" jdbcType="VARCHAR" />
+    <result column="CUST_TEL" property="custTel" jdbcType="DECIMAL" />
+    <result column="CUST_EMAIL" property="custEmail" jdbcType="VARCHAR" />
+    <result column="CUST_ADDRESS" property="custAddress" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="MODIFY_DATE" property="modifyDate" jdbcType="TIMESTAMP" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    CUST_ID, CUST_NAME, CUST_PWD, CUST_SEX, CUST_TEL, CUST_EMAIL, CUST_ADDRESS, CREATE_DATE, 
+    MODIFY_DATE, STATE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zds.bean.CustomExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from CUSTOM
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from CUSTOM
+    where CUST_ID = #{custId,jdbcType=DECIMAL}
+  </select>
+  
+  
+  <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from CUSTOM
+    where CUST_NAME = #{custName,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from CUSTOM
+    where CUST_ID = #{custId,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zds.bean.CustomExample" >
+    delete from CUSTOM
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zds.bean.Custom" >
+    insert into CUSTOM (CUST_ID, CUST_NAME, CUST_PWD, 
+      CUST_SEX, CUST_TEL, CUST_EMAIL, 
+      CUST_ADDRESS, CREATE_DATE, MODIFY_DATE, 
+      STATE)
+    values (ZDS_CUSTOM_SEQ.nextval, #{custName,jdbcType=VARCHAR}, #{custPwd,jdbcType=VARCHAR},
+      #{custSex,jdbcType=VARCHAR}, #{custTel,jdbcType=DECIMAL}, #{custEmail,jdbcType=VARCHAR}, 
+      #{custAddress,jdbcType=VARCHAR}, SYSDATE, SYSDATE,
+      #{state,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zds.bean.Custom" >
+    insert into CUSTOM
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="custId != null" >
+        CUST_ID,
+      </if>
+      <if test="custName != null" >
+        CUST_NAME,
+      </if>
+      <if test="custPwd != null" >
+        CUST_PWD,
+      </if>
+      <if test="custSex != null" >
+        CUST_SEX,
+      </if>
+      <if test="custTel != null" >
+        CUST_TEL,
+      </if>
+      <if test="custEmail != null" >
+        CUST_EMAIL,
+      </if>
+      <if test="custAddress != null" >
+        CUST_ADDRESS,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="modifyDate != null" >
+        MODIFY_DATE,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="custId != null" >
+        #{custId,jdbcType=DECIMAL},
+      </if>
+      <if test="custName != null" >
+        #{custName,jdbcType=VARCHAR},
+      </if>
+      <if test="custPwd != null" >
+        #{custPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="custSex != null" >
+        #{custSex,jdbcType=VARCHAR},
+      </if>
+      <if test="custTel != null" >
+        #{custTel,jdbcType=DECIMAL},
+      </if>
+      <if test="custEmail != null" >
+        #{custEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="custAddress != null" >
+        #{custAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="modifyDate != null" >
+        #{modifyDate,jdbcType=DATE},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zds.bean.CustomExample" resultType="java.lang.Integer" >
+    select count(*) from CUSTOM
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update CUSTOM
+    <set >
+      <if test="record.custId != null" >
+        CUST_ID = #{record.custId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.custName != null" >
+        CUST_NAME = #{record.custName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.custPwd != null" >
+        CUST_PWD = #{record.custPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.custSex != null" >
+        CUST_SEX = #{record.custSex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.custTel != null" >
+        CUST_TEL = #{record.custTel,jdbcType=DECIMAL},
+      </if>
+      <if test="record.custEmail != null" >
+        CUST_EMAIL = #{record.custEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.custAddress != null" >
+        CUST_ADDRESS = #{record.custAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createDate != null" >
+        CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifyDate != null" >
+        MODIFY_DATE = SYSDATE,
+      </if>
+      <if test="record.state != null" >
+        STATE = #{record.state,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update CUSTOM
+    set CUST_ID = #{record.custId,jdbcType=DECIMAL},
+      CUST_NAME = #{record.custName,jdbcType=VARCHAR},
+      CUST_PWD = #{record.custPwd,jdbcType=VARCHAR},
+      CUST_SEX = #{record.custSex,jdbcType=VARCHAR},
+      CUST_TEL = #{record.custTel,jdbcType=DECIMAL},
+      CUST_EMAIL = #{record.custEmail,jdbcType=VARCHAR},
+      CUST_ADDRESS = #{record.custAddress,jdbcType=VARCHAR},
+      CREATE_DATE = #{record.createDate,jdbcType=DATE},
+      MODIFY_DATE = #{record.modifyDate,jdbcType=DATE},
+      STATE = #{record.state,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zds.bean.Custom" >
+    update CUSTOM
+    <set >
+      <if test="custName != null" >
+        CUST_NAME = #{custName,jdbcType=VARCHAR},
+      </if>
+      <if test="custPwd != null" >
+        CUST_PWD = #{custPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="custSex != null" >
+        CUST_SEX = #{custSex,jdbcType=VARCHAR},
+      </if>
+      <if test="custTel != null" >
+        CUST_TEL = #{custTel,jdbcType=DECIMAL},
+      </if>
+      <if test="custEmail != null" >
+        CUST_EMAIL = #{custEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="custAddress != null" >
+        CUST_ADDRESS = #{custAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="modifyDate != null" >
+        MODIFY_DATE = #{modifyDate,jdbcType=DATE},
+      </if>
+      <if test="state != null" >
+        STATE = #{state,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CUST_ID = #{custId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zds.bean.Custom" >
+    update CUSTOM
+    set CUST_NAME = #{custName,jdbcType=VARCHAR},
+      CUST_PWD = #{custPwd,jdbcType=VARCHAR},
+      CUST_SEX = #{custSex,jdbcType=VARCHAR},
+      CUST_TEL = #{custTel,jdbcType=DECIMAL},
+      CUST_EMAIL = #{custEmail,jdbcType=VARCHAR},
+      CUST_ADDRESS = #{custAddress,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=DATE},
+      MODIFY_DATE = #{modifyDate,jdbcType=DATE},
+      STATE = #{state,jdbcType=VARCHAR}
+    where CUST_ID = #{custId,jdbcType=DECIMAL}
+  </update>
+</mapper>
