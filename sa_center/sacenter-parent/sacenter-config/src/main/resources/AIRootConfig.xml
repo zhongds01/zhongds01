@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="GB2312"?>
-
-<AIRootConfig>
-  <item name="FetchConfigType" value="CLASSPATH" desc="获取配置信息方式"></item>
-</AIRootConfig>

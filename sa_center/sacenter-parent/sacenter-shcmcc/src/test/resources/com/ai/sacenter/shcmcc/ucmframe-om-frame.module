@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="GB2312"?>
-<ucmframe name="即开即通服务模块">
-   <module file="com/ai/sacenter/shcmcc/ucmframe-shcmcc-custom.module"      name="服务开通核心服务模块" use="true"/>
-   <module file="com/ai/sacenter/shcmcc/ucmframe-table-custom.module" name="服务开通定单接收模块" use="true"/>
-</ucmframe>

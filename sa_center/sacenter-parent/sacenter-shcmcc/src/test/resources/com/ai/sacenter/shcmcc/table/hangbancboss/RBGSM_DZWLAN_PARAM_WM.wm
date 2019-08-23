@@ -1,1 +1,0 @@
-#if( $IUpffgsmxL && $IUpffgsmxL.size() > 0 )${SUBJECT}_NUM=$IUpffgsmxL.size();#foreach( $InfoCode in $IUpffgsmxL.keySet() )${SUBJECT}_NAME_${velocityCount}=${InfoCode};${SUBJECT}_VALUE_${velocityCount}=$IUpffgsmxL.get(${InfoCode})#if(${velocityCount} != $IUpffgsmxL.keySet().size());#end#end#end

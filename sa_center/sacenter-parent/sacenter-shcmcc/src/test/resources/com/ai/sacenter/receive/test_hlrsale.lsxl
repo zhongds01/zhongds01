@@ -1,1 +1,0 @@
-$FUN.getZONENAME(#{ORDER.BILL_ID}, 'NULL', 'NULL' )

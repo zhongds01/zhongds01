@@ -1,8 +1,0 @@
-#if( $IUpffgsmxL && $IUpffgsmxL.size() > 0 )
-   #foreach( $InfoCode in $IUpffgsmxL.keySet() )
-   <OprInfo>
-      <InfoCode>$InfoCode</InfoCode>
-      <InfoValue>$IUpffgsmxL.get($InfoCode)</InfoValue>
-   </OprInfo>
-   #end
-#end
