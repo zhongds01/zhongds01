@@ -7,4 +7,4 @@ server:
 name: 仲东生
 age: 19
 content: "name:${name},age:${age}"
-logging.level.com.example.springboot
+#logging.level.com.example.springboot

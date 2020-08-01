@@ -42,3 +42,8 @@ server:
       context-path: /hellotest
 spring:
   profiles: test
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+

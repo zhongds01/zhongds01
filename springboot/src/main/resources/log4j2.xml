@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see @https://logging.apache.org/log4j/2.x/manual/customloglevels.html -->
+<!-- high -> low : OFF - FATAL - Error - WARN - INFO - DEBUG - TRACE - ALL  -->
+<!-- status：用来指定 log4j 本身打印日志的级别 -->
+<Configuration status="WARN">
+	<!-- 自定义日志等级，扩展debug，infor，warn，error等。 -->
+	<Properties>
+		<!--自定义一些常量，之后使用${变量名}引用-->
+		<Property name="logFilePath">logs</Property>
+		<Property name="logFileName">debug.log</Property>
+	</Properties>
+	<CustomLevels>
+		<CustomLevel name="DIAG" intLevel="350"/>
+		<CustomLevel name="NOTICE" intLevel="450"/>
+		<CustomLevel name="VERBOSE" intLevel="550"/>
+	</CustomLevels>
+	<!-- 日志追加的目的地（Console、File、RollingFile） -->
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %-7level %logger{36} - %msg%n"/>
+		</Console>
+		<!-- 当前项目根路径下 -->
+		<File name="ToFile" fileName="${logFilePath}/${logFileName}">
+			<PatternLayout pattern="%d %-7level %logger{36} - %msg%n"/>
+		</File>
+	</Appenders>
+	<!-- 日志等级（Root:根日志等级，Logger：指定包的日志等级） -->
+	<Loggers>
+		<!-- 如果没有指定Logger,则所有日志级别为trace -->
+		<Root level="debug">
+			<!-- 只有日志等级大于等于error，才会将日志输出到控制台 -->
+			<AppenderRef ref="Console" level="debug"/>
+			<AppenderRef ref="ToFile" level="trace"/>
+		</Root>
+		<!-- 设置com.example.springboot包下所有日志级别为debug -->
+		<Logger level="debug" name="com.example.springboot">
+		</Logger>
+	</Loggers>
+</Configuration>
