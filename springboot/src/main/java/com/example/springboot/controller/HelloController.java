@@ -1,5 +1,7 @@
 package com.example.springboot.controller;
 
+import com.example.springboot.annotation.Privilege;
+import com.example.springboot.constant.DConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
@@ -39,6 +41,7 @@ public class HelloController {
         this.para1 = para1;
     }
 
+    @Privilege(value = DConstant.PRIVILEGE.ADD)
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello(@NotBlank(message = "para1不能为空") String para1) {
         System.out.println(para1.length());

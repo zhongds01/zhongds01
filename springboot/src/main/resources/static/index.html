@@ -67,6 +67,7 @@
                     success: function (result) {
                         if (result.code === "1") {
                             alert(result.desc);
+                            console.log(result['desc']);
                         } else {
                             location.href = result.data.view;
                         }

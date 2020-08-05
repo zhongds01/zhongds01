@@ -26,6 +26,7 @@ public class LoginController {
 
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
+
     @RequestMapping(value = "login", method = RequestMethod.GET)
     @ResponseBody
     public CommonResponse login(@NotNull(message = "name不为空") String name) {

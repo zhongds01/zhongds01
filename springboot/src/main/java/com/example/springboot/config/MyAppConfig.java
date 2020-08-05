@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * description: @Configuration说明此类是一个配置类
+ * description: @Configuration说明此类是一个配置类,优先加载
  * author: ZDS
  * create_date : 2019/3/26
  * create_time : 14:20

@@ -17,7 +17,14 @@ public final class DConstant {
         String HTTP_STATUS_500 = "500";
     }
 
-    public interface VIEW{
+    public interface VIEW {
         String SUCCESS = "success";
+    }
+
+    public interface PRIVILEGE {
+        String ADD = "ADD";
+        String DELETE = "DELETE";
+        String QUERY = "QUERY";
+        String MODIFY = "MODIFY";
     }
 }
