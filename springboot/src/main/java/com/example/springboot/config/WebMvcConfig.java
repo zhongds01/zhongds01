@@ -3,7 +3,7 @@ package com.example.springboot.config;
 import com.example.springboot.interceptor.PrivilegeInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * Description: please add the description
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  * Date : 2020/8/2 22:23
  */
 @Configuration
-public class WebMvcConfig extends WebMvcConfigurationSupport {
+public class WebMvcConfig implements WebMvcConfigurer {
 
     /**
      * 注册拦截器

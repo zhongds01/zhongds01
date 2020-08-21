@@ -16,30 +16,44 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<springboot.vesion>2.0.6.RELEASE</springboot.vesion>
+		<!-- 设置编译时使用的jdk版本，如果此处设置了，maven-compile-plugin插件不需要配置 -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${springboot.vesion}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${springboot.vesion}</version>
 			<scope>test</scope>
 		</dependency>
 		<!--热部署-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
+			<version>${springboot.vesion}</version>
 			<optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
 		</dependency>
 		<!--配置文件处理器-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
+			<version>${springboot.vesion}</version>
 			<optional>true</optional>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<version>${springboot.vesion}</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
@@ -74,6 +88,11 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
 		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		
 		<!-- jQuery -->
 		<!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
 		<dependency>
@@ -97,6 +116,16 @@
 			<artifactId>element-ui</artifactId>
 			<version>2.13.2</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/xalan/serializer -->
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>serializer</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+		
+		
+	
 	
 	</dependencies>
 	<!--打包支持依赖-->
@@ -105,8 +134,51 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.4.2.RELEASE</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<useDefaultDelimiters>true</useDefaultDelimiters>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<fork>true</fork>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+					
+					
+					<debuglevel> </debuglevel>
+					
+					<compilerArgs>
+						-Xlint:all
+					</compilerArgs>
+					<verbose>true</verbose>
+				</configuration>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/webapp</directory>
+				<targetPath>META-INF/resources</targetPath>
+				<includes>
+					<include>**/**</include>
+				</includes>
+			</resource>
+		</resources>
 	</build>
 
 </project>

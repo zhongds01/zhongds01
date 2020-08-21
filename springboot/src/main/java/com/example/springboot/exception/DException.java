@@ -6,6 +6,7 @@ package com.example.springboot.exception;
  * Date : 2020/8/2 15:42
  */
 public class DException extends Exception {
+
     public DException() {
         super();
     }

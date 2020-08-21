@@ -65,7 +65,7 @@ public class PrivilegeInterceptor implements HandlerInterceptor {
 
         Privilege privilege = null;
 
-        boolean result = false;
+        boolean result = true;
 
         if (handler instanceof HandlerMethod) {
             // 3、获取权限注解信息
