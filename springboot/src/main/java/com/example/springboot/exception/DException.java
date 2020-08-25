@@ -7,6 +7,8 @@ package com.example.springboot.exception;
  */
 public class DException extends Exception {
 
+    private static final long serialVersionUID = -1667217529383687983L;
+
     public DException() {
         super();
     }

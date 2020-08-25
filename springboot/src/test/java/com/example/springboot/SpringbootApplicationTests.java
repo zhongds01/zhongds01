@@ -68,7 +68,6 @@ public class SpringbootApplicationTests {
     }
 
     private void fun1() throws DException {
-        getClass();
 		DException e = new DException(new RemoteException("抛出异常"));
 		throw e;
     }

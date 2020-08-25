@@ -6,10 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotNull;
 import java.util.HashMap;
@@ -63,5 +60,19 @@ public class LoginController {
     @RequestMapping(value = "success", method = RequestMethod.GET)
     public String toSuccess() {
         return DConstant.VIEW.SUCCESS;
+    }
+
+    /**
+     * 测试
+     *
+     * @param name name
+     * @param password password
+     * @return
+     */
+    @RequestMapping(value = "/mytest" ,produces="text/html;charset=UTF-8" )
+    @ResponseBody
+    public String testRequestPara(@RequestParam(name = "name") String name, @RequestParam(name = "password") String password){
+        System.out.println(name);
+        return name + "--" + password;
     }
 }
