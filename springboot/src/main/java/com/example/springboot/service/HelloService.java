@@ -1,5 +1,7 @@
 package com.example.springboot.service;
 
+import org.springframework.stereotype.Component;
+
 /**
  * description: please add the description
  * author: ZDS
@@ -7,4 +9,7 @@ package com.example.springboot.service;
  * create_time : 14:22
  */
 public class HelloService {
+    public void sayHello() {
+        System.out.println("hello");
+    }
 }

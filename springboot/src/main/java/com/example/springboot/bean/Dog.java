@@ -1,11 +1,14 @@
 package com.example.springboot.bean;
 
+import org.springframework.stereotype.Component;
+
 /**
  * description: please add the description
  * author: ZDS
  * create_date : 2019/3/26
  * create_time : 13:14
  */
+@Component
 public class Dog {
     private String name;
     private Integer age;
