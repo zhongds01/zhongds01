@@ -17,7 +17,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <springboot.vesion>2.0.6.RELEASE</springboot.vesion>
+        <springboot.vesion>2.5.12</springboot.vesion>
         <!-- 设置编译时使用的jdk版本，如果此处设置了，maven-compile-plugin插件不需要配置 -->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
